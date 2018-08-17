@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="数据、数据元素、数据项、数据对象、逻辑结构、存储结构（顺序、链表）抽象数据类型：数据对象、数据关系、基本操作Status是函数返回值类型，其值是函数结果状态代码Typedef是描述存储结构，elemtype定义数据元素类型New delete动态分配释放内存空间交换赋值：变量名12异常结束语句 exit（异常代码）C++输入输出：cin&amp;gt;&amp;gt;   &amp;gt;&amp;gt;  ;        c">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构笔记">
+<meta property="og:url" content="http://yoursite.com/2017/03/05/数据结构/index.html">
+<meta property="og:site_name" content="Welcome">
+<meta property="og:description" content="数据、数据元素、数据项、数据对象、逻辑结构、存储结构（顺序、链表）抽象数据类型：数据对象、数据关系、基本操作Status是函数返回值类型，其值是函数结果状态代码Typedef是描述存储结构，elemtype定义数据元素类型New delete动态分配释放内存空间交换赋值：变量名12异常结束语句 exit（异常代码）C++输入输出：cin&amp;gt;&amp;gt;   &amp;gt;&amp;gt;  ;        c">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-08-17T16:14:30.949Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据结构笔记">
+<meta name="twitter:description" content="数据、数据元素、数据项、数据对象、逻辑结构、存储结构（顺序、链表）抽象数据类型：数据对象、数据关系、基本操作Status是函数返回值类型，其值是函数结果状态代码Typedef是描述存储结构，elemtype定义数据元素类型New delete动态分配释放内存空间交换赋值：变量名12异常结束语句 exit（异常代码）C++输入输出：cin&amp;gt;&amp;gt;   &amp;gt;&amp;gt;  ;        c">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/03/05/数据结构/"/>
+
+
+
+
+
+  <title>数据结构笔记 | Welcome</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Welcome</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/05/数据结构/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="十点一刻">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/qifang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Welcome">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">数据结构笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-05T23:22:48+08:00">
+                2017-03-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>数据、数据元素、数据项、数据对象、逻辑结构、存储结构（顺序、链表）<br>抽象数据类型：数据对象、数据关系、基本操作<br>Status是函数返回值类型，其值是函数结果状态代码<br>Typedef是描述存储结构，elemtype定义数据元素类型<br>New delete动态分配释放内存空间<br>交换赋值：变量名1<-->2<br>异常结束语句 exit（异常代码）<br>C++输入输出：cin&gt;&gt;   &gt;&gt;  ;        cout&lt;&lt;   &lt;&lt;  ;<br>算法特性：有穷性、确定性、可行性、输入、输出<br>算法优劣评价：正确性、可读性、健壮性、高效性<br>问题规模：算法求解问题输入量的多少，n越大算法执行时间越长（语句频度之和）<br>语句频度：一条语句重复执行次数<br>分析算法复杂度：找出所有语句中语句频度最大的那条语句作为基本语句，计算基本语句的频度得到问题规模n的某个函数fn，取数量级O（最深层循环决定）<br>语句频度为某个常数：算法执行时间不随问题规模n的增加而增长<br>随数量级递增：常数阶，对数阶，线性阶，线性对数阶（nlog2n），平方阶，立方阶，k次方阶，指数阶<br>随n增大，Tn增长慢的为最优算法<br>原地工作（算法）：算法执行时所需要的辅助空间相对于输入数据量而言是个常数<br>算法的时间复杂度取决于问题规模和待处理数据的初态。</--></p>
+<p>线性结构的基本特点：除第一个元素无直接前驱，最后一个元素无直接后继，其他每个数据元素都有一个前驱和后继<br>一个数据元素可以包含若干个数据项<br>线性表：由n个数据特性相同的元素构成的有限序列<br>线性表的相邻元素之间是一对一的序偶关系<br>初始化：initlist<br>销毁：destroy<br>置空表：clearlist<br>判空表：Listempty<br>求表长：listlength<br>取第i个元素：Getelem<br>查找元素：locateelem<br>前驱（后继）Priorelem/nextelem<br>插入元素：Listinsert<br>删除元素：Listdelete<br>遍历表：Traverselist<br>顺序表：用顺序映像（用一组地址连续的存储单元依次存储线性表的数据元素）的线性表<br>存储位置：LOC（ai）=LOC（1）+（i-1）l（每个元素占据l单元，a（1）为线性表的起始地置或基地址）<br>随机存取的存储结构：只要确定了存储线性表的起始位置，线性表的任一数据元素都可随机存取<br>注意区分元素位置区号和下标位置的对应关系<br>通过length的值判断是否为空<br>动态分配线性表的存储区域可以更有效地利用系统的资源<br>ASL=（n+1）/2，Eins=n/2，Edel=（n-1）/2<br>数组的静态特性：长度相对固定<br>链表的存储映像（结点）：数据域（存储数据元素信息）、指针域（存储直接后继存储位置，指针或链）<br>线性链表（单链表）：链表的每个结点中只包含一个指针域<br>整个链表的存取必须从头指针开始进行，头指针指示链表中的第一个结点（首元结点）的存储位置。<br>单链表最后一个结点的指针为空<br>单链表可由头指针唯一确定，c中的结构指针。<br>单链表可用头指针名字命名<br>首元结点：链表中存储第一个数据元素a1的结点<br>头结点：在首元结点前附设的一个结点，其指针域指向首元结点。数据域可以不存储任何信息，也可以存储<br>头指针：指向链表中第一个结点的指针（有头指头，无头指首元）<br>链表增加头结点作用：便于首元结点的使用，便于空表与非空表的统一处理<br>顺序存取的存取结构：要取得第i个数据元素必须从头指针出发顺链进行寻找<br>单链表ASL=（n-1）/2<br>插入：s-&gt;next=p-&gt;next;p-&gt;next=s;<br>要在i个结点前插入新结点，需找到i-1，所以on<br>删除：p-&gt;next=p-&gt;next-&gt;next；<br>合法插入位置n+1个，合法删除位置n个<br>链表是动态结构，空间不需预先分配划定，由系统按需即时生成<br>前插法：将新结点逐个插入链表的头部（头结点后）来创建链表<br>后插法：将新结点逐个插入链表的尾部来创建链表。为了使新结点能够插入表尾，需要增加一个尾指针r指向链表的尾结点。<br>循环链表特点：表中最后一个结点的指针域指向头结点<br>指向表尾结点的终止条件：单链表（p/p-&gt;next!=null），循环链表（p/p-&gt;next!=l）<br>合并两个线性表：头尾相指，释放第二个表的头结点<br>{p=B-&gt;next（头）-&gt;next;<br>B-&gt;next=A-&gt;next（头）;<br>A-&gt;next=p;    }<br>在单链表中，查找直接后继结点执行时间为o1，而前驱为on<br>双向链表通常采用带头结点的循环链表形式<br>只要是删除，需要判断是否为空<br>只要是静态存储，需要判断是否满<br>存储密度：数据元素本身所占用的存储量和整个结点结构所占用的存储量之比<br>存储密度大，存储空间利用率高<br>顺序表适用：表长变化不大，且能事先确定变化范围。很少插入删除，经常按元素位置序号访问数据元素。<br>链表适用：长度变化极大，频繁进行插入删除</p>
+<p>栈和队列是限定性的数据结构<br>栈是限定仅在表尾进行插入或删除操作的线性表，后进先出<br>栈顶：表尾端<br>栈底：表头端<br>队列：先进先出的线性表<br>队尾：允许插入的一端<br>队头：允许删除的一端<br>插入操作：入栈、入队<br>删除操作：出栈、出队<br>求栈长：stacklength<br>求栈顶元素：gettop<br>插入：push<br>删除：pop<br>遍历：stacktraverse<br>顺序栈：利用一组地址连续的存储单元依次存放自栈底到栈顶的数据元素，同时附设指针top指示栈顶元素在顺序栈的位置<br>空栈：top和base的值相等<br>当Base=NULL，则栈结构不存在<br>Top初值指向栈底，栈非空时，始终指向栈顶元素的上一位置<br>Stacksize指示栈课使用的最大容量<br>存储分配失败：{xx=new yy；if（！xx） exit（overflow）； }<br>入栈出栈需判栈空栈满<br>链栈：以链表的头部作为栈顶<br>入链栈不需要判栈空，出链栈要判栈满<br>递归：在定义的内部直接或间接出现定义本身<br>“分治法”：分解-求解的策略<br>链表是一种递归的数据结构<br>迭代法：迭代地展开递归方程的右端，使之成为一个非递归的和式，再估计<br>求队头元素：gethead<br>插入：enqueue<br>删除：dequeue<br>顺序队列：利用一组地址连续的存储单元依次存放从队列头到队列尾的元素，附设两个整型变量front和rear（指示队列头尾元素的位置，即头尾指针）<br>空队列：front=rear=0；<br>插入新的队列尾元素：rear+1<br>删除队列头元素：front+1<br>头指针始终指向队列头元素，尾指针指向队列尾元素的下一位置<br>假溢出：因数组越界而导致程序的非法操作错误<br>解决假溢出：循环队列（需要模运算），该队列出栈不用释放空间，凡是涉及队头队尾指针修改的都要将其对MAXSIZE求模<br>区别队满队空：少用一个元素空间、另设一个标志位<br>队空：Q.front=Q.rear;<br>队满：(Q.rear+1)%MAXSIZE==Q.front<br>队列长度：头尾指针差值（非循环队列），(Q.rear-Q.front+MAXSIZE)%MAXSIZE（循环队列）<br>e=Q.base[Q.front]  ——-用e返回队头元素<br>链队被添加一个头结点，并令头指针始终指向头结点<br>初始化：构造一个只有一个头结点的空队<br>链队出队：队列最后一个元素被删，队列尾指针丢失，需对队尾指针重新赋值（指向头结点）<br>递归程序占用内存空间较多，运行效率较低</p>
+<p>树：以分支关系定义的层次结构，有且仅有一个称为根的结点，其余m个子树互不相交<br>结点：树的独立单元<br>结点的度：结点拥有的子树数<br>树的度：树内各结点度的最大值<br>叶子结点（终端结点）：度为零的结点<br>分支结点（非终端结点）：度不为零的结点<br>内部结点：除根节点外的分支结点<br>祖先：从根到该结点所经分支上的所有结点<br>子孙：以某结点为根的子树中的任一结点<br>堂兄弟：双亲在同一层的结点<br>树的深度（高度）：树中结点的最大层次<br>有序树：树中结点的各子树从左至右是有次序的（不能互换）。最左边的子树的根称为第一个孩子，最右边称为最后一个孩子<br>森林：m棵互不相交的树的集合<br>二叉树：每个结点至多只有两棵子树（不存在度大于2的结点），子树有左右之分（次序不能任意颠倒），有5种基本形态<br>求根：root<br>求结点值：value<br>赋值结点：assign<br>求双亲：parent<br>求左右孩子：leftchild/rightchild<br>求左右兄弟：leftsibling/rightsibling<br>插入子树：insertchild<br>先序遍历：preordertraverse<br>中序遍历：inordertraverse<br>后序遍历：postordertraverse<br>层次遍历：levelordertraverse<br>二叉树性质：1 在二叉树的第i层上至多有2^（i-1）个结点（i）=1）<br>             2 深度为k的二叉树至多有2^k-1个结点（k）=1）<br>             3 对任何一棵二叉树T，终端结点n0，度为2的结点n2，则n0=n2+1<br>4 具有n个结点的完全二叉树的深度为[log2n]+1（向下取整）<br>5 双亲[i=2],（向下取整），左孩子2i，右孩子2i+1<br>满二叉树：深度为k且含有2^k-1个结点的二叉树，每一层的结点数都是最大结点数<br>完全二叉树：每个结点与满二叉树编号（自上而下，自左而右）一一对应。叶子结点只在层次最大的两层出现，右子孙层次l，则左子孙层次l或l+1<br>顺序存储结构仅适用于完全二叉树（从根起按层序存储），0表示不存在该结点<br>二叉链表：数据域和左、右指针域<br>三叉链表：数据域和左、右指针域，以及指向其双亲结点的指针域<br>在含有n个结点的二叉链表中有n+1个空链域<br>查找双亲时，在二叉链表中需从根指针出发巡查<br>链式存储是二叉树常用的存储结构<br>线索二叉树在第一次遍历时将结点的前驱、后继信息存储下来，便于再次遍历二叉树<br>遍历二叉树：按某条搜索路径巡访树中各个结点，使得每个结点均被访问一次，而且仅被访问一次（二叉树最基本操作）<br>遍历实质：对二叉树进行线性化过程（结点排成线性序列）<br>先序遍历：根，左，右<br>中序遍历：左，根，右<br>后序遍历：左，右，根<br>（遍历时间空间复杂度均为on）<br>由先序和中序序列，或由后序和中序序列均能唯一地确定一棵二叉树<br>复制二叉树（类似先序遍历过程）：利用已有的一棵二叉树复制得到另外一棵与其完全相同的二叉树<br>二叉树深度（计算过程类似后序遍历）：树中结点的最大层次，左右子树深度较大者加1<br>二叉树结点个数：空树则为0，否则为左子树加右子树加1<br>遍历二叉树：以一定规则将二叉树中的结点排列成一个线性序列<br>为避免混淆，则改变结点结构，增加两个标志域<br>LTag：指示结点的左孩子（0），指示结点的前驱（1）<br>RTag：指示结点的右孩子（0），指示结点的后继（1）<br>线索：指向结点前驱和后继的指针<br>线索二叉树：加上线索的二叉树<br>线索化：对二叉树以某种次序遍历使其变为线索二叉树的过程<br>线索链表：实线为指针（指向左、右子树），虚线为线索（指向前驱、后继），且第一个结点的lchild域指针和最后一个结点rchild域的指针均指向头结点<br>线索二叉树构造的实质：将二叉链表中的空指针改为指向前驱或后继的线索<br>为记录遍历过程访问结点的先后关系，附设一个指针pre始终指向刚刚访问过的结点，而指针p指向当前访问的结点<br>中序线索二叉树：<br>LTag=1  左链指向前驱，右链指向后继<br>LTag=0  前驱是左子树中最右下的结点，后继是遍历其右子树时访问的第一个结点<br>在先序线索化树找前驱或在后序线索化树上找后继比较复杂，直接建立4个指针的线索链表<br>树的存储结构<br>双亲表示法：以一组连续的存储单元存储树的结点，除数据域data，附设parent域用以指示其双亲结点的位置。但求结点的孩子需要遍历整个结构<br>孩子表示法：多重链表（每个结点有多个指针域），每个指针指向一棵子树的根结点<br>同构：空间浪费，在一棵有n个结点度为k的树中必有n(k-1)+1个空链域<br>不同构：操作不方便<br>孩子链表：把每个结点的孩子结点排列，以单链表做存储结构。头指针组成线性表，用顺序存储结构<br>孩子兄弟法（二叉树表示法、二叉链表表示法）：链表中结点的两个链域分别指向该结点的第一个孩子结点（firstchild）和下一个兄弟结点（nextsibling）<br>优点：和二叉树的二叉链表完全一样，便于将一般的树结构转换为二叉树<br>任何一棵树都能通过孩子兄弟表示法转换为二叉树进行存储<br>任何一棵和树对应的二叉树，其根结点的右子树必空(利用二叉链表存储树时，右指针指向兄弟结点)<br>树转换成二叉树：将结点的长子变成其左孩子，右兄弟变成其右孩子<br>森林转换成二叉树：每一棵树变成二叉树，后将各根结点视为兄弟连在一起<br>二叉树转换成森林：左孩子变为长子，右孩子变为右兄弟<br>树的遍历：先根遍历（根结点，子树），后根遍历（子树，根结点）<br>引入二叉线索树的目的是加快查找结点前驱或后继的速度<br>交换其所有分支结点左、右子树的位置，利用后序遍历方法最合适。<br>一棵非空的二叉树的先序遍历序列与后序遍历序列正好相反，则该二叉树只有一个叶子结点</p>
+<p>在图结构中，结点之间的关系可以是任意的，图中任意两个数据元素之间都可能相关<br>图G由V（顶点集）和E（边集）。E（G）可以为空，则图G只有顶点没有边<br>有向图（有向边的集合）中，顶点对&lt;x,y&gt;是有序的边或弧，x是有向边的始点或弧尾，y是有向边的终点或弧头<br>无向图（无向边的集合）中，（x,y）是无序的一条边<br>子图：边集合和点集合的子集构成的图<br>无向完全图：具有n（n-1）/2条边<br>有向完全图：具有n（n-1）条弧<br>稀疏图：有很少条弧或边的图<br>稠密图：有很多条弧或边的图<br>权：每条边标上具有某种含义的数值，表示距离或耗费<br>网：带权的图<br>邻接点：v1和v2在一条线上，互为邻接点<br>度TD（v）：和v相关联的边的数目，度等于入度加出度数<br>入度ID(v)：以顶点v为头的弧的数目<br>出度OD(v)：以顶点v为尾的弧的数目<br>路径长度：一条路径上经过的边或弧的数目<br>回路（环）：第一个顶点和最后一个顶点相同的路径<br>简单路径：序列中顶点不重复出现的路径<br>简单回路（环）：除第一个和最后一个顶点外，其余顶点不重复出现的回路<br>连通：v到v1有路径，连通<br>连通图：任意两个顶点都连通，无向图G为连通图<br>连通分量：无向图中的极大连通子图（连通子图个数）<br>强连通图：任意两个顶点都存在路径，有向图G为连通图<br>强连通分量：有向图中的极大强连通子图（连通子图个数）<br>连通树的生成树：一个极小的连通子图，含有图中全部顶点，但只有足以构成一棵树的n-1条边<br>如果一个图有n个顶点和小于n-1条边，则是非连通图。如果多于，则一定是环<br>有n-1条边的图不一定是生成树<br>有向树：有一个顶点的入度为0，其余顶点的入度均为1的有向图<br>生成森林：由若干个有向树组成，含有图中全部顶点，但只有足以构成若干棵不相交的有向树的弧<br>构造图：creategraph<br>返回顶点位置：locatevex<br>返回顶点值：getvex<br>对顶点赋值：putvex<br>返回第一个邻接顶点：firstadjvex<br>返回下一个邻接顶点：nextadjvex<br>增加新顶点：insertvex<br>增加弧：insertarc<br>深度优先遍历：DFSTraverse<br>广度优先遍历：BFSTraverse<br>邻接矩阵：表示顶点之间相邻关系的矩阵<br>图：若属于集合，则Aij=1，否则Aij=0<br>网：若属于集合，则Aij=w（权值），否则Aij=∞（计算机允许的、大于所有边上权值的数）<br>邻接矩阵表示图：一个用于存储邻接矩阵的二维数组，还有一个一维数组存储顶点信息<br>优点：便于判断两个顶点之间是否有边，便于计算各个顶点的度（无向图是第i行元素之和，有向图第i行元素之和为出度，第i列元素之和为入度）<br>缺点：不便于增加和删除结点，不便于统计边的数目（需扫描全部元素），空间复杂度高（稀疏图浪费空间）<br>压缩存储：仅存储下三角（上三角）的元素<br>邻接表：对图中每个顶点建立一个单链表，把邻接的顶点放入链表。单链表的第一个结点存放有关顶点的信息，其余结点存放边的信息。（表头节点表、边表）<br>表头结点表：顺序存储，数据域（用于存储顶点的名称或其他有关信息），链域（指向链表中第一个结点，即与顶点邻接的第一个邻接点）<br>边表：由2n个边链表组成，邻接点域（指示与顶点邻接的点在图中的位置），数据域（存储和边相关的信息，如权值），链域（指示与顶点邻接的下一条边的结点）<br>在无向表的邻接表，顶点的度恰为第i个链表中的结点数。而在有向图仅为顶点的出度<br>逆邻接表：邻接表记录顶点的入边，称入边表<br>优点：便于增加和删除顶点，便于统计边的数目，空间效率高（空间复杂度o（n+e）），适合稀疏图<br>缺点：不便于判断顶点之间是否有边，不便于计算有向图各个顶点的度<br>十字链表：结合有向图的邻接表和逆邻接表<br>在十字链表中，每一条弧有一个结点，对应于每个顶点也有一个结点<br>弧结点：尾域tailvex和头域headvex分别指示弧尾和弧头在图中的位置，链域hlink指向弧头相同的下一条弧，链域tlink指向弧尾相同的下一条弧，info域指向该弧的相关信息<br>弧头或弧尾相同的在同一链表上<br>头结点（顶点结点）：data域存储和顶点相关的信息，链域firstin和firstout分别指向以该顶点为弧头或弧尾的第一个弧结点<br>邻接多重表：每一条边用一个结点表示，每一个顶点也用一个结点表示<br>边结点：mark标志域可用以标记该条边是否被搜索过，ivex和jvex为该边依附的两个顶点在图中的位置，ilink指向下一条依附于顶点ivex的边，jlink指向下一条依附于jvex的边，info为指向和边相关的各种信息的指针域<br>头结点（顶点结点）：data域存储和该顶点相关的信息，firstedge域指示第一条依附于该顶点的边。<br>在邻接多重表中，所有依附于同一顶点的边串联在同一链表中，由于每条边依附于两个顶点，则每个边结点同时链接在两个链表中<br>深度优先搜索：类似树的先序遍历，栈。从某个顶点出发，顺着第一个未被访问的邻接点，返回前一个访问过但有未被访问的邻接点，直至都被访问，结束。时间复杂度on^2（邻接矩阵），oe（邻接表）<br>广度优先搜索：类似树的层次遍历，队列。从顶点出发，依次访问各个未曾访问过的邻接点，再从邻接点出发访问邻接点，先被访问过的先于后被访问过的<br>最小代价生成树（最小生成树）：在一个连通网的所有生成树中，各边的代价之和最小的那棵生成树<br>普里姆算法：找出一条权值最小的边并入集合。适合构造稠密网的最小生成树，时间复杂度on^2<br>加点法：逐步增加集合中的顶点<br>克鲁斯卡尔算法：选择权值最小的边，若该边依附的顶点落在集合中不同的连通分量上，则将此边加入集合，否则舍去，选择另一条。直至集合所有顶点都在同一连通分量上。适合构造稀疏网的最小生成树，时间复杂度oelog2e<br>加边法：逐步增加生成树的边<br>带权有向网，路径第一个顶点为源点，最后一个顶点为终点<br>求从某个源点到其余各顶点的最短路径：迪杰斯特拉算法（按路径长度递增的次序产生最短路径），时间复杂度on^2<br>求每一对顶点之间的最短路径：弗洛伊德算法（求每一对顶点之间的最短路径）</p>
+<p>查找表：由同一类型的数据元素（或记录）构成的集合（一种非常灵便的数据结构）<br>关键字：数据元素（或记录）中某个数据项的值，可以标识。若唯一，则为主关键字。若识别若干，则为次关键字。当数据元素只有一个数据项，其关键字为该数据元素的值<br>查找：根据给定的某个值，在查找表中确定一个其关键字等于给定值的记录或数据元素<br>动态查找表：在查找的同时进行修改。查找成功返回，否则插入关键字等于给定值记录<br>可以用平均查找长度来衡量查找算法的性能<br>顺序查找：从表的一端开始，依次将记录的关键字和给定值进行比较，若相等则查找成功；反之若扫描整个表仍未找到，则查找失败（时间复杂度on）<br>通过设置监视哨，免去查找过程中每一步都要检测整个表是否查找完毕<br>优点：算法简单，对表结构无要求（顺序、链式）<br>缺点：平均查找长度较大，查找效率较低<br>折半查找（二分查找）：从表的中间记录开始，如果给定值和中间记录的关键字相等，则查找成功；如果大于或小于，则在表中大于或小于中间记录的那一半中查找，重复操作直至成功，或者在某一步中查找区间为空，则查找失败。要求顺序存储结构有序表，表中关键字按关键字有序排列（时间复杂度olog2n）<br>折半查找的判定树：树中每一结点对应表中一个记录，结点值是记录在表中的位置序号。把当前查找区间的中间位置作为根，左右子表分别作为左右子树。<br>成功的折半查找恰好是走了一条判定树的根到被查结点的路径，经历比较的关键字个数恰为该结点在树中的层次<br>查找成功时进行比较的关键字个数最多不超过树的深度，至多（log2n）+1[向下取整]<br>优点：比较次数少，查找效率高<br>折半查找不适用与数据元素经常变动的线性表<br>分块查找（索引顺序查找）：建立索引表，对每个子表（块）建立一个索引项（关键字项、指针项）。先确定待查记录所在的块（子表），然后在块中顺序查找。<br>索引表按关键字有序（有序或分块有序）<br>分块有序：第i个子表所有记录的关键字均大于第i-1个子表中的最大关键字<br>确定块可用顺序或折半查找，在块中只能顺序<br>优点：又快速查找又经常动态变化<br>缺点：要增加一个索引表的存储空间并对初始索引表进行排序运算<br>线性表的查找更适用于静态查找表<br>二叉排序树：若左右子树不空，左子树上所有结点的值均小于它的根结点的值，右子树上所有结点的值均大于它的根结点的值，其左右子树也分别为二叉排序树。时间复杂度olog2n<br>中序遍历一棵二叉排序树可以得到一个结点值递增的有序序列<br>适用情况：需要经常进行插入删除和查找运算的表<br>插入：新插入的结点一定是一个新添加的叶子结点，并且是查找不成功时查找路径上访问的最后一个结点的左孩子或右孩子结点（不必移动其他结点，仅需改动某个结点的指针，由空变为非空）<br>构造树的过程：对无序序列进行排序的过程<br>删除：缺右子树用左孩子填补，缺左子树用右孩子填补，在左子树上找中序最后一个结点填补（被删结点左右子树存在）<br>平衡二叉树（AVL）：左右子树深度之差的绝对值不超过1，其左右子树也是平衡二叉树<br>平衡因子：该结点左右子树的深度之差，只可能是-1,0，1<br>调整方法：找到离插入结点最近且平衡因子绝对值超过1的祖先结点<br>最小不平衡子树：以该祖先结点为根的子树<br>基准点：最靠近叶结点的不平衡点<br>LL型：右旋顺时针<br>RR型：左旋逆时针<br>LR型：先逆后顺<br>RL型：先顺后逆</p>
+<p>当平衡的二叉排序树因插入结点而失去平衡时，仅需对最小不平衡子树进行平衡处理。确保二叉树在任何情况下的深度都是olog2n<br>内查找法：查找存储在计算机内存中较小的文件<br>B-树：用于外查找的平衡多叉树。有平衡、有序、多路的特点<br>定义：1 树中每个结点至多有m棵子树<br>      2 若根结点不是叶子结点，则至少有2棵子树<br>      3 除根之外的所有非终端结点至少有[m/2]（向上取整）棵子树<br>      4 所有的叶子结点都出现在同一层次上，并且不带信息，称为失败结点<br>      5 所有的非终端结点最多有m-1个关键字，且左子树小于关键字，右子树大于关键字<br>如：4阶的B-树最多有三个关键字，四棵子树<br>为记录其双亲结点，通常增加一个parent指针，指向双亲结点<br>在B-树中插入关键字，可能产生结点的分裂，删除可能产生合并<br>B+树：1 有n棵子树的结点中含有n个关键字<br>      2 所有的叶子结点中包含了全部关键字的信息，以及指向含这些关键字记录的指针，且叶子结点本身依关键字的大小自小而大顺序链接<br>      3 所有的非终端结点可以看成是索引部分，结点中仅含有其子树（根结点）中最大（最小）关键字<br>散列查找法（杂凑法、散列法）：在元素的存储位置和其关键字建立某种直接关系，直接由关键字找到相应的记录。通过对元素的关键字值进行某种运算，直接求出元素的地址<br>散列函数：p（散列地址）=H（key）[散列函数]<br>散列表：一个有限连续的地址空间，用以存储按散列函数计算得到相应散列地址的数据记录<br>散列表属于线性结构，通过一种散列函数把记录的关键字和它在表中的位置建立起对应关系，并在存储记录发生冲突时采用专门的处理冲突的方法。<br>冲突：对不同的关键字可能得到同一散列地址<br>同义词：具有相同函数值的关键字<br>冲突经常存在原因：散列表中关键字的取值集合远远大于表空间的地址集<br>构造“好”的散列函数遵循原则：<br>1 函数计算简单，每一关键字只能有一个散列地址与之对应<br>2 函数的值域需在表长的范围内，计算出的散列地址的分布应均匀，尽可能减少冲突<br>构造方法：<br>1 数字分析法（从关键字中提取数字分布比较均匀的若干位作为散列地址），事先必须明确知道所有的关键字每一位上各种数字的分布情况<br>2 平方取中法（取关键字平方后的中间几位或其组合作为散列地址，具体所取位数由表长决定），适用于..不能事先了解关键字的所有情况，或难以直接从关键字中找到取值较分散的几位<br>3 折叠法（移位叠加、边界叠加）：将关键字分割成位数相同的几部分（最后一部分的位数可以不同），取这几部分的叠加和（舍去进位）作为散列地址。适用..散列地址位数少，关键字位数多，难以直接从关键字找到取值较分散的几位<br>移位叠加：将分割后每一部分的最低位对齐，然后相加<br>边界叠加：将两个相邻的部分沿边界来回折叠，然后对齐相加<br>除留余数法：H（key）=key%p（p为小于表长的最大质数）<br>处理冲突的方法与散列表本身的组织形式有关<br>开放地址法：在寻找“下一个”空位的散列地址（探测）时，原来的数组空间对所有元素开放。公式Hi=（H（key）+di）%m<br>1 线性探测再散列法：发生冲突时，从冲突地址的下一单元顺序寻找空单元。找不到从头开始，失败作溢出处理<br>2 二次探测再散列法：di=1，–1^1，2^2，-2^2，……，+k^2，-k^2<br>3 伪随机探测再散列法：di=伪随机数序列<br>二次聚集：在处理冲突过程中发生的两个第一个散列地址不同的记录争夺同一个后继散列地址的现象<br>线性只要未满总会找到地址，但会产生二次聚集现象。二次和伪随机可避免二次聚集，但不能保证找得到<br>同义词链表：把具有相同散列地址的记录放在同一个单链表中。凡是散列地址为i的记录都以结点方式插入到以HT[i]为头结点的单链表中。存储效率低，因附加指针域<br>装填因子（散列表的装满程度）：表中填入的记录数/散列表的长度，越小，发生冲突的可能性越小<br>影响平均查找长度：处理冲突的方法和装填因子（散列函数均匀）<br>成功/失败平均查找长度：ASL=1/n∑Ci（n为记录个数，Ci为比较次数）</p>
+<p>排序：按关键字的非递减或非递增顺序对一组记录重新进行排列的操作<br>排序算法是否稳定由排序方法决定<br>内部排序：待排序记录全部存放在计算机内存中进行排序的过程。<br>一趟排序：使有序区中记录的数目增加一个或几个的操作称为一趟排序<br>地址排序：设一个指示各个记录存储位置的地址向量，在排序过程中不移动记录本身，而移动地址向量中这些记录的“地址”，在排序结束之后再按照地址向量中的值调整记录的存储位置<br>直接插入排序：将一条记录插入的已排好序的有序表中，从而得到一个新的、记录数增1的有序表，时间复杂度on^2，空间复杂度o1。稳定排序，算法简便，可顺可链，适合初始记录基本有序（正序）情况</p>
+<p>折半插入排序：类似折半查找。在插入第i个记录时需要经过[log2i]+1次比较，才能确定它应插入的位置。时间复杂度on^2，空间复杂度o1,。稳定排序，只能顺序，适合初始记录无序、n较大的情况</p>
+<p>希尔排序（缩小增量排序）：将整个分割成几组，分别进行直接插入排序，经过几组分组排序，对全部记录进行一次直接插入排序。时间复杂度on^1.3，空间复杂度o1。不稳定，只能顺序，适用于初始记录无序、n较大的情况。增量序列可多种取法，但增量序列的值应取没有除1外的公因子，且最后一个增量值必须等于1</p>
+<p>冒泡排序：两两比较相邻记录的关键字，逆序则交换，使关键字小的左移，关键字大的右移。时间复杂度on^2，空间复杂度o1。稳定，可顺可链，移动次数多，不适用初始记录无序、n较大的情况</p>
+<p>快速排序：任取一个记录（一般取第一个记录）作为枢轴（支点），交换到前面后面。时间复杂度onlog2n，空间复杂度olog2n（最好），on（最坏）。不稳定，适合顺序结构，速度最快，适用初始记录无序、n较大的情况<br>简单选择排序：选择关键字最小的排在最后，依次排序。时间复杂度on^2，空间复杂度o1。稳定，可顺可链，移动记录次数较少</p>
+<p>树形选择排序（锦标赛排序）：对n个记录的关键字进行两两比较，然后在其中[n/2]（向上取整）个较小者之间再进行两两比较，直至选出最小关键字</p>
+<p>堆排序：大根堆（堆顶记录的关键字最大），小根堆（堆顶记录的关键字最小）。从上到下。形状是个完全二叉树。时间复杂度onlog2n，空间复杂度o1。不稳定，只能顺序，比较次数较多，适合记录多的情况<br>筛选法：把较小的关键字逐层筛下去，而将较大的关键字逐层选上来</p>
+<p>2-路归并：将两个有序表合并成一个有序表的过程，核心操作是前后相邻的两个有序表。时间复杂度onlog2n，空间复杂度on。稳定，可顺可链，且不需要附加存储空间（链）</p>
+<p>基数排序：根据关键字中各位的值，通过对待排序记录进行若干趟分配收集来实现排序的，借助多关键字思想对单关键字排序。<br>多关键字排序：最高位优先法，最低位优先法<br>链式基数排序：分配最低位，十位数、百位数，重新链成一个链表。时间复杂度o（d（n+rd）），空间复杂度o（n+rd），d个关键字，每个关键字取rd个值</p>
+<p>时间性能好的都是不稳定的。基数排序是稳定的内排方法<br>若记录本身信息量大，为避免移动记录耗费大量时间，可采用链式存储结构<br>N较大：<br>1 关键字分布随机，稳定性不作要求：快速排序（平均时间性能佳）<br>2 关键字基本有序，稳定性不作要求：堆排序<br>3 关键字基本有序，内存允许，要求排序稳定：归并排序<br>                                                                 wyn</p>
+
+      
+    </div>
+    
+    
+    
+
+<div>
+  
+    
+  
+</div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/05/管理信息系统/" rel="prev" title="管理信息系统">
+                管理信息系统 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/qifang.jpg"
+                alt="十点一刻" />
+            
+              <p class="site-author-name" itemprop="name">十点一刻</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/tenneling" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:tenneling@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        ﻿<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">十点一刻</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">全站共55.2k字</span>
+</div>
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+
+
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+
+</body>
+</html>
