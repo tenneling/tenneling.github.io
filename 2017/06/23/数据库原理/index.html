@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="单选20判断20（10）证明（问题建模，借助公式）计算15（关系代数，几张表，运算结果）编程15（SQL语句）设计（画出ER图，写出关系模式，联系，一对一多对多，判断满足第几范式，不满足就分解）&amp;lt; !–more–&amp;gt;理解！！！第一章P4：数据（概念）数据库存储的基本对象描述事物的符号记录P5：数据库管理系统DBMS计算机的基础软件数据定义功能数据组织、存储和功能：提高存储空间利用率和方便">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库原理（考试版）">
+<meta property="og:url" content="http://yoursite.com/2017/06/23/数据库原理/index.html">
+<meta property="og:site_name" content="Welcome">
+<meta property="og:description" content="单选20判断20（10）证明（问题建模，借助公式）计算15（关系代数，几张表，运算结果）编程15（SQL语句）设计（画出ER图，写出关系模式，联系，一对一多对多，判断满足第几范式，不满足就分解）&amp;lt; !–more–&amp;gt;理解！！！第一章P4：数据（概念）数据库存储的基本对象描述事物的符号记录P5：数据库管理系统DBMS计算机的基础软件数据定义功能数据组织、存储和功能：提高存储空间利用率和方便">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-08-17T16:34:10.425Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据库原理（考试版）">
+<meta name="twitter:description" content="单选20判断20（10）证明（问题建模，借助公式）计算15（关系代数，几张表，运算结果）编程15（SQL语句）设计（画出ER图，写出关系模式，联系，一对一多对多，判断满足第几范式，不满足就分解）&amp;lt; !–more–&amp;gt;理解！！！第一章P4：数据（概念）数据库存储的基本对象描述事物的符号记录P5：数据库管理系统DBMS计算机的基础软件数据定义功能数据组织、存储和功能：提高存储空间利用率和方便">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/06/23/数据库原理/"/>
+
+
+
+
+
+  <title>数据库原理（考试版） | Welcome</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Welcome</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/23/数据库原理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="十点一刻">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/qifang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Welcome">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">数据库原理（考试版）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-23T22:16:48+08:00">
+                2017-06-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>单选20<br>判断20（10）<br>证明（问题建模，借助公式）<br>计算15（关系代数，几张表，运算结果）<br>编程15（SQL语句）<br>设计（画出ER图，写出关系模式，联系，一对一多对多，判断满足第几范式，不满足就分解）<br>&lt; !–more–&gt;<br>理解！！！<br>第一章<br>P4：数据（概念）<br>数据库存储的基本对象<br>描述事物的符号记录<br>P5：数据库管理系统DBMS<br>计算机的基础软件<br>数据定义功能<br>数据组织、存储和功能：提高存储空间利用率和方便存取<br>数据操纵功能：实现对数据库的基本操作，查询插入删除修改<br>数据库的事务管理和运行管理<br>数据库的建立和维护功能<br>与网络中其他软件系统的通信功能<br>P6：数据库管理技术三个阶段（每个阶段的特点）<br>人工管理阶段：数据不保存、应用程序管理数据、数据不共享、数据不具有独立性<br>文件系统阶段：数据可以长期保存、由文件系统管理数据、数据共享性差，冗余度打、数据独立性差<br>数据库系统阶段：数据结构化、数据的共享性高，冗余度低且易扩充、数据独立性高、数据由数据库管理系统统一管理和控制<br>P13：数据库的独立性（逻辑物理独立性）<br>物理独立性：指用户的应用程序与数据库中数据的物理存储是相互独立的<br>逻辑独立性：指用户的应用程序与数据库的逻辑结构是相互独立的<br>P18：数据库的构成要素：完整性约束条件、数据模型<br>完整性规则：给定的数据模型中数据及其联系所具有的制约和依存规则，用以限定复合数据模型的数据库状态以及状态的变化，以保证数据的正确、有效和相容<br>数据模型：层次模型、网状模型、关系模型<br>P29：模式、外模式、内模式（必须内模式理解）<br>模式（逻辑模式）：数据库中全体数据的逻辑结构和特征的描述，是所有用户的公共数据视图，定义数据的逻辑结构，定义数据之间的联系，定义与数据有关的安全性、完整性要求<br>外模式（子模式、用户模式）：数据库用户能够看见和使用的局部数据的逻辑结构和特征的描述，是数据库用户的数据视图，是与某一应用有短的数据的逻辑表示<br>内模式（存储模式）：数据物理结构和存储方式的描述，是数据在数据库内部的组织方式</p>
+<p>外模式/模式映像：当模式改变时，由数据库管理员对各个外模式/模式的映像作相应改变，可以使外模式保持不变。应用程序是依据数据的外模式编写的，从而应用程序不必修改，保证了数据与程序的逻辑独立性，简称数据的逻辑独立性。<br>（对于每一个外模式，数据库系统都有一个外模式/模式映像）<br>模式/内模式映像：当数据库的存储结构改变时，由数据库管理员对模式/内模式映像作相应改变，可以使模式保持不变，从而应用程序也不必改变。保证了数据与程序的物理独立性，简称数据的物理独立性（模式/内模式映像是唯一的）</p>
+<p>首先确定数据库的逻辑模式<br>数据库的内模式依赖于它的全局逻辑结构，但独立于数据库的用户视图，也独立于具体的存储设备<br>数据库的外模式面向具体的应用程序，它定义在逻辑模式之上，但独立于存储模式和存储设备</p>
+<p>第二章<br>P38：域、笛卡尔积、元组、基数、<br>域：一组具有相同数据类型的值的集合<br>笛卡儿积：在A去一个元素，在B去一个元素，组成n个取值的一个集合<br>每一个元素叫做一个元组<br>一个域允许的不同取值个数称为这个域的基数<br>P40：目、候选码、主码、主属性、非主属性<br>n目关系必有n个属性<br>若关系中的某一属性组的值能唯一的表示一个元组，而其子集不能，则称该属性组为候选码<br>若一个关系中有多个候选码，则选定其中一个为主码<br>候选码的诸属性称为主属性<br>不包含在任何候选码中的属性成为非主属性或非码属性<br>关系模式的所有属性是这个关系模式的候选码，称为全码</p>
+<p>选择、投影、并、差、笛卡儿积</p>
+<p>P45：关系的完整性：实体完整性（主属性不能为空）、参照完整性（外码不能取空）、用户定义完整性（用户对）<br>实体完整性规则：若属性A是基本关系R的主属性，则A不能取空值<br>外码：自身不是主码，取值参照另一张表中主码的取值<br>参照完整性规则：若属性F是基本关系R的外码，与基本关系S的主码Ks相对应，则对于R中每个元组在F上的值必须：空值或等于S中某个元组的主码值<br>P49：关系代数<br>传统的集合运算：并、差、交、笛卡儿积<br>专门的关系运算：选择、投影、连接（自然连接去掉重复的属性列）、除（象集）<br>P56：例题，完成关系运算</p>
+<p>第三章（写语句）<br>P90：select、distinct、between、in、like<br>select sno,sname from student<br>select distinct sno from sc<br>select sname drom student where sage between 20 and 23<br>select sname from student where sdept in (‘CS’,’MA’,’IS’);<br>select sname from student where sname like ‘刘<em>’（%代表任意长度，</em>代表任意单个字符）<br>P97：聚集函数<br>select count(<em>)<br>count(</em>),count(),sum(),avg(),max(),min()<br>聚集函数只能select子句和group by的having子句<br>P98：group by（分组查询）<br>select sno from sc group by sno having count(*)&gt;3<br>P99：having、where、连接查询<br>where sc.sno=student.sno<br>P103：嵌套<br>select sname<br>from student<br>where sno in (select sno from sc where cno=’2’)<br>P109：exists语句不考<br>P115：数据更新 update、delete<br>insert into student values (‘201215126’,’张成民’,’男’,’18’,’CS’)<br>update student set sage=22 where sno=’201215121’<br>delete from student where sno=’201215128’<br>P121：视图（理解）<br>定义视图：create view is_student<br>            as<br>            select sno,sname,sage from student where sdept=’IS’ with check option<br>删除视图:drop view is_s1 cascade<br>查询视图<br>P126：更新视图，什么情况更新，什么情况不更新<br>对视图的更新最终要转换为对基本表的更新<br>行列子集视图是可更新的<br>不允许更新：视图是由两个以上基本表导出的<br>视图字段来自字段表达式或常数，不允许insert和update，但是允许delete<br>视图字段来自聚集函数<br>视图定义含有group by子句<br>视图定义含有distinct短语<br>视图定义有嵌套查询，并且内层查询的from子句中涉及的表也是导出该视图的基本表<br>一个不允许更新的视图上定义的视图也不允许更新</p>
+<p>第四章<br>P140：自主存取控制，强制存取控制（grant、revoke）<br>自主存取控制方法：用户对于不同的数据库对象有不同的存取权限，不同的用户对同一对象也有不同的权限，而且用户还可将其拥有的存取权限转授给其他用户<br>强制存取控制方法：每一个数据库对象被标以一定的密级，每一个用户也被授予某一个级别的许可证。对于任意一个对象，只有具有合法许可证的用户才可以存取</p>
+<p>P145：角色<br>grant insert on table sc to U5 with grant option<br>（获得某种权限的用户还可以把这种权限再授予其他的用户）<br>revoke insert on table sc from U5 cascade</p>
+<p>基于角色的授权机制：create role r1;grant select on table student to r1;grant r1 to A;<br>revoke r1 from B</p>
+<p>P148：强制存取控制规则、不下读不上写、强制存取控制的主要适用范围<br>适用于那些对数据有严格而固定密级分类的部门</p>
+<p>主体：系统中的活动实体<br>客体：系统中的被动实体<br>敏感度标记：绝密TS&gt;=机密S&gt;=可信C&gt;=公开P（主体：许可证级别，客体：密级）</p>
+<p>规则：<br>仅当主体的许可证级别大于或等于客体的密级时，该主体才能读取相应的客体<br>仅当主体的许可证级别小于或等于客体的密级时，该主体才能写相应的客体</p>
+<p>P149：审计、视图、数据加密等等（了解）<br>通过视图机制把要保密的数据对无权存取的用户隐藏起来，从而自动对数据提供一定程度的安全保护<br>审计功能把用户对数据库的所有操作自动记录下来放入审计日志中。审计员可以利用审计日志监控数据库中的各种行为，重现导致数据库现有状况的一系列事件，找出非法存取数据的人、时间和内容等<br>存储加密传输加密<br>加密的基本思想：根据一定的算法将原始数据—明文变换为不可识别的格式—密文，从而使得不知道解密算法的人无法获知数据的内容</p>
+<p>第六章<br>第一范式：不存在可分割数据项<br>第二范式：不存在部分函数依赖（非主属性对码）<br>第三范式：不存在传递函数依赖（非主属性对码不存在传递函数依赖）<br>BCNF：决定因素都是码</p>
+<p>（给予关系模式、函数依赖关系，判断满足哪个范式）<br>规范化的基本思想是逐步消除数据依赖中不合适的部分，“一事一地”的模式设计原则<br>模式的分解：分解具有无损连接性，分解要保持函数依赖</p>
+<p>6.3节数据依赖<br>数据依赖是一个关系内部属性与属性之间的一种约束关系，通过属性间值的相等与否体现出来的数据间相关联系<br>函数依赖存在的问题：数据冗余、更新异常、插入异常、删除异常<br>不属于2NF：插入异常、删除异常、修改复杂<br>P203习题第七大题判断题</p>
+<p>第七章<br>P221：画ER图，一对一联系、多对多联系（标注）、联系属性、实体属性<br>数据库建设的基本规律：“三分技术，七分管理，十二分基础数据”<br>数据库设计的基本步骤：需求分析、概念结构设计、逻辑结构设计、物理结构设计、数据库实施、数据库运行与维护<br>数据字典是进行详细的数据收集和数据分析所获得的主要成果。是关于数据库中数据的描述，即元数据而不是数据本身。数据字典是在需求分析阶段建立，在数据库设计过程中不断修改充实完善的，包括数据项、数据结构、数据流、数据存储和处理过程<br>P232：逻辑结构设计，一对一、一对多怎么转换为关系模式，横线，表组合表属性，再进行规范化判别、优化<br>一个一对一联系可以转换为一个独立的关系模式，也可以与任一一端对应的关系模式合并<br>一个一对多联系可以转换为一个独立的关系模式，也可以与n端对应的关系模式合并<br>一个多对多联系可以转换为一个关系模式，与该联系相连的各实体的码以及联系本身的属性均转换为关系的属性，而关系的码为n端实体的码<br>并不是规范化程度越高的关系就越优<br>物理结构设计-&gt;存取方法：B+树索引存取方法、hash索引存取方法、聚簇存取方法<br>把属性上具有相同值的元祖集中存放在连续的物理块中称为聚簇，该属性称为聚簇码</p>
+<p>第九章<br>查询处理步骤：查询分析、查询检查、查询优化（代数优化、物理优化）、查询执行<br>P277：选择操作：全表扫描、索引扫描<br>P278：连接操作：嵌套循环、排序合并、索引连接、哈希连接（外表内表几遍）<br>P281：查询优化实例（总代价=I/O代价+CPU代价+内存代价+通信代价）<br>P284：查询树的启发式优化：选择、投影（要知道）【代数优化】<br>启发式规则：选择运算应尽可能先做、把投影运算和选择运算同时进行、把投影同其前或后的双目运算结合起来、把某些选择同在它前面要执行的笛卡儿积结合起来成为一个连接运算、找出公共子表达式<br>物理优化<br>P286：选择操作的启发式规则（索引扫描、全表扫描）<br>P287：连接操作的启发式规则    （排序、索引、哈希、嵌套），作外表<br>如果2个表都已经按照连接属性排序，则选用排序—合并算法<br>如果一个表在连接属性上有索引，则可以选用索引连接算法<br>如果上面2个规则都不适用，其中一个表较小，则可以选用hash join算法<br>最后可以选用嵌套循环算法，并选择其中较小的表，即占用的块数B较少的表，作为外表</p>
+<p>设连接表R与S分别占用的块数为Br与Bs，连接操作使用的内存缓冲区块数为K，分配K-1块给外表。如果R为外表，则嵌套循环法存取的块数为Br+BrBs/（K-1）</p>
+<p>P288：代价估算cost=B，什么情况cost=B/2、代价计算cost=L+S，怎么来的为什么</p>
+<p>第十章<br>事务的基本概念、四个特性（原子性、一致性、隔离性、持续性）<br>事务：用户定义的一个数据库操作序列，一个不可分割的工作单位<br>原子性：事务是数据库的逻辑工作单位<br>一致性：事务执行的结果必须是使数据库从一个一致性状态从另一个一致性状态<br>隔离性：一个事物的内部操作及使用的数据对其他并发事务是隔离的，并发执行的各个事务之间不能互相干扰<br>持续性（永久性）：一个事务一旦提交，对数据库中的数据的改变是永久性的，接下来的其他操作或故障不应该对其执行结果有任何影响<br>事务内部故障、系统故障、介质故障、计算机病毒<br>事务撤销：在不影响其他事物运行的情况下，强行回滚该事务，即撤销该事务已经作出的任何对数据库的修改，使得该事务好像根本没有启动一样<br>系统故障：系统重启后，所有非正常终止的事务回滚，强行撤销所有未完成事务，还需要重做所有已提交的事务，以将数据库真正恢复到一致状态<br>介质故障：硬故障<br>计算机病毒：人为的故障或破坏</p>
+<p>redo、undo，了解什么时候做什么，将课上的图完全弄明白，写还是没写、提交还是没提交<br>P297：数据转储：海量转储、增量转储、动态转储、静态转储、特性，恢复过程中要用到哪些文件<br>恢复的基本原理：冗余<br>建立冗余数据：数据转储和登记日志文件<br>转储：数据库管理员定期的将整个数据库复制到磁带、磁盘或其他存储介质上保存起来的过程。称为后备副本<br>重装后备副本只能将数据库恢复到转储时的状态，还需重新运行自转储以后的所有更新事务<br>静态转储：在系统中无运行事务时进行的转储操作<br>动态转储：指转储期间允许对数据库进行存取或修改，即转储和用户事务可以并发执行<br>海量转储：每次转储全部数据库<br>增量转储：每次只转储上一次转储后更新过的数据<br>日志文件：用来记录事务对数据库的更新操作的文件<br>日志文件的作用：进行事务故障恢复和系统故障恢复，并协助后备副本进行介质故障恢复<br>登记日志文件遵循两条原则：登记的次序严格按并发事务执行的时间次序、必须先写日志文件，后写数据库<br>事务故障的恢复：undo<br>系统故障的恢复：undo，redo<br>介质故障的恢复：重装数据库，然后重做已完成的事务<br>恢复策略（很多判断）、检查点恢复技术（了解）、数据库镜像基础（了解）<br>动态维护日志文件的方法：周期性地执行建立检查点、保存数据库状态的操作<br>数据库镜像：根据数据库管理员的要求，自动把整个数据库或其中的关键数据复制到另一个磁盘上，每当主数据库更新时，数据库管理系统自动把更新后的数据复制过去，由数据库管理系统自动保证镜像数据与主数据库的一致性</p>
+
+      
+    </div>
+    
+    
+    
+
+<div>
+  
+    
+  
+</div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/06/14/操作系统/" rel="next" title="操作系统">
+                <i class="fa fa-chevron-left"></i> 操作系统
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/20/IT项目管理/" rel="prev" title="IT项目管理">
+                IT项目管理 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/qifang.jpg"
+                alt="十点一刻" />
+            
+              <p class="site-author-name" itemprop="name">十点一刻</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/tenneling" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:tenneling@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        ﻿<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">十点一刻</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">全站共118.0k字</span>
+</div>
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+
+
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+
+</body>
+</html>
