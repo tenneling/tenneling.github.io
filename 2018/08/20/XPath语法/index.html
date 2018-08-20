@@ -1,0 +1,1707 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="实例 1  基本的XPath语法类似于在一个文件系统中定位文件,如果路径以斜线 / 开始, 那么该路径就表示到一个元素的绝对路径  /AAA：    选择根元素AAA&amp;lt;AAA&amp;gt;       &amp;lt;BBB/&amp;gt;       &amp;lt;CCC/&amp;gt;       &amp;lt;BBB/&amp;gt;       &amp;lt;BBB/&amp;gt;       &amp;lt;DDD&amp;gt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="XPath语法">
+<meta property="og:url" content="http://yoursite.com/2018/08/20/XPath语法/index.html">
+<meta property="og:site_name" content="Welcome">
+<meta property="og:description" content="实例 1  基本的XPath语法类似于在一个文件系统中定位文件,如果路径以斜线 / 开始, 那么该路径就表示到一个元素的绝对路径  /AAA：    选择根元素AAA&amp;lt;AAA&amp;gt;       &amp;lt;BBB/&amp;gt;       &amp;lt;CCC/&amp;gt;       &amp;lt;BBB/&amp;gt;       &amp;lt;BBB/&amp;gt;       &amp;lt;DDD&amp;gt;">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-08-20T12:20:43.370Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="XPath语法">
+<meta name="twitter:description" content="实例 1  基本的XPath语法类似于在一个文件系统中定位文件,如果路径以斜线 / 开始, 那么该路径就表示到一个元素的绝对路径  /AAA：    选择根元素AAA&amp;lt;AAA&amp;gt;       &amp;lt;BBB/&amp;gt;       &amp;lt;CCC/&amp;gt;       &amp;lt;BBB/&amp;gt;       &amp;lt;BBB/&amp;gt;       &amp;lt;DDD&amp;gt;">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/08/20/XPath语法/"/>
+
+
+
+
+
+  <title>XPath语法 | Welcome</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Welcome</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/20/XPath语法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="十点一刻">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/qifang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Welcome">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">XPath语法</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-20T20:20:48+08:00">
+                2018-08-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="实例-1"><a href="#实例-1" class="headerlink" title="实例 1"></a>实例 1</h3><blockquote>
+<p> 基本的XPath语法类似于在一个文件系统中定位文件,如果路径以斜线 / 开始, 那么该路径就表示到一个元素的绝对路径</p>
+</blockquote>
+<h5 id="AAA：-选择根元素AAA"><a href="#AAA：-选择根元素AAA" class="headerlink" title="/AAA：    选择根元素AAA"></a>/AAA：    选择根元素AAA</h5><pre><code>&lt;AAA&gt; 
+     &lt;BBB/&gt; 
+     &lt;CCC/&gt; 
+     &lt;BBB/&gt; 
+     &lt;BBB/&gt; 
+     &lt;DDD&gt; 
+          &lt;BBB/&gt; 
+     &lt;/DDD&gt; 
+     &lt;CCC/&gt; 
+&lt;/AAA&gt;
+</code></pre><h5 id="AAA-CCC：-选择AAA的所有CCC子元素"><a href="#AAA-CCC：-选择AAA的所有CCC子元素" class="headerlink" title="/AAA/CCC：  选择AAA的所有CCC子元素"></a>/AAA/CCC：  选择AAA的所有CCC子元素</h5><pre><code>&lt;AAA&gt; 
+     &lt;BBB/&gt; 
+     &lt;CCC/&gt; 
+     &lt;BBB/&gt; 
+     &lt;BBB/&gt; 
+     &lt;DDD&gt; 
+          &lt;BBB/&gt; 
+     &lt;/DDD&gt; 
+     &lt;CCC/&gt; 
+&lt;/AAA&gt;
+</code></pre><h5 id="AAA-DDD-BBB：选择AAA的子元素DDD的所有子元素"><a href="#AAA-DDD-BBB：选择AAA的子元素DDD的所有子元素" class="headerlink" title="/AAA/DDD/BBB：选择AAA的子元素DDD的所有子元素"></a>/AAA/DDD/BBB：选择AAA的子元素DDD的所有子元素</h5><pre><code>&lt;AAA&gt; 
+     &lt;BBB/&gt; 
+     &lt;CCC/&gt; 
+     &lt;BBB/&gt; 
+     &lt;BBB/&gt; 
+     &lt;DDD&gt; 
+          &lt;BBB/&gt; 
+     &lt;/DDD&gt; 
+     &lt;CCC/&gt; 
+&lt;/AAA&gt;
+</code></pre><h3 id="实例-2"><a href="#实例-2" class="headerlink" title="实例 2"></a>实例 2</h3><blockquote>
+<p>如果路径以双斜线 // 开头, 则表示选择文档中所有满足双斜线//之后规则的元素(无论层级关系)</p>
+</blockquote>
+<h5 id="BBB：-选择所有BBB元素"><a href="#BBB：-选择所有BBB元素" class="headerlink" title="//BBB： 选择所有BBB元素"></a>//BBB： 选择所有BBB元素</h5><pre><code>&lt;AAA&gt; 
+     &lt;BBB/&gt; 
+     &lt;CCC/&gt; 
+     &lt;BBB/&gt; 
+     &lt;DDD&gt; 
+          &lt;BBB/&gt; 
+     &lt;/DDD&gt; 
+     &lt;CCC&gt; 
+          &lt;DDD&gt; 
+               &lt;BBB/&gt; 
+               &lt;BBB/&gt; 
+          &lt;/DDD&gt; 
+     &lt;/CCC&gt; 
+&lt;/AAA&gt;
+</code></pre><h5 id="DDD-BBB：选择所有父元素是DDD的BBB元素"><a href="#DDD-BBB：选择所有父元素是DDD的BBB元素" class="headerlink" title="//DDD/BBB：选择所有父元素是DDD的BBB元素"></a>//DDD/BBB：选择所有父元素是DDD的BBB元素</h5><pre><code>&lt;AAA&gt; 
+     &lt;BBB/&gt; 
+     &lt;CCC/&gt; 
+     &lt;BBB/&gt; 
+     &lt;DDD&gt; 
+          &lt;BBB/&gt; 
+     &lt;/DDD&gt; 
+     &lt;CCC&gt; 
+          &lt;DDD&gt; 
+               &lt;BBB/&gt; 
+               &lt;BBB/&gt; 
+          &lt;/DDD&gt; 
+     &lt;/CCC&gt; 
+&lt;/AAA&gt;
+</code></pre><h3 id="实例-3"><a href="#实例-3" class="headerlink" title="实例 3"></a>实例 3</h3><blockquote>
+<p>星号 * 表示选择所有由星号之前的路径所定位的元素</p>
+</blockquote>
+<h5 id="AAA-CCC-DDD-：选择所有路径依附于-AAA-CCC-DDD的元素"><a href="#AAA-CCC-DDD-：选择所有路径依附于-AAA-CCC-DDD的元素" class="headerlink" title="/AAA/CCC/DDD/*：选择所有路径依附于/AAA/CCC/DDD的元素"></a>/AAA/CCC/DDD/*：选择所有路径依附于/AAA/CCC/DDD的元素</h5><pre><code>&lt;AAA&gt; 
+     &lt;XXX&gt; 
+          &lt;DDD&gt; 
+               &lt;BBB/&gt; 
+               &lt;BBB/&gt; 
+               &lt;EEE/&gt; 
+               &lt;FFF/&gt; 
+          &lt;/DDD&gt; 
+     &lt;/XXX&gt; 
+     &lt;CCC&gt; 
+          &lt;DDD&gt; 
+               &lt;BBB/&gt; 
+               &lt;BBB/&gt; 
+               &lt;EEE/&gt; 
+               &lt;FFF/&gt; 
+          &lt;/DDD&gt; 
+     &lt;/CCC&gt; 
+     &lt;CCC&gt; 
+          &lt;BBB&gt; 
+               &lt;BBB&gt; 
+                    &lt;BBB/&gt; 
+               &lt;/BBB&gt; 
+          &lt;/BBB&gt; 
+     &lt;/CCC&gt; 
+&lt;/AAA&gt;
+</code></pre><h5 id="BBB：选择所有的有3个祖先元素的BBB元素"><a href="#BBB：选择所有的有3个祖先元素的BBB元素" class="headerlink" title="///*/BBB：选择所有的有3个祖先元素的BBB元素"></a>/<em>/</em>/*/BBB：选择所有的有3个祖先元素的BBB元素</h5><pre><code>&lt;AAA&gt; 
+     &lt;XXX&gt; 
+          &lt;DDD&gt; 
+               &lt;BBB/&gt; 
+               &lt;BBB/&gt; 
+               &lt;EEE/&gt; 
+               &lt;FFF/&gt; 
+          &lt;/DDD&gt; 
+     &lt;/XXX&gt; 
+     &lt;CCC&gt; 
+          &lt;DDD&gt; 
+               &lt;BBB/&gt; 
+               &lt;BBB/&gt; 
+               &lt;EEE/&gt; 
+               &lt;FFF/&gt; 
+          &lt;/DDD&gt; 
+     &lt;/CCC&gt; 
+     &lt;CCC&gt; 
+          &lt;BBB&gt; 
+               &lt;BBB&gt; 
+                    &lt;BBB/&gt; 
+               &lt;/BBB&gt; 
+          &lt;/BBB&gt; 
+     &lt;/CCC&gt; 
+&lt;/AAA&gt;
+</code></pre><h5 id="：选择所有元素"><a href="#：选择所有元素" class="headerlink" title="//*：选择所有元素"></a>//*：选择所有元素</h5><pre><code>&lt;AAA&gt; 
+     &lt;XXX&gt; 
+          &lt;DDD&gt; 
+               &lt;BBB/&gt; 
+               &lt;BBB/&gt; 
+               &lt;EEE/&gt; 
+               &lt;FFF/&gt; 
+          &lt;/DDD&gt; 
+     &lt;/XXX&gt; 
+     &lt;CCC&gt; 
+          &lt;DDD&gt; 
+               &lt;BBB/&gt; 
+               &lt;BBB/&gt; 
+               &lt;EEE/&gt; 
+               &lt;FFF/&gt; 
+          &lt;/DDD&gt; 
+     &lt;/CCC&gt; 
+     &lt;CCC&gt; 
+          &lt;BBB&gt; 
+               &lt;BBB&gt; 
+                    &lt;BBB/&gt; 
+               &lt;/BBB&gt; 
+          &lt;/BBB&gt; 
+     &lt;/CCC&gt; 
+&lt;/AAA&gt;
+</code></pre><h3 id="实例-4"><a href="#实例-4" class="headerlink" title="实例 4"></a>实例 4</h3><blockquote>
+<p>方块号里的表达式可以进一步的指定元素, 其中数字表示元素在选择集里的位置, 而last()函数则表示选择集中的最后一个元素.</p>
+</blockquote>
+<h5 id="AAA-BBB-1-：选择AAA的第一个BBB子元素"><a href="#AAA-BBB-1-：选择AAA的第一个BBB子元素" class="headerlink" title="/AAA/BBB[1]：选择AAA的第一个BBB子元素"></a>/AAA/BBB[1]：选择AAA的第一个BBB子元素</h5><pre><code>&lt;AAA&gt; 
+     &lt;BBB/&gt; 
+     &lt;BBB/&gt; 
+     &lt;BBB/&gt; 
+     &lt;BBB/&gt; 
+&lt;/AAA&gt;
+</code></pre><h5 id="AAA-BBB-last-：选择AAA的最后一个BBB子元素"><a href="#AAA-BBB-last-：选择AAA的最后一个BBB子元素" class="headerlink" title="/AAA/BBB[last()]：选择AAA的最后一个BBB子元素"></a>/AAA/BBB[last()]：选择AAA的最后一个BBB子元素</h5><pre><code>&lt;AAA&gt; 
+     &lt;BBB/&gt; 
+     &lt;BBB/&gt; 
+     &lt;BBB/&gt; 
+     &lt;BBB/&gt; 
+&lt;/AAA&gt;
+</code></pre><h3 id="实例-5"><a href="#实例-5" class="headerlink" title="实例 5"></a>实例 5</h3><blockquote>
+<p>属性通过前缀 @ 来指定</p>
+</blockquote>
+<h5 id="id-选择所有的id属性"><a href="#id-选择所有的id属性" class="headerlink" title="//@id:选择所有的id属性"></a>//@id:选择所有的id属性</h5><pre><code>&lt;AAA&gt; 
+     &lt;BBB id = &quot;b1&quot;/&gt; 
+     &lt;BBB id = &quot;b2&quot;/&gt; 
+     &lt;BBB name = &quot;bbb&quot;/&gt; 
+     &lt;BBB/&gt; 
+&lt;/AAA&gt;
+</code></pre><h5 id="BBB-id-选择有id属性的BBB元素"><a href="#BBB-id-选择有id属性的BBB元素" class="headerlink" title="//BBB[@id]:选择有id属性的BBB元素"></a>//BBB[@id]:选择有id属性的BBB元素</h5><pre><code>&lt;AAA&gt; 
+     &lt;BBB id = &quot;b1&quot;/&gt; 
+     &lt;BBB id = &quot;b2&quot;/&gt; 
+     &lt;BBB name = &quot;bbb&quot;/&gt; 
+     &lt;BBB/&gt; 
+&lt;/AAA&gt;
+</code></pre><h5 id="BBB-name-选择有name属性的BBB元素"><a href="#BBB-name-选择有name属性的BBB元素" class="headerlink" title="//BBB[@name]:选择有name属性的BBB元素"></a>//BBB[@name]:选择有name属性的BBB元素</h5><pre><code>&lt;AAA&gt; 
+     &lt;BBB id = &quot;b1&quot;/&gt; 
+     &lt;BBB id = &quot;b2&quot;/&gt; 
+     &lt;BBB name = &quot;bbb&quot;/&gt; 
+     &lt;BBB/&gt; 
+&lt;/AAA&gt;
+</code></pre><h5 id="BBB-选择有任意属性的BBB元素"><a href="#BBB-选择有任意属性的BBB元素" class="headerlink" title="//BBB[@*]:选择有任意属性的BBB元素"></a>//BBB[@*]:选择有任意属性的BBB元素</h5><pre><code>&lt;AAA&gt; 
+     &lt;BBB id = &quot;b1&quot;/&gt; 
+     &lt;BBB id = &quot;b2&quot;/&gt; 
+     &lt;BBB name = &quot;bbb&quot;/&gt; 
+     &lt;BBB/&gt; 
+&lt;/AAA&gt;
+</code></pre><h5 id="BBB-not-选择没有属性的BBB元素"><a href="#BBB-not-选择没有属性的BBB元素" class="headerlink" title="//BBB[not(@*)]:选择没有属性的BBB元素"></a>//BBB[not(@*)]:选择没有属性的BBB元素</h5><pre><code>&lt;AAA&gt; 
+     &lt;BBB id = &quot;b1&quot;/&gt; 
+     &lt;BBB id = &quot;b2&quot;/&gt; 
+     &lt;BBB name = &quot;bbb&quot;/&gt; 
+     &lt;BBB/&gt; 
+&lt;/AAA&gt;
+</code></pre><h3 id="实例-6"><a href="#实例-6" class="headerlink" title="实例 6"></a>实例 6</h3><blockquote>
+<p>属性的值可以被用来作为选择的准则, normalize-space函数删除了前部和尾部的空格, 并且把连续的空格串替换为一个单一的空格</p>
+</blockquote>
+<h5 id="BBB-id-’b1’-：选择含有属性id且其值为’b1’的BBB元素"><a href="#BBB-id-’b1’-：选择含有属性id且其值为’b1’的BBB元素" class="headerlink" title="//BBB[@id=’b1’]：选择含有属性id且其值为’b1’的BBB元素"></a>//BBB[@id=’b1’]：选择含有属性id且其值为’b1’的BBB元素</h5><pre><code>&lt;AAA&gt; 
+     &lt;BBB id = &quot;b1&quot;/&gt; 
+     &lt;BBB name = &quot; bbb &quot;/&gt; 
+     &lt;BBB name = &quot;bbb&quot;/&gt; 
+&lt;/AAA&gt;
+</code></pre><h5 id="BBB-name-’bbb’-：选择含有属性name且其值为’bbb’的BBB元素"><a href="#BBB-name-’bbb’-：选择含有属性name且其值为’bbb’的BBB元素" class="headerlink" title="//BBB[@name=’bbb’]：选择含有属性name且其值为’bbb’的BBB元素"></a>//BBB[@name=’bbb’]：选择含有属性name且其值为’bbb’的BBB元素</h5><pre><code>&lt;AAA&gt; 
+     &lt;BBB id = &quot;b1&quot;/&gt; 
+     &lt;BBB name = &quot; bbb &quot;/&gt; 
+     &lt;BBB name = &quot;bbb&quot;/&gt; 
+&lt;/AAA&gt;
+</code></pre><h5 id="BBB-normalize-space-name-’bbb’-：选择含有属性name且其值-在用normalize-space函数去掉前后空格后-为’bbb’的BBB元素"><a href="#BBB-normalize-space-name-’bbb’-：选择含有属性name且其值-在用normalize-space函数去掉前后空格后-为’bbb’的BBB元素" class="headerlink" title="//BBB[normalize-space(@name)=’bbb’]：选择含有属性name且其值(在用normalize-space函数去掉前后空格后)为’bbb’的BBB元素"></a>//BBB[normalize-space(@name)=’bbb’]：选择含有属性name且其值(在用normalize-space函数去掉前后空格后)为’bbb’的BBB元素</h5><pre><code>&lt;AAA&gt; 
+     &lt;BBB id = &quot;b1&quot;/&gt; 
+     &lt;BBB name = &quot; bbb &quot;/&gt; 
+     &lt;BBB name = &quot;bbb&quot;/&gt; 
+&lt;/AAA&gt;
+</code></pre><h3 id="实例-7"><a href="#实例-7" class="headerlink" title="实例 7"></a>实例 7</h3><blockquote>
+<p> count()函数可以计数所选元素的个数</p>
+</blockquote>
+<h5 id="count-BBB-2-：选择含有2个BBB子元素的元素"><a href="#count-BBB-2-：选择含有2个BBB子元素的元素" class="headerlink" title="//*[count(BBB)=2]：选择含有2个BBB子元素的元素"></a>//*[count(BBB)=2]：选择含有2个BBB子元素的元素</h5><pre><code>&lt;AAA&gt; 
+     &lt;CCC&gt; 
+          &lt;BBB/&gt; 
+          &lt;BBB/&gt; 
+          &lt;BBB/&gt; 
+     &lt;/CCC&gt; 
+     &lt;DDD&gt; 
+          &lt;BBB/&gt; 
+          &lt;BBB/&gt; 
+     &lt;/DDD&gt; 
+     &lt;EEE&gt; 
+          &lt;CCC/&gt; 
+          &lt;DDD/&gt; 
+     &lt;/EEE&gt; 
+&lt;/AAA&gt;
+</code></pre><h5 id="count-2-：选择含有2个子元素的元素"><a href="#count-2-：选择含有2个子元素的元素" class="headerlink" title="// [count()=2]：选择含有2个子元素的元素"></a>//<em> [count(</em>)=2]：选择含有2个子元素的元素</h5><pre><code>&lt;AAA&gt; 
+     &lt;CCC&gt; 
+          &lt;BBB/&gt; 
+          &lt;BBB/&gt; 
+          &lt;BBB/&gt; 
+     &lt;/CCC&gt; 
+     &lt;DDD&gt; 
+          &lt;BBB/&gt; 
+          &lt;BBB/&gt; 
+     &lt;/DDD&gt; 
+     &lt;EEE&gt; 
+          &lt;CCC/&gt; 
+          &lt;DDD/&gt; 
+     &lt;/EEE&gt; 
+&lt;/AAA&gt;
+</code></pre><h5 id="count-3-：选择含有3个子元素的元素"><a href="#count-3-：选择含有3个子元素的元素" class="headerlink" title="// [count()=3]：选择含有3个子元素的元素"></a>//<em> [count(</em>)=3]：选择含有3个子元素的元素</h5><pre><code>&lt;AAA&gt; 
+     &lt;CCC&gt; 
+          &lt;BBB/&gt; 
+          &lt;BBB/&gt; 
+          &lt;BBB/&gt; 
+     &lt;/CCC&gt; 
+     &lt;DDD&gt; 
+          &lt;BBB/&gt; 
+          &lt;BBB/&gt; 
+     &lt;/DDD&gt; 
+     &lt;EEE&gt; 
+          &lt;CCC/&gt; 
+          &lt;DDD/&gt; 
+     &lt;/EEE&gt; 
+&lt;/AAA&gt;
+</code></pre><h3 id="实例-8"><a href="#实例-8" class="headerlink" title="实例 8"></a>实例 8</h3><blockquote>
+<p>name()函数返回元素的名称, start-with()函数在该函数的第一个参数字符串是以第二个参数字符开始的情况返回true, contains()函数当其第一个字符串参数包含有第二个字符串参数时返回true.</p>
+</blockquote>
+<h5 id="name-’BBB’-：选择所有名称为BBB的元素-这里等价于-BBB"><a href="#name-’BBB’-：选择所有名称为BBB的元素-这里等价于-BBB" class="headerlink" title="//*[name()=’BBB’]：选择所有名称为BBB的元素(这里等价于//BBB)"></a>//*[name()=’BBB’]：选择所有名称为BBB的元素(这里等价于//BBB)</h5><pre><code>&lt;AAA&gt; 
+     &lt;BCC&gt; 
+          &lt;BBB/&gt; 
+          &lt;BBB/&gt; 
+          &lt;BBB/&gt; 
+     &lt;/BCC&gt; 
+     &lt;DDB&gt; 
+          &lt;BBB/&gt; 
+          &lt;BBB/&gt; 
+     &lt;/DDB&gt; 
+     &lt;BEC&gt; 
+          &lt;CCC/&gt; 
+          &lt;DBD/&gt; 
+     &lt;/BEC&gt; 
+&lt;/AAA&gt;
+</code></pre><h5 id="starts-with-name-’B’-：选择所有名称以”B”起始的元素"><a href="#starts-with-name-’B’-：选择所有名称以”B”起始的元素" class="headerlink" title="//*[starts-with(name(),’B’)]：选择所有名称以”B”起始的元素"></a>//*[starts-with(name(),’B’)]：选择所有名称以”B”起始的元素</h5><pre><code>&lt;AAA&gt; 
+     &lt;BCC&gt; 
+          &lt;BBB/&gt; 
+          &lt;BBB/&gt; 
+          &lt;BBB/&gt; 
+     &lt;/BCC&gt; 
+     &lt;DDB&gt; 
+          &lt;BBB/&gt; 
+          &lt;BBB/&gt; 
+     &lt;/DDB&gt; 
+     &lt;BEC&gt; 
+          &lt;CCC/&gt; 
+          &lt;DBD/&gt; 
+     &lt;/BEC&gt; 
+&lt;/AAA&gt;
+</code></pre><h5 id="contains-name-’C’-：选择所有名称包含”C”的元素"><a href="#contains-name-’C’-：选择所有名称包含”C”的元素" class="headerlink" title="//*[contains(name(),’C’)]：选择所有名称包含”C”的元素"></a>//*[contains(name(),’C’)]：选择所有名称包含”C”的元素</h5><pre><code>&lt;AAA&gt; 
+     &lt;BCC&gt; 
+          &lt;BBB/&gt; 
+          &lt;BBB/&gt; 
+          &lt;BBB/&gt; 
+     &lt;/BCC&gt; 
+     &lt;DDB&gt; 
+          &lt;BBB/&gt; 
+          &lt;BBB/&gt; 
+     &lt;/DDB&gt; 
+     &lt;BEC&gt; 
+          &lt;CCC/&gt; 
+          &lt;DBD/&gt; 
+     &lt;/BEC&gt; 
+&lt;/AAA&gt;
+</code></pre><h3 id="实例-9"><a href="#实例-9" class="headerlink" title="实例 9"></a>实例 9</h3><blockquote>
+<p>string-length函数返回字符串的字符数,你应该用&lt;替代&lt;, 用&gt;代替&gt;</p>
+</blockquote>
+<h5 id="string-length-name-3-选择名字长度为3的元素"><a href="#string-length-name-3-选择名字长度为3的元素" class="headerlink" title="//*[string-length(name()) = 3]:选择名字长度为3的元素"></a>//*[string-length(name()) = 3]:选择名字长度为3的元素</h5><pre><code>&lt;AAA&gt; 
+     &lt;Q/&gt; 
+     &lt;SSSS/&gt; 
+     &lt;BB/&gt; 
+     &lt;CCC/&gt; 
+     &lt;DDDDDDDD/&gt; 
+     &lt;EEEE/&gt; 
+&lt;/AAA&gt;
+</code></pre><h5 id="string-length-name-lt-3-选择名字长度小于3的元素"><a href="#string-length-name-lt-3-选择名字长度小于3的元素" class="headerlink" title="//*[string-length(name()) &lt; 3]:选择名字长度小于3的元素"></a>//*[string-length(name()) &lt; 3]:选择名字长度小于3的元素</h5><pre><code>&lt;AAA&gt; 
+     &lt;Q/&gt; 
+     &lt;SSSS/&gt; 
+     &lt;BB/&gt; 
+     &lt;CCC/&gt; 
+     &lt;DDDDDDDD/&gt; 
+     &lt;EEEE/&gt; 
+&lt;/AAA&gt;
+</code></pre><h5 id="string-length-name-gt-3-选择名字长度大于3的元素"><a href="#string-length-name-gt-3-选择名字长度大于3的元素" class="headerlink" title="//*[string-length(name()) &gt; 3]:选择名字长度大于3的元素"></a>//*[string-length(name()) &gt; 3]:选择名字长度大于3的元素</h5><pre><code>&lt;AAA&gt; 
+     &lt;Q/&gt; 
+     &lt;SSSS/&gt; 
+     &lt;BB/&gt; 
+     &lt;CCC/&gt; 
+     &lt;DDDDDDDD/&gt; 
+     &lt;EEEE/&gt; 
+&lt;/AAA&gt;
+</code></pre><h2 id="实例-10"><a href="#实例-10" class="headerlink" title="实例 10"></a>实例 10</h2><blockquote>
+<p>多个路径可以用分隔符 | 合并在一起</p>
+</blockquote>
+<h5 id="CCC-BBB-选择所有的CCC和BBB元素"><a href="#CCC-BBB-选择所有的CCC和BBB元素" class="headerlink" title="//CCC | //BBB:选择所有的CCC和BBB元素"></a>//CCC | //BBB:选择所有的CCC和BBB元素</h5><pre><code>&lt;AAA&gt; 
+     &lt;BBB/&gt; 
+     &lt;CCC/&gt; 
+     &lt;DDD&gt; 
+          &lt;CCC/&gt; 
+     &lt;/DDD&gt; 
+     &lt;EEE/&gt; 
+&lt;/AAA&gt;
+</code></pre><h5 id="AAA-EEE-BBB-选择所有的BBB元素和所有是AAA的子元素的EEE元素"><a href="#AAA-EEE-BBB-选择所有的BBB元素和所有是AAA的子元素的EEE元素" class="headerlink" title="/AAA/EEE | //BBB:选择所有的BBB元素和所有是AAA的子元素的EEE元素"></a>/AAA/EEE | //BBB:选择所有的BBB元素和所有是AAA的子元素的EEE元素</h5><pre><code>&lt;AAA&gt; 
+     &lt;BBB/&gt; 
+     &lt;CCC/&gt; 
+     &lt;DDD&gt; 
+          &lt;CCC/&gt; 
+     &lt;/DDD&gt; 
+     &lt;EEE/&gt; 
+&lt;/AAA&gt;
+</code></pre><h5 id="AAA-EEE-DDD-CCC-AAA-BBB-可以合并的路径数目没有限制"><a href="#AAA-EEE-DDD-CCC-AAA-BBB-可以合并的路径数目没有限制" class="headerlink" title="/AAA/EEE | //DDD/CCC | /AAA | //BBB:可以合并的路径数目没有限制"></a>/AAA/EEE | //DDD/CCC | /AAA | //BBB:可以合并的路径数目没有限制</h5><pre><code>&lt;AAA&gt; 
+     &lt;BBB/&gt; 
+     &lt;CCC/&gt; 
+     &lt;DDD&gt; 
+          &lt;CCC/&gt; 
+     &lt;/DDD&gt; 
+     &lt;EEE/&gt; 
+&lt;/AAA&gt;
+</code></pre><h3 id="实例-11"><a href="#实例-11" class="headerlink" title="实例 11"></a>实例 11</h3><blockquote>
+<p>child轴(axis)包含上下文节点的子元素, 作为默认的轴,可以忽略不写.</p>
+</blockquote>
+<h5 id="AAA等价于-child-AAA"><a href="#AAA等价于-child-AAA" class="headerlink" title="/AAA等价于 /child::AAA"></a>/AAA等价于 /child::AAA</h5><pre><code>&lt;AAA&gt; 
+     &lt;BBB/&gt; 
+     &lt;CCC/&gt; 
+&lt;/AAA&gt;
+</code></pre><h5 id="child-AAA等价于-AAA"><a href="#child-AAA等价于-AAA" class="headerlink" title="/child::AAA等价于/AAA"></a>/child::AAA等价于/AAA</h5><pre><code>&lt;AAA&gt; 
+     &lt;BBB/&gt; 
+     &lt;CCC/&gt; 
+&lt;/AAA&gt;
+</code></pre><h5 id="AAA-BBB等价于-child-AAA-child-BBB"><a href="#AAA-BBB等价于-child-AAA-child-BBB" class="headerlink" title="/AAA/BBB等价于/child::AAA/child::BBB"></a>/AAA/BBB等价于/child::AAA/child::BBB</h5><pre><code>&lt;AAA&gt; 
+     &lt;BBB/&gt; 
+     &lt;CCC/&gt; 
+&lt;/AAA&gt;
+</code></pre><h5 id="child-AAA-child-BBB等价于-AAA-BBB"><a href="#child-AAA-child-BBB等价于-AAA-BBB" class="headerlink" title="/child::AAA/child::BBB等价于/AAA/BBB"></a>/child::AAA/child::BBB等价于/AAA/BBB</h5><pre><code>&lt;AAA&gt; 
+     &lt;BBB/&gt; 
+     &lt;CCC/&gt; 
+&lt;/AAA&gt;
+</code></pre><h5 id="child-AAA-BBB-二者都可以被合并"><a href="#child-AAA-BBB-二者都可以被合并" class="headerlink" title="/child::AAA/BBB,二者都可以被合并"></a>/child::AAA/BBB,二者都可以被合并</h5><pre><code>&lt;AAA&gt; 
+     &lt;BBB/&gt; 
+     &lt;CCC/&gt; 
+&lt;/AAA&gt;
+</code></pre><h3 id="实例-12"><a href="#实例-12" class="headerlink" title="实例 12"></a>实例 12</h3><blockquote>
+<p>descendant (后代)轴包含上下文节点的后代,一个后代是指子节点或者子节点的子节点等等, 因此descendant轴不会包含属性和命名空间节点.</p>
+</blockquote>
+<h5 id="descendant-选择文档根元素的所有后代-即所有的元素被选择"><a href="#descendant-选择文档根元素的所有后代-即所有的元素被选择" class="headerlink" title="/descendant::*:选择文档根元素的所有后代.即所有的元素被选择"></a>/descendant::*:选择文档根元素的所有后代.即所有的元素被选择</h5><pre><code>&lt;AAA&gt; 
+     &lt;BBB&gt; 
+          &lt;DDD&gt; 
+               &lt;CCC&gt; 
+                    &lt;DDD/&gt; 
+                    &lt;EEE/&gt; 
+               &lt;/CCC&gt; 
+          &lt;/DDD&gt; 
+     &lt;/BBB&gt; 
+     &lt;CCC&gt; 
+          &lt;DDD&gt; 
+               &lt;EEE&gt; 
+                    &lt;DDD&gt; 
+                         &lt;FFF/&gt; 
+                    &lt;/DDD&gt; 
+               &lt;/EEE&gt; 
+          &lt;/DDD&gt; 
+     &lt;/CCC&gt; 
+&lt;/AAA&gt;
+</code></pre><h5 id="AAA-BBB-descendant-选择-AAA-BBB的所有后代元素"><a href="#AAA-BBB-descendant-选择-AAA-BBB的所有后代元素" class="headerlink" title="/AAA/BBB/descendant::*:选择/AAA/BBB的所有后代元素"></a>/AAA/BBB/descendant::*:选择/AAA/BBB的所有后代元素</h5><pre><code>&lt;AAA&gt; 
+     &lt;BBB&gt; 
+          &lt;DDD&gt; 
+               &lt;CCC&gt; 
+                    &lt;DDD/&gt; 
+                    &lt;EEE/&gt; 
+               &lt;/CCC&gt; 
+          &lt;/DDD&gt; 
+     &lt;/BBB&gt; 
+     &lt;CCC&gt; 
+          &lt;DDD&gt; 
+               &lt;EEE&gt; 
+                    &lt;DDD&gt; 
+                         &lt;FFF/&gt; 
+                    &lt;/DDD&gt; 
+               &lt;/EEE&gt; 
+          &lt;/DDD&gt; 
+     &lt;/CCC&gt; 
+&lt;/AAA&gt;
+</code></pre><h5 id="CCC-descendant-选择在祖先元素中有CCC的所有元素"><a href="#CCC-descendant-选择在祖先元素中有CCC的所有元素" class="headerlink" title="//CCC/descendant::*:选择在祖先元素中有CCC的所有元素"></a>//CCC/descendant::*:选择在祖先元素中有CCC的所有元素</h5><pre><code>&lt;AAA&gt; 
+     &lt;BBB&gt; 
+          &lt;DDD&gt; 
+               &lt;CCC&gt; 
+                    &lt;DDD/&gt; 
+                    &lt;EEE/&gt; 
+               &lt;/CCC&gt; 
+          &lt;/DDD&gt; 
+     &lt;/BBB&gt; 
+     &lt;CCC&gt; 
+          &lt;DDD&gt; 
+               &lt;EEE&gt; 
+                    &lt;DDD&gt; 
+                         &lt;FFF/&gt; 
+                    &lt;/DDD&gt; 
+               &lt;/EEE&gt; 
+          &lt;/DDD&gt; 
+     &lt;/CCC&gt; 
+&lt;/AAA&gt;
+</code></pre><h5 id="CCC-descendant-DDD-选择所有以CCC为祖先元素的DDD元素"><a href="#CCC-descendant-DDD-选择所有以CCC为祖先元素的DDD元素" class="headerlink" title="//CCC/descendant::DDD:选择所有以CCC为祖先元素的DDD元素"></a>//CCC/descendant::DDD:选择所有以CCC为祖先元素的DDD元素</h5><pre><code>&lt;AAA&gt; 
+     &lt;BBB&gt; 
+          &lt;DDD&gt; 
+               &lt;CCC&gt; 
+                    &lt;DDD/&gt; 
+                    &lt;EEE/&gt; 
+               &lt;/CCC&gt; 
+          &lt;/DDD&gt; 
+     &lt;/BBB&gt; 
+     &lt;CCC&gt; 
+          &lt;DDD&gt; 
+               &lt;EEE&gt; 
+                    &lt;DDD&gt; 
+                         &lt;FFF/&gt; 
+                    &lt;/DDD&gt; 
+               &lt;/EEE&gt; 
+          &lt;/DDD&gt; 
+     &lt;/CCC&gt; 
+&lt;/AAA&gt;
+</code></pre><h3 id="实例-13"><a href="#实例-13" class="headerlink" title="实例 13"></a>实例 13</h3><blockquote>
+<p>parent轴(axis)包含上下文节点的父节点, 如果有父节点的话</p>
+</blockquote>
+<h5 id="DDD-parent-选择DDD元素的所有父节点"><a href="#DDD-parent-选择DDD元素的所有父节点" class="headerlink" title="//DDD/parent::*:选择DDD元素的所有父节点"></a>//DDD/parent::*:选择DDD元素的所有父节点</h5><pre><code>&lt;AAA&gt; 
+     &lt;BBB&gt; 
+          &lt;DDD&gt; 
+               &lt;CCC&gt; 
+                    &lt;DDD/&gt; 
+                    &lt;EEE/&gt; 
+               &lt;/CCC&gt; 
+          &lt;/DDD&gt; 
+     &lt;/BBB&gt; 
+     &lt;CCC&gt; 
+          &lt;DDD&gt; 
+               &lt;EEE&gt; 
+                    &lt;DDD&gt; 
+                         &lt;FFF/&gt; 
+                    &lt;/DDD&gt; 
+               &lt;/EEE&gt; 
+          &lt;/DDD&gt; 
+     &lt;/CCC&gt; 
+&lt;/AAA&gt;
+</code></pre><h3 id="实例-14"><a href="#实例-14" class="headerlink" title="实例 14"></a>实例 14</h3><blockquote>
+<p>ancestor轴(axis)包含上下节点的祖先节点, 该祖先节点由其上下文节点的父节点以及父节点的父节点等等诸如此类的节点构成,所以ancestor轴总是包含有根节点,除非上下文节点就是根节点本身.</p>
+</blockquote>
+<h5 id="AAA-BBB-DDD-CCC-EEE-ancestor-选择一个绝对路径上的所有节点"><a href="#AAA-BBB-DDD-CCC-EEE-ancestor-选择一个绝对路径上的所有节点" class="headerlink" title="/AAA/BBB/DDD/CCC/EEE/ancestor::*:选择一个绝对路径上的所有节点"></a>/AAA/BBB/DDD/CCC/EEE/ancestor::*:选择一个绝对路径上的所有节点</h5><pre><code>&lt;AAA&gt; 
+     &lt;BBB&gt; 
+          &lt;DDD&gt; 
+               &lt;CCC&gt; 
+                    &lt;DDD/&gt; 
+                    &lt;EEE/&gt; 
+               &lt;/CCC&gt; 
+          &lt;/DDD&gt; 
+     &lt;/BBB&gt; 
+     &lt;CCC&gt; 
+          &lt;DDD&gt; 
+               &lt;EEE&gt; 
+                    &lt;DDD&gt; 
+                         &lt;FFF/&gt; 
+                    &lt;/DDD&gt; 
+               &lt;/EEE&gt; 
+          &lt;/DDD&gt; 
+     &lt;/CCC&gt; 
+&lt;/AAA&gt;
+</code></pre><h5 id="FFF-ancestor-选择FFF元素的祖先节点"><a href="#FFF-ancestor-选择FFF元素的祖先节点" class="headerlink" title="//FFF/ancestor::*:选择FFF元素的祖先节点"></a>//FFF/ancestor::*:选择FFF元素的祖先节点</h5><pre><code>&lt;AAA&gt; 
+     &lt;BBB&gt; 
+          &lt;DDD&gt; 
+               &lt;CCC&gt; 
+                    &lt;DDD/&gt; 
+                    &lt;EEE/&gt; 
+               &lt;/CCC&gt; 
+          &lt;/DDD&gt; 
+     &lt;/BBB&gt; 
+     &lt;CCC&gt; 
+          &lt;DDD&gt; 
+               &lt;EEE&gt; 
+                    &lt;DDD&gt; 
+                         &lt;FFF/&gt; 
+                    &lt;/DDD&gt; 
+               &lt;/EEE&gt; 
+          &lt;/DDD&gt; 
+     &lt;/CCC&gt; 
+&lt;/AAA&gt;
+</code></pre><h3 id="实例-15"><a href="#实例-15" class="headerlink" title="实例 15"></a>实例 15</h3><blockquote>
+<p>following-sibling轴(axis)包含上下文节点之后的所有兄弟节点</p>
+</blockquote>
+<h5 id="AAA-BBB-following-sibling"><a href="#AAA-BBB-following-sibling" class="headerlink" title="/AAA/BBB/following-sibling::*"></a>/AAA/BBB/following-sibling::*</h5><pre><code>&lt;AAA&gt; 
+     &lt;BBB&gt; 
+          &lt;CCC/&gt; 
+          &lt;DDD/&gt; 
+     &lt;/BBB&gt; 
+     &lt;XXX&gt; 
+          &lt;DDD&gt; 
+               &lt;EEE/&gt; 
+               &lt;DDD/&gt; 
+               &lt;CCC/&gt; 
+               &lt;FFF/&gt; 
+               &lt;FFF&gt; 
+                    &lt;GGG/&gt; 
+               &lt;/FFF&gt; 
+          &lt;/DDD&gt; 
+     &lt;/XXX&gt; 
+     &lt;CCC&gt; 
+          &lt;DDD/&gt; 
+     &lt;/CCC&gt; 
+&lt;/AAA&gt;
+</code></pre><h5 id="CCC-following-sibling"><a href="#CCC-following-sibling" class="headerlink" title="//CCC/following-sibling::*"></a>//CCC/following-sibling::*</h5><pre><code>&lt;AAA&gt; 
+     &lt;BBB&gt; 
+          &lt;CCC/&gt; 
+          &lt;DDD/&gt; 
+     &lt;/BBB&gt; 
+     &lt;XXX&gt; 
+          &lt;DDD&gt; 
+               &lt;EEE/&gt; 
+               &lt;DDD/&gt; 
+               &lt;CCC/&gt; 
+               &lt;FFF/&gt; 
+               &lt;FFF&gt; 
+                    &lt;GGG/&gt; 
+               &lt;/FFF&gt; 
+          &lt;/DDD&gt; 
+     &lt;/XXX&gt; 
+     &lt;CCC&gt; 
+          &lt;DDD/&gt; 
+     &lt;/CCC&gt; 
+&lt;/AAA&gt;
+</code></pre><h3 id="实例-16"><a href="#实例-16" class="headerlink" title="实例 16"></a>实例 16</h3><blockquote>
+<p>preceding-sibling 轴(axis)包含上下文节点之前的所有兄弟节点</p>
+</blockquote>
+<h5 id="AAA-XXX-preceding-sibling"><a href="#AAA-XXX-preceding-sibling" class="headerlink" title="/AAA/XXX/preceding-sibling::*"></a>/AAA/XXX/preceding-sibling::*</h5><pre><code>&lt;AAA&gt; 
+     &lt;BBB&gt; 
+          &lt;CCC/&gt; 
+          &lt;DDD/&gt; 
+     &lt;/BBB&gt; 
+     &lt;XXX&gt; 
+          &lt;DDD&gt; 
+               &lt;EEE/&gt; 
+               &lt;DDD/&gt; 
+               &lt;CCC/&gt; 
+               &lt;FFF/&gt; 
+               &lt;FFF&gt; 
+                    &lt;GGG/&gt; 
+               &lt;/FFF&gt; 
+          &lt;/DDD&gt; 
+     &lt;/XXX&gt; 
+     &lt;CCC&gt; 
+          &lt;DDD/&gt; 
+     &lt;/CCC&gt; 
+&lt;/AAA&gt;
+</code></pre><h5 id="CCC-preceding-sibling"><a href="#CCC-preceding-sibling" class="headerlink" title="//CCC/preceding-sibling::*"></a>//CCC/preceding-sibling::*</h5><pre><code>&lt;AAA&gt; 
+     &lt;BBB&gt; 
+          &lt;CCC/&gt; 
+          &lt;DDD/&gt; 
+     &lt;/BBB&gt; 
+     &lt;XXX&gt; 
+          &lt;DDD&gt; 
+               &lt;EEE/&gt; 
+               &lt;DDD/&gt; 
+               &lt;CCC/&gt; 
+               &lt;FFF/&gt; 
+               &lt;FFF&gt; 
+                    &lt;GGG/&gt; 
+               &lt;/FFF&gt; 
+          &lt;/DDD&gt; 
+     &lt;/XXX&gt; 
+     &lt;CCC&gt; 
+          &lt;DDD/&gt; 
+     &lt;/CCC&gt; 
+&lt;/AAA&gt;
+</code></pre><h3 id="实例-17"><a href="#实例-17" class="headerlink" title="实例 17"></a>实例 17</h3><blockquote>
+<p>following轴(axis)包含同一文档中按文档顺序位于上下文节点之后的所有节点, 除了祖先节点,属性节点和命名空间节点</p>
+</blockquote>
+<h5 id="AAA-XXX-following"><a href="#AAA-XXX-following" class="headerlink" title="/AAA/XXX/following::*"></a>/AAA/XXX/following::*</h5><pre><code>&lt;AAA&gt; 
+     &lt;BBB&gt; 
+          &lt;CCC/&gt; 
+          &lt;ZZZ&gt; 
+               &lt;DDD/&gt; 
+               &lt;DDD&gt; 
+                    &lt;EEE/&gt; 
+               &lt;/DDD&gt; 
+          &lt;/ZZZ&gt; 
+          &lt;FFF&gt; 
+               &lt;GGG/&gt; 
+          &lt;/FFF&gt; 
+     &lt;/BBB&gt; 
+     &lt;XXX&gt; 
+          &lt;DDD&gt; 
+               &lt;EEE/&gt; 
+               &lt;DDD/&gt; 
+               &lt;CCC/&gt; 
+               &lt;FFF/&gt; 
+               &lt;FFF&gt; 
+                    &lt;GGG/&gt; 
+               &lt;/FFF&gt; 
+          &lt;/DDD&gt; 
+     &lt;/XXX&gt; 
+     &lt;CCC&gt; 
+          &lt;DDD/&gt; 
+     &lt;/CCC&gt; 
+&lt;/AAA&gt;
+</code></pre><h5 id="ZZZ-following"><a href="#ZZZ-following" class="headerlink" title="//ZZZ/following::*"></a>//ZZZ/following::*</h5><pre><code>&lt;AAA&gt; 
+     &lt;BBB&gt; 
+          &lt;CCC/&gt; 
+          &lt;ZZZ&gt; 
+               &lt;DDD/&gt; 
+               &lt;DDD&gt; 
+                    &lt;EEE/&gt; 
+               &lt;/DDD&gt; 
+          &lt;/ZZZ&gt; 
+          &lt;FFF&gt; 
+               &lt;GGG/&gt; 
+          &lt;/FFF&gt; 
+     &lt;/BBB&gt; 
+     &lt;XXX&gt; 
+          &lt;DDD&gt; 
+               &lt;EEE/&gt; 
+               &lt;DDD/&gt; 
+               &lt;CCC/&gt; 
+               &lt;FFF/&gt; 
+               &lt;FFF&gt; 
+                    &lt;GGG/&gt; 
+               &lt;/FFF&gt; 
+          &lt;/DDD&gt; 
+     &lt;/XXX&gt; 
+     &lt;CCC&gt; 
+          &lt;DDD/&gt; 
+     &lt;/CCC&gt; 
+&lt;/AAA&gt;
+</code></pre><h3 id="实例-18"><a href="#实例-18" class="headerlink" title="实例 18"></a>实例 18</h3><blockquote>
+<p>following轴(axis)包含同一文档中按文档顺序位于上下文节点之前的所有节点, 除了祖先节点,属性节点和命名空间节点</p>
+</blockquote>
+<h5 id="AAA-XXX-preceding"><a href="#AAA-XXX-preceding" class="headerlink" title="/AAA/XXX/preceding::*"></a>/AAA/XXX/preceding::*</h5><pre><code>&lt;AAA&gt; 
+     &lt;BBB&gt; 
+          &lt;CCC/&gt; 
+          &lt;ZZZ&gt; 
+               &lt;DDD/&gt; 
+          &lt;/ZZZ&gt; 
+     &lt;/BBB&gt; 
+     &lt;XXX&gt; 
+          &lt;DDD&gt; 
+               &lt;EEE/&gt; 
+               &lt;DDD/&gt; 
+               &lt;CCC/&gt; 
+               &lt;FFF/&gt; 
+               &lt;FFF&gt; 
+                    &lt;GGG/&gt; 
+               &lt;/FFF&gt; 
+          &lt;/DDD&gt; 
+     &lt;/XXX&gt; 
+     &lt;CCC&gt; 
+          &lt;DDD/&gt; 
+     &lt;/CCC&gt; 
+&lt;/AAA&gt;
+</code></pre><h5 id="GGG-preceding"><a href="#GGG-preceding" class="headerlink" title="//GGG/preceding::*"></a>//GGG/preceding::*</h5><pre><code>&lt;AAA&gt; 
+     &lt;BBB&gt; 
+          &lt;CCC/&gt; 
+          &lt;ZZZ&gt; 
+               &lt;DDD/&gt; 
+          &lt;/ZZZ&gt; 
+     &lt;/BBB&gt; 
+     &lt;XXX&gt; 
+          &lt;DDD&gt; 
+               &lt;EEE/&gt; 
+               &lt;DDD/&gt; 
+               &lt;CCC/&gt; 
+               &lt;FFF/&gt; 
+               &lt;FFF&gt; 
+                    &lt;GGG/&gt; 
+               &lt;/FFF&gt; 
+          &lt;/DDD&gt; 
+     &lt;/XXX&gt; 
+     &lt;CCC&gt; 
+          &lt;DDD/&gt; 
+     &lt;/CCC&gt; 
+&lt;/AAA&gt;
+</code></pre><h3 id="实例-19"><a href="#实例-19" class="headerlink" title="实例 19"></a>实例 19</h3><blockquote>
+<p>descendant-or-self 轴(axis)包含上下文节点本身和该节点的后代节点</p>
+</blockquote>
+<h5 id="AAA-XXX-descendant-or-self"><a href="#AAA-XXX-descendant-or-self" class="headerlink" title="/AAA/XXX/descendant-or-self::*"></a>/AAA/XXX/descendant-or-self::*</h5><pre><code>&lt;AAA&gt; 
+     &lt;BBB&gt; 
+          &lt;CCC/&gt; 
+          &lt;ZZZ&gt; 
+               &lt;DDD/&gt; 
+          &lt;/ZZZ&gt; 
+     &lt;/BBB&gt; 
+     &lt;XXX&gt; 
+          &lt;DDD&gt; 
+               &lt;EEE/&gt; 
+               &lt;DDD/&gt; 
+               &lt;CCC/&gt; 
+               &lt;FFF/&gt; 
+               &lt;FFF&gt; 
+                    &lt;GGG/&gt; 
+               &lt;/FFF&gt; 
+          &lt;/DDD&gt; 
+     &lt;/XXX&gt; 
+     &lt;CCC&gt; 
+          &lt;DDD/&gt; 
+     &lt;/CCC&gt; 
+&lt;/AAA&gt;
+</code></pre><h5 id="CCC-descendant-or-self"><a href="#CCC-descendant-or-self" class="headerlink" title="//CCC/descendant-or-self::*"></a>//CCC/descendant-or-self::*</h5><pre><code>&lt;AAA&gt; 
+     &lt;BBB&gt; 
+          &lt;CCC/&gt; 
+          &lt;ZZZ&gt; 
+               &lt;DDD/&gt; 
+          &lt;/ZZZ&gt; 
+     &lt;/BBB&gt; 
+     &lt;XXX&gt; 
+          &lt;DDD&gt; 
+               &lt;EEE/&gt; 
+               &lt;DDD/&gt; 
+               &lt;CCC/&gt; 
+               &lt;FFF/&gt; 
+               &lt;FFF&gt; 
+                    &lt;GGG/&gt; 
+               &lt;/FFF&gt; 
+          &lt;/DDD&gt; 
+     &lt;/XXX&gt; 
+     &lt;CCC&gt; 
+          &lt;DDD/&gt; 
+     &lt;/CCC&gt; 
+&lt;/AAA&gt;
+</code></pre><h3 id="实例-20"><a href="#实例-20" class="headerlink" title="实例 20"></a>实例 20</h3><blockquote>
+<p>ancestor-or-self 轴(axis)包含上下文节点本身和该节点的祖先节点</p>
+</blockquote>
+<h5 id="AAA-XXX-DDD-EEE-ancestor-or-self"><a href="#AAA-XXX-DDD-EEE-ancestor-or-self" class="headerlink" title="/AAA/XXX/DDD/EEE/ancestor-or-self::*"></a>/AAA/XXX/DDD/EEE/ancestor-or-self::*</h5><pre><code>&lt;AAA&gt; 
+     &lt;BBB&gt; 
+          &lt;CCC/&gt; 
+          &lt;ZZZ&gt; 
+               &lt;DDD/&gt; 
+          &lt;/ZZZ&gt; 
+     &lt;/BBB&gt; 
+     &lt;XXX&gt; 
+          &lt;DDD&gt; 
+               &lt;EEE/&gt; 
+               &lt;DDD/&gt; 
+               &lt;CCC/&gt; 
+               &lt;FFF/&gt; 
+               &lt;FFF&gt; 
+                    &lt;GGG/&gt; 
+               &lt;/FFF&gt; 
+          &lt;/DDD&gt; 
+     &lt;/XXX&gt; 
+     &lt;CCC&gt; 
+          &lt;DDD/&gt; 
+     &lt;/CCC&gt; 
+&lt;/AAA&gt;
+</code></pre><h5 id="GGG-ancestor-or-self"><a href="#GGG-ancestor-or-self" class="headerlink" title="//GGG/ancestor-or-self::*"></a>//GGG/ancestor-or-self::*</h5><pre><code>&lt;AAA&gt; 
+     &lt;BBB&gt; 
+          &lt;CCC/&gt; 
+          &lt;ZZZ&gt; 
+               &lt;DDD/&gt; 
+          &lt;/ZZZ&gt; 
+     &lt;/BBB&gt; 
+     &lt;XXX&gt; 
+          &lt;DDD&gt; 
+               &lt;EEE/&gt; 
+               &lt;DDD/&gt; 
+               &lt;CCC/&gt; 
+               &lt;FFF/&gt; 
+               &lt;FFF&gt; 
+                    &lt;GGG/&gt; 
+               &lt;/FFF&gt; 
+          &lt;/DDD&gt; 
+     &lt;/XXX&gt; 
+     &lt;CCC&gt; 
+          &lt;DDD/&gt; 
+     &lt;/CCC&gt; 
+&lt;/AAA&gt;
+</code></pre><h3 id="实例-21"><a href="#实例-21" class="headerlink" title="实例 21"></a>实例 21</h3><blockquote>
+<p>ancestor, descendant, following, preceding 和self轴(axis)分割了XML文档(忽略属性节点和命名空间节点), 不能交迭, 而一起使用则包含所有节点</p>
+</blockquote>
+<h5 id="GGG-ancestor"><a href="#GGG-ancestor" class="headerlink" title="//GGG/ancestor::*"></a>//GGG/ancestor::*</h5><pre><code>&lt;AAA&gt; 
+     &lt;BBB&gt; 
+          &lt;CCC/&gt; 
+          &lt;ZZZ/&gt; 
+     &lt;/BBB&gt; 
+     &lt;XXX&gt; 
+          &lt;DDD&gt; 
+               &lt;EEE/&gt; 
+               &lt;FFF&gt; 
+                    &lt;HHH/&gt; 
+                    &lt;GGG&gt; 
+                         &lt;JJJ&gt; 
+                              &lt;QQQ/&gt; 
+                         &lt;/JJJ&gt; 
+                         &lt;JJJ/&gt; 
+                    &lt;/GGG&gt; 
+                    &lt;HHH/&gt; 
+               &lt;/FFF&gt; 
+          &lt;/DDD&gt; 
+     &lt;/XXX&gt; 
+     &lt;CCC&gt; 
+          &lt;DDD/&gt; 
+     &lt;/CCC&gt; 
+&lt;/AAA&gt;
+</code></pre><h5 id="GGG-descendant"><a href="#GGG-descendant" class="headerlink" title="//GGG/descendant::*"></a>//GGG/descendant::*</h5><pre><code>&lt;AAA&gt; 
+     &lt;BBB&gt; 
+          &lt;CCC/&gt; 
+          &lt;ZZZ/&gt; 
+     &lt;/BBB&gt; 
+     &lt;XXX&gt; 
+          &lt;DDD&gt; 
+               &lt;EEE/&gt; 
+               &lt;FFF&gt; 
+                    &lt;HHH/&gt; 
+                    &lt;GGG&gt; 
+                         &lt;JJJ&gt; 
+                              &lt;QQQ/&gt; 
+                         &lt;/JJJ&gt; 
+                         &lt;JJJ/&gt; 
+                    &lt;/GGG&gt; 
+                    &lt;HHH/&gt; 
+               &lt;/FFF&gt; 
+          &lt;/DDD&gt; 
+     &lt;/XXX&gt; 
+     &lt;CCC&gt; 
+          &lt;DDD/&gt; 
+     &lt;/CCC&gt; 
+&lt;/AAA&gt;
+</code></pre><h5 id="GGG-following"><a href="#GGG-following" class="headerlink" title="//GGG/following::*"></a>//GGG/following::*</h5><pre><code>&lt;AAA&gt; 
+     &lt;BBB&gt; 
+          &lt;CCC/&gt; 
+          &lt;ZZZ/&gt; 
+     &lt;/BBB&gt; 
+     &lt;XXX&gt; 
+          &lt;DDD&gt; 
+               &lt;EEE/&gt; 
+               &lt;FFF&gt; 
+                    &lt;HHH/&gt; 
+                    &lt;GGG&gt; 
+                         &lt;JJJ&gt; 
+                              &lt;QQQ/&gt; 
+                         &lt;/JJJ&gt; 
+                         &lt;JJJ/&gt; 
+                    &lt;/GGG&gt; 
+                    &lt;HHH/&gt; 
+               &lt;/FFF&gt; 
+          &lt;/DDD&gt; 
+     &lt;/XXX&gt; 
+     &lt;CCC&gt; 
+          &lt;DDD/&gt; 
+     &lt;/CCC&gt; 
+&lt;/AAA&gt;
+</code></pre><h5 id="GGG-preceding-1"><a href="#GGG-preceding-1" class="headerlink" title="//GGG/preceding::*"></a>//GGG/preceding::*</h5><pre><code>&lt;AAA&gt; 
+     &lt;BBB&gt; 
+          &lt;CCC/&gt; 
+          &lt;ZZZ/&gt; 
+     &lt;/BBB&gt; 
+     &lt;XXX&gt; 
+          &lt;DDD&gt; 
+               &lt;EEE/&gt; 
+               &lt;FFF&gt; 
+                    &lt;HHH/&gt; 
+                    &lt;GGG&gt; 
+                         &lt;JJJ&gt; 
+                              &lt;QQQ/&gt; 
+                         &lt;/JJJ&gt; 
+                         &lt;JJJ/&gt; 
+                    &lt;/GGG&gt; 
+                    &lt;HHH/&gt; 
+               &lt;/FFF&gt; 
+          &lt;/DDD&gt; 
+     &lt;/XXX&gt; 
+     &lt;CCC&gt; 
+          &lt;DDD/&gt; 
+     &lt;/CCC&gt; 
+&lt;/AAA&gt;
+</code></pre><h5 id="GGG-self"><a href="#GGG-self" class="headerlink" title="//GGG/self::*"></a>//GGG/self::*</h5><pre><code>&lt;AAA&gt; 
+     &lt;BBB&gt; 
+          &lt;CCC/&gt; 
+          &lt;ZZZ/&gt; 
+     &lt;/BBB&gt; 
+     &lt;XXX&gt; 
+          &lt;DDD&gt; 
+               &lt;EEE/&gt; 
+               &lt;FFF&gt; 
+                    &lt;HHH/&gt; 
+                    &lt;GGG&gt; 
+                         &lt;JJJ&gt; 
+                              &lt;QQQ/&gt; 
+                         &lt;/JJJ&gt; 
+                         &lt;JJJ/&gt; 
+                    &lt;/GGG&gt; 
+                    &lt;HHH/&gt; 
+               &lt;/FFF&gt; 
+          &lt;/DDD&gt; 
+     &lt;/XXX&gt; 
+     &lt;CCC&gt; 
+          &lt;DDD/&gt; 
+     &lt;/CCC&gt; 
+&lt;/AAA&gt;
+</code></pre><h5 id="GGG-ancestor-GGG-descendant-GGG-following-GGG-preceding-GGG-self"><a href="#GGG-ancestor-GGG-descendant-GGG-following-GGG-preceding-GGG-self" class="headerlink" title="//GGG/ancestor:: | //GGG/descendant:: | //GGG/following:: | //GGG/preceding:: | //GGG/self::*"></a>//GGG/ancestor::<em> | //GGG/descendant::</em> | //GGG/following::<em> | //GGG/preceding::</em> | //GGG/self::*</h5><pre><code>&lt;AAA&gt; 
+     &lt;BBB&gt; 
+          &lt;CCC/&gt; 
+          &lt;ZZZ/&gt; 
+     &lt;/BBB&gt; 
+     &lt;XXX&gt; 
+          &lt;DDD&gt; 
+               &lt;EEE/&gt; 
+               &lt;FFF&gt; 
+                    &lt;HHH/&gt; 
+                    &lt;GGG&gt; 
+                         &lt;JJJ&gt; 
+                              &lt;QQQ/&gt; 
+                         &lt;/JJJ&gt; 
+                         &lt;JJJ/&gt; 
+                    &lt;/GGG&gt; 
+                    &lt;HHH/&gt; 
+               &lt;/FFF&gt; 
+          &lt;/DDD&gt; 
+     &lt;/XXX&gt; 
+     &lt;CCC&gt; 
+          &lt;DDD/&gt; 
+     &lt;/CCC&gt; 
+&lt;/AAA&gt;
+</code></pre><h3 id="实例-22"><a href="#实例-22" class="headerlink" title="实例 22"></a>实例 22</h3><blockquote>
+<p>div运算符做浮点除法运算, mod运算符做求余运算, floor函数返回不大于参数的最大整数(趋近于正无穷), ceiling返回不小于参数的最小整数(趋近于负无穷)</p>
+</blockquote>
+<h5 id="BBB-position-mod-2-0-：选择偶数位置的BBB元素"><a href="#BBB-position-mod-2-0-：选择偶数位置的BBB元素" class="headerlink" title="//BBB[position() mod 2 = 0 ]：选择偶数位置的BBB元素"></a>//BBB[position() mod 2 = 0 ]：选择偶数位置的BBB元素</h5><pre><code>&lt;AAA&gt; 
+     &lt;BBB/&gt; 
+     &lt;BBB/&gt; 
+     &lt;BBB/&gt; 
+     &lt;BBB/&gt; 
+     &lt;BBB/&gt; 
+     &lt;BBB/&gt; 
+     &lt;BBB/&gt; 
+     &lt;BBB/&gt; 
+     &lt;CCC/&gt; 
+     &lt;CCC/&gt; 
+     &lt;CCC/&gt; 
+&lt;/AAA&gt;
+</code></pre><h5 id="BBB-position-floor-last-div-2-0-5-or-position-ceiling-last-div-2-0-5-：选择中间的BBB元素"><a href="#BBB-position-floor-last-div-2-0-5-or-position-ceiling-last-div-2-0-5-：选择中间的BBB元素" class="headerlink" title="//BBB[ position() = floor(last() div 2 + 0.5) or position() = ceiling(last() div 2 + 0.5) ]：选择中间的BBB元素"></a>//BBB[ position() = floor(last() div 2 + 0.5) or position() = ceiling(last() div 2 + 0.5) ]：选择中间的BBB元素</h5><pre><code>&lt;AAA&gt; 
+     &lt;BBB/&gt; 
+     &lt;BBB/&gt; 
+     &lt;BBB/&gt; 
+     &lt;BBB/&gt; 
+     &lt;BBB/&gt; 
+     &lt;BBB/&gt; 
+     &lt;BBB/&gt; 
+     &lt;BBB/&gt; 
+     &lt;CCC/&gt; 
+     &lt;CCC/&gt; 
+     &lt;CCC/&gt; 
+&lt;/AAA&gt;
+</code></pre><h5 id="CCC-position-floor-last-div-2-0-5-or-position-ceiling-last-div-2-0-5-：选择中间的CCC元素"><a href="#CCC-position-floor-last-div-2-0-5-or-position-ceiling-last-div-2-0-5-：选择中间的CCC元素" class="headerlink" title="//CCC[ position() = floor(last() div 2 + 0.5) or position() = ceiling(last() div 2 + 0.5) ]：选择中间的CCC元素"></a>//CCC[ position() = floor(last() div 2 + 0.5) or position() = ceiling(last() div 2 + 0.5) ]：选择中间的CCC元素</h5><pre><code>&lt;AAA&gt; 
+     &lt;BBB/&gt; 
+     &lt;BBB/&gt; 
+     &lt;BBB/&gt; 
+     &lt;BBB/&gt; 
+     &lt;BBB/&gt; 
+     &lt;BBB/&gt; 
+     &lt;BBB/&gt; 
+     &lt;BBB/&gt; 
+     &lt;CCC/&gt; 
+     &lt;CCC/&gt; 
+     &lt;CCC/&gt; 
+&lt;/AAA&gt;
+</code></pre>
+      
+    </div>
+    
+    
+    
+
+<div>
+  
+    
+  
+</div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/03/决策支持系统/" rel="next" title="决策支持系统">
+                <i class="fa fa-chevron-left"></i> 决策支持系统
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/qifang.jpg"
+                alt="十点一刻" />
+            
+              <p class="site-author-name" itemprop="name">十点一刻</p>
+              <p class="site-description motion-element" itemprop="description">在没有路的丛林走出迷雾</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/tenneling" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:tenneling@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-1"><span class="nav-number">1.</span> <span class="nav-text">实例 1</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#AAA：-选择根元素AAA"><span class="nav-number">1.0.1.</span> <span class="nav-text">/AAA：    选择根元素AAA</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#AAA-CCC：-选择AAA的所有CCC子元素"><span class="nav-number">1.0.2.</span> <span class="nav-text">/AAA/CCC：  选择AAA的所有CCC子元素</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#AAA-DDD-BBB：选择AAA的子元素DDD的所有子元素"><span class="nav-number">1.0.3.</span> <span class="nav-text">/AAA/DDD/BBB：选择AAA的子元素DDD的所有子元素</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-2"><span class="nav-number">2.</span> <span class="nav-text">实例 2</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#BBB：-选择所有BBB元素"><span class="nav-number">2.0.1.</span> <span class="nav-text">//BBB： 选择所有BBB元素</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#DDD-BBB：选择所有父元素是DDD的BBB元素"><span class="nav-number">2.0.2.</span> <span class="nav-text">//DDD/BBB：选择所有父元素是DDD的BBB元素</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-3"><span class="nav-number">3.</span> <span class="nav-text">实例 3</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#AAA-CCC-DDD-：选择所有路径依附于-AAA-CCC-DDD的元素"><span class="nav-number">3.0.1.</span> <span class="nav-text">/AAA/CCC/DDD/*：选择所有路径依附于/AAA/CCC/DDD的元素</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#BBB：选择所有的有3个祖先元素的BBB元素"><span class="nav-number">3.0.2.</span> <span class="nav-text">///*/BBB：选择所有的有3个祖先元素的BBB元素</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#：选择所有元素"><span class="nav-number">3.0.3.</span> <span class="nav-text">//*：选择所有元素</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-4"><span class="nav-number">4.</span> <span class="nav-text">实例 4</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#AAA-BBB-1-：选择AAA的第一个BBB子元素"><span class="nav-number">4.0.1.</span> <span class="nav-text">/AAA/BBB[1]：选择AAA的第一个BBB子元素</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#AAA-BBB-last-：选择AAA的最后一个BBB子元素"><span class="nav-number">4.0.2.</span> <span class="nav-text">/AAA/BBB[last()]：选择AAA的最后一个BBB子元素</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-5"><span class="nav-number">5.</span> <span class="nav-text">实例 5</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#id-选择所有的id属性"><span class="nav-number">5.0.1.</span> <span class="nav-text">//@id:选择所有的id属性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#BBB-id-选择有id属性的BBB元素"><span class="nav-number">5.0.2.</span> <span class="nav-text">//BBB[@id]:选择有id属性的BBB元素</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#BBB-name-选择有name属性的BBB元素"><span class="nav-number">5.0.3.</span> <span class="nav-text">//BBB[@name]:选择有name属性的BBB元素</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#BBB-选择有任意属性的BBB元素"><span class="nav-number">5.0.4.</span> <span class="nav-text">//BBB[@*]:选择有任意属性的BBB元素</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#BBB-not-选择没有属性的BBB元素"><span class="nav-number">5.0.5.</span> <span class="nav-text">//BBB[not(@*)]:选择没有属性的BBB元素</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-6"><span class="nav-number">6.</span> <span class="nav-text">实例 6</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#BBB-id-’b1’-：选择含有属性id且其值为’b1’的BBB元素"><span class="nav-number">6.0.1.</span> <span class="nav-text">//BBB[@id=’b1’]：选择含有属性id且其值为’b1’的BBB元素</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#BBB-name-’bbb’-：选择含有属性name且其值为’bbb’的BBB元素"><span class="nav-number">6.0.2.</span> <span class="nav-text">//BBB[@name=’bbb’]：选择含有属性name且其值为’bbb’的BBB元素</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#BBB-normalize-space-name-’bbb’-：选择含有属性name且其值-在用normalize-space函数去掉前后空格后-为’bbb’的BBB元素"><span class="nav-number">6.0.3.</span> <span class="nav-text">//BBB[normalize-space(@name)=’bbb’]：选择含有属性name且其值(在用normalize-space函数去掉前后空格后)为’bbb’的BBB元素</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-7"><span class="nav-number">7.</span> <span class="nav-text">实例 7</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#count-BBB-2-：选择含有2个BBB子元素的元素"><span class="nav-number">7.0.1.</span> <span class="nav-text">//*[count(BBB)=2]：选择含有2个BBB子元素的元素</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#count-2-：选择含有2个子元素的元素"><span class="nav-number">7.0.2.</span> <span class="nav-text">// [count()=2]：选择含有2个子元素的元素</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#count-3-：选择含有3个子元素的元素"><span class="nav-number">7.0.3.</span> <span class="nav-text">// [count()=3]：选择含有3个子元素的元素</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-8"><span class="nav-number">8.</span> <span class="nav-text">实例 8</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#name-’BBB’-：选择所有名称为BBB的元素-这里等价于-BBB"><span class="nav-number">8.0.1.</span> <span class="nav-text">//*[name()=’BBB’]：选择所有名称为BBB的元素(这里等价于//BBB)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#starts-with-name-’B’-：选择所有名称以”B”起始的元素"><span class="nav-number">8.0.2.</span> <span class="nav-text">//*[starts-with(name(),’B’)]：选择所有名称以”B”起始的元素</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#contains-name-’C’-：选择所有名称包含”C”的元素"><span class="nav-number">8.0.3.</span> <span class="nav-text">//*[contains(name(),’C’)]：选择所有名称包含”C”的元素</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-9"><span class="nav-number">9.</span> <span class="nav-text">实例 9</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#string-length-name-3-选择名字长度为3的元素"><span class="nav-number">9.0.1.</span> <span class="nav-text">//*[string-length(name()) = 3]:选择名字长度为3的元素</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#string-length-name-lt-3-选择名字长度小于3的元素"><span class="nav-number">9.0.2.</span> <span class="nav-text">//*[string-length(name()) &lt; 3]:选择名字长度小于3的元素</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#string-length-name-gt-3-选择名字长度大于3的元素"><span class="nav-number">9.0.3.</span> <span class="nav-text">//*[string-length(name()) &gt; 3]:选择名字长度大于3的元素</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实例-10"><span class="nav-number"></span> <span class="nav-text">实例 10</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#CCC-BBB-选择所有的CCC和BBB元素"><span class="nav-number">0.0.1.</span> <span class="nav-text">//CCC | //BBB:选择所有的CCC和BBB元素</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#AAA-EEE-BBB-选择所有的BBB元素和所有是AAA的子元素的EEE元素"><span class="nav-number">0.0.2.</span> <span class="nav-text">/AAA/EEE | //BBB:选择所有的BBB元素和所有是AAA的子元素的EEE元素</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#AAA-EEE-DDD-CCC-AAA-BBB-可以合并的路径数目没有限制"><span class="nav-number">0.0.3.</span> <span class="nav-text">/AAA/EEE | //DDD/CCC | /AAA | //BBB:可以合并的路径数目没有限制</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-11"><span class="nav-number">1.</span> <span class="nav-text">实例 11</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#AAA等价于-child-AAA"><span class="nav-number">1.0.1.</span> <span class="nav-text">/AAA等价于 /child::AAA</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#child-AAA等价于-AAA"><span class="nav-number">1.0.2.</span> <span class="nav-text">/child::AAA等价于/AAA</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#AAA-BBB等价于-child-AAA-child-BBB"><span class="nav-number">1.0.3.</span> <span class="nav-text">/AAA/BBB等价于/child::AAA/child::BBB</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#child-AAA-child-BBB等价于-AAA-BBB"><span class="nav-number">1.0.4.</span> <span class="nav-text">/child::AAA/child::BBB等价于/AAA/BBB</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#child-AAA-BBB-二者都可以被合并"><span class="nav-number">1.0.5.</span> <span class="nav-text">/child::AAA/BBB,二者都可以被合并</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-12"><span class="nav-number">2.</span> <span class="nav-text">实例 12</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#descendant-选择文档根元素的所有后代-即所有的元素被选择"><span class="nav-number">2.0.1.</span> <span class="nav-text">/descendant::*:选择文档根元素的所有后代.即所有的元素被选择</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#AAA-BBB-descendant-选择-AAA-BBB的所有后代元素"><span class="nav-number">2.0.2.</span> <span class="nav-text">/AAA/BBB/descendant::*:选择/AAA/BBB的所有后代元素</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#CCC-descendant-选择在祖先元素中有CCC的所有元素"><span class="nav-number">2.0.3.</span> <span class="nav-text">//CCC/descendant::*:选择在祖先元素中有CCC的所有元素</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#CCC-descendant-DDD-选择所有以CCC为祖先元素的DDD元素"><span class="nav-number">2.0.4.</span> <span class="nav-text">//CCC/descendant::DDD:选择所有以CCC为祖先元素的DDD元素</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-13"><span class="nav-number">3.</span> <span class="nav-text">实例 13</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#DDD-parent-选择DDD元素的所有父节点"><span class="nav-number">3.0.1.</span> <span class="nav-text">//DDD/parent::*:选择DDD元素的所有父节点</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-14"><span class="nav-number">4.</span> <span class="nav-text">实例 14</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#AAA-BBB-DDD-CCC-EEE-ancestor-选择一个绝对路径上的所有节点"><span class="nav-number">4.0.1.</span> <span class="nav-text">/AAA/BBB/DDD/CCC/EEE/ancestor::*:选择一个绝对路径上的所有节点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#FFF-ancestor-选择FFF元素的祖先节点"><span class="nav-number">4.0.2.</span> <span class="nav-text">//FFF/ancestor::*:选择FFF元素的祖先节点</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-15"><span class="nav-number">5.</span> <span class="nav-text">实例 15</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#AAA-BBB-following-sibling"><span class="nav-number">5.0.1.</span> <span class="nav-text">/AAA/BBB/following-sibling::*</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#CCC-following-sibling"><span class="nav-number">5.0.2.</span> <span class="nav-text">//CCC/following-sibling::*</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-16"><span class="nav-number">6.</span> <span class="nav-text">实例 16</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#AAA-XXX-preceding-sibling"><span class="nav-number">6.0.1.</span> <span class="nav-text">/AAA/XXX/preceding-sibling::*</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#CCC-preceding-sibling"><span class="nav-number">6.0.2.</span> <span class="nav-text">//CCC/preceding-sibling::*</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-17"><span class="nav-number">7.</span> <span class="nav-text">实例 17</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#AAA-XXX-following"><span class="nav-number">7.0.1.</span> <span class="nav-text">/AAA/XXX/following::*</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ZZZ-following"><span class="nav-number">7.0.2.</span> <span class="nav-text">//ZZZ/following::*</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-18"><span class="nav-number">8.</span> <span class="nav-text">实例 18</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#AAA-XXX-preceding"><span class="nav-number">8.0.1.</span> <span class="nav-text">/AAA/XXX/preceding::*</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#GGG-preceding"><span class="nav-number">8.0.2.</span> <span class="nav-text">//GGG/preceding::*</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-19"><span class="nav-number">9.</span> <span class="nav-text">实例 19</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#AAA-XXX-descendant-or-self"><span class="nav-number">9.0.1.</span> <span class="nav-text">/AAA/XXX/descendant-or-self::*</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#CCC-descendant-or-self"><span class="nav-number">9.0.2.</span> <span class="nav-text">//CCC/descendant-or-self::*</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-20"><span class="nav-number">10.</span> <span class="nav-text">实例 20</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#AAA-XXX-DDD-EEE-ancestor-or-self"><span class="nav-number">10.0.1.</span> <span class="nav-text">/AAA/XXX/DDD/EEE/ancestor-or-self::*</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#GGG-ancestor-or-self"><span class="nav-number">10.0.2.</span> <span class="nav-text">//GGG/ancestor-or-self::*</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-21"><span class="nav-number">11.</span> <span class="nav-text">实例 21</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#GGG-ancestor"><span class="nav-number">11.0.1.</span> <span class="nav-text">//GGG/ancestor::*</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#GGG-descendant"><span class="nav-number">11.0.2.</span> <span class="nav-text">//GGG/descendant::*</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#GGG-following"><span class="nav-number">11.0.3.</span> <span class="nav-text">//GGG/following::*</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#GGG-preceding-1"><span class="nav-number">11.0.4.</span> <span class="nav-text">//GGG/preceding::*</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#GGG-self"><span class="nav-number">11.0.5.</span> <span class="nav-text">//GGG/self::*</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#GGG-ancestor-GGG-descendant-GGG-following-GGG-preceding-GGG-self"><span class="nav-number">11.0.6.</span> <span class="nav-text">//GGG/ancestor:: | //GGG/descendant:: | //GGG/following:: | //GGG/preceding:: | //GGG/self::*</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例-22"><span class="nav-number">12.</span> <span class="nav-text">实例 22</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#BBB-position-mod-2-0-：选择偶数位置的BBB元素"><span class="nav-number">12.0.1.</span> <span class="nav-text">//BBB[position() mod 2 = 0 ]：选择偶数位置的BBB元素</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#BBB-position-floor-last-div-2-0-5-or-position-ceiling-last-div-2-0-5-：选择中间的BBB元素"><span class="nav-number">12.0.2.</span> <span class="nav-text">//BBB[ position() = floor(last() div 2 + 0.5) or position() = ceiling(last() div 2 + 0.5) ]：选择中间的BBB元素</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#CCC-position-floor-last-div-2-0-5-or-position-ceiling-last-div-2-0-5-：选择中间的CCC元素"><span class="nav-number">12.0.3.</span> <span class="nav-text">//CCC[ position() = floor(last() div 2 + 0.5) or position() = ceiling(last() div 2 + 0.5) ]：选择中间的CCC元素</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+<div id="music163player">
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=2&id=477786576&auto=0&height=32"></iframe>
+</div>
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        ﻿<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">十点一刻</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">全站共135.2k字</span>
+</div>
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+
+
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+
+</body>
+</html>
