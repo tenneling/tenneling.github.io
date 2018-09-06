@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="Servlet的作用：接受一个请求request，做一些处理，然后返回一个响应response Servlet的三个特性：  Servlet是独立于平台和协议的 Servlet运行于服务器端 Serlvet用于生成动态的Web页面  Servlet容器是为Servlet对象运行提供支持的一类Web服务器，能将请求的URL映射到Servlet上。每个Servlet都需要在Servlet容器上注册，表">
+<meta name="description" content="Struts标签 通用标签 UI标签 Ajax标签  通用标签 流程控制标签  if/elseif/else标签：必须指定test属性，进行条件判断的逻辑表达式 append标签：用于将多个集合对象拼接成为一个新的集合对象，在拼接完成之后使用一个&amp;lt;s:iterator&amp;gt;即可迭代多个集合对象 generator标签：将指定字符串按指定的分隔符分隔成多个子串 iterator标签：用于对集">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Servlet">
-<meta property="og:url" content="http://yoursite.com/2018/09/05/Servlet/index.html">
+<meta property="og:title" content="Struts2标签">
+<meta property="og:url" content="http://yoursite.com/2018/09/06/Struts2标签/index.html">
 <meta property="og:site_name" content="Welcome">
-<meta property="og:description" content="Servlet的作用：接受一个请求request，做一些处理，然后返回一个响应response Servlet的三个特性：  Servlet是独立于平台和协议的 Servlet运行于服务器端 Serlvet用于生成动态的Web页面  Servlet容器是为Servlet对象运行提供支持的一类Web服务器，能将请求的URL映射到Servlet上。每个Servlet都需要在Servlet容器上注册，表">
+<meta property="og:description" content="Struts标签 通用标签 UI标签 Ajax标签  通用标签 流程控制标签  if/elseif/else标签：必须指定test属性，进行条件判断的逻辑表达式 append标签：用于将多个集合对象拼接成为一个新的集合对象，在拼接完成之后使用一个&amp;lt;s:iterator&amp;gt;即可迭代多个集合对象 generator标签：将指定字符串按指定的分隔符分隔成多个子串 iterator标签：用于对集">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-05T12:39:41.729Z">
+<meta property="og:updated_time" content="2018-09-06T03:37:32.678Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Servlet">
-<meta name="twitter:description" content="Servlet的作用：接受一个请求request，做一些处理，然后返回一个响应response Servlet的三个特性：  Servlet是独立于平台和协议的 Servlet运行于服务器端 Serlvet用于生成动态的Web页面  Servlet容器是为Servlet对象运行提供支持的一类Web服务器，能将请求的URL映射到Servlet上。每个Servlet都需要在Servlet容器上注册，表">
+<meta name="twitter:title" content="Struts2标签">
+<meta name="twitter:description" content="Struts标签 通用标签 UI标签 Ajax标签  通用标签 流程控制标签  if/elseif/else标签：必须指定test属性，进行条件判断的逻辑表达式 append标签：用于将多个集合对象拼接成为一个新的集合对象，在拼接完成之后使用一个&amp;lt;s:iterator&amp;gt;即可迭代多个集合对象 generator标签：将指定字符串按指定的分隔符分隔成多个子串 iterator标签：用于对集">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/05/Servlet/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/06/Struts2标签/"/>
 
 
 
 
 
-  <title>Servlet | Welcome</title>
+  <title>Struts2标签 | Welcome</title>
   
 
 
@@ -242,7 +242,7 @@
   
 
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/05/Servlet/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/06/Struts2标签/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="十点一刻">
@@ -259,7 +259,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Servlet</h1>
+          <h1 class="post-title" itemprop="name headline">Struts2标签</h1>
         
 
         <div class="post-meta">
@@ -271,8 +271,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-05T10:45:48+08:00">
-                2018-09-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-06T11:45:48+08:00">
+                2018-09-06
               </time>
             
 
@@ -309,80 +309,89 @@
       
 
       
-        <p>Servlet的作用：接受一个请求request，做一些处理，然后返回一个响应response</p>
-<p>Servlet的三个特性：</p>
+        <h5 id="Struts标签"><a href="#Struts标签" class="headerlink" title="Struts标签"></a>Struts标签</h5><ol>
+<li>通用标签</li>
+<li>UI标签</li>
+<li>Ajax标签</li>
+</ol>
+<h5 id="通用标签"><a href="#通用标签" class="headerlink" title="通用标签"></a>通用标签</h5><ol>
+<li><p>流程控制标签</p>
 <ol>
-<li>Servlet是独立于平台和协议的</li>
-<li>Servlet运行于服务器端</li>
-<li>Serlvet用于生成动态的Web页面</li>
+<li>if/elseif/else标签：必须指定test属性，进行条件判断的逻辑表达式</li>
+<li>append标签：用于将多个集合对象拼接成为一个新的集合对象，在拼接完成之后使用一个&lt;s:iterator&gt;即可迭代多个集合对象</li>
+<li>generator标签：将指定字符串按指定的分隔符分隔成多个子串</li>
+<li>iterator标签：用于对集合进行迭代</li>
+<li>merge标签：拼接集合对象，拼接方式不同</li>
+<li><p>sort标签：用于对集合进行排序，排序时必须提供自己的排序规则</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;s:bean var=&quot;myComparator&quot; name=&quot;xx.MyComparator&quot;&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>subset标签：用于截取并获得集合的子集 </p>
+</li>
 </ol>
-<p>Servlet容器是为Servlet对象运行提供支持的一类Web服务器，能将请求的URL映射到Servlet上。每个Servlet都需要在Servlet容器上注册，表明自己接收哪些请求，并做哪些处理。然后Servlet容器将会根据这些信息，调用和管理Servlet</p>
-<h5 id="Servlet的生命周期定义了一个Servlet如何被加载、初始化，以及它怎样接收请求、响应请求、提供服务"><a href="#Servlet的生命周期定义了一个Servlet如何被加载、初始化，以及它怎样接收请求、响应请求、提供服务" class="headerlink" title="Servlet的生命周期定义了一个Servlet如何被加载、初始化，以及它怎样接收请求、响应请求、提供服务"></a>Servlet的生命周期定义了一个Servlet如何被加载、初始化，以及它怎样接收请求、响应请求、提供服务</h5><ol>
-<li>客户端请求Servlet，容器根据此请求，寻找是否存在Servlet实例，若不存在，容器负责装载此Servlet</li>
-<li>容器根据请求，创建一个对应的Servlet实例</li>
-<li>容器调用创建完成的Servlet实例中的init()方法</li>
-<li>容器创建一个ServletRequest对象和ServletResponse对象，分别代表客户端的请求和向客户端返回的响应</li>
-<li>容器调用Servlet实例的Service()方法，并将创建出来的ServletRequest和ServletResponse对象作为参数传递</li>
-<li>在Servlet的service()方法中根据ServletRequest的信息，处理请求，访问其他资源，获取需求的信息</li>
-<li>在service()方法中利用ServletResponse将响应传回容器，并最终到达客户端</li>
-<li>对于更多的客户端请求，Server创建新的ServletRequest和ServletResponse对象，仍激活此Servlet的service()方法，将这两个对象作为参数传递给它，但无需再次调用init()</li>
-<li>当Server不再需要Servlet时，Server调用Servlets的destroy()方法</li>
+</li>
 </ol>
-<h5 id="Servlet的非生命周期方法"><a href="#Servlet的非生命周期方法" class="headerlink" title="Servlet的非生命周期方法"></a>Servlet的非生命周期方法</h5><ol>
-<li>getServletInfo：返回Servlet的描述</li>
-<li>getServletConfig：返回由Servlet容器传给init方法的ServletConfig</li>
-</ol>
-<h5 id="ServletRequest方法"><a href="#ServletRequest方法" class="headerlink" title="ServletRequest方法"></a>ServletRequest方法</h5><ol>
-<li>返回请求主体的字节数.如果不知道字节长度，返回-1</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public int getContentLength()</span><br></pre></td></tr></table></figure>
 <ol start="2">
-<li><p>返回请求主体的MIME类型.如果不知道类型，返回null</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public java.lang.String getContentType()</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>返回指定请求参数的值</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public java.lang.String.getParameter(java.lang.String name)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>返回这个HTTP请求的协议名称和版本</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public java.lang.String getProtocol()</span><br></pre></td></tr></table></figure>
+<li>数据访问标签<ol>
+<li>a标签：HTML超链接</li>
+<li>action标签：用于在JSP页面直接调用action</li>
+<li>bean标签：用于创建一个JavaBean实例</li>
+<li>date标签：用于格式化输出日期，还可计算两个日期之间的差值</li>
+<li>debug标签：用于辅助测试，在页面生成一个连接，通过该链接可以查看到ValueStack和StackContext中所有的值信息</li>
+<li>i18n标签：用于将某个资源文件放到当前的值栈中，允许使用text标签来访问资源文件中的键值对</li>
+<li>include标签：用于将一个JSP页面或Servlet页面包含到本页面中</li>
+<li>param标签：用于为其他标签提供参数</li>
+<li>property标签：用于输出指定值</li>
+<li>push标签：用于将某个对象放到ValueStack的栈顶</li>
+<li>set标签：用于将某个对象或值放入指定范围内</li>
+<li>text标签：用来显示资源文件中的键值对</li>
+<li>url标签：用于生成URL链接</li>
+</ol>
 </li>
 </ol>
-<p>HttpServletRequest方法</p>
-<ol>
-<li>返回表示请求上下文的请求URL部分</li>
+<h5 id="UI标签"><a href="#UI标签" class="headerlink" title="UI标签"></a>UI标签</h5><ol>
+<li>表单标签<ol>
+<li>checkbox标签：用于生成复选框</li>
+<li>checkboxlist标签：用于生成多个复选框</li>
+<li>combobox标签：用于生成下拉菜单</li>
+<li>doubleselect标签：用于生成连动下拉菜单</li>
+<li>head标签：提供额外的utils.js及相应的css样式</li>
+<li>file标签：用于生成文件域</li>
+<li>form标签：用于生成HTML的form表单</li>
+<li>hidden标签：用于生成一个隐藏域</li>
+<li>label标签：用于生成一个隐藏域，支持使用OGNL表达式</li>
+<li>optiontransferselect标签</li>
+<li>optgroup标签：允许以分组的形式来使用html的select组件</li>
+<li>password标签：用于生成HTML密码输入框组件</li>
+<li>radio标签：用于生成单选按钮或单选按钮组</li>
+<li>reset标签：用于生成重置表单的HTML组件</li>
+<li>select标签：用于生成下拉菜单</li>
+<li>submit标签：用于生成提供表单的HTML组件</li>
+<li>textarea标签：用于生成文本输入区域</li>
+<li>textfield标签：用于生成HTML的普通输入框组件</li>
+<li>token标签：用于解决页面重复提交等问题</li>
+<li>updownselect标签：对一个select下拉框组件中的内容进行排序</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java.lang.String getContextPath()</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li><p>返回一个Cookie对象数组</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Cookie[] getCookies()</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>返回指定HTTP标题的值</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java.lang.String getHeader(java.lang.String name)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>返回生成这个请求的HTTP方法名称</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java.lang.String getMethod()</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>返回请求URL中的查询字符串</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java.lang.String getQueryString()</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>返回与这个请求相关的会话对象。若不存在，将创建一个新的会话对象</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HttpSession getSession()</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>返回与这个请求相关的会话对象。若有，并且create参数为true，将创建一个新的会话对象</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HttpSession getSession(boolean create)</span><br></pre></td></tr></table></figure>
+<li>非表单标签<ol>
+<li>actionerror标签：用于显示执行action过程中的错误信息</li>
+<li>actionmessage标签：用于显示执行action过程中的提示信息</li>
+<li>fielderror标签：用于显示执行action过程中的属性的错误信息</li>
+<li>component标签：用于指定主题下自定义的UI组件</li>
+<li>div标签：用于生成一个div</li>
+</ol>
 </li>
 </ol>
-<p>会话管理(默认下一个Web服务器无法区分一个HTTP请求是否为第一次访问)</p>
-<ol>
-<li><p>URL重写是一种会话跟踪技术，它将一个或多个token添加到URL的查询字符串中，每个token通常为key=value形式       </p>
-<blockquote>
-<p>注意URL和token间用问号？分割，token间用与号&amp;</p>
-</blockquote>
-</li>
-<li><p>隐藏域将值放到HTML表单中。当表单提交时，隐藏域的值也同时提交到服务器端</p>
-</li>
-<li>Cookies是一个很少的信息片段，可自动地在浏览器和Web服务器间交互，因此cookies可存储在多个页面间传递的信息</li>
-<li>HttpSession对象最强大最通用。一个用户可以有且最多有一个HTTPSession，并且不会被其他用户访问到<br>默认情况下，HttpSession会在用户不活动一段时间后自动过期，该时间可以通过部署描述符的session-timeout元素配置  </li>
+<h5 id="Ajax标签"><a href="#Ajax标签" class="headerlink" title="Ajax标签"></a>Ajax标签</h5><ol>
+<li>a标签：允许用户单击链接发出一个Ajax请求</li>
+<li>autocompleter标签：允许用户在输入表单时提供自动提示和关键字补全</li>
+<li>bind标签：用于把某个html组件要调用的JavaScript事件嫁接到另一个html组件</li>
+<li>datetimepicker标签：一个界面友好的日历控件</li>
+<li>div标签：可以向后台发送异步请求，来不断更新自己的内容</li>
+<li>head标签：用于生成Dojo配置、JavaScript代码以及相关主题的CSS样式</li>
+<li>submit标签：具有异步提交功能</li>
+<li>tabbedpanel标签：用来提供页卡功能</li>
+<li>textarea标签：一个富文本编辑器</li>
+<li>tree/treenode标签：用于生成树形列表</li>
 </ol>
 
       
@@ -413,8 +422,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/20/XPath语法/" rel="next" title="XPath语法">
-                <i class="fa fa-chevron-left"></i> XPath语法
+              <a href="/2018/09/05/部署描述符/" rel="next" title="部署描述符web.xml">
+                <i class="fa fa-chevron-left"></i> 部署描述符web.xml
               </a>
             
           </div>
@@ -422,10 +431,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/05/EJB/" rel="prev" title="EJB">
-                EJB <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -559,7 +564,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#Servlet的生命周期定义了一个Servlet如何被加载、初始化，以及它怎样接收请求、响应请求、提供服务"><span class="nav-number">1.</span> <span class="nav-text">Servlet的生命周期定义了一个Servlet如何被加载、初始化，以及它怎样接收请求、响应请求、提供服务</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Servlet的非生命周期方法"><span class="nav-number">2.</span> <span class="nav-text">Servlet的非生命周期方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ServletRequest方法"><span class="nav-number">3.</span> <span class="nav-text">ServletRequest方法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#Struts标签"><span class="nav-number">1.</span> <span class="nav-text">Struts标签</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#通用标签"><span class="nav-number">2.</span> <span class="nav-text">通用标签</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#UI标签"><span class="nav-number">3.</span> <span class="nav-text">UI标签</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Ajax标签"><span class="nav-number">4.</span> <span class="nav-text">Ajax标签</span></a></li></ol></div>
             
 
           </div>
