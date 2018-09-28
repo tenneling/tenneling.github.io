@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="新浪笔试1、172.58.66.30这个主机IP地址对应的另一种表示形式AC3A421E       2、PHP连接MySQL服务器时，采用“长连接”比“短连接”有什么优势概念解释：长连接：相对于短连接，指在一个连接上可以连续发送多个数据包，在连接保持期间，如果没有数据包发送，需要双方发链路检测包。mysql的长连接如果长期闲置，mysql会8小时后（默认时间）主动断开该连接。短连接：指通讯双方有">
+<meta property="og:type" content="article">
+<meta property="og:title" content="笔试汇总帖">
+<meta property="og:url" content="http://yoursite.com/2018/09/28/笔试总结帖/index.html">
+<meta property="og:site_name" content="Welcome">
+<meta property="og:description" content="新浪笔试1、172.58.66.30这个主机IP地址对应的另一种表示形式AC3A421E       2、PHP连接MySQL服务器时，采用“长连接”比“短连接”有什么优势概念解释：长连接：相对于短连接，指在一个连接上可以连续发送多个数据包，在连接保持期间，如果没有数据包发送，需要双方发链路检测包。mysql的长连接如果长期闲置，mysql会8小时后（默认时间）主动断开该连接。短连接：指通讯双方有">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-09-28T05:27:00.698Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="笔试汇总帖">
+<meta name="twitter:description" content="新浪笔试1、172.58.66.30这个主机IP地址对应的另一种表示形式AC3A421E       2、PHP连接MySQL服务器时，采用“长连接”比“短连接”有什么优势概念解释：长连接：相对于短连接，指在一个连接上可以连续发送多个数据包，在连接保持期间，如果没有数据包发送，需要双方发链路检测包。mysql的长连接如果长期闲置，mysql会8小时后（默认时间）主动断开该连接。短连接：指通讯双方有">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/09/28/笔试总结帖/"/>
+
+
+
+
+
+  <title>笔试汇总帖 | Welcome</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Welcome</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/28/笔试总结帖/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="十点一刻">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/qifang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Welcome">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">笔试汇总帖</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-28T13:45:48+08:00">
+                2018-09-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="新浪笔试"><a href="#新浪笔试" class="headerlink" title="新浪笔试"></a>新浪笔试</h3><h4 id="1、172-58-66-30这个主机IP地址对应的另一种表示形式"><a href="#1、172-58-66-30这个主机IP地址对应的另一种表示形式" class="headerlink" title="1、172.58.66.30这个主机IP地址对应的另一种表示形式"></a>1、172.58.66.30这个主机IP地址对应的另一种表示形式</h4><p>AC3A421E      </p>
+<h4 id="2、PHP连接MySQL服务器时，采用“长连接”比“短连接”有什么优势"><a href="#2、PHP连接MySQL服务器时，采用“长连接”比“短连接”有什么优势" class="headerlink" title="2、PHP连接MySQL服务器时，采用“长连接”比“短连接”有什么优势"></a>2、PHP连接MySQL服务器时，采用“长连接”比“短连接”有什么优势</h4><h6 id="概念解释："><a href="#概念解释：" class="headerlink" title="概念解释："></a>概念解释：</h6><p>长连接：相对于短连接，指在一个连接上可以连续发送多个数据包，在连接保持期间，如果没有数据包发送，需要双方发链路检测包。mysql的长连接如果长期闲置，mysql会8小时后（默认时间）主动断开该连接。<br>短连接：指通讯双方有数据交互时，就建立一个连接，数据发送完成后，则断开此连接，即每次连接只完成一项业务的发送。    </p>
+<h6 id="连接的区别："><a href="#连接的区别：" class="headerlink" title="连接的区别："></a>连接的区别：</h6><p>1、短连接：<br>客户端连接–创建socket认证连接–维护连接–数据传输–关闭连接<br>2、长连接<br>客户端连接–创建socket认证连接–维护连接–数据传输–维护连接–数据传输–…..–关闭连接</p>
+<h6 id="个人总结："><a href="#个人总结：" class="headerlink" title="个人总结："></a>个人总结：</h6><p>长连接主要用于在少数客户端与服务端的频繁通信，因为这时候如果用短连接频繁通信常会发生Socket出错，并且频繁创建Socket连接也是对资源的浪费。<br>但是对于服务端来说，长连接也会耗费一定的资源，需要专门的线程（unix下可以用进程管理）来负责维护连接状态。</p>
+<h6 id="长连接和短连接的选择要视情况而定。"><a href="#长连接和短连接的选择要视情况而定。" class="headerlink" title="长连接和短连接的选择要视情况而定。"></a>长连接和短连接的选择要视情况而定。</h6><p>1、在频繁的与数据库服务通信，并且又非高并发的情况下，使用长连接更合适；<br>2、太多持久连接，大部分是sleep状态的，或者系统是高并发的，使用短连接更合适。</p>
+<h4 id="3、https中的ssl工作在哪一层？"><a href="#3、https中的ssl工作在哪一层？" class="headerlink" title="3、https中的ssl工作在哪一层？"></a>3、https中的ssl工作在哪一层？</h4><p>SSL（Secure Socket Layer安全套接层）以及其继承者TSL（Transport Layer Security 传输层安全）是为了网络通信安全而提供安全及数据完整性的一种安全协议。TLS与SSL在传输层对网络连接进行加密。会话层的功能和表示层的功能正好和SSL记录协议和握手协议的功能</p>
+<h4 id="4、inode"><a href="#4、inode" class="headerlink" title="4、inode"></a>4、inode</h4><p>inode(发音：eye-node)译成中文就是索引节点，它用来存放档案及目录的基本信息，包含时间、档名、使用者及群组等。<br>inode 是 UNIX 操作系统中的一种数据结构，其本质是结构体，它包含了与文件系统中各个文件相关的一些重要信息。在 UNIX 中创建文件系统时，同时将会创建大量的 inode 。通常，文件系统磁盘空间中大约百分之一空间分配给了 inode 表。<br>inode 表包含一份清单，其中列出了对应文件系统的所有inode编号。当用户搜索或者访问一个文件时，UNIX 系统通过 inode 表查找正确的 inode 编号。在找到 inode 编号之后，相关的命令才可以访问该 inode ，并对其进行适当的更改。<br>例如，使用 vi 来编辑一个文件。当您键入 vi <filename> 时，在 inode 表中找到 inode 编号之后，才允许您打开该 inode 。在 vi 的编辑会话期间，更改了该 inode 中的某些属性，当您完成操作并键入:wq时，将关闭并释放该inode。通过这种方式，如果两个用户试图对同一个文件进行编辑，inode已经在第一个编辑会话期间分配给了另一个用户 ID (UID)，因此第二个编辑任务就必须等待，直到该 inode 释放为止。</filename></p>
+<h4 id="5、返回状态码500"><a href="#5、返回状态码500" class="headerlink" title="5、返回状态码500"></a>5、返回状态码500</h4><p>http请求返回500状态码，整体原因是：服务器内部错误。</p>
+<h4 id="6、TCP协议中滑动窗口作用"><a href="#6、TCP协议中滑动窗口作用" class="headerlink" title="6、TCP协议中滑动窗口作用"></a>6、TCP协议中滑动窗口作用</h4><p>TCP 滑动窗口（发送窗口和接收窗口）<br>滑动窗口本质上是描述接受方（本地）的TCP数据报缓冲区大小的数据，发送方根据这个数据来计算自己最多能发送多长的数据。如果发送方收到接受方的窗口大小为0的TCP数据报，那么发送方将停止发送数据，等到接受方发送窗口大小不为0的数据报的到来<br>TCP的滑动窗口主要有两个作用，一是提供TCP的可靠性，二是提供TCP的流控特性。同时滑动窗口机制还体现了TCP面向字节流的设计思路。</p>
+<h4 id="7、分屏显示"><a href="#7、分屏显示" class="headerlink" title="7、分屏显示"></a>7、分屏显示</h4><p>分屏显示：more<br>查看内容时，在信息过长无法在一屏上显示时，会出现快速滚屏，使得用户无法看清文件的内容，此时可以使用more命令，每次只显示一页，按下空格键可以显示下一页，按下q键退出显示，按下h键可以获取帮助 。<br>利用Linux所提供的管道符“|”将两个命令隔开，管道符左边命令的输出就会作为管道符右边命令的输入。连续使用管道意味着第一个命令的输出会作为第二个命令的输入，第二个命令的输出又会作为第三个命令的输入，依此类推。<br>输入了ls -alh  /bin | more ，可以看到分屏显示bin目录下文件的内容</p>
+<h4 id="8、用于显示进程执行时的系统调用命令"><a href="#8、用于显示进程执行时的系统调用命令" class="headerlink" title="8、用于显示进程执行时的系统调用命令"></a>8、用于显示进程执行时的系统调用命令</h4><p>linux strace命令–跟踪系统调用<br>strace常用来跟踪进程执行时的系统调用和所接收的信号</p>
+<h4 id="9、快速查找某区号对应省份，最节约内存空间的算法（暂无答案）"><a href="#9、快速查找某区号对应省份，最节约内存空间的算法（暂无答案）" class="headerlink" title="9、快速查找某区号对应省份，最节约内存空间的算法（暂无答案）"></a>9、快速查找某区号对应省份，最节约内存空间的算法（暂无答案）</h4><h4 id="10、http和https常用端口"><a href="#10、http和https常用端口" class="headerlink" title="10、http和https常用端口"></a>10、http和https常用端口</h4><p>HTTP服务器，默认的端口号为80/tcp（木马Executor开放此端口）；<br>HTTPS（securely transferring web pages）服务器，默认的端口号为443/tcp 443/udp；</p>
+<h4 id="11、tcpdump命令"><a href="#11、tcpdump命令" class="headerlink" title="11、tcpdump命令"></a>11、tcpdump命令</h4><p>TcpDump可以将网络中传送的数据包完全截获下来提供分析。它支持针对网络层、协议、主机、网络或端口的过滤，并提供and、or、not等逻辑语句来帮助你去掉无用的信息。<br>TcpDump是Linux中强大的网络数据采集分析工具之一。<br>用简单的话来定义tcpdump，就是：dump the traffic on a network，根据使用者的定义对网络上的数据包进行截获的包分析工具。</p>
+<h4 id="12、在浏览器输入https-www-weibo-com后，到页面展示完毕中间，发生了什么"><a href="#12、在浏览器输入https-www-weibo-com后，到页面展示完毕中间，发生了什么" class="headerlink" title="12、在浏览器输入https://www.weibo.com后，到页面展示完毕中间，发生了什么"></a>12、在浏览器输入<a href="https://www.weibo.com后，到页面展示完毕中间，发生了什么" target="_blank" rel="noopener">https://www.weibo.com后，到页面展示完毕中间，发生了什么</a></h4><ol>
+<li>在浏览器里输入网址:</li>
+<li>浏览器查找域名的IP地址</li>
+<li>浏览器给web服务器发送一个HTTP请求</li>
+<li>weibo服务的永久重定向响应</li>
+<li>浏览器跟踪重定向地址</li>
+<li>服务器“处理”请求</li>
+<li>服务器发回一个HTML响应</li>
+<li>浏览器开始显示HTML</li>
+<li>浏览器发送获取嵌入在HTML中的对象</li>
+<li>浏览器发送异步（AJAX）请求</li>
+<li>设计一个哈希函数，使哈希退化为链表</li>
+</ol>
+<h3 id="唯品会笔试"><a href="#唯品会笔试" class="headerlink" title="唯品会笔试"></a>唯品会笔试</h3><h4 id="1、Integer"><a href="#1、Integer" class="headerlink" title="1、Integer"></a>1、Integer</h4><p>Integer 类在对象中包装了一个基本类型 int 的值。Integer 类型的对象包含一个 int 类型的字段。<br>此外，该类提供了多个方法，能在int类型和 String类型之间互相转换，还提供了处理 int 类型时非常有用的其他一些常量和方法。</p>
+<h4 id="2、终止一个前台进程可能用到的命令和操作（kill）"><a href="#2、终止一个前台进程可能用到的命令和操作（kill）" class="headerlink" title="2、终止一个前台进程可能用到的命令和操作（kill）"></a>2、终止一个前台进程可能用到的命令和操作（kill）</h4><ul>
+<li>kill    无参数表示向进程输入关闭的指令</li>
+<li>^C    关闭当前（前台）进程</li>
+<li>^Z    暂停当前（前台）进程</li>
+<li>shutdown    关机</li>
+<li>halt    就是调用shutdown -h<h4 id="3、Linux改变文件所有者的命令（chmod）"><a href="#3、Linux改变文件所有者的命令（chmod）" class="headerlink" title="3、Linux改变文件所有者的命令（chmod）"></a>3、Linux改变文件所有者的命令（chmod）</h4>修改文件所属组群——chgrp<br>修改文件拥有者——chown<br>改变文件权限——chmod<h4 id="4、Linux文件权限，第三段内容"><a href="#4、Linux文件权限，第三段内容" class="headerlink" title="4、Linux文件权限，第三段内容"></a>4、Linux文件权限，第三段内容</h4>第一位表示文件类型 -表示普通文件。d表示目录文件<br>第二、三、四位表示文件所有者的读，写，执行权限<br>第五、六、七位表示文件所在属组的读，写，执行权限<br>第八、九、十位表示文件的其它用户的读，写，执行权限<h4 id="5、java-lang-OutOfMemoryError-PermGen-Space"><a href="#5、java-lang-OutOfMemoryError-PermGen-Space" class="headerlink" title="5、java.lang.OutOfMemoryError.PermGen.Space"></a>5、java.lang.OutOfMemoryError.PermGen.Space</h4>导致OutOfMemoryError异常的常见原因有以下几种：<ol>
+<li>内存中加载的数据量过于庞大，如一次从数据库取出过多数据；</li>
+<li>集合类中有对对象的引用，使用完后未清空，使得JVM不能回收；</li>
+<li>代码中存在死循环或循环产生过多重复的对象实体；</li>
+<li>使用的第三方软件中的BUG；</li>
+<li>启动参数内存值设定的过小；<h4 id="6、weak-reference"><a href="#6、weak-reference" class="headerlink" title="6、weak reference"></a>6、weak reference</h4>当一个对象仅仅被weak reference指向, 而没有任何其他strong reference指向的时候, 如果GC运行, 那么这个对象就会被回收.<br>weak reference的语法是:<br>WeakReference<car> weakCar = new WeakReference(Car)(car);<br>当要获得weak reference引用的object时, 首先需要判断它是否已经被回收:<br>weakCar.get();<br>如果此方法为空, 那么说明weakCar指向的对象已经被回收了.<h4 id="7、run-和start-区别"><a href="#7、run-和start-区别" class="headerlink" title="7、run()和start()区别"></a>7、run()和start()区别</h4>start()：该方法是在当前线程中启动一个新的线程，而新启动的线程会调用run()方法，同时该方 法不能重复调用；<br>run()  ：该方法和普通的方法一样，可以重复执行，不会创建新的线程。<h4 id="8、Error的子类表示无法修复"><a href="#8、Error的子类表示无法修复" class="headerlink" title="8、Error的子类表示无法修复"></a>8、Error的子类表示无法修复</h4>RuntimeException 表示这种异常是否出现经常不可预料，出现了的话，就中止处理。<br>Error 一般表示无法恢复的故障，也就是你再试一次依然会出错，比如 OutOfMemoryError，试多少次很大概率出错的。<br>Exception 则表示一般性的异常，而且这种异常是设计中早已考虑到很常见的错误，并且一定要求在设计中说明如果处理这种异常。<h4 id="10、线程停止执行（stop-、yield-）"><a href="#10、线程停止执行（stop-、yield-）" class="headerlink" title="10、线程停止执行（stop()、yield()）"></a>10、线程停止执行（stop()、yield()）</h4></car></li>
+</ol>
+</li>
+</ul>
+<ol>
+<li>Thread.yield()：暂停当前正在执行的线程对象，并执行其他线程。</li>
+<li>Thread.sleep(long millis)：使当前线程暂停millis所指定的毫秒，转到执行其它线程。</li>
+<li>Thread.stop()：错误的停止线程的方法！戛然而止，立马停止。<h4 id="11、对称加密算法"><a href="#11、对称加密算法" class="headerlink" title="11、对称加密算法"></a>11、对称加密算法</h4>DES算法，3DES算法，TDEA算法，Blowfish算法，RC5算法，IDEA算法。<h4 id="12、Java可以同时用abstract和final声明、volatile关键字不保证对变量操作的原子性"><a href="#12、Java可以同时用abstract和final声明、volatile关键字不保证对变量操作的原子性" class="headerlink" title="12、Java可以同时用abstract和final声明、volatile关键字不保证对变量操作的原子性"></a>12、Java可以同时用abstract和final声明、volatile关键字不保证对变量操作的原子性</h4>abstract抽象类，需要继承，而final定义的类不能继承，所以final 和 abstract 不能同时修饰一个类。</li>
+</ol>
+<p>Java 内存模型将内存分为共享内存和本地内存。共享内存又称为堆内存，指的就是线程之间共享的内存，包含所有的实例域、静态域和数组元素。每个线程都有一个私有的，只对自己可见的内存，称之为本地内存。<br>共享内存中共享变量虽然由所有的线程共享，但是为了提高效率，线程并不直接使用这些变量，每个线程都会在自己的本地内存中存储一个共享内存的副本，使用这个副本参与运算。由于这个副本的参与，导致了线程之间对共享内存的读写存在可见性问题。</p>
+<p>Java语言中关键字 volatile 被称作轻量级的 synchronized，与synchronized相比，volatile编码相对简单且运行的时的开销较少</p>
+<h6 id="为何使用volatile？"><a href="#为何使用volatile？" class="headerlink" title="为何使用volatile？"></a>为何使用volatile？</h6><p>（1）简易性：在某些需要同步的场景下使用volatile变量要比使用锁更加简单<br>（2）性能：在某些情况下使用volatile同步机制的性能要优于锁<br>（3）volatile操作不会像锁一样容易造成阻塞</p>
+<h6 id="volatile特性"><a href="#volatile特性" class="headerlink" title="volatile特性"></a>volatile特性</h6><p>（1）volatile 变量具有 synchronized 的可见性特性，及如果一个字段被声明为volatile，java线程内存模型确保所有的线程看到这个变量的值是一致的<br>（2）禁止进行指令重排序<br>（3）不保证原子性</p>
+<h6 id="注："><a href="#注：" class="headerlink" title="注："></a>注：</h6><p>① 重排序：重排序通常是编译器或运行时环境为了优化程序性能而采取的对指令进行重新排序执行的一种手段<br>② 原子性：不可中断的一个或一系列操作<br>③ 可见性：锁提供了两种主要特性：互斥和可见性，互斥即一次只允许一个线程持有某个特定的锁，因此可使用该特性实现对共享数据的协调访问协议，这样，一次就只有一个线程能够使用该共享数据。可见性要更加复杂一些，它必须确保释放锁之前对共享数据做出的更改对于随后获得该锁的另一个线程是可见的。</p>
+<h6 id="volatile的实现原理"><a href="#volatile的实现原理" class="headerlink" title="volatile的实现原理"></a>volatile的实现原理</h6><p>如果对声明了volatile的变量进行写操作，JVM就会向处理器发送一条Lock前缀的指令，该Lock指令会使这个变量所在缓存行的数据回写到系统内存，根据缓存一致性协议，每个处理器都会通过嗅探在总线上传输的数据来检查自己缓存的值是否已过期，当处理器发现自己的缓存行对应的地址被修改，就会将当前处理器的缓存行设置成无效状态，在下次访问相同内存地址时，强制执行缓存行填充。</p>
+<h6 id="正确使用volatile的场景"><a href="#正确使用volatile的场景" class="headerlink" title="正确使用volatile的场景"></a>正确使用volatile的场景</h6><p>volatile 主要用来解决多线程环境中内存不可见问题。对于一写多读，是可以解决变量同步问题，但是如果多写，就无法解决线程安全问题。<br>  一个线程对 volatile 变量的写一定对之后对这个变量的读的线程可见。</p>
+<h4 id="13、文件a的访问权限为rw-r–r–-增加所有用户的执行权限和同组用户的写权限（命令）"><a href="#13、文件a的访问权限为rw-r–r–-增加所有用户的执行权限和同组用户的写权限（命令）" class="headerlink" title="13、文件a的访问权限为rw-r–r–,增加所有用户的执行权限和同组用户的写权限（命令）"></a>13、文件a的访问权限为rw-r–r–,增加所有用户的执行权限和同组用户的写权限（命令）</h4><p>chmod a+x g+w exer1</p>
+<h4 id="14、AtomicLong-Synchronized"><a href="#14、AtomicLong-Synchronized" class="headerlink" title="14、AtomicLong/Synchronized"></a>14、AtomicLong/Synchronized</h4><h5 id="并发编程"><a href="#并发编程" class="headerlink" title="并发编程"></a>并发编程</h5><h6 id="线程安全"><a href="#线程安全" class="headerlink" title="线程安全"></a>线程安全</h6><p>　　当多个线程访问某个类是，这个类始终能表现出正常的行为，那么这个类（对象或方法）就是线程安全的。</p>
+<h6 id="synchronized"><a href="#synchronized" class="headerlink" title="synchronized"></a>synchronized</h6><p>在任意个对象及方法上加锁，而加锁的这段代码称为互斥区或临界区。关键字synchronized取得的锁都是对象锁，而不是把一段代码当作锁，所以示例代码中的那个线程先执行synchronized关键字的方法，那个线程就持有该方法所属对象的锁（Lock）,两个对象，线程获得的就是两个不同的锁，他们互不影响。</p>
+<h6 id="volatile-使变量在多个线程可见。"><a href="#volatile-使变量在多个线程可见。" class="headerlink" title="volatile:使变量在多个线程可见。"></a>volatile:使变量在多个线程可见。</h6><p>在java中每个线程都会有一块工作内存区，其中存放着所有线程共享的主内存的变量值的拷贝。当线程执行时，他会在自己的工作内存区中操作这些变量。为了存取一个共享的变量，一个线程通常先获取锁并清除它的内存工作区，把这些共享变量从所有的线程的共享内存区中正确的装入他自己所在的工作内存区中，当线程解锁时保证该工作内存区中的变量的值写回到共享内存中。<br>一个线程可执行的操作有使用(use)、赋值(assign)、装载(load)、存储(store)、锁定(lock)、解锁(unlock)。<br>主内存执行的操作有读(read)、写(write)、锁定(lock)、解锁(unlock)，每个操作都是原子性的。</p>
+<h6 id="volatile的作用"><a href="#volatile的作用" class="headerlink" title="volatile的作用"></a>volatile的作用</h6><p>强制线程到主内存(共享内存)里去读变量，而不去线程工作内存区里去读取，从而实现多个线程间的变量可见。也就是满足线程安全的可见性。<br>volatile关键字虽然拥有多个线程之间的可见性，但是却不具备同步性（原子性），可以算是一个轻量级的synchronized,性能要比synchronized强很多，不会造成阻塞,但一般volatile用于只针对多个线程可见的变量操作，并不能代替synchronized的同步功能。<br>volatile关键字值具有可见性，没有原子性。要实现原子性建议使用atomic类系列的对象，支持原子性操作（注意：atomic类只保证本身方法的原子性，并不能保证多次操作的原子性）</p>
+<h6 id="原子操作"><a href="#原子操作" class="headerlink" title="原子操作"></a>原子操作</h6><p>在多进程（线程）访问共享资源时，能够确保所有其他的进程（线程）都不在同一时间内访问相同的资源。原子操作（atomic operation）是不需要synchronized，这是Java多线程编程的老生常谈了。所谓原子操作是指不会被线程调度机制打断的操作；这种操作一旦开始，就一直运行到结束，中间不会有任何 context switch （切换到另一个线程）。 </p>
+<h4 id="15、堆和栈的区别"><a href="#15、堆和栈的区别" class="headerlink" title="15、堆和栈的区别"></a>15、堆和栈的区别</h4><p>Java程序在运行时都要开辟空间，任何软件在运行时都要在内存中开辟空间，Java虚拟机运行时也是要开辟空间的。JVM运行时在内存中开辟一片内存区域，启动时在自己的内存区域中进行更细致的划分，因为虚拟机中每一片内存处理的方式都不同，所以要单独进行管理。</p>
+<h6 id="JVM内存的划分"><a href="#JVM内存的划分" class="headerlink" title="JVM内存的划分"></a>JVM内存的划分</h6><ol>
+<li>寄存器</li>
+<li>本地方法区</li>
+<li>方法区</li>
+<li>栈内存</li>
+<li>堆内存</li>
+</ol>
+<h6 id="栈内存"><a href="#栈内存" class="headerlink" title="栈内存"></a>栈内存</h6><p>栈内存首先是一片内存区域，存储的都是局部变量，凡是定义在方法中的都是局部变量（方法外的是全局变量），for循环内部定义的也是局部变量，是先加载函数才能进行局部变量的定义，所以方法先进栈，然后再定义变量，变量有自己的作用域，一旦离开作用域，变量就会被释放。栈内存的更新速度很快，因为局部变量的生命周期都很短。</p>
+<h6 id="堆内存"><a href="#堆内存" class="headerlink" title="堆内存"></a>堆内存</h6><p>存储的是数组和对象（其实数组就是对象），凡是new建立的都是在堆中，堆中存放的都是实体（对象），实体用于封装数据，而且是封装多个（实体的多个属性），如果一个数据消失，这个实体也没有消失，还可以用，所以堆是不会随时释放的，但是栈不一样，栈里存放的都是单个变量，变量被释放了，那就没有了。堆里的实体虽然不会被释放，但是会被当成垃圾，Java有垃圾回收机制不定时的收取。</p>
+<h6 id="堆与栈的区别"><a href="#堆与栈的区别" class="headerlink" title="堆与栈的区别"></a>堆与栈的区别</h6><ol>
+<li>栈内存存储的是局部变量而堆内存存储的是实体；</li>
+<li>栈内存的更新速度要快于堆内存，因为局部变量的生命周期很短；</li>
+<li>栈内存存放的变量生命周期一旦结束就会被释放，而堆内存存放的实体会被垃圾回收机制不定时的回收。</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+<div>
+  
+    
+  
+</div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/06/Struts2标签/" rel="next" title="Struts2标签">
+                <i class="fa fa-chevron-left"></i> Struts2标签
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/qifang.jpg"
+                alt="十点一刻" />
+            
+              <p class="site-author-name" itemprop="name">十点一刻</p>
+              <p class="site-description motion-element" itemprop="description">在没有路的丛林走出迷雾</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/tenneling" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:tenneling@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#新浪笔试"><span class="nav-number">1.</span> <span class="nav-text">新浪笔试</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、172-58-66-30这个主机IP地址对应的另一种表示形式"><span class="nav-number">1.1.</span> <span class="nav-text">1、172.58.66.30这个主机IP地址对应的另一种表示形式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、PHP连接MySQL服务器时，采用“长连接”比“短连接”有什么优势"><span class="nav-number">1.2.</span> <span class="nav-text">2、PHP连接MySQL服务器时，采用“长连接”比“短连接”有什么优势</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#概念解释："><span class="nav-number">1.2.0.1.</span> <span class="nav-text">概念解释：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#连接的区别："><span class="nav-number">1.2.0.2.</span> <span class="nav-text">连接的区别：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#个人总结："><span class="nav-number">1.2.0.3.</span> <span class="nav-text">个人总结：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#长连接和短连接的选择要视情况而定。"><span class="nav-number">1.2.0.4.</span> <span class="nav-text">长连接和短连接的选择要视情况而定。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、https中的ssl工作在哪一层？"><span class="nav-number">1.3.</span> <span class="nav-text">3、https中的ssl工作在哪一层？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、inode"><span class="nav-number">1.4.</span> <span class="nav-text">4、inode</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、返回状态码500"><span class="nav-number">1.5.</span> <span class="nav-text">5、返回状态码500</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6、TCP协议中滑动窗口作用"><span class="nav-number">1.6.</span> <span class="nav-text">6、TCP协议中滑动窗口作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7、分屏显示"><span class="nav-number">1.7.</span> <span class="nav-text">7、分屏显示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8、用于显示进程执行时的系统调用命令"><span class="nav-number">1.8.</span> <span class="nav-text">8、用于显示进程执行时的系统调用命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9、快速查找某区号对应省份，最节约内存空间的算法（暂无答案）"><span class="nav-number">1.9.</span> <span class="nav-text">9、快速查找某区号对应省份，最节约内存空间的算法（暂无答案）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10、http和https常用端口"><span class="nav-number">1.10.</span> <span class="nav-text">10、http和https常用端口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11、tcpdump命令"><span class="nav-number">1.11.</span> <span class="nav-text">11、tcpdump命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12、在浏览器输入https-www-weibo-com后，到页面展示完毕中间，发生了什么"><span class="nav-number">1.12.</span> <span class="nav-text">12、在浏览器输入https://www.weibo.com后，到页面展示完毕中间，发生了什么</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#唯品会笔试"><span class="nav-number">2.</span> <span class="nav-text">唯品会笔试</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、Integer"><span class="nav-number">2.1.</span> <span class="nav-text">1、Integer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、终止一个前台进程可能用到的命令和操作（kill）"><span class="nav-number">2.2.</span> <span class="nav-text">2、终止一个前台进程可能用到的命令和操作（kill）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、Linux改变文件所有者的命令（chmod）"><span class="nav-number">2.3.</span> <span class="nav-text">3、Linux改变文件所有者的命令（chmod）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、Linux文件权限，第三段内容"><span class="nav-number">2.4.</span> <span class="nav-text">4、Linux文件权限，第三段内容</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、java-lang-OutOfMemoryError-PermGen-Space"><span class="nav-number">2.5.</span> <span class="nav-text">5、java.lang.OutOfMemoryError.PermGen.Space</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6、weak-reference"><span class="nav-number">2.6.</span> <span class="nav-text">6、weak reference</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7、run-和start-区别"><span class="nav-number">2.7.</span> <span class="nav-text">7、run()和start()区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8、Error的子类表示无法修复"><span class="nav-number">2.8.</span> <span class="nav-text">8、Error的子类表示无法修复</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10、线程停止执行（stop-、yield-）"><span class="nav-number">2.9.</span> <span class="nav-text">10、线程停止执行（stop()、yield()）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11、对称加密算法"><span class="nav-number">2.10.</span> <span class="nav-text">11、对称加密算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12、Java可以同时用abstract和final声明、volatile关键字不保证对变量操作的原子性"><span class="nav-number">2.11.</span> <span class="nav-text">12、Java可以同时用abstract和final声明、volatile关键字不保证对变量操作的原子性</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#为何使用volatile？"><span class="nav-number">2.11.0.1.</span> <span class="nav-text">为何使用volatile？</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#volatile特性"><span class="nav-number">2.11.0.2.</span> <span class="nav-text">volatile特性</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#注："><span class="nav-number">2.11.0.3.</span> <span class="nav-text">注：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#volatile的实现原理"><span class="nav-number">2.11.0.4.</span> <span class="nav-text">volatile的实现原理</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#正确使用volatile的场景"><span class="nav-number">2.11.0.5.</span> <span class="nav-text">正确使用volatile的场景</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#13、文件a的访问权限为rw-r–r–-增加所有用户的执行权限和同组用户的写权限（命令）"><span class="nav-number">2.12.</span> <span class="nav-text">13、文件a的访问权限为rw-r–r–,增加所有用户的执行权限和同组用户的写权限（命令）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#14、AtomicLong-Synchronized"><span class="nav-number">2.13.</span> <span class="nav-text">14、AtomicLong/Synchronized</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#并发编程"><span class="nav-number">2.13.1.</span> <span class="nav-text">并发编程</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#线程安全"><span class="nav-number">2.13.1.1.</span> <span class="nav-text">线程安全</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#synchronized"><span class="nav-number">2.13.1.2.</span> <span class="nav-text">synchronized</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#volatile-使变量在多个线程可见。"><span class="nav-number">2.13.1.3.</span> <span class="nav-text">volatile:使变量在多个线程可见。</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#volatile的作用"><span class="nav-number">2.13.1.4.</span> <span class="nav-text">volatile的作用</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#原子操作"><span class="nav-number">2.13.1.5.</span> <span class="nav-text">原子操作</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#15、堆和栈的区别"><span class="nav-number">2.14.</span> <span class="nav-text">15、堆和栈的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#JVM内存的划分"><span class="nav-number">2.14.0.1.</span> <span class="nav-text">JVM内存的划分</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#栈内存"><span class="nav-number">2.14.0.2.</span> <span class="nav-text">栈内存</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#堆内存"><span class="nav-number">2.14.0.3.</span> <span class="nav-text">堆内存</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#堆与栈的区别"><span class="nav-number">2.14.0.4.</span> <span class="nav-text">堆与栈的区别</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+<div id="music163player">
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=2&id=477786576&auto=0&height=32"></iframe>
+</div>
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        ﻿<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">十点一刻</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">全站共143.8k字</span>
+</div>
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+
+
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+
+</body>
+</html>
