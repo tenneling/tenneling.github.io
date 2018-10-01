@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="Welcome">
 <meta property="og:description" content="新浪笔试1、172.58.66.30这个主机IP地址对应的另一种表示形式AC3A421E       2、PHP连接MySQL服务器时，采用“长连接”比“短连接”有什么优势概念解释：长连接：相对于短连接，指在一个连接上可以连续发送多个数据包，在连接保持期间，如果没有数据包发送，需要双方发链路检测包。mysql的长连接如果长期闲置，mysql会8小时后（默认时间）主动断开该连接。短连接：指通讯双方有">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-28T05:41:05.654Z">
+<meta property="og:updated_time" content="2018-10-01T08:09:29.576Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="笔试汇总帖">
 <meta name="twitter:description" content="新浪笔试1、172.58.66.30这个主机IP地址对应的另一种表示形式AC3A421E       2、PHP连接MySQL服务器时，采用“长连接”比“短连接”有什么优势概念解释：长连接：相对于短连接，指在一个连接上可以连续发送多个数据包，在连接保持期间，如果没有数据包发送，需要双方发链路检测包。mysql的长连接如果长期闲置，mysql会8小时后（默认时间）主动断开该连接。短连接：指通讯双方有">
@@ -385,6 +385,183 @@
 <li>栈内存的更新速度要快于堆内存，因为局部变量的生命周期很短；</li>
 <li>栈内存存放的变量生命周期一旦结束就会被释放，而堆内存存放的实体会被垃圾回收机制不定时的回收。</li>
 </ol>
+<h3 id="商汤"><a href="#商汤" class="headerlink" title="商汤"></a>商汤</h3><h4 id="1-for嵌套循环的时间复杂度"><a href="#1-for嵌套循环的时间复杂度" class="headerlink" title="1.for嵌套循环的时间复杂度"></a>1.for嵌套循环的时间复杂度</h4><blockquote>
+<p>如果内外循环之间的循环量之间没关系可将内外循环次数之积作为复杂度看待，若有关系则考虑内循环的基本操作的执行次数来分析复杂度</p>
+</blockquote>
+<p>一次：n²/2+n/2    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   O（n²）<br>二次：n*(n+1)(n+2)/6  &nbsp;&nbsp;&nbsp;O（n3）</p>
+<h4 id="2-int的自增-自减操作不是线程安全的？"><a href="#2-int的自增-自减操作不是线程安全的？" class="headerlink" title="2.int的自增/自减操作不是线程安全的？"></a>2.int的自增/自减操作不是线程安全的？</h4><p>自增自减是包含了两个计算操作，不是线程安全的</p>
+<h4 id="3-图G是一个包含n个顶点和k个独立子树的森林，则图G边数？"><a href="#3-图G是一个包含n个顶点和k个独立子树的森林，则图G边数？" class="headerlink" title="3.图G是一个包含n个顶点和k个独立子树的森林，则图G边数？"></a>3.图G是一个包含n个顶点和k个独立子树的森林，则图G边数？</h4><p>如果某棵树中有N个结点,K条边,则N = k + 1<br>设森林中有m棵树,其结点数分别为n1,n2,n3,.,nm<br>相应地,各棵树的边数分别为k1,k2,k3,…km<br>显然：n1 = k1 + 1,n2 = k2 + 1,.,nm = km + 1&nbsp; (1)<br>按照题设：<br>n1 + n2 + n3 +.+ nm = N&nbsp;  (2)<br>k1 + k2 + k3 +.+ km = K&nbsp;  (3)<br>将(1) 代入(2) 得：<br>(k1 + 1) + (k2 + 1) + (k3 + 1) + .+ (km + 1) = N<br>即：<br>k1 + k2 + k3 + …+ km + 1 + 1 +.+ 1 = N<br>按照(3)：<br>K+ m= N<br>于是m = N - K  </p>
+<p><strong>反之，边数=结点-树=n-k</strong></p>
+<h4 id="4-在网段200-10-11-144-27中，可分配地址中第四组八字节地址以十进制表示最大为多少"><a href="#4-在网段200-10-11-144-27中，可分配地址中第四组八字节地址以十进制表示最大为多少" class="headerlink" title="4.在网段200.10.11.144/27中，可分配地址中第四组八字节地址以十进制表示最大为多少"></a>4.在网段200.10.11.144/27中，可分配地址中第四组八字节地址以十进制表示最大为多少</h4><p>A类 从1.0.0.0 到126.255.255.255<br>B类 从128.0.0.0到191.255.255.255<br>C类 从192.0.0.0到223.255.255.255<br>其中127.x.x.x段地址空间是被保留的回环地址</p>
+<p><strong>IP地址包含网络地址+主机地址，即IP地址=网络地址+主机地址</strong><br>网络地址:<br>如果是192的C段地址，那么，网络地址就是：192.168.1.0，地址掩码是：255.255.255.0。<br>如果地址掩码是：255.255.0.0，那么网络地址就是：192.168.0.0。<br>网络地址很大一部分是由地址掩码决定的。<br>主机地址：<br>IP地址是202.112.14.137，掩码是255.255.255.224 ，<br>网络地址是202.112.14.128，子网号是128。<br>主机地址是202.112.14.137 。</p>
+<p><strong>根据子网掩码可以分割网络号+主机号</strong><br>255.255.255.224 转二进制：<br>11111111 11111111 11111111 11100000<br>网络号有27位，主机号有5位<br>网络地址：把IP地址转成二进制和子网掩码进行与运算<br>11001010 01110000 00001110 10001001<br>11001010 01110000 00001110 10001001<br>11111111   11111111  11111111   11100000<br><strong>即：202.112.14.128</strong></p>
+<h4 id="5-雄患病概率30-，雌患病概率10-，雄雌数量各一半，随机抽一只，发现无患病，是雄的概率为？"><a href="#5-雄患病概率30-，雌患病概率10-，雄雌数量各一半，随机抽一只，发现无患病，是雄的概率为？" class="headerlink" title="5.雄患病概率30%，雌患病概率10%，雄雌数量各一半，随机抽一只，发现无患病，是雄的概率为？"></a>5.雄患病概率30%，雌患病概率10%，雄雌数量各一半，随机抽一只，发现无患病，是雄的概率为？</h4><p>7/16，直接10只雄10只雌</p>
+<h4 id="编程："><a href="#编程：" class="headerlink" title="编程："></a>编程：</h4><p>输入一个整数数组a，和一个整数k，对于a中每一个元素，必须进行一次操作（加上k或者减去k），执行完后，整个数组最大和最小值之差最小，输出差值</p>
+<h3 id="巨人网络"><a href="#巨人网络" class="headerlink" title="巨人网络"></a>巨人网络</h3><h4 id="1-给定一个奇数，比如n-3，生成1到n平方的数，填入九宫格，使行横竖斜的和都相等"><a href="#1-给定一个奇数，比如n-3，生成1到n平方的数，填入九宫格，使行横竖斜的和都相等" class="headerlink" title="1.给定一个奇数，比如n=3，生成1到n平方的数，填入九宫格，使行横竖斜的和都相等"></a>1.给定一个奇数，比如n=3，生成1到n平方的数，填入九宫格，使行横竖斜的和都相等</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">//n=3（c++）</span><br><span class="line">void nineGongGe( int n)&#123;</span><br><span class="line">    int **a ; </span><br><span class="line">    a= new int*[n]; </span><br><span class="line">    for(int i = 0; i&lt; n;++i)</span><br><span class="line">        a[i] = new int[n]; </span><br><span class="line">    for(int i = 0; i&lt; n; ++i) </span><br><span class="line">        for(int j = 0; j &lt; n; ++j) </span><br><span class="line">            a[i][j] = 0; </span><br><span class="line">            int x = 0, y = n/2; </span><br><span class="line">            a[x][y] = 1; </span><br><span class="line">    for(int i = 2; i&lt;= n*n; ++i)&#123; </span><br><span class="line">        int xNew = x-1; </span><br><span class="line">        int yNew = y+1; </span><br><span class="line">        if(yNew &gt; n-1) yNew = 0; </span><br><span class="line">        if(xNew &lt; 0) xNew = n-1; </span><br><span class="line">        if(a[xNew][yNew] != 0)&#123; </span><br><span class="line">            xNew = x+1; yNew = y; </span><br><span class="line">        &#125; </span><br><span class="line">        a[xNew][yNew] = i; </span><br><span class="line">        x = xNew; y = yNew; </span><br><span class="line">    &#125; </span><br><span class="line">    for(int i = 0; i&lt; n; ++i)&#123; </span><br><span class="line">        for(int j = 0; j &lt; n; ++j)&#123; </span><br><span class="line">            cout&lt;&lt; a[i][j]&lt;&lt;&quot;\t&quot;; </span><br><span class="line">        &#125; </span><br><span class="line">        cout&lt;&lt;endl; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-画出QPS和响应时间随着服务请求数不断增多的趋势图（略）"><a href="#2-画出QPS和响应时间随着服务请求数不断增多的趋势图（略）" class="headerlink" title="2.画出QPS和响应时间随着服务请求数不断增多的趋势图（略）"></a>2.画出QPS和响应时间随着服务请求数不断增多的趋势图（略）</h4><p>QPS（TPS）= 并发数/平均响应时间</p>
+<h4 id="3-400和500错误码的区别"><a href="#3-400和500错误码的区别" class="headerlink" title="3.400和500错误码的区别"></a>3.400和500错误码的区别</h4><h5 id="1xx（临时响应）-表示临时响应并需要请求者继续执行操作的状态代码。"><a href="#1xx（临时响应）-表示临时响应并需要请求者继续执行操作的状态代码。" class="headerlink" title="1xx（临时响应）: 表示临时响应并需要请求者继续执行操作的状态代码。"></a>1xx（临时响应）: 表示临时响应并需要请求者继续执行操作的状态代码。</h5><blockquote>
+<p>100  （继续） 请求者应当继续提出请求。</p>
+</blockquote>
+<p>服务器返回此代码表示已收到请求的第一部分，正在等待其余部分。  </p>
+<blockquote>
+<p>101  （切换协议）</p>
+</blockquote>
+<p>请求者已要求服务器切换协议，服务器已确认并准备切换。</p>
+<h5 id="2xx-（成功）-表示成功处理了请求的状态代码。"><a href="#2xx-（成功）-表示成功处理了请求的状态代码。" class="headerlink" title="2xx （成功）: 表示成功处理了请求的状态代码。"></a>2xx （成功）: 表示成功处理了请求的状态代码。</h5><blockquote>
+<p>200  （成功）  服务器已成功处理了请求。</p>
+</blockquote>
+<p>通常，这表示服务器提供了请求的网页。</p>
+<blockquote>
+<p>201  （已创建） </p>
+</blockquote>
+<p>请求成功并且服务器创建了新的资源。</p>
+<blockquote>
+<p>202  （已接受）  </p>
+</blockquote>
+<p>服务器已接受请求，但尚未处理。</p>
+<blockquote>
+<p>203  （非授权信息） </p>
+</blockquote>
+<p>服务器已成功处理了请求，但返回的信息可能来自另一来源。</p>
+<blockquote>
+<p>204  （无内容） </p>
+</blockquote>
+<p>服务器成功处理了请求，但没有返回任何内容。</p>
+<blockquote>
+<p>205  （重置内容）</p>
+</blockquote>
+<p>服务器成功处理了请求，但没有返回任何内容。<br>206  （部分内容）  服务器成功处理了部分 GET 请求。</p>
+<h5 id="3xx-（重定向）-表示要完成请求，需要进一步操作。-通常，这些状态代码用来重定向。"><a href="#3xx-（重定向）-表示要完成请求，需要进一步操作。-通常，这些状态代码用来重定向。" class="headerlink" title="3xx （重定向）: 表示要完成请求，需要进一步操作。 通常，这些状态代码用来重定向。"></a>3xx （重定向）: 表示要完成请求，需要进一步操作。 通常，这些状态代码用来重定向。</h5><blockquote>
+<p>300  （多种选择） </p>
+</blockquote>
+<p>针对请求，服务器可执行多种操作。 服务器可根据请求者 (user agent) 选择一项操作，或提供操作列表供请求者选择。</p>
+<blockquote>
+<p>301  （永久移动） </p>
+</blockquote>
+<p>请求的网页已永久移动到新位置。 服务器返回此响应（对 GET 或 HEAD 请求的响应）时，会自动将请求者转到新位置。</p>
+<blockquote>
+<p>302  （临时移动） </p>
+</blockquote>
+<p>服务器目前从不同位置的网页响应请求，但请求者应继续使用原有位置来进行以后的请求。</p>
+<blockquote>
+<p>303  （查看其他位置）</p>
+</blockquote>
+<p>请求者应当对不同的位置使用单独的 GET 请求来检索响应时，服务器返回此代码。</p>
+<blockquote>
+<p>304  （未修改）</p>
+</blockquote>
+<p>自从上次请求后，请求的网页未修改过。 服务器返回此响应时，不会返回网页内容。</p>
+<blockquote>
+<p>305  （使用代理）</p>
+</blockquote>
+<p>请求者只能使用代理访问请求的网页。 如果服务器返回此响应，还表示请求者应使用代理。</p>
+<blockquote>
+<p>307  （临时重定向） </p>
+</blockquote>
+<p>服务器目前从不同位置的网页响应请求，但请求者应继续使用原有位置来进行以后的请求。</p>
+<h5 id="4xx（请求错误）-这些状态代码表示请求可能出错，妨碍了服务器的处理。"><a href="#4xx（请求错误）-这些状态代码表示请求可能出错，妨碍了服务器的处理。" class="headerlink" title="4xx（请求错误）: 这些状态代码表示请求可能出错，妨碍了服务器的处理。"></a>4xx（请求错误）: 这些状态代码表示请求可能出错，妨碍了服务器的处理。</h5><blockquote>
+<p>400  （错误请求） </p>
+</blockquote>
+<p>服务器不理解请求的语法。</p>
+<blockquote>
+<p>401  （未授权） 请求要求身份验证。</p>
+</blockquote>
+<p>对于需要登录的网页，服务器可能返回此响应。</p>
+<blockquote>
+<p>403  （禁止） 服务器拒绝请求。</p>
+</blockquote>
+<blockquote>
+<p>404  （未找到） 服务器找不到请求的网页。</p>
+</blockquote>
+<blockquote>
+<p>405  （方法禁用） 禁用请求中指定的方法。</p>
+</blockquote>
+<blockquote>
+<p>406  （不接受）</p>
+</blockquote>
+<p>无法使用请求的内容特性响应请求的网页。</p>
+<blockquote>
+<p>407  （需要代理授权） </p>
+</blockquote>
+<p>此状态代码与 401（未授权）类似，但指定请求者应当授权使用代理。</p>
+<blockquote>
+<p>408  （请求超时）  服务器等候请求时发生超时。</p>
+</blockquote>
+<blockquote>
+<p>409  （冲突）  服务器在完成请求时发生冲突。</p>
+</blockquote>
+<p>服务器必须在响应中包含有关冲突的信息。</p>
+<blockquote>
+<p>410  （已删除） </p>
+</blockquote>
+<p>如果请求的资源已永久删除，服务器就会返回此响应。</p>
+<blockquote>
+<p>411  （需要有效长度）</p>
+</blockquote>
+<p>服务器不接受不含有效内容长度标头字段的请求。</p>
+<blockquote>
+<p>412  （未满足前提条件）</p>
+</blockquote>
+<p>服务器未满足请求者在请求中设置的其中一个前提条件。</p>
+<blockquote>
+<p>413  （请求实体过大）</p>
+</blockquote>
+<p>服务器无法处理请求，因为请求实体过大，超出服务器的处理能力。</p>
+<blockquote>
+<p>414  （请求的 URI 过长） </p>
+</blockquote>
+<p>请求的 URI（通常为网址）过长，服务器无法处理。</p>
+<blockquote>
+<p>415  （不支持的媒体类型）</p>
+</blockquote>
+<p>请求的格式不受请求页面的支持。</p>
+<blockquote>
+<p>416  （请求范围不符合要求）</p>
+</blockquote>
+<p>如果页面无法提供请求的范围，则服务器会返回此状态代码。</p>
+<blockquote>
+<p>417  （未满足期望值）</p>
+</blockquote>
+<p>服务器未满足”期望”请求标头字段的要求。</p>
+<h5 id="5xx（服务器错误）-这些状态代码表示服务器在尝试处理请求时发生内部错误。"><a href="#5xx（服务器错误）-这些状态代码表示服务器在尝试处理请求时发生内部错误。" class="headerlink" title="5xx（服务器错误）: 这些状态代码表示服务器在尝试处理请求时发生内部错误。"></a>5xx（服务器错误）: 这些状态代码表示服务器在尝试处理请求时发生内部错误。</h5><p><strong>这些错误可能是服务器本身的错误，而不是请求出错.</strong></p>
+<blockquote>
+<p>500  （服务器内部错误） </p>
+</blockquote>
+<p>服务器遇到错误，无法完成请求。</p>
+<blockquote>
+<p>501  （尚未实施） 服务器不具备完成请求功能。</p>
+</blockquote>
+<p>如服务器无法识别请求方法时可能会返回此代码。</p>
+<blockquote>
+<p>502  （错误网关）</p>
+</blockquote>
+<p>服务器作为网关或代理，从上游服务器收到无效响应。</p>
+<blockquote>
+<p>503  （服务不可用）</p>
+</blockquote>
+<p>服务器目前无法使用（由于超载或停机维护）。 通常，这只是暂时状态。</p>
+<blockquote>
+<p>504  （网关超时） </p>
+</blockquote>
+<p>服务器作为网关或代理，但是没有及时从上游服务器收到请求。</p>
+<blockquote>
+<p>505  （HTTP 版本不受支持）</p>
+</blockquote>
+<p>服务器不支持请求中所用的 HTTP 协议版本。</p>
+<h4 id="4-持续集成是什么，普遍用什么工具"><a href="#4-持续集成是什么，普遍用什么工具" class="headerlink" title="4.持续集成是什么，普遍用什么工具"></a>4.持续集成是什么，普遍用什么工具</h4><p>持续集成，Continuous Integration, CI，</p>
+<ol>
+<li><p>一种软件项目管理方法，依据资产库（源码，类库等）的变更自动完成编译、测试、部署和反馈。</p>
+</li>
+<li><p>一种软件开发实践，它倡导团队开发成员协同工作，有需要的时候就对代码进行集成，不必要等到软件开发后期才开始集成。通常，每次的集成都是通过自动化的构建来验证，包括自动编译、发布和测试，从而尽快地发现集成错误，让团队能够更快的开发内聚的软件</p>
+</li>
+</ol>
+<p>用java实现的持续集成的开源工具有：<br>CruiseControl  <a href="http://cruisecontrol.sf.net/" target="_blank" rel="noopener">http://cruisecontrol.sf.net/</a><br>Continuum   <a href="http://maven.apache.org/continuum/" target="_blank" rel="noopener">http://maven.apache.org/continuum/</a><br>Anthill  <a href="http://www.anthillpro.com/e/giant-ci-matrix-os" target="_blank" rel="noopener">http://www.anthillpro.com/e/giant-ci-matrix-os</a><br>LuntBuild    <a href="http://luntbuild.javaforge.com/" target="_blank" rel="noopener">http://luntbuild.javaforge.com/</a><br>Gump   <a href="http://jakarta.apache.org/gump/" target="_blank" rel="noopener">http://jakarta.apache.org/gump/</a>  </p>
+<h4 id="5-unitest原理"><a href="#5-unitest原理" class="headerlink" title="5.unitest原理"></a>5.unitest原理</h4><h5 id="python功能自动化测试框架"><a href="#python功能自动化测试框架" class="headerlink" title="python功能自动化测试框架"></a>python功能自动化测试框架</h5><p>首先是要写好TestCase，然后由TestLoader加载TestCase到TestSuite，然后由TextTestRunner来运行TestSuite，运行的结果保存在TextTestResult中，整个过程集成在unittest.main模块中。<br>测试的基础就是TestCase，也就是用例的编写，用例的开始需要对测试做前期准备，用例结束则需清理环境，保证下一个用例在合适的环境下进行。<br>类TestSequenceFunctions包含继承自unittest.TestCase，重写了setUp()方法和tearDown（）方法，打印语句以表明测试的开始和结束。TestSequenceFunctions还定义了三个以’test’开头的方法，对每一个以test开头的方法，都为其构建了一个TestCase对象。方法都放在TestSequenceFunctions类中，是因为这几个测试用例的fixture是相同的（即setUp()和tearDown()），如果每一个测试用例单独写成一个TestCase的话，会有很多的冗余代码。<br>每一个方法里面可以写入断言语句，如assertEqual，assertTrue，assertRaises等，对测试的结果进行判断，并在测试完成后输出。</p>
+<h4 id="6-边层值分析"><a href="#6-边层值分析" class="headerlink" title="6.边层值分析"></a>6.边层值分析</h4><p>黑盒测试、白盒测试</p>
+<h4 id="7-78-78-123，多少进制"><a href="#7-78-78-123，多少进制" class="headerlink" title="7.78+78=123，多少进制"></a>7.78+78=123，多少进制</h4><ol>
+<li>78+78=123为7x+8+7x+8=x^2+2x+3，得x=13</li>
+<li>8+8=16，而123的尾数是3，16-13=3.故是 13进制</li>
+</ol>
 
       
     </div>
@@ -556,7 +733,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#新浪笔试"><span class="nav-number">1.</span> <span class="nav-text">新浪笔试</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、172-58-66-30这个主机IP地址对应的另一种表示形式"><span class="nav-number">1.1.</span> <span class="nav-text">1、172.58.66.30这个主机IP地址对应的另一种表示形式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、PHP连接MySQL服务器时，采用“长连接”比“短连接”有什么优势"><span class="nav-number">1.2.</span> <span class="nav-text">2、PHP连接MySQL服务器时，采用“长连接”比“短连接”有什么优势</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#概念解释："><span class="nav-number">1.2.0.1.</span> <span class="nav-text">概念解释：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#连接的区别："><span class="nav-number">1.2.0.2.</span> <span class="nav-text">连接的区别：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#个人总结："><span class="nav-number">1.2.0.3.</span> <span class="nav-text">个人总结：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#长连接和短连接的选择要视情况而定。"><span class="nav-number">1.2.0.4.</span> <span class="nav-text">长连接和短连接的选择要视情况而定。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、https中的ssl工作在哪一层？"><span class="nav-number">1.3.</span> <span class="nav-text">3、https中的ssl工作在哪一层？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、inode"><span class="nav-number">1.4.</span> <span class="nav-text">4、inode</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、返回状态码500"><span class="nav-number">1.5.</span> <span class="nav-text">5、返回状态码500</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6、TCP协议中滑动窗口作用"><span class="nav-number">1.6.</span> <span class="nav-text">6、TCP协议中滑动窗口作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7、分屏显示"><span class="nav-number">1.7.</span> <span class="nav-text">7、分屏显示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8、用于显示进程执行时的系统调用命令"><span class="nav-number">1.8.</span> <span class="nav-text">8、用于显示进程执行时的系统调用命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9、快速查找某区号对应省份，最节约内存空间的算法（暂无答案）"><span class="nav-number">1.9.</span> <span class="nav-text">9、快速查找某区号对应省份，最节约内存空间的算法（暂无答案）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10、http和https常用端口"><span class="nav-number">1.10.</span> <span class="nav-text">10、http和https常用端口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11、tcpdump命令"><span class="nav-number">1.11.</span> <span class="nav-text">11、tcpdump命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12、在浏览器输入-https-www-weibo-com-后，到页面展示完毕中间，发生了什么"><span class="nav-number">1.12.</span> <span class="nav-text">12、在浏览器输入 https://www.weibo.com 后，到页面展示完毕中间，发生了什么</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#唯品会笔试"><span class="nav-number">2.</span> <span class="nav-text">唯品会笔试</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、Integer"><span class="nav-number">2.1.</span> <span class="nav-text">1、Integer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、终止一个前台进程可能用到的命令和操作（kill）"><span class="nav-number">2.2.</span> <span class="nav-text">2、终止一个前台进程可能用到的命令和操作（kill）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、Linux改变文件所有者的命令（chmod）"><span class="nav-number">2.3.</span> <span class="nav-text">3、Linux改变文件所有者的命令（chmod）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、Linux文件权限，第三段内容"><span class="nav-number">2.4.</span> <span class="nav-text">4、Linux文件权限，第三段内容</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、java-lang-OutOfMemoryError-PermGen-Space"><span class="nav-number">2.5.</span> <span class="nav-text">5、java.lang.OutOfMemoryError.PermGen.Space</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6、weak-reference"><span class="nav-number">2.6.</span> <span class="nav-text">6、weak reference</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7、run-和start-区别"><span class="nav-number">2.7.</span> <span class="nav-text">7、run()和start()区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8、Error的子类表示无法修复"><span class="nav-number">2.8.</span> <span class="nav-text">8、Error的子类表示无法修复</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10、线程停止执行（stop-、yield-）"><span class="nav-number">2.9.</span> <span class="nav-text">10、线程停止执行（stop()、yield()）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11、对称加密算法"><span class="nav-number">2.10.</span> <span class="nav-text">11、对称加密算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12、Java可以同时用abstract和final声明、volatile关键字不保证对变量操作的原子性"><span class="nav-number">2.11.</span> <span class="nav-text">12、Java可以同时用abstract和final声明、volatile关键字不保证对变量操作的原子性</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#为何使用volatile？"><span class="nav-number">2.11.0.1.</span> <span class="nav-text">为何使用volatile？</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#volatile特性"><span class="nav-number">2.11.0.2.</span> <span class="nav-text">volatile特性</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#注："><span class="nav-number">2.11.0.3.</span> <span class="nav-text">注：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#volatile的实现原理"><span class="nav-number">2.11.0.4.</span> <span class="nav-text">volatile的实现原理</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#正确使用volatile的场景"><span class="nav-number">2.11.0.5.</span> <span class="nav-text">正确使用volatile的场景</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#13、文件a的访问权限为rw-r–r–-增加所有用户的执行权限和同组用户的写权限（命令）"><span class="nav-number">2.12.</span> <span class="nav-text">13、文件a的访问权限为rw-r–r–,增加所有用户的执行权限和同组用户的写权限（命令）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#14、AtomicLong-Synchronized"><span class="nav-number">2.13.</span> <span class="nav-text">14、AtomicLong/Synchronized</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#并发编程"><span class="nav-number">2.13.1.</span> <span class="nav-text">并发编程</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#线程安全"><span class="nav-number">2.13.1.1.</span> <span class="nav-text">线程安全</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#synchronized"><span class="nav-number">2.13.1.2.</span> <span class="nav-text">synchronized</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#volatile-使变量在多个线程可见。"><span class="nav-number">2.13.1.3.</span> <span class="nav-text">volatile:使变量在多个线程可见。</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#volatile的作用"><span class="nav-number">2.13.1.4.</span> <span class="nav-text">volatile的作用</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#原子操作"><span class="nav-number">2.13.1.5.</span> <span class="nav-text">原子操作</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#15、堆和栈的区别"><span class="nav-number">2.14.</span> <span class="nav-text">15、堆和栈的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#JVM内存的划分"><span class="nav-number">2.14.0.1.</span> <span class="nav-text">JVM内存的划分</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#栈内存"><span class="nav-number">2.14.0.2.</span> <span class="nav-text">栈内存</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#堆内存"><span class="nav-number">2.14.0.3.</span> <span class="nav-text">堆内存</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#堆与栈的区别"><span class="nav-number">2.14.0.4.</span> <span class="nav-text">堆与栈的区别</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#新浪笔试"><span class="nav-number">1.</span> <span class="nav-text">新浪笔试</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、172-58-66-30这个主机IP地址对应的另一种表示形式"><span class="nav-number">1.1.</span> <span class="nav-text">1、172.58.66.30这个主机IP地址对应的另一种表示形式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、PHP连接MySQL服务器时，采用“长连接”比“短连接”有什么优势"><span class="nav-number">1.2.</span> <span class="nav-text">2、PHP连接MySQL服务器时，采用“长连接”比“短连接”有什么优势</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#概念解释："><span class="nav-number">1.2.0.1.</span> <span class="nav-text">概念解释：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#连接的区别："><span class="nav-number">1.2.0.2.</span> <span class="nav-text">连接的区别：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#个人总结："><span class="nav-number">1.2.0.3.</span> <span class="nav-text">个人总结：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#长连接和短连接的选择要视情况而定。"><span class="nav-number">1.2.0.4.</span> <span class="nav-text">长连接和短连接的选择要视情况而定。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、https中的ssl工作在哪一层？"><span class="nav-number">1.3.</span> <span class="nav-text">3、https中的ssl工作在哪一层？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、inode"><span class="nav-number">1.4.</span> <span class="nav-text">4、inode</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、返回状态码500"><span class="nav-number">1.5.</span> <span class="nav-text">5、返回状态码500</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6、TCP协议中滑动窗口作用"><span class="nav-number">1.6.</span> <span class="nav-text">6、TCP协议中滑动窗口作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7、分屏显示"><span class="nav-number">1.7.</span> <span class="nav-text">7、分屏显示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8、用于显示进程执行时的系统调用命令"><span class="nav-number">1.8.</span> <span class="nav-text">8、用于显示进程执行时的系统调用命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9、快速查找某区号对应省份，最节约内存空间的算法（暂无答案）"><span class="nav-number">1.9.</span> <span class="nav-text">9、快速查找某区号对应省份，最节约内存空间的算法（暂无答案）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10、http和https常用端口"><span class="nav-number">1.10.</span> <span class="nav-text">10、http和https常用端口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11、tcpdump命令"><span class="nav-number">1.11.</span> <span class="nav-text">11、tcpdump命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12、在浏览器输入-https-www-weibo-com-后，到页面展示完毕中间，发生了什么"><span class="nav-number">1.12.</span> <span class="nav-text">12、在浏览器输入 https://www.weibo.com 后，到页面展示完毕中间，发生了什么</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#唯品会笔试"><span class="nav-number">2.</span> <span class="nav-text">唯品会笔试</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、Integer"><span class="nav-number">2.1.</span> <span class="nav-text">1、Integer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、终止一个前台进程可能用到的命令和操作（kill）"><span class="nav-number">2.2.</span> <span class="nav-text">2、终止一个前台进程可能用到的命令和操作（kill）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、Linux改变文件所有者的命令（chmod）"><span class="nav-number">2.3.</span> <span class="nav-text">3、Linux改变文件所有者的命令（chmod）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、Linux文件权限，第三段内容"><span class="nav-number">2.4.</span> <span class="nav-text">4、Linux文件权限，第三段内容</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、java-lang-OutOfMemoryError-PermGen-Space"><span class="nav-number">2.5.</span> <span class="nav-text">5、java.lang.OutOfMemoryError.PermGen.Space</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6、weak-reference"><span class="nav-number">2.6.</span> <span class="nav-text">6、weak reference</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7、run-和start-区别"><span class="nav-number">2.7.</span> <span class="nav-text">7、run()和start()区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8、Error的子类表示无法修复"><span class="nav-number">2.8.</span> <span class="nav-text">8、Error的子类表示无法修复</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10、线程停止执行（stop-、yield-）"><span class="nav-number">2.9.</span> <span class="nav-text">10、线程停止执行（stop()、yield()）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11、对称加密算法"><span class="nav-number">2.10.</span> <span class="nav-text">11、对称加密算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12、Java可以同时用abstract和final声明、volatile关键字不保证对变量操作的原子性"><span class="nav-number">2.11.</span> <span class="nav-text">12、Java可以同时用abstract和final声明、volatile关键字不保证对变量操作的原子性</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#为何使用volatile？"><span class="nav-number">2.11.0.1.</span> <span class="nav-text">为何使用volatile？</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#volatile特性"><span class="nav-number">2.11.0.2.</span> <span class="nav-text">volatile特性</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#注："><span class="nav-number">2.11.0.3.</span> <span class="nav-text">注：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#volatile的实现原理"><span class="nav-number">2.11.0.4.</span> <span class="nav-text">volatile的实现原理</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#正确使用volatile的场景"><span class="nav-number">2.11.0.5.</span> <span class="nav-text">正确使用volatile的场景</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#13、文件a的访问权限为rw-r–r–-增加所有用户的执行权限和同组用户的写权限（命令）"><span class="nav-number">2.12.</span> <span class="nav-text">13、文件a的访问权限为rw-r–r–,增加所有用户的执行权限和同组用户的写权限（命令）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#14、AtomicLong-Synchronized"><span class="nav-number">2.13.</span> <span class="nav-text">14、AtomicLong/Synchronized</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#并发编程"><span class="nav-number">2.13.1.</span> <span class="nav-text">并发编程</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#线程安全"><span class="nav-number">2.13.1.1.</span> <span class="nav-text">线程安全</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#synchronized"><span class="nav-number">2.13.1.2.</span> <span class="nav-text">synchronized</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#volatile-使变量在多个线程可见。"><span class="nav-number">2.13.1.3.</span> <span class="nav-text">volatile:使变量在多个线程可见。</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#volatile的作用"><span class="nav-number">2.13.1.4.</span> <span class="nav-text">volatile的作用</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#原子操作"><span class="nav-number">2.13.1.5.</span> <span class="nav-text">原子操作</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#15、堆和栈的区别"><span class="nav-number">2.14.</span> <span class="nav-text">15、堆和栈的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#JVM内存的划分"><span class="nav-number">2.14.0.1.</span> <span class="nav-text">JVM内存的划分</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#栈内存"><span class="nav-number">2.14.0.2.</span> <span class="nav-text">栈内存</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#堆内存"><span class="nav-number">2.14.0.3.</span> <span class="nav-text">堆内存</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#堆与栈的区别"><span class="nav-number">2.14.0.4.</span> <span class="nav-text">堆与栈的区别</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#商汤"><span class="nav-number">3.</span> <span class="nav-text">商汤</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-for嵌套循环的时间复杂度"><span class="nav-number">3.1.</span> <span class="nav-text">1.for嵌套循环的时间复杂度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-int的自增-自减操作不是线程安全的？"><span class="nav-number">3.2.</span> <span class="nav-text">2.int的自增/自减操作不是线程安全的？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-图G是一个包含n个顶点和k个独立子树的森林，则图G边数？"><span class="nav-number">3.3.</span> <span class="nav-text">3.图G是一个包含n个顶点和k个独立子树的森林，则图G边数？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-在网段200-10-11-144-27中，可分配地址中第四组八字节地址以十进制表示最大为多少"><span class="nav-number">3.4.</span> <span class="nav-text">4.在网段200.10.11.144/27中，可分配地址中第四组八字节地址以十进制表示最大为多少</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-雄患病概率30-，雌患病概率10-，雄雌数量各一半，随机抽一只，发现无患病，是雄的概率为？"><span class="nav-number">3.5.</span> <span class="nav-text">5.雄患病概率30%，雌患病概率10%，雄雌数量各一半，随机抽一只，发现无患病，是雄的概率为？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编程："><span class="nav-number">3.6.</span> <span class="nav-text">编程：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#巨人网络"><span class="nav-number">4.</span> <span class="nav-text">巨人网络</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-给定一个奇数，比如n-3，生成1到n平方的数，填入九宫格，使行横竖斜的和都相等"><span class="nav-number">4.1.</span> <span class="nav-text">1.给定一个奇数，比如n=3，生成1到n平方的数，填入九宫格，使行横竖斜的和都相等</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-画出QPS和响应时间随着服务请求数不断增多的趋势图（略）"><span class="nav-number">4.2.</span> <span class="nav-text">2.画出QPS和响应时间随着服务请求数不断增多的趋势图（略）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-400和500错误码的区别"><span class="nav-number">4.3.</span> <span class="nav-text">3.400和500错误码的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1xx（临时响应）-表示临时响应并需要请求者继续执行操作的状态代码。"><span class="nav-number">4.3.1.</span> <span class="nav-text">1xx（临时响应）: 表示临时响应并需要请求者继续执行操作的状态代码。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2xx-（成功）-表示成功处理了请求的状态代码。"><span class="nav-number">4.3.2.</span> <span class="nav-text">2xx （成功）: 表示成功处理了请求的状态代码。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3xx-（重定向）-表示要完成请求，需要进一步操作。-通常，这些状态代码用来重定向。"><span class="nav-number">4.3.3.</span> <span class="nav-text">3xx （重定向）: 表示要完成请求，需要进一步操作。 通常，这些状态代码用来重定向。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4xx（请求错误）-这些状态代码表示请求可能出错，妨碍了服务器的处理。"><span class="nav-number">4.3.4.</span> <span class="nav-text">4xx（请求错误）: 这些状态代码表示请求可能出错，妨碍了服务器的处理。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5xx（服务器错误）-这些状态代码表示服务器在尝试处理请求时发生内部错误。"><span class="nav-number">4.3.5.</span> <span class="nav-text">5xx（服务器错误）: 这些状态代码表示服务器在尝试处理请求时发生内部错误。</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-持续集成是什么，普遍用什么工具"><span class="nav-number">4.4.</span> <span class="nav-text">4.持续集成是什么，普遍用什么工具</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-unitest原理"><span class="nav-number">4.5.</span> <span class="nav-text">5.unitest原理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#python功能自动化测试框架"><span class="nav-number">4.5.1.</span> <span class="nav-text">python功能自动化测试框架</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-边层值分析"><span class="nav-number">4.6.</span> <span class="nav-text">6.边层值分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-78-78-123，多少进制"><span class="nav-number">4.7.</span> <span class="nav-text">7.78+78=123，多少进制</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -597,7 +774,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">全站共143.8k字</span>
+  <span class="post-count">全站共146.6k字</span>
 </div>
         
 
