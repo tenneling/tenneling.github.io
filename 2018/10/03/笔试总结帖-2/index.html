@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="Welcome">
 <meta property="og:description" content="搜狐笔试1、JOIN、FULL JOIN join on 取到的只有左右两边都匹配上的记录数，即总记录数=左右都匹配上的记录数。  full join on 取到的除了左右两边都匹配上的记录数，对于左边表与右边表没有匹配的，用null补上作为右边表匹配的数据；右边表与左边表没有匹配的，用null补上作为左边表匹配的数据。总记录数=左边未匹配记录数+右边未匹配记录数+左右都匹配上的记录数。  因此，">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-02T06:25:10.934Z">
+<meta property="og:updated_time" content="2018-10-02T10:27:38.052Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="笔试汇总帖-2">
 <meta name="twitter:description" content="搜狐笔试1、JOIN、FULL JOIN join on 取到的只有左右两边都匹配上的记录数，即总记录数=左右都匹配上的记录数。  full join on 取到的除了左右两边都匹配上的记录数，对于左边表与右边表没有匹配的，用null补上作为右边表匹配的数据；右边表与左边表没有匹配的，用null补上作为左边表匹配的数据。总记录数=左边未匹配记录数+右边未匹配记录数+左右都匹配上的记录数。  因此，">
@@ -317,6 +317,490 @@
 <li><p>因此，full join on 的记录数〉= join on的记录数</p>
 </li>
 </ol>
+<h4 id="2、默认的MySQL隔离级别（Repeatable-read）"><a href="#2、默认的MySQL隔离级别（Repeatable-read）" class="headerlink" title="2、默认的MySQL隔离级别（Repeatable read）"></a>2、默认的MySQL隔离级别（Repeatable read）</h4><p>REPEATABLE READ为默认事务隔离级别。</p>
+<ol>
+<li>READ UNCOMMITTED（读未提交数据）：允许事务读取未被其他事务提交的变更数据，会出现脏读、不可重复读和幻读问题。</li>
+<li>READ COMMITTED（读已提交数据）：只允许事务读取已经被其他事务提交的变更数据，可避免脏读，仍会出现不可重复读和幻读问题。</li>
+<li>REPEATABLE READ（可重复读）：确保事务可以多次从一个字段中读取相同的值，在此事务持续期间，禁止其他事务对此字段的更新，可以避免脏读和不可重复读，仍会出现幻读问题。</li>
+<li>SERIALIZABLE（序列化）：确保事务可以从一个表中读取相同的行，在这个事务持续期间，禁止其他事务对该表执行插入、更新和删除操作，可避免所有并发问题，但性能非常低。</li>
+</ol>
+<h4 id="3、适合做数据库索引的数据结构（哈夫曼树）"><a href="#3、适合做数据库索引的数据结构（哈夫曼树）" class="headerlink" title="3、适合做数据库索引的数据结构（哈夫曼树）"></a>3、适合做数据库索引的数据结构（哈夫曼树）</h4><p>目前大部分数据库系统及文件系统都采用B-Tree或其变种B+Tree作为索引结构</p>
+<h4 id="4、设置背景颜色"><a href="#4、设置背景颜色" class="headerlink" title="4、设置背景颜色"></a>4、设置背景颜色</h4><p>给div元素设置背景色可以通过以下几种方式实现：</p>
+<ol>
+<li>在div元素的style属性上设置background-color，此种只能一个一个的div设置，不能批量</li>
+<li>使用css设置div元素的background-color，此种可以按ID设置一个div，也可以按class设置指定的多个div，也可以直接使用dom的div批量设置整个页面的div</li>
+<li>使用Jquery设置div元素的background-color，同样可以按ID、class、div设置</li>
+</ol>
+<h4 id="5、启动类加载器由JVM实现"><a href="#5、启动类加载器由JVM实现" class="headerlink" title="5、启动类加载器由JVM实现"></a>5、启动类加载器由JVM实现</h4><p>不属于Java类/不同类加载器加载的同一个类在JVM属于不同的类</p>
+<ol>
+<li>“命名空间”，是指jvm为每个类加载器维护的一个“表”,这个表记录了所有以此类加载器为“初始类加载器”（而不是定义类加载器，所以一个类可以存在于很多的命名空间中）加载的类的列表</li>
+<li>一个类，由不同的类加载器实例加载的话，会在方法区产生两个不同的类，彼此不可见，并且在堆中生成不同Class实例。</li>
+</ol>
+<h4 id="6、Java的栈内存不是线程共享的"><a href="#6、Java的栈内存不是线程共享的" class="headerlink" title="6、Java的栈内存不是线程共享的"></a>6、Java的栈内存不是线程共享的</h4><p>在多线程环境下，每个线程拥有一个栈和一个程序计数器。栈和程序计数器用来保存线程的执行历史和线程的执行状态，是线程私有的资源。其他的资源（比如堆、地址空间、全局变量）是由同一个进程内的多个线程共享</p>
+<h4 id="7、打印文本文件file-txt中除掉“1”开头的行和空行的信息"><a href="#7、打印文本文件file-txt中除掉“1”开头的行和空行的信息" class="headerlink" title="7、打印文本文件file.txt中除掉“1”开头的行和空行的信息"></a>7、打印文本文件file.txt中除掉“1”开头的行和空行的信息</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#more /etc/file.txt | grep ^ [^1]</span><br></pre></td></tr></table></figure>
+<ol>
+<li>使用grep -v “^#”  来去掉注释行，其中：-v  就是取相反的   ^# 表示以#开头的行，可以使用“&gt;”来重写配置文件</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">eg. grep -v &quot;^#&quot; /etc/vsftpd/vsftpd.conf</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>有时也会连同空行一起去掉，使用管道符来完成（^$表示空行  ）</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">eg. grep -v &quot;^#&quot;  httpd.conf | grep -v &quot;^$&quot;  &gt;&gt; vsftpd.conf</span><br></pre></td></tr></table></figure>
+<p>上面用了 2次 grep 过滤命令 ，也就是把空行和注解行过滤掉，再把剩下的内容追加保存为原来的配置文件 vsftpd.conf  这个时候就文件里的内容就没有注解行和空行了。</p>
+<ol start="3">
+<li>备注：在更改配置文件时，建议先对配置文件做一下备份，对配置文件不熟悉的建议不要用这种方法，配置文件中的注解行还是有一定的帮助的。</li>
+<li>shell储备知识：<ol>
+<li>^一行的开始 ^d以开头的  ^..1 第三个为1的字符   ^字符要放在匹配的字符前面 </li>
+<li>$一行的末尾 ^$ 表示空行 ^.$匹配一行一个字符的  $字符要放在匹配的字符后面 </li>
+<li>*匹配任意个字符  包括0个字符</li>
+<li>‘.’表示单个字符 </li>
+<li>\可以屏蔽一个特殊的字符 *.pas 这里的<em> 是特殊字符，这样就表示 </em>.pas这个文件 </li>
+<li>逗号可以分割不同的匹配字符如[S,s]表示S或者s都可以 </li>
+<li>-表示一个范围，[1-9],[a-z],[A-Z]  [1-9 A-Z a-z]任意的字符或者数字 <ol>
+<li>A{2}B 表示A出现了2次  AAB </li>
+<li>A{4,}B 表示A至少出现4次 AAAAB，AAAAAB </li>
+<li>A{2,4}B 表示A出现2－4次  AAB AAAB AAAAB </li>
+<li>[0-9]{3}.[0-9]{3}.[0-9]{3}.[0-9]{3}  0-999.0-999.0-999.0-999</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h4 id="8、Spring为简化Java开发采用策略"><a href="#8、Spring为简化Java开发采用策略" class="headerlink" title="8、Spring为简化Java开发采用策略"></a>8、Spring为简化Java开发采用策略</h4><p>为了降低Java开发的复杂性，Spring采取了以下关键策略：</p>
+<ol>
+<li>基于POJO的轻量级和最小侵入性编程；</li>
+<li>通过依赖注入和面向接口实现松耦合；</li>
+<li>基于切面和惯例进行声明式编程；</li>
+<li>通过切面和模板减少样板式代码。</li>
+</ol>
+<h4 id="9、Spring的切面是在目标对象生命周期的哪个阶段植入的"><a href="#9、Spring的切面是在目标对象生命周期的哪个阶段植入的" class="headerlink" title="9、Spring的切面是在目标对象生命周期的哪个阶段植入的"></a>9、Spring的切面是在目标对象生命周期的哪个阶段植入的</h4><blockquote>
+<p>织入是把切面应用到目标对象并创建新的代理对象的过程。</p>
+</blockquote>
+<p>切面在指定的连接点被织入到目标对象中。在目标对象的生命周期里有多个点可以进行织入：</p>
+<ol>
+<li>编译期：切面在目标类编译时被织入，这种方式需要特殊的编译器。AspectJ的织入编译器就是以这种方式织入切面的。</li>
+<li>类加载期：切面在目标类加载到jvm时被织入。这种方式 需要特殊的类加载器（ClassLoader），它可以在目标类被引入应用之前增强该目标类的字节码。AspectJ5的加载时织入（load-time weaving，LTW）就支持以这种方式织入切面。</li>
+<li>运行期：切面在应用运行的某个时刻被织入。一般情况下，在织入切面时，AOP容器会为目标对象动态的创建一个代理对象。Spring AOP就是以这种方式织入切面的。</li>
+</ol>
+<h4 id="10、DTD-XSD"><a href="#10、DTD-XSD" class="headerlink" title="10、DTD/XSD"></a>10、DTD/XSD</h4><h5 id="DTD-Documnet-Type-Definition-，文档类型定义"><a href="#DTD-Documnet-Type-Definition-，文档类型定义" class="headerlink" title="DTD(Documnet Type Definition)，文档类型定义"></a>DTD(Documnet Type Definition)，文档类型定义</h5><p>一种XML约束模式语言，XML文件的验证机制,属于XML文件组成的一部分。</p>
+<ol>
+<li>DTD 是一种保证XML文档格式正确的有效方法，可以通过比较XML文档和DTD文件来看文档是否符合规范，元素和标签使用是否正确。 </li>
+<li>一个 DTD文档包含：元素的定义规则，元素间关系的定义规则，元素可使用的属性，可使用的实体或符号规则。</li>
+<li>DTD 是使用非 XML 语法编写的。</li>
+<li>DTD 不可扩展,不支持命名空间,只提供非常有限的数据类型 .</li>
+</ol>
+<h5 id="XSD-XML-Schemas-Definition-，描述了XML文档的结构。"><a href="#XSD-XML-Schemas-Definition-，描述了XML文档的结构。" class="headerlink" title="XSD(XML Schemas Definition)，描述了XML文档的结构。"></a>XSD(XML Schemas Definition)，描述了XML文档的结构。</h5><ol>
+<li>可用一个指定的XML Schema来验证某个XML文档，以检查该XML文档是否符合其要求。文档设计者可以通过XML Schema指定一个XML文档所允许的结构和内容，并可据此检查一个XML文档是否是有效的。</li>
+<li>XML Schema本身是一个XML文档，它符合XML语法结构。可以用通用的XML解析器解析它。</li>
+<li>一个XML Schema包含：文档中出现的元素、文档中出现的属性、子元素、子元素的数量、子元素的顺序、元素是否为空、元素和属性的数据类型、元素或属性的默认 和固定值。</li>
+</ol>
+<h5 id="XSD是DTD替代者的原因"><a href="#XSD是DTD替代者的原因" class="headerlink" title="XSD是DTD替代者的原因"></a>XSD是DTD替代者的原因</h5><ol>
+<li>据将来的条件可扩展</li>
+<li>XSD比DTD丰富和有用</li>
+<li>用XML书写</li>
+<li>支持数据类型</li>
+<li>支持命名空间。</li>
+</ol>
+<h3 id="途牛笔试"><a href="#途牛笔试" class="headerlink" title="途牛笔试"></a>途牛笔试</h3><h4 id="1、运算符优先级"><a href="#1、运算符优先级" class="headerlink" title="1、运算符优先级"></a>1、运算符优先级</h4><p>！ &gt; 算术运算符 &gt; 关系运算符 &gt; &amp;&amp; &gt; || &gt; 赋值运算符</p>
+<h4 id="2、不属于jQuery的筛选（自动）：自动-过滤-查找-串联"><a href="#2、不属于jQuery的筛选（自动）：自动-过滤-查找-串联" class="headerlink" title="2、不属于jQuery的筛选（自动）：自动/过滤/查找/串联"></a>2、不属于jQuery的筛选（自动）：自动/过滤/查找/串联</h4><ol>
+<li>属性筛选</li>
+<li>内容筛选</li>
+<li>层级筛选</li>
+<li>方法筛选</li>
+</ol>
+<h4 id="3、Thread方法（getPriority）"><a href="#3、Thread方法（getPriority）" class="headerlink" title="3、Thread方法（getPriority）"></a>3、Thread方法（getPriority）</h4><h5 id="Thread类构造方法："><a href="#Thread类构造方法：" class="headerlink" title="Thread类构造方法："></a>Thread类构造方法：</h5><ol>
+<li>Thread（）；</li>
+<li>Thread（String name）；</li>
+<li>Thread（Runable r）；</li>
+<li>Thread（Runable r, String name）；</li>
+</ol>
+<h5 id="Thread类常用方法："><a href="#Thread类常用方法：" class="headerlink" title="Thread类常用方法："></a>Thread类常用方法：</h5><ol>
+<li>start();//启动线程</li>
+<li>getId();//获得线程ID</li>
+<li>getName();//获得线程名字</li>
+<li>getPriority();//获得优先权</li>
+<li>isAlive();//判断线程是否活动</li>
+<li>isDaemon();//判断是否守护线程</li>
+<li>getState();//获得线程状态</li>
+<li>sleep(long mill);//休眠线程</li>
+<li>join();//等待线程结束</li>
+<li>yield();//放弃cpu使用权利</li>
+<li>interrupt();//中断线程</li>
+<li>currentThread();//获得正在执行的线程对象</li>
+</ol>
+<h4 id="4、null是object-string（string）"><a href="#4、null是object-string（string）" class="headerlink" title="4、null是object/string（string）"></a>4、null是object/string（string）</h4><p>object不能为null</p>
+<h4 id="5、IPV4和IPV6地址长度（32-128）"><a href="#5、IPV4和IPV6地址长度（32-128）" class="headerlink" title="5、IPV4和IPV6地址长度（32,128）"></a>5、IPV4和IPV6地址长度（32,128）</h4><ol>
+<li>IPv4地址的二进制形式长度为32</li>
+<li>IPv6地址的二进制形式长度为128</li>
+</ol>
+<h4 id="6、支持HTML5的浏览器（Safari、Chrome、Firefox、Opera）"><a href="#6、支持HTML5的浏览器（Safari、Chrome、Firefox、Opera）" class="headerlink" title="6、支持HTML5的浏览器（Safari、Chrome、Firefox、Opera）"></a>6、支持HTML5的浏览器（Safari、Chrome、Firefox、Opera）</h4><p>主流浏览器对html5的支持情况 </p>
+<ol>
+<li>Chrome，Firefox：自动升级，支持最好。</li>
+<li>Safari，Opera</li>
+<li>IE9及其更高版</li>
+<li>Firefox（火狐浏览器）</li>
+<li>Safari</li>
+<li>Opera</li>
+<li>傲游浏览器（Maxthon）</li>
+<li>360浏览器</li>
+<li>搜狗浏览器</li>
+<li>QQ浏览器</li>
+<li>猎豹浏览器等</li>
+</ol>
+<h4 id="7、浏览器的存储技术（cookie、localStorage）"><a href="#7、浏览器的存储技术（cookie、localStorage）" class="headerlink" title="7、浏览器的存储技术（cookie、localStorage）"></a>7、浏览器的存储技术（cookie、localStorage）</h4><h5 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h5><h6 id="cookie是什么"><a href="#cookie是什么" class="headerlink" title="cookie是什么"></a>cookie是什么</h6><p>cookie是指存储在用户本地终端上的数据，同时它是与具体的web页面或者站点相关的。cookie数据会自动在web浏览器和web服务器之间传输，也就是说HTTP请求发送时，会把保存在该请求域名下的所有cookie值发送给web服务器，因此服务器端脚本是可以读、写存储在客户端的cookie的操作。</p>
+<h6 id="cookie的有效期"><a href="#cookie的有效期" class="headerlink" title="cookie的有效期"></a>cookie的有效期</h6><p>cookie默认情况下的有效期是很短暂的，一旦用户关闭浏览器，cookie保存的数据就会丢失。如果想要延长cookie的有效期，可以通过设置HTTP头信息中的cache-control属性的max-age值，或者修改HTTP头信息中的expires属性的值来延长有效期。</p>
+<h6 id="cookie的作用域"><a href="#cookie的作用域" class="headerlink" title="cookie的作用域"></a>cookie的作用域</h6><p>它是通过文档源和文档路径来确定的。该作用域通过cookie的path和domain属性也是可配置的。默认情况下，cookie和创建它的web页面有关，并对该页面以及和该页面同目录或者子目录的其他页面可见。有时候，你可能希望让整个网站都能够使用cookie的值，而不管是哪个页面创建它。要满足这样的需求可以设置cookie的路径(设置cookie的path属性)。cookie的作用域默认由文档源限制。但是，有的大型网站想要子域之间能够互相共享cookie。</p>
+<h6 id="cookie的数目和大小的限制"><a href="#cookie的数目和大小的限制" class="headerlink" title="cookie的数目和大小的限制"></a>cookie的数目和大小的限制</h6><p>每个web服务器(域名)保存的cookie数不能超过50个，每个cookie保存的数据不能超过4KB，如果超过了4KB（IE6大约只能存储2K），服务器会处理不了。</p>
+<h6 id="cookie的优点"><a href="#cookie的优点" class="headerlink" title="cookie的优点"></a>cookie的优点</h6><p>能用于和服务器端通信；当cookie快要过期时，可以重新设置而不是删除。</p>
+<h6 id="cookie的缺点"><a href="#cookie的缺点" class="headerlink" title="cookie的缺点"></a>cookie的缺点</h6><p>它会随着http头信息一起发送，增加了网络流量（文档传输的负载）；它只能储存少量的数据；它只能储存字符串；有潜在的安全问题。</p>
+<p><strong>另外，自从有了Web Storage API(Local and Session Storage)，cookie就不被推荐用于存储数据了</strong></p>
+<h5 id="2、LocalStorage"><a href="#2、LocalStorage" class="headerlink" title="2、LocalStorage"></a>2、LocalStorage</h5><h6 id="localStorage是什么"><a href="#localStorage是什么" class="headerlink" title="localStorage是什么"></a>localStorage是什么</h6><p>在HTML5中，新加入了一个localStorage特性，这个特性主要是用来作为本地存储来使用的，解决了cookie存储空间不足的问题(cookie中每条cookie的存储空间为4k)，localStorage中一般浏览器支持的是5M大小，这个在不同的浏览器中localStorage会有所不同。</p>
+<h6 id="localStorage的优点"><a href="#localStorage的优点" class="headerlink" title="localStorage的优点"></a>localStorage的优点</h6><ol>
+<li>localStorage拓展了cookie的4K限制；</li>
+<li>localStorage会可以将第一次请求的数据直接存储到本地，这个相当于一个5M大小的针对于前端页面的数据库，相比于cookie可以节约带宽，但是这个却是只有在高版本的浏览器中才支持的；</li>
+<li>localStorage 方法存储的数据没有时间限制。第二天、第二周或下一年之后，数据依然可用。</li>
+</ol>
+<h6 id="localStorage的缺点："><a href="#localStorage的缺点：" class="headerlink" title="localStorage的缺点："></a>localStorage的缺点：</h6><ol>
+<li>浏览器的大小不统一，并且在IE8以上的IE版本才支持localStorage这个属性；</li>
+<li>目前所有的浏览器中都会把localStorage的值类型限定为string类型，这个在对我们日常比较常见的JSON对象类型需要一些转换；</li>
+<li>localStorage在浏览器的隐私模式下面是不可读取的；</li>
+<li>localStorage本质上是对字符串的读取，如果存储内容多的话会消耗内存空间，会导致页面变卡；</li>
+<li>localStorage不能被爬虫抓取到。</li>
+</ol>
+<h5 id="3、SessionStorage"><a href="#3、SessionStorage" class="headerlink" title="3、SessionStorage"></a>3、SessionStorage</h5><p>sessionStorage与localStorage的唯一一点区别就是localStorage属于永久性存储，而sessionStorage属于当会话结束的时候，sessionStorage中的键值对就会被清空。</p>
+<h5 id="4、UserData、GlobalStorage、Google-Gear"><a href="#4、UserData、GlobalStorage、Google-Gear" class="headerlink" title="4、UserData、GlobalStorage、Google Gear"></a>4、UserData、GlobalStorage、Google Gear</h5><p>这三种的使用都有一定的局限性</p>
+<ol>
+<li>userData是IE浏览器专属，它的容量可以达到640K，这种方案可靠，不需要安装额外插件，只不过它仅在IE下有效</li>
+<li>globalStorage适用于Firefox 2+的浏览器，类似于IE的userData</li>
+<li>google gear是谷歌开发出的一种本地存储技术，需要安装Gear组件。</li>
+</ol>
+<h5 id="5、Flash-ShareObject"><a href="#5、Flash-ShareObject" class="headerlink" title="5、Flash ShareObject"></a>5、Flash ShareObject</h5><p>这种方式能能解决上面提到的cookie存储的两个弊端，而且能够跨浏览器，应该说是目前最好的本地存储方案。不过，需要在页面中插入一个Flash，当浏览器没有安装Flash控件时就不能用了。所幸的是，没有安装Flash的用户极少。</p>
+<h5 id="cookie-localStorage和sessionStorage的异同："><a href="#cookie-localStorage和sessionStorage的异同：" class="headerlink" title="cookie,localStorage和sessionStorage的异同："></a>cookie,localStorage和sessionStorage的异同：</h5><p><strong>共同点：都是保存在浏览器端，且同源的。</strong><br>区别：</p>
+<ol>
+<li>cookie数据始终在同源的http请求中携带（即使不需要），即cookie在浏览器和服务器间来回传递；而sessionStorage和localStorage不会自动把数据发给服务器，仅在本地保存；</li>
+<li>cookie数据有路径（path）的概念，可以限制cookie只属于某个路径下；</li>
+<li>存储大小限制也不同，cookie数据不能超过4k，同时因为每次http请求都会携带cookie，所以cookie只适合保存很小的数据，如会话标识；sessionStorage和localStorage 虽然也有存储大小的限制，但比cookie大得多，可以达到5M或更大；</li>
+<li>数据有效期不同，sessionStorage：仅在当前浏览器窗口关闭前有效，自然也就不可能持久保持；localStorage：始终有效，窗口或浏览器关闭也一直保存，因此用作持久数据；cookie只在设置的cookie过期时间之前一直有效，即使窗口或浏览器关闭；</li>
+<li>作用域不同，sessionStorage不在不同的浏览器窗口中共享，即使是同一个页面；localStorage 在所有同源窗口中都是共享的；cookie也是在所有同源窗口中都是共享的；</li>
+<li>Web Storage 支持事件通知机制，可以将数据更新的通知发送给监听者；Web Storage 的 api 接口使用更方便。</li>
+</ol>
+<h4 id="8、A关闭与B的TCP连接"><a href="#8、A关闭与B的TCP连接" class="headerlink" title="8、A关闭与B的TCP连接"></a>8、A关闭与B的TCP连接</h4><h6 id="所经历的状态（TIME-WAIT、FIN-WAIT-1、FIN-WAIT-2）"><a href="#所经历的状态（TIME-WAIT、FIN-WAIT-1、FIN-WAIT-2）" class="headerlink" title="所经历的状态（TIME_WAIT、FIN_WAIT_1、FIN_WAIT_2）"></a>所经历的状态（TIME_WAIT、FIN_WAIT_1、FIN_WAIT_2）</h6><ol>
+<li>在服务端输入Ctrl+C终端服务端程序，再次输入netstat–ant命令，看到服务端进入了FIN_WAIT2状态，而客户端进入了CLOSE_WAIT状态。</li>
+<li>FIN_WAIT2状态就是服务端在主动发起断开的连接请求时，发送FIN并收到客户端的ACK进入的等待客户端FIN的状态；而与FIN_WAIT2相对的FIN_WAIT1就是服务端发送完成FIN后还未接收到客户端返回的ACK时进入的状态，这个状态时长很短，在我本机上无法捕捉；这个CLOSE_WAIT状态是客户端接受到服务端的FIN并发送ACK后，等待用户手动关闭套接字的状态。</li>
+<li>此时如果关闭客户端的套接字，直接在客户端输入Ctrl+C，服务端就会进入我们熟悉的TIME_WAIT状态：客户端也在断开连接后会进入Time-wait状态</li>
+</ol>
+<h6 id="从主机A主动发起断开连接请求的四次握手过程"><a href="#从主机A主动发起断开连接请求的四次握手过程" class="headerlink" title="从主机A主动发起断开连接请求的四次握手过程:"></a>从主机A主动发起断开连接请求的四次握手过程:</h6><ol>
+<li>第一次握手：主机A发送FIN数据包，SEQ设置为5000，表示主机B在接收到数据后需要返回一个ACK为5001的数据包，否则主机A重新发送该数据包。</li>
+<li>第二次握手：主机B发送ACK为5001的数据包表示成功接收主机A断开连接请求，同时SEQ为6000，但是这是断开连接的过程，主机B不会期望主机A返回ACK为6001的数据包。</li>
+<li>第三次握手：主机B准备好了断开连接工作后，向主机A发送FIN数据包，表示请求断开与A的连接，同时SEQ设置为6001，ACK设置为5001。</li>
+<li>第四次握手：主机A接收到主机B请求断开连接的数据包之后返回允许断开连接的数据包，SEQ设置为5001，同时ACK设置为6002表示已经成功接收主机B发送的数据包。</li>
+</ol>
+<h4 id="9、OLAP多维分析操作"><a href="#9、OLAP多维分析操作" class="headerlink" title="9、OLAP多维分析操作"></a>9、OLAP多维分析操作</h4><p>OLAP的基本多维分析操作有钻取、切片和切块、以及旋转等。</p>
+<ol>
+<li>钻取：是改变维的层次，变换分析的粒度。它包括向下钻取（Drill-down）和向上钻取（Drill-up）/上卷(Roll-up)。Drill-up是在某一维上将低层次的细节数据概括到高层次的汇总数据，或者减少维数；而Drill-down则相反，它从汇总数据深入到细节数据进行观察或增加新维。</li>
+<li>切片和切块：是在一部分维上选定值后，关心度量数据在剩余维上的分布。如果剩余的维只有两个，则是切片；如果有三个或以上，则是切块。</li>
+<li>旋转：是变换维的方向，即在表格中重新安排维的放置（例如行列互换）。</li>
+</ol>
+<h4 id="10、对网站的文件和资源进行优化"><a href="#10、对网站的文件和资源进行优化" class="headerlink" title="10、对网站的文件和资源进行优化"></a>10、对网站的文件和资源进行优化</h4><p>（文件合并、使用CDN托管、缓存、文件拆分）</p>
+<ol>
+<li>文件合并（目的是减少http请求）<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;减少HTTP请求的方案主要有合并JavaScript和CSS文件、CSS Sprites、图像映射 （Image Map）和使用Data URI来编码图片。目前大部分网页中的JavaScript和CSS文件数量和开发时一致，少量的网页会根据实际情况采取本地合 并，这些合并中相当多的是有选择地手动完成，每次新的合并都需要重新在本地完成并上传到服务器，比较的随意和繁琐，同样文件的压缩也有类似的情况。而利用 服务端的合并和压缩，可以按照开发的逻辑尽可能让文件的颗粒度变小，利用网页中URL的规则来自动实现文件的合并和压缩，这会相当的灵活和高效。</li>
+<li>文件压缩：目的是直接减少文件下载的体积</li>
+<li>使用 CDN （内容分发网络）来托管资源：<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;基本思路是尽可能避开互联网上有可能影响数据传输速度和稳定性的瓶颈和环节，使内容传输的更快、更稳定。通过在网络各处放置节点服务器所构成的在现有的互联网基础之上的一层智能虚拟网络，CDN系统能够实时地根据网络流量和各节点的连接、负载状况以及到用户的距离和响应时间等综合信息将用户的请求重新导向离用户最近的服务节点上。</li>
+<li>缓存的使用（并且多个域名来提供缓存）</li>
+<li>GZIP 压缩JS 和 CSS 文件</li>
+</ol>
+<h4 id="11、HTTP1-1版本支持的请求方法（GET-OPTION-DELETE-TRACE）"><a href="#11、HTTP1-1版本支持的请求方法（GET-OPTION-DELETE-TRACE）" class="headerlink" title="11、HTTP1.1版本支持的请求方法（GET/OPTION/DELETE/TRACE）"></a>11、HTTP1.1版本支持的请求方法（GET/OPTION/DELETE/TRACE）</h4><ol>
+<li>POST<br>向指定资源提交数据进行处理请求（例如提交表单或者上传文件）。数据被包含在请求体中。POST请求可能会导致新的资源的建立和/或已有资源的修改。</li>
+<li>GET<br>向特定的资源发出请求。注意：GET方法不应当被用于产生“副作用”的操作中，例如在Web Application中。其中一个原因是GET可能会被网络蜘蛛等随意访问。</li>
+<li>PUT<br>向指定资源位置上传其最新内容<br>4.DELETE<br>请求服务器删除Request-URI所标识的资源。<br>5.HEAD<br>向服务器索要与GET请求相一致的响应，只不过响应体将不会被返回。这一方法可以在不必传输整个响应内容的情况下，就可以获取包含在响应消息头中的元信息。<br>6.OPTIONS<br>返回服务器针对特定资源所支持的HTTP请求方法。也可以利用向Web服务器发送’*’的请求来测试服务器的功能性。<br>7.TRACE<br>回显服务器收到的请求，主要用于测试或诊断。<br>8.CONTENT<br>HTTP/1.1协议中预留给能够将连接改为管道方式的代理服务器。</li>
+</ol>
+<h4 id="12、类方法调用另一个类的私有方法（通过反射）"><a href="#12、类方法调用另一个类的私有方法（通过反射）" class="headerlink" title="12、类方法调用另一个类的私有方法（通过反射）"></a>12、类方法调用另一个类的私有方法（通过反射）</h4><p>实例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">import java.lang.reflect.Field;</span><br><span class="line">import java.lang.reflect.Method;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 通过反射调用类的private方法以及属性</span><br><span class="line"> * */</span><br><span class="line">public class ReflectByInvokePrivate &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line">* @param args</span><br><span class="line">*/</span><br><span class="line">public static void main(String[] args) throws Exception &#123;</span><br><span class="line">PrivateDemo pDemo=new PrivateDemo();</span><br><span class="line">Class&lt;?&gt; classType=pDemo.getClass();//创建该对象的class对象</span><br><span class="line">Method m=classType.getDeclaredMethod(&quot;sayHello&quot;, new Class[]&#123;String.class&#125;);//通过class对象获取需要调用的方法</span><br><span class="line">m.setAccessible(true);//压制java检查机制  使得private可访问   </span><br><span class="line">String result= (String)m.invoke(pDemo, new Object[]&#123;&quot;dawson&quot;&#125;);</span><br><span class="line"></span><br><span class="line">System.out.println(result);</span><br><span class="line"></span><br><span class="line">System.out.println(&quot;-------------------华丽的分割线----------------------&quot;);</span><br><span class="line">Field feild=classType.getDeclaredField(&quot;userName&quot;);//获取对应的属性</span><br><span class="line">feild.setAccessible(true);//压制java检查</span><br><span class="line">feild.set(pDemo, &quot;李四&quot;);//设置该属性的值</span><br><span class="line"></span><br><span class="line">Method m1=classType.getDeclaredMethod(&quot;getUserName&quot;, new Class[]&#123;&#125;);</span><br><span class="line">m1.setAccessible(true);</span><br><span class="line">result= (String)m1.invoke(pDemo, new Object[]&#123;&#125;);</span><br><span class="line"></span><br><span class="line">System.out.println(result);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class PrivateDemo&#123;</span><br><span class="line"></span><br><span class="line">private String userName=&quot;张三&quot;;</span><br><span class="line"></span><br><span class="line">private String sayHello(String name)&#123;</span><br><span class="line">return &quot;Hello &quot;+name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public String getUserName()&#123;</span><br><span class="line">return userName;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="13、重载的面向对象特性"><a href="#13、重载的面向对象特性" class="headerlink" title="13、重载的面向对象特性"></a>13、重载的面向对象特性</h4><p>多态：多态是指允许不同类的对象对同一消息作出响应。多态包括参数化多态和包含多态。多态语言具有灵活、抽象、行为共享、代码共享等优势，很好地解决了应用程序函数的同名问题。 </p>
+<ol>
+<li>参数多态（parametric），采用参数化模板，通过给出不同的参数列表，使得一个结构有多种类型。</li>
+<li>包含多态（InclusionPolymorphism）：同样的操作可用于一个类型及其子类型。包含多态一般需要进行运行时的类型检查。</li>
+</ol>
+<h4 id="14、firebug自动完成上一个属性的快捷键（Tab-调试JS）"><a href="#14、firebug自动完成上一个属性的快捷键（Tab-调试JS）" class="headerlink" title="14、firebug自动完成上一个属性的快捷键（Tab/调试JS）"></a>14、firebug自动完成上一个属性的快捷键（Tab/调试JS）</h4><h5 id="Firebug快捷键"><a href="#Firebug快捷键" class="headerlink" title="Firebug快捷键"></a>Firebug快捷键</h5><ol>
+<li>打开Firebug窗口:F12</li>
+<li>关闭Firebug窗口:F12</li>
+<li>在新窗口打开Firebug:Ctrl+F12</li>
+<li>往前切换标签:Ctrl+`</li>
+<li>将光标移到命令行:Ctrl+Shift+L</li>
+<li>将光标移到搜索框:Ctrl+Shift+K</li>
+<li>进入Inspect模式:Ctrl+Shift+C</li>
+<li>进行JavaScript性能测试:Ctrl+Shift+P</li>
+<li>重新执行最后一条命令行命令:Ctrl+Shift+E</li>
+</ol>
+<h5 id="HTML标签"><a href="#HTML标签" class="headerlink" title="HTML标签"></a>HTML标签</h5><ol>
+<li>编辑属性:单击属性名或值</li>
+<li>编辑文本节点:单击文本</li>
+<li>编辑Element:双击Element标记</li>
+<li>移到路径里的下一个节点:Ctrl+.</li>
+<li>移到路径里的上一个节点:Ctrl+,</li>
+</ol>
+<h5 id="HTML编辑"><a href="#HTML编辑" class="headerlink" title="HTML编辑"></a>HTML编辑</h5><ol>
+<li>完成编辑:Return</li>
+<li>取消编辑:Esc</li>
+<li>移到下一个区域:Tab</li>
+<li>移到上一个区域:Shift+Tab</li>
+</ol>
+<h5 id="HTML-Inspect-模式"><a href="#HTML-Inspect-模式" class="headerlink" title="HTML Inspect 模式"></a>HTML Inspect 模式</h5><ol>
+<li>取消Inspect:Esc</li>
+<li>Inspect 父节点:Ctrl+Up</li>
+<li>Inspect 子节点:Ctrl+Down</li>
+</ol>
+<h5 id="Script标签"><a href="#Script标签" class="headerlink" title="Script标签"></a>Script标签</h5><ol>
+<li>继续运行:F5 或 Ctrl+/</li>
+<li>单步执行（Step Over）:F10 或 Ctrl+’</li>
+<li>单步执行（Step Into）:F11 或 Ctrl+;</li>
+<li>退出函数（Step Out）:Shift+F11或 Ctrl+Shift+;</li>
+<li>设置断点:单击行号</li>
+<li>禁止断点:在行号上Shift+Click</li>
+<li>编辑断点条件:在行号上Right-Click</li>
+<li>运行到当前行:在行号上Middle-Click或 在行号上Ctrl+Click</li>
+<li>移到堆栈中的下一个函数:Ctrl+.</li>
+<li>移到堆栈中的上一个函数:Ctrl+,</li>
+<li>将焦点切换到Scripts菜单:Ctrl+Space</li>
+<li>将焦点切换到Watch编辑:Ctrl+Shift+N</li>
+</ol>
+<h5 id="DOM-标签"><a href="#DOM-标签" class="headerlink" title="DOM 标签"></a>DOM 标签</h5><ol>
+<li>编辑属性:双击在空白</li>
+<li>移到路径中下一个对象:Ctrl+.</li>
+<li>移到路径中上一个对象:Ctrl+,</li>
+</ol>
+<h5 id="DOM-和Watch编辑"><a href="#DOM-和Watch编辑" class="headerlink" title="DOM 和Watch编辑"></a>DOM 和Watch编辑</h5><ol>
+<li>结束编辑:Return</li>
+<li>取消编辑:Esc</li>
+<li>自动完成下一个属性:Tab</li>
+<li>自动完成上一个属性:Shift+Tab</li>
+</ol>
+<h5 id="CSS标签"><a href="#CSS标签" class="headerlink" title="CSS标签"></a>CSS标签</h5><ol>
+<li>编辑属性:单击属性</li>
+<li>插入新属性:双击空白处</li>
+<li>移动焦点到Style Sheets菜单:Ctrl+Space</li>
+</ol>
+<h5 id="CSS编辑"><a href="#CSS编辑" class="headerlink" title="CSS编辑"></a>CSS编辑</h5><ol>
+<li>完成编辑:Return</li>
+<li>取消编辑:Esc</li>
+<li>移到下一个区域:Tab</li>
+<li>移到上一个区域:Shift+Tab</li>
+<li>按步长1增加数值:Up</li>
+<li>按步长1减少数值:Down</li>
+<li>按步长10增加数值:Page Up</li>
+<li>按步长10减少数值:Page Down</li>
+<li>自动完成下一个关键字:Up</li>
+<li>自动完成上一个关键字:Down</li>
+</ol>
+<h5 id="Layout标签"><a href="#Layout标签" class="headerlink" title="Layout标签"></a>Layout标签</h5><ol>
+<li>编辑值:单击值</li>
+</ol>
+<h5 id="Layout编辑"><a href="#Layout编辑" class="headerlink" title="Layout编辑"></a>Layout编辑</h5><ol>
+<li>完成编辑:Return</li>
+<li>取消编辑:Esc</li>
+<li>移到下一个区域:Tab</li>
+<li>移到上一个区域:Shift+Tab</li>
+<li>按步长1增加数值:Up</li>
+<li>按步长1减少数值:Down</li>
+<li>按步长10增加数值:Page Up</li>
+<li>按步长10减少数值:Page Down</li>
+<li>自动完成下一个关键字:Up</li>
+<li>自动完成上一个关键字:Down</li>
+</ol>
+<h5 id="命令行-小"><a href="#命令行-小" class="headerlink" title="命令行 (小)"></a>命令行 (小)</h5><ol>
+<li>自动完成上一个属性:Tab</li>
+<li>自动完成下一个属性:Shift+Tab</li>
+<li>执行:Return</li>
+<li>Inspect结果:Shift+Return</li>
+<li>打开结果鼠标右键菜单:Ctrl+Return</li>
+<li>执行:Ctrl+Return</li>
+</ol>
+<h4 id="15、-1-0-127的补码"><a href="#15、-1-0-127的补码" class="headerlink" title="15、-1,0,127的补码"></a>15、-1,0,127的补码</h4><ol>
+<li>-1的补码 ：11111111</li>
+<li>0的补码 : 00000000</li>
+<li>+127的补码：01111111</li>
+</ol>
+<h4 id="16、高内聚低耦合"><a href="#16、高内聚低耦合" class="headerlink" title="16、高内聚低耦合"></a>16、高内聚低耦合</h4><ol>
+<li>高内聚指一个软件模块是由相关性很强的代码组成，只负责一项任务</li>
+<li>低耦合指一个完整的系统，模块与模块之间，尽可能的使其独立存在。让每个模块尽可能的独立完成某个特定的子功能。模块与模块之间的接口，尽量的少而简单。如果某两个模块间的关系比较复杂的话，最好首先考虑进一步的模块划分。这样有利于修改和组合。</li>
+</ol>
+<h4 id="17、数据库联合索引"><a href="#17、数据库联合索引" class="headerlink" title="17、数据库联合索引"></a>17、数据库联合索引</h4><p>联合索引使用结论:</p>
+<ol>
+<li>查询条件中出现联合索引第一列,或者全部,则能利用联合索引.</li>
+<li>条件列中只要条件相连在一起,以本文例子来说就是:<br>last_name=’1′ and first_name=’1′<br>与<br>first_name=’1′ and last_name=’1′,无论前后,都会利用上联合索引.</li>
+<li>查询条件中没有出现联合索引的第一列,而出现联合索引的第二列,或者第三列,都不会利用联合索引查询.</li>
+</ol>
+<h4 id="18、Spring能否注入null或空串（都允许）"><a href="#18、Spring能否注入null或空串（都允许）" class="headerlink" title="18、Spring能否注入null或空串（都允许）"></a>18、Spring能否注入null或空串（都允许）</h4><p>当对象声明为bean组件的时候，它是交给spring容器去管理的，容器会帮你进行初始化；但是如果使用new方法来调用对象时，会跳过spring容器生成新的对象，这时候就无法进行初始化，所以在调试的时候就会出现SparkSource对象为null，并且SparkSource对象里面以注入方式引用的对象也为null；被申明为bean对象的组件必须使用注入的方式进行调用。</p>
+<h4 id="19、代码输出（finally）"><a href="#19、代码输出（finally）" class="headerlink" title="19、代码输出（finally）"></a>19、代码输出（finally）</h4><p>首先只有抛出异常才会进入catch代码块，而finally语义为最后地，即无论如何都会执行finally代码块</p>
+<h4 id="20、进制运算（尾数）"><a href="#20、进制运算（尾数）" class="headerlink" title="20、进制运算（尾数）"></a>20、进制运算（尾数）</h4><ol>
+<li>用末尾位（个位)判断：乘法运算的个位相乘等于个位的值</li>
+<li>进行代数运算</li>
+</ol>
+<h3 id="海康威视笔试（技术支持）"><a href="#海康威视笔试（技术支持）" class="headerlink" title="海康威视笔试（技术支持）"></a>海康威视笔试（技术支持）</h3><h4 id="1、网络层的功能"><a href="#1、网络层的功能" class="headerlink" title="1、网络层的功能"></a>1、网络层的功能</h4><p>网络层是OSI参考模型中的第三层，介于传输层和数据链路层之间，它在数据链路层提供的两个相邻端点之间的数据帧的传送功能上，进一步管理网络中的数据通信，将数据设法从源端经过若干个中间节点传送到目的端，从而向运输层提供最基本的端到端的数据传送服务。<br>主要内容</p>
+<ol>
+<li>虚电路分组交换和数据报分组交换</li>
+<li>路由选择算法</li>
+<li>阻塞控制方法</li>
+<li>X.25协议</li>
+<li>综合业务数据网（ISDN）</li>
+<li>异步传输模式（ATM）及网际互连原理与实现。</li>
+</ol>
+<h4 id="2、动态路由-静态路由"><a href="#2、动态路由-静态路由" class="headerlink" title="2、动态路由/静态路由"></a>2、动态路由/静态路由</h4><h5 id="静态路由"><a href="#静态路由" class="headerlink" title="静态路由"></a>静态路由</h5><p>　　在路由器中设置的固定的路由表。除非网络管理员干预，否则静态路由不会发生变化。由于静态路由不能对网络的改变作出反映，一般用于网络规模不大、拓扑结构固定的网络中。静态路由的优点是简单、高效、可靠。在所有的路由中，静态路由优先级最高。当动态路由与静态路由发生冲突时，以静态路由为准</p>
+<h5 id="动态路由"><a href="#动态路由" class="headerlink" title="动态路由"></a>动态路由</h5><p>　网络中的路由器之间相互通信，传递路由信息，利用收到的路由信息更新路由器表的过程。它能实时地适应网络结构的变化。如果路由更新信息表明发生了网络变化，路由选择软件就会重新计算路由，并发出新的路由更新信息。这些信息通过各个网络，引起各路由器重新启动其路由算法，并更新各自的路由表以动态地反映网络拓扑变化。动态路由适用于网络规模大、网络拓扑复杂的网络。</p>
+<h6 id="动态路由机制的运作依赖路由器的两个基本功能"><a href="#动态路由机制的运作依赖路由器的两个基本功能" class="headerlink" title="动态路由机制的运作依赖路由器的两个基本功能"></a>动态路由机制的运作依赖路由器的两个基本功能</h6><ol>
+<li><strong>路由器之间适时地交换路由信息。</strong><br>动态路由之所以能根据网络的情况自动计算路由、选择转发路径，是由于当网络发生变化时，路由器之间彼此交换的路由信息会告知对方网络的这种变化，通过信息扩散使所有路由器都能得知网络变化。</li>
+<li><strong>路由器根据某种路由算法（不同的动态路由协议算法不同）把收集到的路由信息加工成路由表，供路由器在转发IP报文时查阅。</strong><br>在网络发生变化时，收集到最新的路由信息后，路由算法重新计算，从而可以得到最新的路由表。<br>路由器之间的路由信息交换在不同的路由协议中的过程和原则是不同的。交换路由信息的最终目的在于通过路由表找到一条转发IP报文的“最佳”路径。每一种路由算法都有其衡量“最佳”的一套原则，大多是在综合多个特性的基础上进行计算，这些特性有：路径所包含的路由器结点数（hop count）、网络传输费用（cost）、带宽（bandwidth）、延迟（delay）、负载（load）、可靠性（reliability）和最大传输单元MTU（maximum transmission unit）。</li>
+</ol>
+<h6 id="动态路由特点"><a href="#动态路由特点" class="headerlink" title="动态路由特点"></a>动态路由特点</h6><ol>
+<li>无需管理员手工维护，减轻了管理员的工作负担</li>
+<li>占用了网络带宽</li>
+<li>在路由器上运行路由协议，使路由器可以自动根据网络拓朴结构的变化调整路由条目</li>
+<li>网络规模大、拓扑复杂的网络</li>
+</ol>
+<h4 id="3、子网划分技术是在自然分类IP地址上占用哪个部分实现的-主机号"><a href="#3、子网划分技术是在自然分类IP地址上占用哪个部分实现的-主机号" class="headerlink" title="3、子网划分技术是在自然分类IP地址上占用哪个部分实现的(主机号)"></a>3、子网划分技术是在自然分类IP地址上占用哪个部分实现的(主机号)</h4><p>假如需要子网划分，网络地址就需要向主机地址借位</p>
+<h4 id="4、二层以太网交换机，如果查找失败，交换机将…"><a href="#4、二层以太网交换机，如果查找失败，交换机将…" class="headerlink" title="4、二层以太网交换机，如果查找失败，交换机将…"></a>4、二层以太网交换机，如果查找失败，交换机将…</h4><p>无论是单播、组播、广播帧,如果帧的目的MAC地址在MAC地址表中存在,且表项所关联的端口与接收到帧的端口相同时,则交换机对此帧进行过滤,即不转发此帧;<br>对于未知的单播帧(即帧的MAc地址在交换机MAC地址表中无相应表项)、组播帧、广播帧,则除源端口外的其它端口转发出去。</p>
+<h4 id="5、在IP网络中，ping是基于（ICMP）协议开发的应用程序"><a href="#5、在IP网络中，ping是基于（ICMP）协议开发的应用程序" class="headerlink" title="5、在IP网络中，ping是基于（ICMP）协议开发的应用程序"></a>5、在IP网络中，ping是基于（ICMP）协议开发的应用程序</h4><p>ICMP协议Internet Control Message Protocol（internet报文控制协议），<br>TCP/IP协议族的一个子协议，用于在IP主机、路由器之间传递控制消息。控制消息是指网络通不通、主机是否可达、路由是否可用等网络本身的消息。这些控制消息虽然并不传输用户数据，但是对于用户数据的传递起着重要的作用。<br>所以，ICMP协议是一种面向无连接的协议，用于传输出错报告控制信息。它是一个非常重要的协议，它对于网络安全具有极其重要的意义。</p>
+<h4 id="6、当网络出现环路，（数据包无休止地传递）"><a href="#6、当网络出现环路，（数据包无休止地传递）" class="headerlink" title="6、当网络出现环路，（数据包无休止地传递）"></a>6、当网络出现环路，（数据包无休止地传递）</h4><blockquote>
+<p>路由环路，就是数据包不断在这个网络传输，始终到达不了目的地，导致掉线或者网络瘫痪。</p>
+</blockquote>
+<p>所有环路的形成都是由于目的路径不明确导致混乱而造成的</p>
+<ol>
+<li>第二层环路：一个广播信息经过两个交换机的时候会不断恶性循环的产生广播，造成环路</li>
+<li>第三层环路：原路由意外不能工作，造成路由通告错误，形成一个恶性循环</li>
+</ol>
+<h4 id="7、IP地址为10-10-10-48，子网掩码为255-255-255-254，子网广播地址（10-10-10-255）"><a href="#7、IP地址为10-10-10-48，子网掩码为255-255-255-254，子网广播地址（10-10-10-255）" class="headerlink" title="7、IP地址为10.10.10.48，子网掩码为255.255.255.254，子网广播地址（10.10.10.255）"></a>7、IP地址为10.10.10.48，子网掩码为255.255.255.254，子网广播地址（10.10.10.255）</h4><p>网络地址的两种算法</p>
+<ol>
+<li>把主机地址和掩码分别转成2进制 相与的结果为网络地址</li>
+<li>通过掩码判断网络大小</li>
+</ol>
+<h4 id="8、数据链路层标准"><a href="#8、数据链路层标准" class="headerlink" title="8、数据链路层标准"></a>8、数据链路层标准</h4><ol>
+<li>802.1–高层及其交互工作。提供高层标准的框架,包括端到端协议、网络互连、网络管理、路由选择、桥接和性能测量。</li>
+<li>802.2-连接链路控制LLC,提供OSI数据链路层的高子层功能,提供LAN、MAC子层与高层协议间的一致接口。</li>
+<li>802.3-以太网规范,定义CSMA/CD标准的媒体访问控制(MAC)子层和物理层规范。</li>
+<li>802.4-令牌总线网。定义令牌传递总线的媒体访问控制(MAC)子层和物理层规范。</li>
+<li>802.5-令牌环线网,定义令牌传递环的媒体访问控制(MAC)子层和物理层规范。</li>
+<li>802.6-城域网MAN,定义城域网(MAN)的媒体访问控制(MAC)子层和物理层规范(DQDB分布队列双总线)。</li>
+</ol>
+<h4 id="9、物理层的主要功能"><a href="#9、物理层的主要功能" class="headerlink" title="9、物理层的主要功能"></a>9、物理层的主要功能</h4><p>物理层Physical Layer，计算机网络OSI模型中最低的一层。物理层为传输数据所需要的物理链路创建、维持、拆除，而提供具有机械的，电子的，功能的和规范的特性。<br>简单的说，物理层确保原始的数据可在各种物理媒体上传输。局域网与广域网皆属第1、2层。<br>物理层是OSI的第一层，它虽然处于最底层，却是整个开放系统的基础。物理层为设备之间的数据通信提供传输媒体及互连设备，为数据传输提供可靠的环境。<br><strong>“信号和介质”</strong>。</p>
+<h4 id="10、DNS工作于（应用层）"><a href="#10、DNS工作于（应用层）" class="headerlink" title="10、DNS工作于（应用层）"></a>10、DNS工作于（应用层）</h4><blockquote>
+<p>DNS(Domain Name System)域名系统主要负责记录互联网中主机名和该主机IP地址之间的映射关系</p>
+</blockquote>
+<p>对应于某个应用的协议一般都是属于应用层的，应用层下直接基于传输层UDP协议</p>
+<h4 id="11、定码率4096kbps-s，每小时文件大小（14400MB）"><a href="#11、定码率4096kbps-s，每小时文件大小（14400MB）" class="headerlink" title="11、定码率4096kbps/s，每小时文件大小（14400MB）"></a>11、定码率4096kbps/s，每小时文件大小（14400MB）</h4><p><strong>计算输出文件大小公式：</strong><br>（音频编码率（KBit为单位）/8 + 视频编码率（KBit为单位）/8）× 影片总长度（秒为单位）= 文件大小（MB为单位） </p>
+<h4 id="12、1080P高清宽屏画质分辨率（1920-1080）"><a href="#12、1080P高清宽屏画质分辨率（1920-1080）" class="headerlink" title="12、1080P高清宽屏画质分辨率（1920*1080）"></a>12、1080P高清宽屏画质分辨率（1920*1080）</h4><ol>
+<li>VGA(640x480)</li>
+<li>SVGA(800x600) </li>
+<li>XGA(1024x768)</li>
+<li>SXGA+(1400x1050) </li>
+<li>UXGA(1600x1200)</li>
+<li>QXGA(2048x1536)</li>
+<li>WVGA(800x480) </li>
+<li>WSVGA(1024x600) </li>
+<li>WXGA(1280x800) </li>
+<li>WXGA+(1440x900) </li>
+<li>WSXGA+(1680x1050)</li>
+<li>WUXGA(1920x1200) </li>
+<li>WQXGA(2560x1600) </li>
+<li>qHD(960 x 540) </li>
+<li>720p(1280x720)</li>
+<li>WXGA(1366x768) </li>
+<li>1080p(1920x1080) </li>
+<li>QHD(2560 x 1440) </li>
+<li>SXGA (1280x1024) </li>
+</ol>
+<h4 id="13、（DOS）不是图形化界面的OS"><a href="#13、（DOS）不是图形化界面的OS" class="headerlink" title="13、（DOS）不是图形化界面的OS"></a>13、（DOS）不是图形化界面的OS</h4><p>DOS没有图形界面。</p>
+<h4 id="14、一个c语言的执行"><a href="#14、一个c语言的执行" class="headerlink" title="14、一个c语言的执行"></a>14、一个c语言的执行</h4><p>C语言的执行是从本程序的 main() { 开始，到 } 结束</p>
+<h4 id="15、c语言编译程序"><a href="#15、c语言编译程序" class="headerlink" title="15、c语言编译程序"></a>15、c语言编译程序</h4><ol>
+<li>编辑xx.c文件</li>
+<li>预处理<br>预处理过程实质上是处理“#”，将#include包含的头文件直接拷贝到hell.c当中；将#define定义的宏进行替换，同时将代码中没用的注释部分删除等<ol>
+<li>将所有的#define删除，并且展开所有的宏定义。说白了就是字符替换</li>
+<li>处理所有的条件编译指令，#ifdef #ifndef #endif等，就是带#的那些</li>
+<li>处理#include，将#include指向的文件插入到该行处</li>
+<li>删除所有注释</li>
+<li>添加行号和文件标示，这样的在调试和编译出错的时候才知道是是哪个文件的哪一行</li>
+<li>保留#pragma编译器指令，因为编译器需要使用它们。</li>
+</ol>
+</li>
+<li>编译<br>编译的过程实质上是把高级语言翻译成机器语言的过程，即从 高级语言-&gt;汇编语言-&gt;机器语言（二进制）<ol>
+<li>词法分析，</li>
+<li>语法分析</li>
+<li>语义分析</li>
+<li>优化后生成相应的汇编代码</li>
+</ol>
+</li>
+<li>链接<br>编译过程只是把源文件翻译成二进制，不能直接执行，需要将翻译成的二进制与需要用到库绑定在一块。</li>
+</ol>
+<h3 id="海康威视笔试（Java）"><a href="#海康威视笔试（Java）" class="headerlink" title="海康威视笔试（Java）"></a>海康威视笔试（Java）</h3><h4 id="1、hik两个线程并发执行，求hik取值范围"><a href="#1、hik两个线程并发执行，求hik取值范围" class="headerlink" title="1、hik两个线程并发执行，求hik取值范围"></a>1、hik两个线程并发执行，求hik取值范围</h4><blockquote>
+<p>（【0,50】/【50,100】）<br> for(int i=0;i&lt;50;i++)</p>
+</blockquote>
+<h4 id="2、配置一个servlet需要的参数，最好在（service）方法中加载"><a href="#2、配置一个servlet需要的参数，最好在（service）方法中加载" class="headerlink" title="2、配置一个servlet需要的参数，最好在（service）方法中加载"></a>2、配置一个servlet需要的参数，最好在（service）方法中加载</h4><p>配置servlet参数</p>
+<ol>
+<li>servletconfig：称为servlet初始化变量，既在一个servlet初始化调用，用于servlet初始化。在init方法中调用。</li>
+<li>servletcontext：上下文初始化参数，全局可用的，一个web应用只有一个，在容器启动时调用的。</li>
+</ol>
+<h4 id="3、Java关键字（goto、vo-）"><a href="#3、Java关键字（goto、vo-）" class="headerlink" title="3、Java关键字（goto、vo..）"></a>3、Java关键字（goto、vo..）</h4><ol>
+<li>由于goto关键字在java之前的语言中广泛使用，因此尽管现在在java中还没有使用该关键字，但是仍然设置为了保留字，一旦在开发环境中输入goto就会变色为关键字颜色。</li>
+<li>volatile关键字，在Java 5之前，它是一个备受争议的关键字，因为在程序中使用它往往会导致出人意料的结果。在Java 5之后，volatile关键字才得以重获生机。</li>
+</ol>
+<h4 id="4、null是object类型-String类型-String"><a href="#4、null是object类型-String类型-String" class="headerlink" title="4、null是object类型/String类型(String)"></a>4、null是object类型/String类型(String)</h4><p>object类型转string类型</p>
+<ol>
+<li>采用Object.toString()</li>
+<li>采用(String)Object</li>
+<li>String.valueOf(Object)</li>
+</ol>
+<h4 id="5、ArrayList和linkedlist区别（数组-链表、线程安全-非线程安全）"><a href="#5、ArrayList和linkedlist区别（数组-链表、线程安全-非线程安全）" class="headerlink" title="5、ArrayList和linkedlist区别（数组/链表、线程安全/非线程安全）"></a>5、ArrayList和linkedlist区别（数组/链表、线程安全/非线程安全）</h4><p><strong>共同点：都是线程安全的。</strong><br>区别： </p>
+<ol>
+<li>ArrayList实现了基于动态数组的数据结构，LinkedList基于链表的数据结构。</li>
+<li>对于随机访问get和set，ArrayList优于LinkedList</li>
+<li>对于新增和删除操作add和remove，LinedList比较占优势</li>
+</ol>
+<h4 id="6、java中的override和overload区别"><a href="#6、java中的override和overload区别" class="headerlink" title="6、java中的override和overload区别"></a>6、java中的override和overload区别</h4><h5 id="overload-重载）的特点"><a href="#overload-重载）的特点" class="headerlink" title="overload(重载）的特点"></a>overload(重载）的特点</h5><ol>
+<li>不能通过访问权限，返回类型，抛出的异常进行重载；</li>
+<li>方法的异常类型和数目不会对重载造成影响；</li>
+<li>对于继承来说，如果某一个方法在父类中的修饰符是private，那么就不能在子类对其进行重载了。如果要定义的话，也只是定义了一个新方法。</li>
+</ol>
+<h5 id="override-重写）的特点"><a href="#override-重写）的特点" class="headerlink" title="override(重写）的特点"></a>override(重写）的特点</h5><ol>
+<li>覆盖的方法的返回值必须和被覆盖的方法返回一致； </li>
+<li>覆盖的方法抛出的异常必须和被覆盖方法的所抛出的异常一致，或者是其子类。 </li>
+<li>被覆盖的方法不能被定义为private。否则在其子类中只是新定义了一个方法，并没有对其进行覆盖。</li>
+</ol>
+<h4 id="7、空间复杂度最高（归并排序On）"><a href="#7、空间复杂度最高（归并排序On）" class="headerlink" title="7、空间复杂度最高（归并排序On）"></a>7、空间复杂度最高（归并排序On）</h4><p>归并排序：首先让数组中的每一个数单独成为长度为1的区间，然后两两一组有序合并，得到长度为2的有序区间，依次进行，直到合成整个区间。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">////实现归并，并把数据都放在list1里面    </span><br><span class="line">void merging(int *list1, int list1_size, int *list2, int list2_size) &#123; int i=0, j=0, k=0, m=0; int temp[MAXSIZE]; while(i &lt; list1_size &amp;&amp; j &lt; list2_size) &#123; if(list1[i]&lt;list2[j]) &#123; temp[k++] = list1[i++]; &#125; else &#123; temp[k++] = list2[j++]; &#125; &#125; while(i&lt;list1_size) &#123; temp[k++] = list1[i++]; &#125; while(j&lt;list2_size) &#123; temp[k++] = list2[j++]; &#125; for(m=0; m &lt; (list1_size+list2_size); m++) &#123; list1[m]=temp[m]; &#125; &#125; //如果有剩下的，那么说明就是它是比前面的数组都大的，直接加入就可以了 void mergeSort(int array[], int n) &#123; if(n&gt;1) &#123; int *list1 = array; int list1_size = n/2; int *list2 = array + n/2; int list2_size = n-list1_size; mergeSort(list1, list1_size); mergeSort(list2, list2_size); merging(list1, list1_size, list2, list2_size); &#125; &#125; //归并排序复杂度分析：一趟归并需要将待排序列中的所有记录 //扫描一遍，因此耗费时间为O(n),而由完全二叉树的深度可知， //整个归并排序需要进行[log2n],因此，总的时间复杂度为 //O(nlogn),而且这是归并排序算法中平均的时间性能 //空间复杂度：由于归并过程中需要与原始记录序列同样数量级的 //存储空间去存放归并结果及递归深度为log2N的栈空间，因此空间 //复杂度为O(n+logN) //也就是说，归并排序是一种比较占内存，但却效率高且稳定的算法</span><br></pre></td></tr></table></figure>
+<h5 id="时间复杂度记忆"><a href="#时间复杂度记忆" class="headerlink" title="时间复杂度记忆"></a>时间复杂度记忆</h5><ol>
+<li>冒泡、选择、直接 排序需要两个for循环，每次只关注一个元素，平均时间复杂度为O（n2）（一遍找元素O(n)，一遍找位置O(n)）</li>
+<li>快速、归并、希尔、堆基于二分思想，log以2为底，平均时间复杂度为O(nlogn)（一遍找元素O(n)，一遍找位置O(logn)）</li>
+</ol>
+<h5 id="稳定性记忆-“快希选堆”（快牺牲稳定性）"><a href="#稳定性记忆-“快希选堆”（快牺牲稳定性）" class="headerlink" title="稳定性记忆-“快希选堆”（快牺牲稳定性）"></a>稳定性记忆-“快希选堆”（快牺牲稳定性）</h5><p>排序算法的稳定性：排序前后相同元素的相对位置不变，则称排序算法是稳定的；否则排序算法是不稳定的。</p>
+<h4 id="8、synchronized"><a href="#8、synchronized" class="headerlink" title="8、synchronized"></a>8、synchronized</h4><blockquote>
+<p>同一时刻一个线程执行，修饰静态方法/非静态方法/代码块、锁对象/Java基本数据类型</p>
+</blockquote>
+<p>Synchronized，Java语言的关键字，当它用来修饰一个方法或者一个代码块的时候，能够保证在同一时刻最多只有一个线程执行该段代码。</p>
+<ol>
+<li>Synchronized修饰非静态方法，实际上是对调用该方法的对象加锁，俗称“对象锁”。</li>
+<li>Synchronized修饰静态方法，实际上是对该类对象加锁，俗称“类锁”。<br>注意：一个是对象锁 一个是Class类锁</li>
+</ol>
+<p>在多线程中最好不要直接对基本数据类型对象进行加锁来实现线程同步，对于static全局变量，最好的方式是对类（不是类对象）进项加锁。</p>
+<h4 id="9、forword和redirect"><a href="#9、forword和redirect" class="headerlink" title="9、forword和redirect"></a>9、forword和redirect</h4><p>Forward和Redirect代表了两种请求转发方式：直接转发和间接转发。</p>
+<ol>
+<li>直接转发方式（Forward），客户端和浏览器只发出一次请求，Servlet、HTML、JSP或其它信息资源，由第二个信息资源响应该请求，在请求对象request中，保存的对象对于每个信息资源是共享的。</li>
+<li>间接转发方式（Redirect）实际是两次HTTP请求，服务器端在响应第一次请求的时候，让浏览器再向另外一个URL发出请求，从而达到转发的目的。</li>
+</ol>
+<h5 id="举个通俗的例子："><a href="#举个通俗的例子：" class="headerlink" title="举个通俗的例子："></a>举个通俗的例子：</h5><ol>
+<li>直接转发就相当于：“A找B借钱，B说没有，B去找C借，借到借不到都会把消息传递给A”；</li>
+<li>间接转发就相当于：”A找B借钱，B说没有，让A去找C借”。</li>
+</ol>
+<h5 id="间接转发："><a href="#间接转发：" class="headerlink" title="间接转发："></a>间接转发：</h5><p>间接转发方式，有时也叫重定向，它一般用于避免用户的非正常访问。例如：用户在没有登录的情况下访问后台资源，Servlet可以将该HTTP请求重定向到登录页面，让用户登录以后再访问。在Servlet中，通过调用response对象的SendRedirect()方法，告诉浏览器重定向访问指定的URL</p>
+<h5 id="间接转发请求过程"><a href="#间接转发请求过程" class="headerlink" title="间接转发请求过程"></a>间接转发请求过程</h5><p>浏览器向Servlet1发出访问请求；<br>Servlet1调用sendRedirect()方法，将浏览器重定向到Servlet2；<br>浏览器向servlet2发出请求；<br>最终由Servlet2做出响应。 </p>
+<h5 id="请求转发"><a href="#请求转发" class="headerlink" title="请求转发"></a>请求转发</h5><p>直接转发方式，请求转发。Web应用程序大多会有一个控制器。由控制器来控制请求应该转发给那个信息资源。然后由这些信息资源处理请求，处理完以后还可能转发给另外的信息资源来返回给用户，这个过程就是经典的MVC模式。<br>javax.serlvet.RequestDispatcher接口是请求转发器必须实现的接口，由Web容器为Servlet提供实现该接口的对象，通过调用该接口的forward()方法到达请求转发的目的</p>
+<h5 id="直接转发请求过程："><a href="#直接转发请求过程：" class="headerlink" title="直接转发请求过程："></a>直接转发请求过程：</h5><p>浏览器向Servlet1发出访问请求；<br>Servlet1调用forward()方法，在服务器端将请求转发给Servlet2；<br>最终由Servlet2做出响应。</p>
+<h4 id="10、新建流对象（D）"><a href="#10、新建流对象（D）" class="headerlink" title="10、新建流对象（D）"></a>10、新建流对象（D）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">（bufferw...(new filew..(txt))</span><br><span class="line">objecti...(new filei...(dat))</span><br><span class="line">gzipout....(new  fileout....(zip))</span><br><span class="line">bufferedr....(new filei.....(dat))）</span><br></pre></td></tr></table></figure>
+<p>Reader只能用FileReader进行实例化</p>
+<h4 id="11、集合描述（Hashmap是线程安全的-set）"><a href="#11、集合描述（Hashmap是线程安全的-set）" class="headerlink" title="11、集合描述（Hashmap是线程安全的/set）"></a>11、集合描述（Hashmap是线程安全的/set）</h4><ol>
+<li>Collection、ArrayList、HashMap、HashSet都是非同步的，线程不安全的<ol start="2">
+<li>Vector 和 HashTable 线程安全，各自核心方法添加上了synchronized 关键字。</li>
+</ol>
+</li>
+</ol>
 
       
     </div>
@@ -488,7 +972,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#搜狐笔试"><span class="nav-number">1.</span> <span class="nav-text">搜狐笔试</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、JOIN、FULL-JOIN"><span class="nav-number">1.1.</span> <span class="nav-text">1、JOIN、FULL JOIN</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#搜狐笔试"><span class="nav-number">1.</span> <span class="nav-text">搜狐笔试</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、JOIN、FULL-JOIN"><span class="nav-number">1.1.</span> <span class="nav-text">1、JOIN、FULL JOIN</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、默认的MySQL隔离级别（Repeatable-read）"><span class="nav-number">1.2.</span> <span class="nav-text">2、默认的MySQL隔离级别（Repeatable read）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、适合做数据库索引的数据结构（哈夫曼树）"><span class="nav-number">1.3.</span> <span class="nav-text">3、适合做数据库索引的数据结构（哈夫曼树）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、设置背景颜色"><span class="nav-number">1.4.</span> <span class="nav-text">4、设置背景颜色</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、启动类加载器由JVM实现"><span class="nav-number">1.5.</span> <span class="nav-text">5、启动类加载器由JVM实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6、Java的栈内存不是线程共享的"><span class="nav-number">1.6.</span> <span class="nav-text">6、Java的栈内存不是线程共享的</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7、打印文本文件file-txt中除掉“1”开头的行和空行的信息"><span class="nav-number">1.7.</span> <span class="nav-text">7、打印文本文件file.txt中除掉“1”开头的行和空行的信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8、Spring为简化Java开发采用策略"><span class="nav-number">1.8.</span> <span class="nav-text">8、Spring为简化Java开发采用策略</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9、Spring的切面是在目标对象生命周期的哪个阶段植入的"><span class="nav-number">1.9.</span> <span class="nav-text">9、Spring的切面是在目标对象生命周期的哪个阶段植入的</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10、DTD-XSD"><span class="nav-number">1.10.</span> <span class="nav-text">10、DTD/XSD</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#DTD-Documnet-Type-Definition-，文档类型定义"><span class="nav-number">1.10.1.</span> <span class="nav-text">DTD(Documnet Type Definition)，文档类型定义</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#XSD-XML-Schemas-Definition-，描述了XML文档的结构。"><span class="nav-number">1.10.2.</span> <span class="nav-text">XSD(XML Schemas Definition)，描述了XML文档的结构。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#XSD是DTD替代者的原因"><span class="nav-number">1.10.3.</span> <span class="nav-text">XSD是DTD替代者的原因</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#途牛笔试"><span class="nav-number">2.</span> <span class="nav-text">途牛笔试</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、运算符优先级"><span class="nav-number">2.1.</span> <span class="nav-text">1、运算符优先级</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、不属于jQuery的筛选（自动）：自动-过滤-查找-串联"><span class="nav-number">2.2.</span> <span class="nav-text">2、不属于jQuery的筛选（自动）：自动/过滤/查找/串联</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、Thread方法（getPriority）"><span class="nav-number">2.3.</span> <span class="nav-text">3、Thread方法（getPriority）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Thread类构造方法："><span class="nav-number">2.3.1.</span> <span class="nav-text">Thread类构造方法：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Thread类常用方法："><span class="nav-number">2.3.2.</span> <span class="nav-text">Thread类常用方法：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、null是object-string（string）"><span class="nav-number">2.4.</span> <span class="nav-text">4、null是object/string（string）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、IPV4和IPV6地址长度（32-128）"><span class="nav-number">2.5.</span> <span class="nav-text">5、IPV4和IPV6地址长度（32,128）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6、支持HTML5的浏览器（Safari、Chrome、Firefox、Opera）"><span class="nav-number">2.6.</span> <span class="nav-text">6、支持HTML5的浏览器（Safari、Chrome、Firefox、Opera）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7、浏览器的存储技术（cookie、localStorage）"><span class="nav-number">2.7.</span> <span class="nav-text">7、浏览器的存储技术（cookie、localStorage）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Cookie"><span class="nav-number">2.7.1.</span> <span class="nav-text">Cookie</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#cookie是什么"><span class="nav-number">2.7.1.1.</span> <span class="nav-text">cookie是什么</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#cookie的有效期"><span class="nav-number">2.7.1.2.</span> <span class="nav-text">cookie的有效期</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#cookie的作用域"><span class="nav-number">2.7.1.3.</span> <span class="nav-text">cookie的作用域</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#cookie的数目和大小的限制"><span class="nav-number">2.7.1.4.</span> <span class="nav-text">cookie的数目和大小的限制</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#cookie的优点"><span class="nav-number">2.7.1.5.</span> <span class="nav-text">cookie的优点</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#cookie的缺点"><span class="nav-number">2.7.1.6.</span> <span class="nav-text">cookie的缺点</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2、LocalStorage"><span class="nav-number">2.7.2.</span> <span class="nav-text">2、LocalStorage</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#localStorage是什么"><span class="nav-number">2.7.2.1.</span> <span class="nav-text">localStorage是什么</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#localStorage的优点"><span class="nav-number">2.7.2.2.</span> <span class="nav-text">localStorage的优点</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#localStorage的缺点："><span class="nav-number">2.7.2.3.</span> <span class="nav-text">localStorage的缺点：</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3、SessionStorage"><span class="nav-number">2.7.3.</span> <span class="nav-text">3、SessionStorage</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4、UserData、GlobalStorage、Google-Gear"><span class="nav-number">2.7.4.</span> <span class="nav-text">4、UserData、GlobalStorage、Google Gear</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5、Flash-ShareObject"><span class="nav-number">2.7.5.</span> <span class="nav-text">5、Flash ShareObject</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#cookie-localStorage和sessionStorage的异同："><span class="nav-number">2.7.6.</span> <span class="nav-text">cookie,localStorage和sessionStorage的异同：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8、A关闭与B的TCP连接"><span class="nav-number">2.8.</span> <span class="nav-text">8、A关闭与B的TCP连接</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#所经历的状态（TIME-WAIT、FIN-WAIT-1、FIN-WAIT-2）"><span class="nav-number">2.8.0.1.</span> <span class="nav-text">所经历的状态（TIME_WAIT、FIN_WAIT_1、FIN_WAIT_2）</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#从主机A主动发起断开连接请求的四次握手过程"><span class="nav-number">2.8.0.2.</span> <span class="nav-text">从主机A主动发起断开连接请求的四次握手过程:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9、OLAP多维分析操作"><span class="nav-number">2.9.</span> <span class="nav-text">9、OLAP多维分析操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10、对网站的文件和资源进行优化"><span class="nav-number">2.10.</span> <span class="nav-text">10、对网站的文件和资源进行优化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11、HTTP1-1版本支持的请求方法（GET-OPTION-DELETE-TRACE）"><span class="nav-number">2.11.</span> <span class="nav-text">11、HTTP1.1版本支持的请求方法（GET/OPTION/DELETE/TRACE）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12、类方法调用另一个类的私有方法（通过反射）"><span class="nav-number">2.12.</span> <span class="nav-text">12、类方法调用另一个类的私有方法（通过反射）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#13、重载的面向对象特性"><span class="nav-number">2.13.</span> <span class="nav-text">13、重载的面向对象特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#14、firebug自动完成上一个属性的快捷键（Tab-调试JS）"><span class="nav-number">2.14.</span> <span class="nav-text">14、firebug自动完成上一个属性的快捷键（Tab/调试JS）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Firebug快捷键"><span class="nav-number">2.14.1.</span> <span class="nav-text">Firebug快捷键</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#HTML标签"><span class="nav-number">2.14.2.</span> <span class="nav-text">HTML标签</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#HTML编辑"><span class="nav-number">2.14.3.</span> <span class="nav-text">HTML编辑</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#HTML-Inspect-模式"><span class="nav-number">2.14.4.</span> <span class="nav-text">HTML Inspect 模式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Script标签"><span class="nav-number">2.14.5.</span> <span class="nav-text">Script标签</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#DOM-标签"><span class="nav-number">2.14.6.</span> <span class="nav-text">DOM 标签</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#DOM-和Watch编辑"><span class="nav-number">2.14.7.</span> <span class="nav-text">DOM 和Watch编辑</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#CSS标签"><span class="nav-number">2.14.8.</span> <span class="nav-text">CSS标签</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#CSS编辑"><span class="nav-number">2.14.9.</span> <span class="nav-text">CSS编辑</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Layout标签"><span class="nav-number">2.14.10.</span> <span class="nav-text">Layout标签</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Layout编辑"><span class="nav-number">2.14.11.</span> <span class="nav-text">Layout编辑</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#命令行-小"><span class="nav-number">2.14.12.</span> <span class="nav-text">命令行 (小)</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#15、-1-0-127的补码"><span class="nav-number">2.15.</span> <span class="nav-text">15、-1,0,127的补码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#16、高内聚低耦合"><span class="nav-number">2.16.</span> <span class="nav-text">16、高内聚低耦合</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#17、数据库联合索引"><span class="nav-number">2.17.</span> <span class="nav-text">17、数据库联合索引</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#18、Spring能否注入null或空串（都允许）"><span class="nav-number">2.18.</span> <span class="nav-text">18、Spring能否注入null或空串（都允许）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#19、代码输出（finally）"><span class="nav-number">2.19.</span> <span class="nav-text">19、代码输出（finally）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#20、进制运算（尾数）"><span class="nav-number">2.20.</span> <span class="nav-text">20、进制运算（尾数）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#海康威视笔试（技术支持）"><span class="nav-number">3.</span> <span class="nav-text">海康威视笔试（技术支持）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、网络层的功能"><span class="nav-number">3.1.</span> <span class="nav-text">1、网络层的功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、动态路由-静态路由"><span class="nav-number">3.2.</span> <span class="nav-text">2、动态路由/静态路由</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#静态路由"><span class="nav-number">3.2.1.</span> <span class="nav-text">静态路由</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#动态路由"><span class="nav-number">3.2.2.</span> <span class="nav-text">动态路由</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#动态路由机制的运作依赖路由器的两个基本功能"><span class="nav-number">3.2.2.1.</span> <span class="nav-text">动态路由机制的运作依赖路由器的两个基本功能</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#动态路由特点"><span class="nav-number">3.2.2.2.</span> <span class="nav-text">动态路由特点</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、子网划分技术是在自然分类IP地址上占用哪个部分实现的-主机号"><span class="nav-number">3.3.</span> <span class="nav-text">3、子网划分技术是在自然分类IP地址上占用哪个部分实现的(主机号)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、二层以太网交换机，如果查找失败，交换机将…"><span class="nav-number">3.4.</span> <span class="nav-text">4、二层以太网交换机，如果查找失败，交换机将…</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、在IP网络中，ping是基于（ICMP）协议开发的应用程序"><span class="nav-number">3.5.</span> <span class="nav-text">5、在IP网络中，ping是基于（ICMP）协议开发的应用程序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6、当网络出现环路，（数据包无休止地传递）"><span class="nav-number">3.6.</span> <span class="nav-text">6、当网络出现环路，（数据包无休止地传递）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7、IP地址为10-10-10-48，子网掩码为255-255-255-254，子网广播地址（10-10-10-255）"><span class="nav-number">3.7.</span> <span class="nav-text">7、IP地址为10.10.10.48，子网掩码为255.255.255.254，子网广播地址（10.10.10.255）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8、数据链路层标准"><span class="nav-number">3.8.</span> <span class="nav-text">8、数据链路层标准</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9、物理层的主要功能"><span class="nav-number">3.9.</span> <span class="nav-text">9、物理层的主要功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10、DNS工作于（应用层）"><span class="nav-number">3.10.</span> <span class="nav-text">10、DNS工作于（应用层）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11、定码率4096kbps-s，每小时文件大小（14400MB）"><span class="nav-number">3.11.</span> <span class="nav-text">11、定码率4096kbps/s，每小时文件大小（14400MB）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12、1080P高清宽屏画质分辨率（1920-1080）"><span class="nav-number">3.12.</span> <span class="nav-text">12、1080P高清宽屏画质分辨率（1920*1080）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#13、（DOS）不是图形化界面的OS"><span class="nav-number">3.13.</span> <span class="nav-text">13、（DOS）不是图形化界面的OS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#14、一个c语言的执行"><span class="nav-number">3.14.</span> <span class="nav-text">14、一个c语言的执行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#15、c语言编译程序"><span class="nav-number">3.15.</span> <span class="nav-text">15、c语言编译程序</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#海康威视笔试（Java）"><span class="nav-number">4.</span> <span class="nav-text">海康威视笔试（Java）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、hik两个线程并发执行，求hik取值范围"><span class="nav-number">4.1.</span> <span class="nav-text">1、hik两个线程并发执行，求hik取值范围</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、配置一个servlet需要的参数，最好在（service）方法中加载"><span class="nav-number">4.2.</span> <span class="nav-text">2、配置一个servlet需要的参数，最好在（service）方法中加载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、Java关键字（goto、vo-）"><span class="nav-number">4.3.</span> <span class="nav-text">3、Java关键字（goto、vo..）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、null是object类型-String类型-String"><span class="nav-number">4.4.</span> <span class="nav-text">4、null是object类型/String类型(String)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、ArrayList和linkedlist区别（数组-链表、线程安全-非线程安全）"><span class="nav-number">4.5.</span> <span class="nav-text">5、ArrayList和linkedlist区别（数组/链表、线程安全/非线程安全）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6、java中的override和overload区别"><span class="nav-number">4.6.</span> <span class="nav-text">6、java中的override和overload区别</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#overload-重载）的特点"><span class="nav-number">4.6.1.</span> <span class="nav-text">overload(重载）的特点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#override-重写）的特点"><span class="nav-number">4.6.2.</span> <span class="nav-text">override(重写）的特点</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7、空间复杂度最高（归并排序On）"><span class="nav-number">4.7.</span> <span class="nav-text">7、空间复杂度最高（归并排序On）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#时间复杂度记忆"><span class="nav-number">4.7.1.</span> <span class="nav-text">时间复杂度记忆</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#稳定性记忆-“快希选堆”（快牺牲稳定性）"><span class="nav-number">4.7.2.</span> <span class="nav-text">稳定性记忆-“快希选堆”（快牺牲稳定性）</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8、synchronized"><span class="nav-number">4.8.</span> <span class="nav-text">8、synchronized</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9、forword和redirect"><span class="nav-number">4.9.</span> <span class="nav-text">9、forword和redirect</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#举个通俗的例子："><span class="nav-number">4.9.1.</span> <span class="nav-text">举个通俗的例子：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#间接转发："><span class="nav-number">4.9.2.</span> <span class="nav-text">间接转发：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#间接转发请求过程"><span class="nav-number">4.9.3.</span> <span class="nav-text">间接转发请求过程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#请求转发"><span class="nav-number">4.9.4.</span> <span class="nav-text">请求转发</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#直接转发请求过程："><span class="nav-number">4.9.5.</span> <span class="nav-text">直接转发请求过程：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10、新建流对象（D）"><span class="nav-number">4.10.</span> <span class="nav-text">10、新建流对象（D）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11、集合描述（Hashmap是线程安全的-set）"><span class="nav-number">4.11.</span> <span class="nav-text">11、集合描述（Hashmap是线程安全的/set）</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -529,7 +1013,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">全站共159.7k字</span>
+  <span class="post-count">全站共171.2k字</span>
 </div>
         
 
