@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="CVTE笔试1、IPV4定义IPv4（Internet Protocol Version 4）协议族是TCP/IP协议族中最为核心的协议族。它工作在TCP/IP协议栈的网络层，该层与OSI参考模型的网络层相对应。网络层提供了无连接数据传输服务，即网络在发送分组时不需要先建立连接，每一个分组（也就是IP数据报文）独立发送，与前后的分组无关。 目的网络层的IPv4协议族为数据链路层和传输层实现互通提供">
+<meta property="og:type" content="article">
+<meta property="og:title" content="笔试汇总帖-3">
+<meta property="og:url" content="http://yoursite.com/2018/10/03/笔试总结帖-3/index.html">
+<meta property="og:site_name" content="Welcome">
+<meta property="og:description" content="CVTE笔试1、IPV4定义IPv4（Internet Protocol Version 4）协议族是TCP/IP协议族中最为核心的协议族。它工作在TCP/IP协议栈的网络层，该层与OSI参考模型的网络层相对应。网络层提供了无连接数据传输服务，即网络在发送分组时不需要先建立连接，每一个分组（也就是IP数据报文）独立发送，与前后的分组无关。 目的网络层的IPv4协议族为数据链路层和传输层实现互通提供">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-10-03T07:55:29.155Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="笔试汇总帖-3">
+<meta name="twitter:description" content="CVTE笔试1、IPV4定义IPv4（Internet Protocol Version 4）协议族是TCP/IP协议族中最为核心的协议族。它工作在TCP/IP协议栈的网络层，该层与OSI参考模型的网络层相对应。网络层提供了无连接数据传输服务，即网络在发送分组时不需要先建立连接，每一个分组（也就是IP数据报文）独立发送，与前后的分组无关。 目的网络层的IPv4协议族为数据链路层和传输层实现互通提供">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/10/03/笔试总结帖-3/"/>
+
+
+
+
+
+  <title>笔试汇总帖-3 | Welcome</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Welcome</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/03/笔试总结帖-3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="十点一刻">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/qifang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Welcome">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">笔试汇总帖-3</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-03T15:55:48+08:00">
+                2018-10-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="CVTE笔试"><a href="#CVTE笔试" class="headerlink" title="CVTE笔试"></a>CVTE笔试</h3><h4 id="1、IPV4"><a href="#1、IPV4" class="headerlink" title="1、IPV4"></a>1、IPV4</h4><h5 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h5><p>IPv4（Internet Protocol Version 4）协议族是TCP/IP协议族中最为核心的协议族。它工作在TCP/IP协议栈的网络层，该层与OSI参考模型的网络层相对应。网络层提供了无连接数据传输服务，即网络在发送分组时不需要先建立连接，每一个分组（也就是IP数据报文）独立发送，与前后的分组无关。</p>
+<h5 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h5><p>网络层的IPv4协议族为数据链路层和传输层实现互通提供了保障。IPv4协议族可以屏蔽各链路层的差异，为传输层提供统一的网络层传输标准。</p>
+<h5 id="IPv4协议族"><a href="#IPv4协议族" class="headerlink" title="IPv4协议族"></a>IPv4协议族</h5><ol>
+<li>地址解析协议ARP（Address Resolution Protocol）</li>
+<li>逆地址解析协议RARP（Reverse Address Resolution Protocol）</li>
+<li>互联网控制消息协议ICMP（Internet Control Message Protocol）</li>
+<li>传输控制协议TCP（Transmission Contronl Protocol）</li>
+<li>用户数据报协议UDP（User Datagram Protocol）等</li>
+</ol>
+<h5 id="IPv4地址组成"><a href="#IPv4地址组成" class="headerlink" title="IPv4地址组成"></a>IPv4地址组成</h5><ol>
+<li>网络号码字段（Net-id）。IP地址的网络号码字段用来标识一个网络，网络号码字段的前几位用来区分IP地址的类型。</li>
+<li>主机号码字段（Host-id）。主机号码字段用来区分一个网络内的不同主机。对于网络号相同的设备，无论实际所处的物理位置如何，它们都是处在同一个网络中。</li>
+</ol>
+<h4 id="2、JVM垃圾回收，年老代堆空间、年轻代堆空间"><a href="#2、JVM垃圾回收，年老代堆空间、年轻代堆空间" class="headerlink" title="2、JVM垃圾回收，年老代堆空间、年轻代堆空间"></a>2、JVM垃圾回收，年老代堆空间、年轻代堆空间</h4><blockquote>
+<p>在基于分代的内存回收策略中，堆空间通常都被划分为3个代，年轻代，年老代（或者tenured代），永久代。在年轻代中又被划分了三个小的区域，分别为：Eden（伊甸）区，S0区(survivor 0)，S1区(survivor 1)</p>
+</blockquote>
+<ol>
+<li>新的对象总被分配到年经代中，当年轻代空间被填满时，这时需要执行一次垃圾回收，即执行 minor GC，回收不再被引用的对象，并同时提升幸存的对象其年龄，年经代中的幸存对象都有年龄标识字段，一旦其达到一定的阈值，则仍然幸存的对象将被提升到老年代空间中。</li>
+<li>老年代的空间用于存放长时间幸存的对象，即生命周期较长的对象，一旦年轻代空间的幸存对象达到一定的年龄阈值后，将被自动提升到年老代，当年老代空间被对象填满时，这时执行一次Major GC。相较于minor GC, Major GC的执行次数要比minor GC要少很多，同时，Major Gc 执行的时间较Minor Gc要长。因为其涉及到更多的对象扫描。这种分代的思想，也是基于在实践中，对于新分配的对象具有更短的生命周期，年老的对象具有更长的生命周期所作出的较佳的选择。</li>
+<li>与此同时，Minor Gc 和 Major Gc 在执行垃圾收集时，采取的是stop the world event ，即终止正在运行的线程，等GC执行完毕在恢复所有的线程。</li>
+<li>对于永久代的内存，主要是用来存放元数据的相关信息，类及其方法的信息。当一个类不再使用时将会被回收，当执行Full GC时，将会扫描永久代内存，对其进行垃圾回收。</li>
+</ol>
+<h4 id="3、网卡是完成（数据链路层和物理层）功能"><a href="#3、网卡是完成（数据链路层和物理层）功能" class="headerlink" title="3、网卡是完成（数据链路层和物理层）功能"></a>3、网卡是完成（数据链路层和物理层）功能</h4><p>网卡是工作在链路层的网络组件，是局域网中连接计算机和传输介质的接口，不仅能实现与局域网传输介质之间的物理连接和电信号匹配，还涉及帧的发送与接收、帧的封装与拆封、介质访问控制、数据的编码与解码以及数据缓存的功能等。</p>
+<h5 id="主要功能"><a href="#主要功能" class="headerlink" title="主要功能"></a>主要功能</h5><ol>
+<li>数据的封装与解封，发送时将上一层交下来的数据加上首部和尾部，成为以太网的帧。接收时将以太网的帧剥去首部和尾部，然后送交上一层。</li>
+<li>链路管理，主要是CSMA/CD（Carrier Sense Multiple Access with Collision Detection ，带冲突检测的载波监听多路访问）协议的实现。</li>
+<li>编码与译码，即曼彻斯特编码与译码。</li>
+</ol>
+<h4 id="4、多列索引-聚簇索引-索引选择性"><a href="#4、多列索引-聚簇索引-索引选择性" class="headerlink" title="4、多列索引/聚簇索引/索引选择性"></a>4、多列索引/聚簇索引/索引选择性</h4><h5 id="多列索引"><a href="#多列索引" class="headerlink" title="多列索引"></a>多列索引</h5><ol>
+<li>一个多列索引可以认为是包含通过合并(concatenate)索引列值创建的值的一个排序数组</li>
+<li>多列建索引比对每个列分别建索引更有优势，因为索引建立得越多就越占磁盘空间，在更新数据的时候速度会更慢。</li>
+<li>建立多列索引时，需要注意顺序，应该将严格的索引放在前面，这样筛选的力度会更大，效率更高。</li>
+</ol>
+<h5 id="聚簇索引"><a href="#聚簇索引" class="headerlink" title="聚簇索引"></a>聚簇索引</h5><p>聚集索引是根据数据行的键值在表中排序存储数据行。索引定义中包含聚集索引列。每个表只能有一个聚集索引。只有当表包含聚集索引时，表中的数据行才按排序顺序存储。如果表具有聚集索引，则该表称为聚集表。集索引决定了表数据的存储顺序,如果表没有聚集索引，则其数据行存储在一个称为堆的无序结构中。</p>
+<h5 id="索引的选择性"><a href="#索引的选择性" class="headerlink" title="索引的选择性"></a>索引的选择性</h5><blockquote>
+<p>索引的选择性是指索引列中不同值的数目与表中记录数的比。</p>
+</blockquote>
+<h6 id="确定索引的选择性的方法"><a href="#确定索引的选择性的方法" class="headerlink" title="确定索引的选择性的方法"></a>确定索引的选择性的方法</h6><ol>
+<li>手工测量索引的选择性</li>
+<li>自动测量索引的选择性</li>
+</ol>
+<h4 id="5、Java泛型"><a href="#5、Java泛型" class="headerlink" title="5、Java泛型"></a>5、Java泛型</h4><ol>
+<li>List<int> list=new ArrayList<int>()不合法</int></int></li>
+<li>List<integer> list=new ArrayList<integer>()合法</integer></integer></li>
+<li>非泛型允许有泛型方法</li>
+<li>泛型，即“参数化类型”，将类型由原来的具体的类型参数化，类似于方法中的变量参数，此时类型也定义成参数形式（可以称之为类型形参），然后在使用/调用时传入具体的类型（类型实参）。</li>
+<li>通过List<string>，直接限定了list集合中只能含有String类型的元素，无须再进行强制类型转换，因为此时，集合能够记住元素的类型信息，编译器已经能够确认它是String类型了。</string></li>
+<li>在List<string>中，String是类型实参，相应的List接口中肯定含有类型形参。且get()方法的返回结果也直接是此形参类型（也就是对应的传入的类型实参）。</string></li>
+<li>在List接口中采用泛型化定义之后，<e>中的E表示类型形参，可以接收具体的类型实参，并且此接口定义中，凡是出现E的地方均表示相同的接受自外部的类型实参。</e></li>
+</ol>
+<h4 id="6、Java集合类"><a href="#6、Java集合类" class="headerlink" title="6、Java集合类"></a>6、Java集合类</h4><blockquote>
+<p>集合类存放于 java.util 包中，是一个用来存放对象的容器。</p>
+</blockquote>
+<ol>
+<li>集合只能存放对象。</li>
+<li>集合存放的是多个对象的引用，对象本身还是放在堆内存中。</li>
+<li>集合可以存放不同类型，不限数量的数据类型。</li>
+</ol>
+<h5 id="集合详解"><a href="#集合详解" class="headerlink" title="集合详解"></a>集合详解</h5><ol>
+<li>Iterator:迭代器，它是Java集合的顶层接口（不包括 map 系列的集合，Map接口 是 map 系列集合的顶层接口）</li>
+<li>Collection:List 接口和 Set 接口的父接口</li>
+<li>List :有序，可以重复的集合。</li>
+<li>Set：典型实现 HashSet()是一个无序，不可重复的集合</li>
+<li>Map：key-value 的键值对，key 不允许重复，value 可以</li>
+</ol>
+<h5 id="Map-和-Set-集合的关系"><a href="#Map-和-Set-集合的关系" class="headerlink" title="Map 和 Set 集合的关系"></a>Map 和 Set 集合的关系</h5><ol>
+<li>有几个类型的集合<ol>
+<li>HashMap 和 HashSet ，都采用哈希表算法；</li>
+<li>TreeMap 和 TreeSet 都采用 红-黑树算法；</li>
+<li>LinkedHashMap 和 LinkedHashSet 都采用哈希表算法和红-黑树算法。</li>
+</ol>
+</li>
+<li>分析 Set 的底层源码，我们可以看到，Set 集合 就是 由 Map 集合的 Key 组成。</li>
+</ol>
+<h4 id="7、排序"><a href="#7、排序" class="headerlink" title="7、排序"></a>7、排序</h4><ol>
+<li>当输入序列有序或元素个数较小时，最佳的排序方法（冒泡排序）</li>
+<li>当用于排序的辅助空间较小（堆排序&lt;快速排序&lt;归并排序）</li>
+<li>从平均时间性能而言，快速排序最佳，其所需时间最少，但快速排序在最坏情况下的时间性能不如堆排序和归并排序。当序列中的记录基本有序或元素个数较少时，冒泡排序和简单选择排序为最佳排序方法。<br>由于堆排序空间复杂度为O(1)，快速排序空间复杂度在最坏情况下为O(n)，平均为O(log2n、)，归并排序空间复杂度为O(n)</li>
+</ol>
+<h4 id="8、GC与强引用、软引用、弱引用、虚引用之间的关系"><a href="#8、GC与强引用、软引用、弱引用、虚引用之间的关系" class="headerlink" title="8、GC与强引用、软引用、弱引用、虚引用之间的关系"></a>8、GC与强引用、软引用、弱引用、虚引用之间的关系</h4><p>Java 引用的类别</p>
+<ol>
+<li>强引用：只要程序通过 new 关键字创建了对象，那么垃圾回收期永远不会进行对对象的回收，除非是系统内存不够，即便如此，JVM也就只是抛出OutOfMemory（）异常，当然如果对象的引用被释放后。这个对象将会被释放掉。</li>
+<li>软引用：非必须引用，当内存资源不够即将溢出时，这个时候GC将会对对象的内存空间进行回收，从而避免内存溢出错误的发生。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//实现软引用</span><br><span class="line">Object obj = new Object();</span><br><span class="line">SoftReference&lt;Object&gt; sf  = new SoftReference&lt;Object&gt;(obj);</span><br><span class="line">obj = null ;</span><br><span class="line">sf.get(); // 这个时候sf是obj对象的一个软引用，通过get（）方法可以获取到这个对象，当内存不足的时候可能返回 null ；</span><br><span class="line">/* 使用场景：当用户需要实现类似缓存的功能，在内存足够的情况下直接通过软引用取值，无需从繁忙的真实来源查询数据，提升速度；当内存不足时，自动删除部分缓存数据，从真正的来源查询相关数据。*/</span><br></pre></td></tr></table></figure>
+<p>3 、弱引用：第二次垃圾回收时回收，不管当前内存资源是否充足</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//如何实现弱引用：</span><br><span class="line">Object obj = new Object （）；</span><br><span class="line">WeakReference&lt;Object&gt; wf = new WeakReference&lt;Object&gt;（）；// 创建弱引用对象</span><br><span class="line">obj = null ;</span><br><span class="line">wf.get（）; // 有的时候回返回null</span><br><span class="line">wf.isEnQueued（）; // 返回是否被垃圾回收器标记为即将回收的装状态</span><br><span class="line">/* 弱引用主要用于监控对象是否已经被垃圾回收器标记为即将回收的垃圾，可以通过弱引用的isEnqueued方法返回对象是否被垃圾回收器标记。*/</span><br></pre></td></tr></table></figure>
+<p>4、虚引用（幽灵引用）：虚引用主要用于检测对象是否已经从内存删除。虚引用是话语权级别最低的引用，只要垃圾回收开始工作，那么虚引用就会被回收。 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//实现方式</span><br><span class="line">Object obj = new Object （）；</span><br><span class="line">PhantomReference&lt;Object&gt; pf = new PhantomReference&lt;Object&gt;(obj)；</span><br><span class="line">pf.get();//永远返回null</span><br></pre></td></tr></table></figure>
+<h4 id="9、一个SQL查询中group-by的字段必须包含在select字段中"><a href="#9、一个SQL查询中group-by的字段必须包含在select字段中" class="headerlink" title="9、一个SQL查询中group by的字段必须包含在select字段中"></a>9、一个SQL查询中group by的字段必须包含在select字段中</h4><blockquote>
+<p>分组查询中，select后的字段必须是group by中包含的字段</p>
+</blockquote>
+<h4 id="10、反射"><a href="#10、反射" class="headerlink" title="10、反射"></a>10、反射</h4><blockquote>
+<p>getMethod(String)方法的作用是根据方法名获取方法<br>public Method[]</p>
+</blockquote>
+<p>getMethods()返回某个类的所有公用（public）方法包括其继承类的公用方法，当然也包括它所实现接口的方法。</p>
+<blockquote>
+<p>反射可以获取类中私有的属性和方法<br>反射…….class文件<br>反射可以直接设置私有属性的值</p>
+</blockquote>
+<p>利用反射不但可以访问类的私有属性、方法，还可以重新设置私有属性的值，调用私有方法。</p>
+<h5 id="11、二叉树计算"><a href="#11、二叉树计算" class="headerlink" title="11、二叉树计算"></a>11、二叉树计算</h5><blockquote>
+<p>假定在一棵二叉树中，双分支结点数为15，单分支结点数为30个，则叶子结点为（16）</p>
+</blockquote>
+<p>假设ni表示二叉树中度为i的结点数，<br>已有n2 = 15，n1 = 30。<br>根据二叉树的性质，有n0 = n2 + 1，<br>故n0 = 16，即该二叉树中叶子结点数为16个。</p>
+<h4 id="12、HTTP协议（基于TCP、属于应用层协议）"><a href="#12、HTTP协议（基于TCP、属于应用层协议）" class="headerlink" title="12、HTTP协议（基于TCP、属于应用层协议）"></a>12、HTTP协议（基于TCP、属于应用层协议）</h4><ol>
+<li>HTTP是一个基于TCP/IP通信协议来传递数据（HTML 文件, 图片文件, 查询结果等）的请求应答协议。</li>
+<li>HTTP协议被封装在TCP包中，使用端口号80，因此HTTP协议属于传输层之上，即应用层。</li>
+</ol>
+<h4 id="13、StringBuilder线程安全、StringBuffer非线程安全"><a href="#13、StringBuilder线程安全、StringBuffer非线程安全" class="headerlink" title="13、StringBuilder线程安全、StringBuffer非线程安全"></a>13、StringBuilder线程安全、StringBuffer非线程安全</h4><ol>
+<li>StringBuffer 字符串变量（线程安全）</li>
+<li>StringBuilder 字符串变量（非线程安全）</li>
+</ol>
+<h4 id="14、JDK1-8用const修饰常量"><a href="#14、JDK1-8用const修饰常量" class="headerlink" title="14、JDK1.8用const修饰常量"></a>14、JDK1.8用const修饰常量</h4><p>const和goto是Java的保留字，没有被使用实现。</p>
+<h5 id="15、StringBuffer"><a href="#15、StringBuffer" class="headerlink" title="15、StringBuffer"></a>15、StringBuffer</h5><blockquote>
+<p>StringBuffer不可变对象，可存储操作字符串<br>StringBuffer类的对象能被多次修改，并不产生新的未使用对象</p>
+</blockquote>
+<ol>
+<li>StringBuffer 对一串字符进行操作，可变类/对象，进行修改的时候不会重新建立对象。</li>
+<li>Java提供的有特殊的语法，而通常情况下一般使用构造方法进行初始化。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//初始化出的StringBuffer对象是一个空的对象</span><br><span class="line">StringBuffer s = new StringBuffer();</span><br><span class="line">//创建带有内容的StringBuffer对象</span><br><span class="line">StringBuffer s = new StringBuffer(“abc”);</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>StringBuffer类中的方法主要偏重于对于字符串的变化，例如追加、插入和删除等</li>
+</ol>
+<h4 id="16、分数运算"><a href="#16、分数运算" class="headerlink" title="16、分数运算"></a>16、分数运算</h4><blockquote>
+<p>输入：”1/3+1/4”， 输出：“7/12”</p>
+</blockquote>
+<h4 id="17、数组arr，随机抽走一张"><a href="#17、数组arr，随机抽走一张" class="headerlink" title="17、数组arr，随机抽走一张"></a>17、数组arr，随机抽走一张</h4><blockquote>
+<p>输入：{0,1,2,4,5}，输出：3</p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+<div>
+  
+    
+  
+</div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/03/笔试总结帖-2/" rel="next" title="笔试汇总帖-2">
+                <i class="fa fa-chevron-left"></i> 笔试汇总帖-2
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/qifang.jpg"
+                alt="十点一刻" />
+            
+              <p class="site-author-name" itemprop="name">十点一刻</p>
+              <p class="site-description motion-element" itemprop="description">在没有路的丛林走出迷雾</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/tenneling" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:tenneling@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#CVTE笔试"><span class="nav-number">1.</span> <span class="nav-text">CVTE笔试</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、IPV4"><span class="nav-number">1.1.</span> <span class="nav-text">1、IPV4</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#定义"><span class="nav-number">1.1.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#目的"><span class="nav-number">1.1.2.</span> <span class="nav-text">目的</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#IPv4协议族"><span class="nav-number">1.1.3.</span> <span class="nav-text">IPv4协议族</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#IPv4地址组成"><span class="nav-number">1.1.4.</span> <span class="nav-text">IPv4地址组成</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、JVM垃圾回收，年老代堆空间、年轻代堆空间"><span class="nav-number">1.2.</span> <span class="nav-text">2、JVM垃圾回收，年老代堆空间、年轻代堆空间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、网卡是完成（数据链路层和物理层）功能"><span class="nav-number">1.3.</span> <span class="nav-text">3、网卡是完成（数据链路层和物理层）功能</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#主要功能"><span class="nav-number">1.3.1.</span> <span class="nav-text">主要功能</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、多列索引-聚簇索引-索引选择性"><span class="nav-number">1.4.</span> <span class="nav-text">4、多列索引/聚簇索引/索引选择性</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#多列索引"><span class="nav-number">1.4.1.</span> <span class="nav-text">多列索引</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#聚簇索引"><span class="nav-number">1.4.2.</span> <span class="nav-text">聚簇索引</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#索引的选择性"><span class="nav-number">1.4.3.</span> <span class="nav-text">索引的选择性</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#确定索引的选择性的方法"><span class="nav-number">1.4.3.1.</span> <span class="nav-text">确定索引的选择性的方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、Java泛型"><span class="nav-number">1.5.</span> <span class="nav-text">5、Java泛型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6、Java集合类"><span class="nav-number">1.6.</span> <span class="nav-text">6、Java集合类</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#集合详解"><span class="nav-number">1.6.1.</span> <span class="nav-text">集合详解</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Map-和-Set-集合的关系"><span class="nav-number">1.6.2.</span> <span class="nav-text">Map 和 Set 集合的关系</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7、排序"><span class="nav-number">1.7.</span> <span class="nav-text">7、排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8、GC与强引用、软引用、弱引用、虚引用之间的关系"><span class="nav-number">1.8.</span> <span class="nav-text">8、GC与强引用、软引用、弱引用、虚引用之间的关系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9、一个SQL查询中group-by的字段必须包含在select字段中"><span class="nav-number">1.9.</span> <span class="nav-text">9、一个SQL查询中group by的字段必须包含在select字段中</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10、反射"><span class="nav-number">1.10.</span> <span class="nav-text">10、反射</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#11、二叉树计算"><span class="nav-number">1.10.1.</span> <span class="nav-text">11、二叉树计算</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12、HTTP协议（基于TCP、属于应用层协议）"><span class="nav-number">1.11.</span> <span class="nav-text">12、HTTP协议（基于TCP、属于应用层协议）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#13、StringBuilder线程安全、StringBuffer非线程安全"><span class="nav-number">1.12.</span> <span class="nav-text">13、StringBuilder线程安全、StringBuffer非线程安全</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#14、JDK1-8用const修饰常量"><span class="nav-number">1.13.</span> <span class="nav-text">14、JDK1.8用const修饰常量</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#15、StringBuffer"><span class="nav-number">1.13.1.</span> <span class="nav-text">15、StringBuffer</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#16、分数运算"><span class="nav-number">1.14.</span> <span class="nav-text">16、分数运算</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#17、数组arr，随机抽走一张"><span class="nav-number">1.15.</span> <span class="nav-text">17、数组arr，随机抽走一张</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+<div id="music163player">
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=2&id=477786576&auto=0&height=32"></iframe>
+</div>
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        ﻿<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">十点一刻</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">全站共180.5k字</span>
+</div>
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+
+
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+
+</body>
+</html>
