@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="Welcome">
 <meta property="og:description" content="Servlet的作用：接受一个请求request，做一些处理，然后返回一个响应response Servlet的三个特性：  Servlet是独立于平台和协议的 Servlet运行于服务器端 Serlvet用于生成动态的Web页面  Servlet容器是为Servlet对象运行提供支持的一类Web服务器，能将请求的URL映射到Servlet上。每个Servlet都需要在Servlet容器上注册，表">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-05T12:39:41.729Z">
+<meta property="og:updated_time" content="2018-10-04T13:28:49.371Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Servlet">
 <meta name="twitter:description" content="Servlet的作用：接受一个请求request，做一些处理，然后返回一个响应response Servlet的三个特性：  Servlet是独立于平台和协议的 Servlet运行于服务器端 Serlvet用于生成动态的Web页面  Servlet容器是为Servlet对象运行提供支持的一类Web服务器，能将请求的URL映射到Servlet上。每个Servlet都需要在Servlet容器上注册，表">
@@ -333,10 +333,9 @@
 <li>getServletConfig：返回由Servlet容器传给init方法的ServletConfig</li>
 </ol>
 <h5 id="ServletRequest方法"><a href="#ServletRequest方法" class="headerlink" title="ServletRequest方法"></a>ServletRequest方法</h5><ol>
-<li>返回请求主体的字节数.如果不知道字节长度，返回-1</li>
-</ol>
+<li><p>返回请求主体的字节数.如果不知道字节长度，返回-1</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public int getContentLength()</span><br></pre></td></tr></table></figure>
-<ol start="2">
+</li>
 <li><p>返回请求主体的MIME类型.如果不知道类型，返回null</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public java.lang.String getContentType()</span><br></pre></td></tr></table></figure>
 </li>
@@ -349,10 +348,9 @@
 </ol>
 <p>HttpServletRequest方法</p>
 <ol>
-<li>返回表示请求上下文的请求URL部分</li>
-</ol>
+<li><p>返回表示请求上下文的请求URL部分</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java.lang.String getContextPath()</span><br></pre></td></tr></table></figure>
-<ol start="2">
+</li>
 <li><p>返回一个Cookie对象数组</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Cookie[] getCookies()</span><br></pre></td></tr></table></figure>
 </li>
@@ -372,15 +370,10 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HttpSession getSession(boolean create)</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<p>会话管理(默认下一个Web服务器无法区分一个HTTP请求是否为第一次访问)</p>
+<p>会话管理(默认下一个Web服务器无法区分一个HTTP请求是否为第一次访问)<br><strong>注意URL和token间用问号？分割，token间用与号&amp;</strong></p>
 <ol>
-<li><p>URL重写是一种会话跟踪技术，它将一个或多个token添加到URL的查询字符串中，每个token通常为key=value形式       </p>
-<blockquote>
-<p>注意URL和token间用问号？分割，token间用与号&amp;</p>
-</blockquote>
-</li>
-<li><p>隐藏域将值放到HTML表单中。当表单提交时，隐藏域的值也同时提交到服务器端</p>
-</li>
+<li>URL重写是一种会话跟踪技术，它将一个或多个token添加到URL的查询字符串中，每个token通常为key=value形式       </li>
+<li>隐藏域将值放到HTML表单中。当表单提交时，隐藏域的值也同时提交到服务器端</li>
 <li>Cookies是一个很少的信息片段，可自动地在浏览器和Web服务器间交互，因此cookies可存储在多个页面间传递的信息</li>
 <li>HttpSession对象最强大最通用。一个用户可以有且最多有一个HTTPSession，并且不会被其他用户访问到<br>默认情况下，HttpSession会在用户不活动一段时间后自动过期，该时间可以通过部署描述符的session-timeout元素配置  </li>
 </ol>
@@ -600,7 +593,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">全站共210.2k字</span>
+  <span class="post-count">全站共216.7k字</span>
 </div>
         
 

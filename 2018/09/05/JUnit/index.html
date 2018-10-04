@@ -86,12 +86,10 @@
 <meta property="og:site_name" content="Welcome">
 <meta property="og:description" content="JUnit特性  用于测试期望结果的断言 用于共享共同测试数据的测试工具 用于方便的组织和运行测试的测试套件 图形和文本的测试运行器  对类的一个方法进行测试  在eclipse加入JUnit的library 新建一个class             1234567891011121314//HelloWorld.javapackage example;import org.omg.CORBA.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2018/09/05/JUnit/images/1.png">
-<meta property="og:updated_time" content="2018-09-05T10:46:11.031Z">
+<meta property="og:updated_time" content="2018-10-04T13:25:35.733Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Junit">
 <meta name="twitter:description" content="JUnit特性  用于测试期望结果的断言 用于共享共同测试数据的测试工具 用于方便的组织和运行测试的测试套件 图形和文本的测试运行器  对类的一个方法进行测试  在eclipse加入JUnit的library 新建一个class             1234567891011121314//HelloWorld.javapackage example;import org.omg.CORBA.">
-<meta name="twitter:image" content="http://yoursite.com/2018/09/05/JUnit/images/1.png">
 
 
 
@@ -329,7 +327,7 @@
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">//setUP()用来建立测试环境</span><br><span class="line">//tearDown()用于清理资源</span><br><span class="line">//绿色代表测试通过，红色未通过</span><br><span class="line">package example;</span><br><span class="line"></span><br><span class="line">import static org.junit.Assert.*;</span><br><span class="line"></span><br><span class="line">import org.junit.After;</span><br><span class="line">import org.junit.Before;</span><br><span class="line">import org.junit.Test;</span><br><span class="line"></span><br><span class="line">import junit.framework.TestCase;</span><br><span class="line"></span><br><span class="line">public class HelloWorldTest extends TestCase&#123;</span><br><span class="line"></span><br><span class="line">	private HelloWorld hello;</span><br><span class="line">	</span><br><span class="line">	@Before</span><br><span class="line">	public void setUp() throws Exception &#123;</span><br><span class="line">		super.setUp();</span><br><span class="line">		hello=new HelloWorld();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	@After</span><br><span class="line">	public void tearDown() throws Exception &#123;</span><br><span class="line">		super.tearDown();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	@Test</span><br><span class="line">	public void testAbs() &#123;</span><br><span class="line">		assertEquals(hello.abs(14),14);</span><br><span class="line">		assertEquals(hello.abs(-5),5);</span><br><span class="line">		assertEquals(hello.abs(0),0);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ol start="4">
-<li><img src="images/1.png" alt=""></li>
+<li>success！[图略]</li>
 </ol>
 
       
@@ -522,7 +520,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">全站共210.2k字</span>
+  <span class="post-count">全站共216.7k字</span>
 </div>
         
 
