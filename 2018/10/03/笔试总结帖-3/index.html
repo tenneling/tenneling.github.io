@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="Welcome">
 <meta property="og:description" content="CVTE笔试1、IPV4定义IPv4（Internet Protocol Version 4）协议族是TCP/IP协议族中最为核心的协议族。它工作在TCP/IP协议栈的网络层，该层与OSI参考模型的网络层相对应。网络层提供了无连接数据传输服务，即网络在发送分组时不需要先建立连接，每一个分组（也就是IP数据报文）独立发送，与前后的分组无关。 目的网络层的IPv4协议族为数据链路层和传输层实现互通提供">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-03T07:55:29.155Z">
+<meta property="og:updated_time" content="2018-10-04T05:29:56.082Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="笔试汇总帖-3">
 <meta name="twitter:description" content="CVTE笔试1、IPV4定义IPv4（Internet Protocol Version 4）协议族是TCP/IP协议族中最为核心的协议族。它工作在TCP/IP协议栈的网络层，该层与OSI参考模型的网络层相对应。网络层提供了无连接数据传输服务，即网络在发送分组时不需要先建立连接，每一个分组（也就是IP数据报文）独立发送，与前后的分组无关。 目的网络层的IPv4协议族为数据链路层和传输层实现互通提供">
@@ -439,6 +439,457 @@
 <h4 id="17、数组arr，随机抽走一张"><a href="#17、数组arr，随机抽走一张" class="headerlink" title="17、数组arr，随机抽走一张"></a>17、数组arr，随机抽走一张</h4><blockquote>
 <p>输入：{0,1,2,4,5}，输出：3</p>
 </blockquote>
+<h3 id="同程艺龙笔试"><a href="#同程艺龙笔试" class="headerlink" title="同程艺龙笔试"></a>同程艺龙笔试</h3><h4 id="1、创建对象时，jvm会找到对应的-java文件，通过-java文件创建对象？（false）"><a href="#1、创建对象时，jvm会找到对应的-java文件，通过-java文件创建对象？（false）" class="headerlink" title="1、创建对象时，jvm会找到对应的.java文件，通过.java文件创建对象？（false）"></a>1、创建对象时，jvm会找到对应的.java文件，通过.java文件创建对象？（false）</h4><p>对象的创建过程：</p>
+<ol>
+<li>所有的类都是在第一次被使用时，动态加载到JVM中。当首次创建类型为Dog的对象时，或者Dog类的静态方法首次被调用时，或者静态属性域首次被访问时，java解释器查找classPath，定位到Dog.class文件。</li>
+<li>载入Dog.class文件，生成一个Class类型对象，所有有关的静态初始化动作都会执行：如静态代码块，静态成员属性。 并且这种初始化动作只在Class对象首次加载时候进行一次。</li>
+<li>当用new Dog()创建对象时，首先JVM在堆heap上为Dog对象分配足够的存储空间。</li>
+<li>存储空间清空，自动将Dog对象中的所有基本类型数据都设置成了默认值，对象引用被设置为null。</li>
+<li>执行所有在字段定义处的一些初始化操作。</li>
+<li>调用构造器方法。（没有继承）</li>
+</ol>
+<h4 id="2、重写的方法不能比被重写的方法抛出（throws声明的）更多种类的异常？（false）"><a href="#2、重写的方法不能比被重写的方法抛出（throws声明的）更多种类的异常？（false）" class="headerlink" title="2、重写的方法不能比被重写的方法抛出（throws声明的）更多种类的异常？（false）"></a>2、重写的方法不能比被重写的方法抛出（throws声明的）更多种类的异常？（false）</h4><ol>
+<li>在java 中，当我们子类要重写父类中的方法，如果父类的方法有异常声明，那么子类重写这个方法时候，所要声明的异常不应该比父类的大。只能是小等，或者可以没有。</li>
+<li>子类重写父类的方法时候不能声明抛出比父类大的异常 </li>
+</ol>
+<h4 id="3、byte类型所占存储空间为1个字节，取值范围0-255？（false）"><a href="#3、byte类型所占存储空间为1个字节，取值范围0-255？（false）" class="headerlink" title="3、byte类型所占存储空间为1个字节，取值范围0~255？（false）"></a>3、byte类型所占存储空间为1个字节，取值范围0~255？（false）</h4><p>byte的取值范围为-128~127，占用1个字节（-2的7次方到2的7次方-1） </p>
+<h4 id="4、java中可以通过this关键字解决成员变量与局部变量名称冲突问题？（true）"><a href="#4、java中可以通过this关键字解决成员变量与局部变量名称冲突问题？（true）" class="headerlink" title="4、java中可以通过this关键字解决成员变量与局部变量名称冲突问题？（true）"></a>4、java中可以通过this关键字解决成员变量与局部变量名称冲突问题？（true）</h4><p>this关键字常见用法</p>
+<ol>
+<li>通过this关键字可以明确地去访问一个类的成员变量，解决与局部变量名称冲突的问题。</li>
+<li>this关键字调用成员方法。</li>
+<li>this关键字调用构造方法</li>
+<li>this表示当前对象</li>
+</ol>
+<p>5、集合中元素类型必须是相同的？（false）</p>
+<ol>
+<li>不同类型的元素，根本上都继承于Object类，本质上还是同一类型的元素。</li>
+<li>声明集合时，不声明它的泛型类型时，默认Object泛型，跟List<object>效果一样。</object></li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Object&gt; list = new ArrayList&lt;Object&gt;();</span><br><span class="line">list.add(&quot;abc&quot;);</span><br><span class="line">list.add(123);</span><br><span class="line">list.add(new HashMap&lt;Integer,String&gt;());</span><br><span class="line">List list = new ArrayList();</span><br></pre></td></tr></table></figure>
+<h4 id="6、当类被加载时，静态代码块会执行，并且只会执行一次？（true）"><a href="#6、当类被加载时，静态代码块会执行，并且只会执行一次？（true）" class="headerlink" title="6、当类被加载时，静态代码块会执行，并且只会执行一次？（true）"></a>6、当类被加载时，静态代码块会执行，并且只会执行一次？（true）</h4><p>静态代码块和非静态代码块的区别</p>
+<ol>
+<li>静态代码块,在虚拟机加载类的时候就会加载执行,而且只执行一次</li>
+<li>非静态代码块,在创建对象的时候(即new一个对象的时候)执行,每次创建对象都会执行一次</li>
+</ol>
+<h4 id="7、在不同的操作系统中可以使用同一个JDK？（false）"><a href="#7、在不同的操作系统中可以使用同一个JDK？（false）" class="headerlink" title="7、在不同的操作系统中可以使用同一个JDK？（false）"></a>7、在不同的操作系统中可以使用同一个JDK？（false）</h4><h4 id="8、两个对象的内容和类型是否相同，通过“-”操作符进行判定？（false）"><a href="#8、两个对象的内容和类型是否相同，通过“-”操作符进行判定？（false）" class="headerlink" title="8、两个对象的内容和类型是否相同，通过“==”操作符进行判定？（false）"></a>8、两个对象的内容和类型是否相同，通过“==”操作符进行判定？（false）</h4><ol>
+<li>值类型是存储在内存中的堆栈（以后简称栈），而引用类型的变量在栈中仅仅是存储引用类型变量的地址，而其本身则存储在堆中。</li>
+<li>==操作比较的是两个变量的值是否相等，对于引用型变量表示的是两个变量在堆中存储的地址是否相同，即栈中的内容是否相同。</li>
+<li>equals操作表示的两个变量是否是对同一个对象的引用，即堆中的内容是否相同。</li>
+<li>==比较的是2个对象的地址，而equals比较的是2个对象的内容。</li>
+</ol>
+<h4 id="1、OSI：物、数、网、传、会、表、应"><a href="#1、OSI：物、数、网、传、会、表、应" class="headerlink" title="1、OSI：物、数、网、传、会、表、应"></a>1、OSI：物、数、网、传、会、表、应</h4><h4 id="2、ServerSocketChannel可能发生哪个事件？"><a href="#2、ServerSocketChannel可能发生哪个事件？" class="headerlink" title="2、ServerSocketChannel可能发生哪个事件？"></a>2、ServerSocketChannel可能发生哪个事件？</h4><blockquote>
+<p>selection.OP_ACCEPT：接收连接就绪事件<br>selection.OP_CONNECT：连接就绪事件<br>selection.OP_WRITE：写就绪事件<br>selection.OP_READ：读就绪事件</p>
+</blockquote>
+<p>ServerSocketChannel类<br>(用于阻塞或非阻塞式侦听连接)，主要是绑定socket地址，监听Socket连接。 </p>
+<ol>
+<li>ServerSocketChannel open()：创建未绑定的ServerSocketChannel.</li>
+<li>ServerSocket socket()：返回此ServerSocketChannel的serversocket.</li>
+<li>SocketChannel accept()：侦听连接请求，阻塞模式下会一直等待直到出现请求，非阻塞模式下如果没有请求就直接返回null.</li>
+<li>int validOps()：返回ServerSocketChannel可能产生的事件，即SelectionKey.OP_ACCEPT(有连接请求)。</li>
+</ol>
+<h4 id="3、构造函数的返回类型只能是void型（false）"><a href="#3、构造函数的返回类型只能是void型（false）" class="headerlink" title="3、构造函数的返回类型只能是void型（false）"></a>3、构造函数的返回类型只能是void型（false）</h4><p>构造函数的名字与类的名字相同，并且不能指定返回类型。</p>
+<h4 id="4、object"><a href="#4、object" class="headerlink" title="4、object"></a>4、object</h4><blockquote>
+<p>object o=new String(“a”);<br>Strings=o;//编译错误</p>
+</blockquote>
+<p>Object 是所有类的超类，Object类型的变量可以引用任何类型的对象</p>
+<h4 id="5、list"><a href="#5、list" class="headerlink" title="5、list"></a>5、list</h4><blockquote>
+<p>list是一个ArrayList对象，哪个方法可以在iterator遍历过程中正确并安全的删除一个list中保存的对象？<br>//Iterator it=list.iterator()<br>（it.remove(),list.remove(obj),list.remove(index),list.remove(it.next())）</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public class Main &#123;</span><br><span class="line">public static void main(String[] args) throws Exception &#123;</span><br><span class="line">    List&lt;Integer&gt; list = new ArrayList&lt;&gt;();</span><br><span class="line">    for (int i = 0; i &lt; 5; i++)</span><br><span class="line">        list.add(i);</span><br><span class="line">    // list &#123;0, 1, 2, 3, 4&#125;</span><br><span class="line">    Iterator&lt;Integer&gt; it = list.iterator();</span><br><span class="line">    while (it.hasNext()) &#123;</span><br><span class="line">        // index and number</span><br><span class="line">        int num = it.next();</span><br><span class="line">        System.out.print(num);</span><br><span class="line">        if (num % 2 == 0) &#123;</span><br><span class="line">            it.remove();</span><br><span class="line">            System.out.print(&quot; delete&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="6、线程"><a href="#6、线程" class="headerlink" title="6、线程"></a>6、线程</h4><blockquote>
+<p>当线程在IO出堵塞时，线程（转换成等待状态/没有线程可完成IO操作）</p>
+</blockquote>
+<p>阻塞情况</p>
+<ol>
+<li>等待阻塞：运行(running)的线程执行o.wait()方法，JVM会把该线程放入等待队列(waitting queue)中。</li>
+<li>同步阻塞：运行(running)的线程在获取对象的同步锁时，若该同步锁被别的线程占用，则JVM会把该线程放入锁池(lock pool)中。</li>
+<li>其他阻塞：运行(running)的线程执行Thread.sleep(long ms)或t.join()方法，或者发出了I/O请求时，JVM会把该线程置为阻塞状态。当sleep()状态超时、join()等待线程终止或者超时、或者I/O处理完毕时，线程重新转入可运行(runnable)状态。</li>
+</ol>
+<h4 id="7、哪一个关键字表示线程放弃对象锁（wait）"><a href="#7、哪一个关键字表示线程放弃对象锁（wait）" class="headerlink" title="7、哪一个关键字表示线程放弃对象锁（wait）"></a>7、哪一个关键字表示线程放弃对象锁（wait）</h4><p>wait 是 Object 类的方法,对此对象调用 wait 方法导致本线程放弃对象锁</p>
+<h4 id="8、哪些会导致String字符串被改变（toUpperCase、replace、concat）"><a href="#8、哪些会导致String字符串被改变（toUpperCase、replace、concat）" class="headerlink" title="8、哪些会导致String字符串被改变（toUpperCase、replace、concat）"></a>8、哪些会导致String字符串被改变（toUpperCase、replace、concat）</h4><p>没有改变字符串的方法可以调用</p>
+<h4 id="9、int型数据的正确取值范围"><a href="#9、int型数据的正确取值范围" class="headerlink" title="9、int型数据的正确取值范围"></a>9、int型数据的正确取值范围</h4><ol>
+<li>在C语言中，int型数据所占的字节和具体的编译器有关，32位编译器int占4个字节，16位编译器int占2个字节</li>
+<li>当int型数据占两个字节时，int型数据取值范围为-32768 ~ 32767</li>
+</ol>
+<h4 id="10、线程"><a href="#10、线程" class="headerlink" title="10、线程"></a>10、线程</h4><ol>
+<li>当一个线程因为抢先机制而停止运行，它被放在可运行队列的前面（false/后面）</li>
+<li>使用start方法可以使一个线程立即开始运行（false）</li>
+</ol>
+<h4 id="11、char-a-’a’，int-String-‘a’重载"><a href="#11、char-a-’a’，int-String-‘a’重载" class="headerlink" title="11、char a=’a’，int/String ‘a’重载"></a>11、char a=’a’，int/String ‘a’重载</h4><p>char型不能为字符串，只能为字符，int重载</p>
+<h4 id="12、DatagramPacket"><a href="#12、DatagramPacket" class="headerlink" title="12、DatagramPacket"></a>12、DatagramPacket</h4><p>DatagramPacket表示存放数据的数据报</p>
+<h4 id="13、post用户提交的表单数据位于http请求的（请求体）"><a href="#13、post用户提交的表单数据位于http请求的（请求体）" class="headerlink" title="13、post用户提交的表单数据位于http请求的（请求体）"></a>13、post用户提交的表单数据位于http请求的（请求体）</h4><p>HTTP POST格式:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;request line&gt;</span><br><span class="line">&lt;request header&gt;</span><br><span class="line">&lt;blank line&gt;</span><br><span class="line">&lt;request body&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="14、Error-Exception类区别"><a href="#14、Error-Exception类区别" class="headerlink" title="14、Error/Exception类区别"></a>14、Error/Exception类区别</h4><ol>
+<li>Error（错误）是系统中的错误，程序员是不能改变的和处理的，是在程序编译时出现的错误，只能通过修改程序才能修正。一般是指与虚拟机相关的问题，如系统崩溃，虚拟机错误，内存空间不足，方法调用栈溢等。对于这类错误的导致的应用程序中断，仅靠程序本身无法恢复和和预防，遇到这样的错误，建议让程序终止。</li>
+<li>Exception（异常）表示程序可以处理的异常，可以捕获且可能恢复。遇到这类异常，应该尽可能处理异常，使程序恢复运行，而不应该随意终止异常。</li>
+</ol>
+<p>Exception类型</p>
+<ol>
+<li>CheckedException：（编译时异常） 需要用try——catch显示的捕获，对于可恢复的异常使用CheckedException。</li>
+<li>UnCheckedException（RuntimeException）：（运行时异常）不需要捕获，对于程序错误（不可恢复）的异常使用RuntimeException。</li>
+</ol>
+<h3 id="腾讯笔试"><a href="#腾讯笔试" class="headerlink" title="腾讯笔试"></a>腾讯笔试</h3><h4 id="1、修改-home下xx目录以及目录下所有文件，所有人可读可写"><a href="#1、修改-home下xx目录以及目录下所有文件，所有人可读可写" class="headerlink" title="1、修改/home下xx目录以及目录下所有文件，所有人可读可写"></a>1、修改/home下xx目录以及目录下所有文件，所有人可读可写</h4><blockquote>
+<p>chmod 777/home/xx -R</p>
+</blockquote>
+<h4 id="2、最佳置换OPT"><a href="#2、最佳置换OPT" class="headerlink" title="2、最佳置换OPT"></a>2、最佳置换OPT</h4><blockquote>
+<p>置换以后不再被访问，或者在将来最迟才会被访问的页面，缺页中断率最低。</p>
+</blockquote>
+<h4 id="3、字符“tencent”的二进制编码位数（未解）"><a href="#3、字符“tencent”的二进制编码位数（未解）" class="headerlink" title="3、字符“tencent”的二进制编码位数（未解）"></a>3、字符“tencent”的二进制编码位数（未解）</h4><h4 id="4、递归算法"><a href="#4、递归算法" class="headerlink" title="4、递归算法"></a>4、递归算法</h4><ol>
+<li>递归名次解释：<br>程序调用自身的编程技巧称为递归（ recursion）。递归做为一种算法在程序设计语言中广泛应用。一个过程或函数在其定义或说明中有直接或间接调用自身的一种方法，它通常把一个大型复杂的问题层层转化为一个与原问题相似的规模较小的问题来求解，递归策略只需少量的程序就可描述出解题过程所需要的多次重复计算，大大地减少了程序的代码量。递归的能力在于用有限的语句来定义对象的无限集合。一般来说，递归需要有边界条件、递归前进段和递归返回段。当边界条件不满足时，递归前进；当边界条件满足时，递归返回。<br>递归定义：在运行的过程中调用自己。</li>
+<li>构成递归需具备的条件：<ol>
+<li>子问题须与原始问题为同样的事，且更为简单；</li>
+<li>不能无限制地调用本身，须有个出口，化简为非递归状况处理。</li>
+</ol>
+</li>
+<li>尾递归名次解释：<br>如果一个函数中所有递归形式的调用都出现在函数的末尾，我们称这个递归函数是尾递归的。当递归调用是整个函数体中最后执行的语句且它的返回值不属于表达式的一部分时，这个递归调用就是尾递归。尾递归函数的特点是在回归过程中不用做任何操作，这个特性很重要，因为大多数现代的编译器会利用这种特点自动生成优化的代码。</li>
+<li>尾递归原理：<br>当编译器检测到一个函数调用是尾递归的时候，它就覆盖当前的活动记录而不是在栈中去创建一个新的。编译器可以做到这点，因为递归调用是当前活跃期内最后一条待执行的语句，于是当这个调用返回时栈帧中并没有其他事情可做，因此也就没有保存栈帧的必要了。通过覆盖当前的栈帧而不是在其之上重新添加一个，这样所使用的栈空间就大大缩减了，这使得实际的运行效率会变得更高。</li>
+<li>用栈实现递归与非递归的转换（略）</li>
+</ol>
+<h4 id="5、由数组变为链表，什么排序算法的时间复杂度会增加"><a href="#5、由数组变为链表，什么排序算法的时间复杂度会增加" class="headerlink" title="5、由数组变为链表，什么排序算法的时间复杂度会增加"></a>5、由数组变为链表，什么排序算法的时间复杂度会增加</h4><blockquote>
+<p>（不利于随机存取）</p>
+</blockquote>
+<h4 id="6、B-树、B-树"><a href="#6、B-树、B-树" class="headerlink" title="6、B-树、B+树"></a>6、B-树、B+树</h4><ol>
+<li>B+树比B树更适合实际应用中操作系统的文件索引和数据库索引</li>
+<li>B树只适合随机检索，B+树同时支持随机检索和顺序检索；</li>
+<li>B-树、B+树是平衡多路树</li>
+</ol>
+<h4 id="7、静态链接只是对相对地址修改"><a href="#7、静态链接只是对相对地址修改" class="headerlink" title="7、静态链接只是对相对地址修改"></a>7、静态链接只是对相对地址修改</h4><ol>
+<li>静态链接就是在装入内存之前把进程相关的所有目标程序都链接起来，产生装入模块。需要地址和数据两个问题，分别是对相对地址进行修改，变换外部调用符号。</li>
+<li>动态链接可实现多个程序对同一模块共享（静态链接）</li>
+</ol>
+<h4 id="8、传输层提供建立、维护和拆端到端的连接"><a href="#8、传输层提供建立、维护和拆端到端的连接" class="headerlink" title="8、传输层提供建立、维护和拆端到端的连接"></a>8、传输层提供建立、维护和拆端到端的连接</h4><ol>
+<li>网络层将数据封装为数据报后发送到链路层</li>
+<li>传输层提供了流量控制功能</li>
+<li>数据链路层的服务访问点是MAC地址</li>
+</ol>
+<h4 id="9、MapReduce-面向大数据并行处理的计算模型、框架和平台"><a href="#9、MapReduce-面向大数据并行处理的计算模型、框架和平台" class="headerlink" title="9、MapReduce 面向大数据并行处理的计算模型、框架和平台"></a>9、MapReduce 面向大数据并行处理的计算模型、框架和平台</h4><ol>
+<li>MapReduce是一个基于集群的高性能并行计算平台（Cluster Infrastructure）。它允许用市  场上普通的商用服务器构成一个包含数十、数百至数千个节点的分布和并行计算集群。</li>
+<li>MapReduce是一个并行计算与运行软件框架（Software Framework）。它提供了一个庞大但设计精良的并行计算软件框架，能自动完成计算任务的并行化处理，自动划分计算数据和计算任务，在集群节点上自动分配和执行任务以及收集计算结果，将数据分布存储、数据通信、容错处理等并行计算涉及到的很多系统底层的复杂细节交由系统负责处理，大大减少了软件开发人员的负担。</li>
+<li>MapReduce是一个并行程序设计模型与方法（Programming Model &amp; Methodology）。它借助于函数式程序设计语言Lisp的设计思想，提供了一种简便的并行程序设计方法，用Map和Reduce两个函数编程实现基本的并行计算任务，提供了抽象的操作和并行编程接口，以简单方便地完成大规模数据的编程和计算处理</li>
+</ol>
+<h4 id="10、快速排序"><a href="#10、快速排序" class="headerlink" title="10、快速排序"></a>10、快速排序</h4><h5 id="快速排序基本思想："><a href="#快速排序基本思想：" class="headerlink" title="快速排序基本思想："></a>快速排序基本思想：</h5><p>通过一趟排序将要排序的数据分割成独立的两部分，其中一部分的所有数据都比另外一部分的所有数据都要小，然后再按此方法对这两部分数据分别进行快速排序，整个排序过程可以递归进行，以此达到整个数据变成有序序列。</p>
+<h5 id="快速排序的算法："><a href="#快速排序的算法：" class="headerlink" title="快速排序的算法："></a>快速排序的算法：</h5><ol>
+<li>设置两个变量i、j，排序开始的时候：i=0，j=N-1；</li>
+<li>以第一个数组元素作为关键数据，赋值给key，即key=A[0]；</li>
+<li>从j开始向前搜索，即由后开始向前搜索(j–)，找到第一个小于key的值A[j]，将A[j]和A[i]互换；</li>
+<li>从i开始向后搜索，即由前开始向后搜索(i++)，找到第一个大于key的A[i]，将A[i]和A[j]互换；</li>
+<li>重复第3、4步，直到i=j； </li>
+<li>3,4步中，没找到符合条件的值，即3中A[j]不小于key,4中A[i]不大于key的时候改变j、i的值，使得j=j-1，i=i+1，直至找到为止。找到符合条件的值，进行交换的时候i， j指针位置不变。另外，i==j这一过程一定正好是i+或j-完成的时候，此时令循环结束。<br>11、入栈队列5,4,6,7,10,9，出栈队列为a1,a2,a3,a4,a5,a6,若a2=6，则a3取值可能有多少个</li>
+</ol>
+<h4 id="12、TCP通信时，拥塞窗口cwmd-1，慢开始门限ssthresh-24"><a href="#12、TCP通信时，拥塞窗口cwmd-1，慢开始门限ssthresh-24" class="headerlink" title="12、TCP通信时，拥塞窗口cwmd=1，慢开始门限ssthresh=24"></a>12、TCP通信时，拥塞窗口cwmd=1，慢开始门限ssthresh=24</h4><p>发送方每收到一个确认就把窗口cwmd加1，但确认多个数据报的时候就加相应的数值，即一次传输轮次之后拥塞窗口就加倍</p>
+<ol>
+<li>当cwnd&lt;ssthresh时，使用慢开始算法。</li>
+<li>当cwnd&gt;ssthresh时，改用拥塞避免算法。</li>
+<li>当cwnd=ssthresh时，慢开始与拥塞避免算法任意。</li>
+</ol>
+<h4 id="13、JVM性能调优工具：jmap、jps、jstack、jstat"><a href="#13、JVM性能调优工具：jmap、jps、jstack、jstat" class="headerlink" title="13、JVM性能调优工具：jmap、jps、jstack、jstat"></a>13、JVM性能调优工具：jmap、jps、jstack、jstat</h4><ol>
+<li>jps主要用来输出JVM中运行的进程状态信息(jps [options] [hostid])</li>
+<li>jstack主要用来查看某个Java进程内的线程堆栈信息( jstack [option] pid )</li>
+<li>jmap用来查看堆内存使用状况，一般结合jhat使用。</li>
+<li>jmap -heap pid查看进程堆内存使用情况，包括GC算法、堆配置参数和各代中堆内存使用情况。</li>
+<li>jmap -histo[:live] pid查看堆内存中的对象数目、大小统计直方图</li>
+<li>jstat利用JVM内建的指令对Java应用程序的资源和性能进行实时的命令行的监控，包括了对进程的classloader，compiler，gc情况</li>
+</ol>
+<h4 id="14、允许远程主机访问本机的8080端口的防火墙策略"><a href="#14、允许远程主机访问本机的8080端口的防火墙策略" class="headerlink" title="14、允许远程主机访问本机的8080端口的防火墙策略"></a>14、允许远程主机访问本机的8080端口的防火墙策略</h4><h3 id="4399笔试"><a href="#4399笔试" class="headerlink" title="4399笔试"></a>4399笔试</h3><h4 id="1、进程主要组成部分"><a href="#1、进程主要组成部分" class="headerlink" title="1、进程主要组成部分"></a>1、进程主要组成部分</h4><ol>
+<li>程序。作用：描述进程要完成的功能。</li>
+<li>数据。作用：程序在执行时所需要的数据和工作区。</li>
+<li>PCB。作用：包含进程的描述信息和控制信息。它是进程存在的唯一标志。 进程控制块</li>
+</ol>
+<h4 id="2、与初始排序无关的是"><a href="#2、与初始排序无关的是" class="headerlink" title="2、与初始排序无关的是"></a>2、与初始排序无关的是</h4><ol>
+<li>元素的移动次数与关键字的初始排列次序无关的是：基数排序</li>
+<li>元素的比较次数与初始序列无关是：选择排序</li>
+<li>算法的时间复杂度与初始序列无关的是：直接选择排序</li>
+</ol>
+<h4 id="3、在MySQL中，char和varchar的类型区别在于"><a href="#3、在MySQL中，char和varchar的类型区别在于" class="headerlink" title="3、在MySQL中，char和varchar的类型区别在于"></a>3、在MySQL中，char和varchar的类型区别在于</h4><ol>
+<li>用来存储字符串，只是保存方式不一样。</li>
+<li>char有固定的长度，而varchar属于可变长的字符类型。</li>
+</ol>
+<h3 id="小米笔试"><a href="#小米笔试" class="headerlink" title="小米笔试"></a>小米笔试</h3><h4 id="1、图"><a href="#1、图" class="headerlink" title="1、图"></a>1、图</h4><blockquote>
+<p>假设一个无向图包含12个顶点，其中5个顶点有5个段，7个顶点有7个度，那么这个图有（12）条边</p>
+</blockquote>
+<h4 id="2、为避免运算过程中整型溢出可以考虑的方法"><a href="#2、为避免运算过程中整型溢出可以考虑的方法" class="headerlink" title="2、为避免运算过程中整型溢出可以考虑的方法"></a>2、为避免运算过程中整型溢出可以考虑的方法</h4><p>一般在计算时，使用long来执行，在计算的因子中显式地标准数字类型。</p>
+<h4 id="3、队列，两端入队，一端出队"><a href="#3、队列，两端入队，一端出队" class="headerlink" title="3、队列，两端入队，一端出队"></a>3、队列，两端入队，一端出队</h4><h4 id="4、TCP是面向数据报的传输，UDP是面向字节流的传输（false）"><a href="#4、TCP是面向数据报的传输，UDP是面向字节流的传输（false）" class="headerlink" title="4、TCP是面向数据报的传输，UDP是面向字节流的传输（false）"></a>4、TCP是面向数据报的传输，UDP是面向字节流的传输（false）</h4><p>TCP是面向字节流的传输，UDP是面向数据报的传输</p>
+<h4 id="5、线程的粒度小于进程（true）"><a href="#5、线程的粒度小于进程（true）" class="headerlink" title="5、线程的粒度小于进程（true）"></a>5、线程的粒度小于进程（true）</h4><p>线程的划分尺度小于进程，使得多线程程序的并发性高。 </p>
+<h4 id="6、-strcmp-sprintf-strcpy-strncat-那些函数容易造成缓冲区溢出"><a href="#6、-strcmp-sprintf-strcpy-strncat-那些函数容易造成缓冲区溢出" class="headerlink" title="6、(strcmp,sprintf,strcpy,strncat)那些函数容易造成缓冲区溢出"></a>6、(strcmp,sprintf,strcpy,strncat)那些函数容易造成缓冲区溢出</h4><p>警惕缓冲区溢出（不安全的库函数）</p>
+<ol>
+<li>字符串处理函数<ol>
+<li>strcpy()</li>
+<li>strcat()</li>
+<li>sprintf()、vsprintf()</li>
+</ol>
+</li>
+<li>字符读取函数<ol>
+<li>gets()</li>
+<li>getchar()、fgetc()、getc()、read()</li>
+<li>scanf()系列</li>
+<li>getenv()</li>
+</ol>
+</li>
+</ol>
+<h3 id="百信银行笔试"><a href="#百信银行笔试" class="headerlink" title="百信银行笔试"></a>百信银行笔试</h3><h4 id="1、属于应用层的网络协议"><a href="#1、属于应用层的网络协议" class="headerlink" title="1、属于应用层的网络协议"></a>1、属于应用层的网络协议</h4><ol>
+<li>域名系统（Domain Name System，DNS）：用于实现网络设备名字到IP地址映射的网络 服务。</li>
+<li>文件传输协议（File Transfer Protocol，FTP）：用于实现交互式文件传输功能。</li>
+<li>简单邮件传送协议（Simple Mail Transfer Protocol， SMTP）：用于实现电子邮箱传送功能</li>
+<li>超文本传输协议（HyperText Transfer Protocol，HTTP）：用于实现WWW服务。</li>
+<li>简单网络管理协议（simple Network Management Protocol，SNMP）用于管理与监视网络设备</li>
+<li>远程登录协议（Telnet）：用于实现远程登录功能。</li>
+</ol>
+<h4 id="2、抽象abstract方法是否可同时是静态的static，是否可同时被synchronized修饰"><a href="#2、抽象abstract方法是否可同时是静态的static，是否可同时被synchronized修饰" class="headerlink" title="2、抽象abstract方法是否可同时是静态的static，是否可同时被synchronized修饰"></a>2、抽象abstract方法是否可同时是静态的static，是否可同时被synchronized修饰</h4><ol>
+<li>抽象方法需要子类重写，而静态的方法是无法被重写的，因此二者是矛盾的。</li>
+<li>synchronized和方法的实现细节有关，抽象方法不涉及实现细节，因此也是相互矛盾的。</li>
+</ol>
+<h4 id="3、迭代查询"><a href="#3、迭代查询" class="headerlink" title="3、迭代查询"></a>3、迭代查询</h4><blockquote>
+<p>本地域名服务器在域名解析过程中，可能发出DNS查询的最多次数（3？）</p>
+</blockquote>
+<ol>
+<li>最少情况下：当本机DNS高速缓存中存有该域名的DNS信息时，则不需要查询任何域名服务器，这样最少发出0次DNS查询。</li>
+<li>最多情况下：因为均采用迭代查询的方式，在最坏的情况下，需要依次迭代地向本地域名服务器、根域名服务器（.com）、顶级域名服务器（xyz.com）、权限域名服务器（abc.xyz.com）发出DNS查询请求，因此最多发出4次DNS查询。</li>
+</ol>
+<h4 id="4、5条直线最多可将一个圆切成（13-16）份"><a href="#4、5条直线最多可将一个圆切成（13-16）份" class="headerlink" title="4、5条直线最多可将一个圆切成（13-16）份"></a>4、5条直线最多可将一个圆切成（13-16）份</h4><p>n条直线最多可以把一个圆分成s份,公式s=1+n(n+1)/2,把5带入就可得,s=16份,既最多可分16份</p>
+<h4 id="5、Hive中内部外部表的区别"><a href="#5、Hive中内部外部表的区别" class="headerlink" title="5、Hive中内部外部表的区别"></a>5、Hive中内部外部表的区别</h4><p>未被external修饰的是内部表，被external修饰的为外部表；</p>
+<h5 id="区别："><a href="#区别：" class="headerlink" title="区别："></a>区别：</h5><ol>
+<li>内部表数据由Hive自身管理，外部表数据由HDFS管理；</li>
+<li>内部表数据存储的位置是hive.metastore.warehouse.dir（默认：/user/hive/warehouse），外部表数据的存储位置由自己制定；</li>
+<li>删除内部表会直接删除元数据（metadata）及存储数据；删除外部表仅仅会删除元数据，HDFS上的文件并不会被删除；</li>
+<li>对内部表的修改会将修改直接同步给元数据，而对外部表的表结构和分区进行修改，则需要修复（MSCK REPAIR TABLE table_name;）</li>
+</ol>
+<h4 id="6、Java数组复制效率最高的方法"><a href="#6、Java数组复制效率最高的方法" class="headerlink" title="6、Java数组复制效率最高的方法"></a>6、Java数组复制效率最高的方法</h4><blockquote>
+<p>clone、for循环逐一复制、Array.copyOf、System.arraycopy</p>
+</blockquote>
+<ol>
+<li>for循环最慢，约为clone方法的2倍，约为System.arraycopy的4~5倍；System.arraycopy最快。</li>
+<li>System.arraycopy &gt; clone &gt; Arrays.copyOf &gt; for循环</li>
+</ol>
+<h4 id="7、基于TCP协议"><a href="#7、基于TCP协议" class="headerlink" title="7、基于TCP协议"></a>7、基于TCP协议</h4><p>TCP是因特网中的传输层协议，使用三次握手协议建立连接。<br>当主动方发出SYN连接请求后，等待对方回答SYN+ACK  ，并最终对对方的 SYN 执行 ACK 确认。这种建立连接的方法可以防止产生错误的连接，TCP使用的流量控制协议是可变大小的滑动窗口协议。</p>
+<h5 id="TCP三次握手的过程："><a href="#TCP三次握手的过程：" class="headerlink" title="TCP三次握手的过程："></a>TCP三次握手的过程：</h5><ol>
+<li>客户端发送SYN（SEQ=x）报文给服务器端，进入SYN_SEND状态。</li>
+<li>服务器端收到SYN报文，回应一个SYN （SEQ=y）ACK(ACK=x+1）报文，进入SYN_RECV状态。</li>
+<li>客户端收到服务器端的SYN报文，回应一个ACK(ACK=y+1）报文，进入Established状态。<br>三次握手完成，TCP客户端和服务器端成功地建立连接，可以开始传输数据了。</li>
+</ol>
+<h5 id="TCP-UDP协议族："><a href="#TCP-UDP协议族：" class="headerlink" title="TCP/UDP协议族："></a>TCP/UDP协议族：</h5><ol>
+<li>HTTP(HyperText Transfer Protocol，超文本传输协议）运行于TCP协议上。</li>
+<li>TELNET (Teletype over the Network, 网络电传) ，通过一个终端(terminal)登陆到网络(运行在TCP协议上)。</li>
+<li>FTP (File Transfer Protocol, 文件传输协议) ，由名知义</li>
+<li>SMTP (Simple Mail Transfer Protocol，简单邮件传输协议) ，用来发送电子邮件(运行在TCP协议上) 。</li>
+<li>DNS (Domain Name Service，域名服务) ，用于完成地址查找，邮件转发等工作(运行在TCP和UDP协议上) 。</li>
+<li>ECHO (Echo Protocol, 回绕协议) ，用于查错及测量应答时间(运行在TCP和UDP协议上) 。</li>
+<li>NTP (Network Time Protocol，网络时间协议) ，用于网络同步(运行在UDP协议上) 。</li>
+<li>SNMP (Simple Network Management Protocol, 简单网络管理协议) ，用于网络信息的收集和网络管理。(运行于UDP协议上）</li>
+<li>BOOTP (Boot Protocol，启动协议) ，应用于无盘设备(运行在UDP协议上)。</li>
+</ol>
+<h4 id="8、a-”-”-b-”-”-s-”-”，用a与b来表示，有21-36-28-34种表示方式"><a href="#8、a-”-”-b-”-”-s-”-”，用a与b来表示，有21-36-28-34种表示方式" class="headerlink" title="8、a=”#”,b=”##”,s=”########”，用a与b来表示，有21/36/28/34种表示方式"></a>8、a=”#”,b=”##”,s=”########”，用a与b来表示，有21/36/28/34种表示方式</h4><h4 id="9、若字符串s-“aibank”，则s中的互异的非平凡子串（非空且不同于s本身）的个数为（20）"><a href="#9、若字符串s-“aibank”，则s中的互异的非平凡子串（非空且不同于s本身）的个数为（20）" class="headerlink" title="9、若字符串s=“aibank”，则s中的互异的非平凡子串（非空且不同于s本身）的个数为（20）"></a>9、若字符串s=“aibank”，则s中的互异的非平凡子串（非空且不同于s本身）的个数为（20）</h4><ol>
+<li>算第一个字母开头的， 有n个 （其中包括s本身）</li>
+<li>第二次字母开头的， n-1个</li>
+<li>一直到1个，得n + (n-1) + ….  + 1 = n(n+1) / 2 </li>
+<li>然后 减去一个 s本身，得(n²/2)+(n/2)-1=20</li>
+</ol>
+<h4 id="10、后退N帧-GSN协议"><a href="#10、后退N帧-GSN协议" class="headerlink" title="10、后退N帧 GSN协议"></a>10、后退N帧 GSN协议</h4><p>讲到gbn，首先要讲到累积确认。<br>累积确认：接收方不必对收到的分组逐个发送确认，而是可以在收到几个分组后，对按序到达的最后一个分组加以确认。 比如，发送方发送0~7个帧，接收方对第0,2,3,7个帧发送确认，就是分别对第0个帧的确认，对第1,2个帧的确认，对第3个帧的确认，对第4,5,6,7个帧的确认。 假如接收方只发送了第3个帧的确认，就说明前面0,1,2,3号帧都被接收方正常接收了，但是后面的四个帧虽然也已经发送了，但是却需要重传，这就称作Go-back-N，也就是gbn（后退N帧）协议。 在这里实际上是回退4帧。</p>
+<h4 id="11、用户代理只能发送不能接受电子邮件，则可能是（POP3）地址错误"><a href="#11、用户代理只能发送不能接受电子邮件，则可能是（POP3）地址错误" class="headerlink" title="11、用户代理只能发送不能接受电子邮件，则可能是（POP3）地址错误"></a>11、用户代理只能发送不能接受电子邮件，则可能是（POP3）地址错误</h4><ol>
+<li>用户代理使用POP3协议接收邮件。通常用户在配置电子邮件用户代理时需要设置邮件服务器的。2. POP3地址(如pop3.gmail.com)，如果这个地址设置错误，就会导致用户无法接收邮件。用户代理中的SMTP地址错误的话会导致无法发送邮件。收件人E-mail地址错误的话，可能会发错人，也可能会导致投递失败(不存在的地址)。</li>
+</ol>
+<h4 id="12、与数据库表有关的约束not-null"><a href="#12、与数据库表有关的约束not-null" class="headerlink" title="12、与数据库表有关的约束not null"></a>12、与数据库表有关的约束not null</h4><p>数据库中表的常见七大约束</p>
+<ol>
+<li>空属性not null：not null 此列属性不允许为空，必须做数据插入</li>
+<li>默认值：某一种数据会经常性的出现某个具体的值，可以在一开始就指定好，在需要真实数据的时候，用户可以选 择性的使用默认值。</li>
+<li>列描述 comment：comment描述仅作为列的作用，没有实际含义 </li>
+<li>自动填充0 （zerofill）</li>
+<li>主键约束（primary key）：主键用于唯一约束字段数据，使用主键约束的字段，不能为空，不能重复，主键所在的列为整数类型，一张表有且只能有一个主键</li>
+<li>自增长（auto_increment）</li>
+<li>唯一键（unique）</li>
+</ol>
+<h4 id="13、n-4有多少种出栈序列"><a href="#13、n-4有多少种出栈序列" class="headerlink" title="13、n=4有多少种出栈序列"></a>13、n=4有多少种出栈序列</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">f(1) = 1     //即 1</span><br><span class="line">f(2) = 2     //即 12、21</span><br><span class="line">f(3) = 5     //即 123、132、213、321、231</span><br><span class="line">f(4) = f(3) + f(2) * f(1) + f(1) * f(2) + f(3)</span><br></pre></td></tr></table></figure>
+<h4 id="14、www-aibank-com域名使用https的原因：防止流量劫持"><a href="#14、www-aibank-com域名使用https的原因：防止流量劫持" class="headerlink" title="14、www.aibank.com域名使用https的原因：防止流量劫持"></a>14、<a href="http://www.aibank.com域名使用https的原因：防止流量劫持" target="_blank" rel="noopener">www.aibank.com域名使用https的原因：防止流量劫持</a></h4><p>SSL协议提供了对服务器的身份认证，所以DNS劫持导致连接错误服务器的情况将会被发现进而终止连接，最终导致DNS挟持攻击无法实现。此外SSL协议还提供数据的加密和完整性校验，这就解决了关键信息被嗅探以及数据内容被修改的可能。</p>
+<h4 id="15、gcc工具不可用于Java构建（Maven、Gradle、Ant）"><a href="#15、gcc工具不可用于Java构建（Maven、Gradle、Ant）" class="headerlink" title="15、gcc工具不可用于Java构建（Maven、Gradle、Ant）"></a>15、gcc工具不可用于Java构建（Maven、Gradle、Ant）</h4><h4 id="16、JVM内存：Java方法、程序计数器、方法-线程隔离"><a href="#16、JVM内存：Java方法、程序计数器、方法-线程隔离" class="headerlink" title="16、JVM内存：Java方法、程序计数器、方法===线程隔离"></a>16、JVM内存：Java方法、程序计数器、方法===线程隔离</h4><ol>
+<li>程序计数器是一个比较小的内存区域，指示当前线程所执行的字节码执行到了第几行，是线程隔离的</li>
+<li>Java方法执行内存模型，用于存储局部变量，操作数栈，动态链接，方法出口等信息，是线程隔离的</li>
+<li>方法区用于存储JVM加载的类信息、常量、静态变量、编译器编译后的代码等数据，是线程共享的</li>
+<li>原则上讲，所有的对象都在堆区上分配内存，是线程之间共享的</li>
+</ol>
+<h4 id="17、Hadoop的调度器有哪些"><a href="#17、Hadoop的调度器有哪些" class="headerlink" title="17、Hadoop的调度器有哪些"></a>17、Hadoop的调度器有哪些</h4><ol>
+<li>默认的调度器FIFO</li>
+<li>计算能力调度器Capacity Scheduler</li>
+<li>公平调度器Fair Scheduler</li>
+<li>适用于异构集群的调度器LATE</li>
+<li>适用于实时作业的调度器Deadline Scheduler和Constraint-based Scheduler</li>
+</ol>
+<h3 id="珍爱网笔试（线下）"><a href="#珍爱网笔试（线下）" class="headerlink" title="珍爱网笔试（线下）"></a>珍爱网笔试（线下）</h3><h4 id="1、书写最简单的单例模式"><a href="#1、书写最简单的单例模式" class="headerlink" title="1、书写最简单的单例模式"></a>1、书写最简单的单例模式</h4><blockquote>
+<p>单例模式：保证一个类仅有一个实例，并提供一个访问它的全局访问点。</p>
+</blockquote>
+<h5 id="何时使用"><a href="#何时使用" class="headerlink" title="何时使用"></a>何时使用</h5><p>当系统需要某个类只有一个实例的时候</p>
+<h5 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h5><p>单例模式的类唯一实例由其本身控制，可以很好的控制用户何时访问它。</p>
+<h5 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public class SimpleSingleton &#123;</span><br><span class="line">private static SimpleSingleton instance;</span><br><span class="line">private SimpleSingleton()&#123;&#125;</span><br><span class="line">public static SimpleSingleton getIntance()&#123;</span><br><span class="line">if(instance == null)</span><br><span class="line">instance = new SimpleSingleton();</span><br><span class="line">return instance;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="一点资讯笔试"><a href="#一点资讯笔试" class="headerlink" title="一点资讯笔试"></a>一点资讯笔试</h3><h4 id="1、这个等式在哪种进制下成立，24-18-396（8进制）"><a href="#1、这个等式在哪种进制下成立，24-18-396（8进制）" class="headerlink" title="1、这个等式在哪种进制下成立，24*18=396（8进制）"></a>1、这个等式在哪种进制下成立，24*18=396（8进制）</h4><h4 id="2、PCI总线"><a href="#2、PCI总线" class="headerlink" title="2、PCI总线"></a>2、PCI总线</h4><p>PCI总线是一种树型结构，并且独立于CPU总线，可以和CPU总线并行操作。PCI总线上可以挂接PCI设备和PCI桥片，PCI总线上只允许有一个PCI主设备，其他的均为PCI 从设备，而且读写操作只能在主从设备之间进行，从设备之间的数据交换需要通过主设备中转</p>
+<h4 id="3、TCP通过（IP地址-端口号）来区分不同的连接"><a href="#3、TCP通过（IP地址-端口号）来区分不同的连接" class="headerlink" title="3、TCP通过（IP地址+端口号）来区分不同的连接"></a>3、TCP通过（IP地址+端口号）来区分不同的连接</h4><h4 id="4、内存1GB，机械磁盘80GB，10亿条索引数据，每条32B，哪种索引方式"><a href="#4、内存1GB，机械磁盘80GB，10亿条索引数据，每条32B，哪种索引方式" class="headerlink" title="4、内存1GB，机械磁盘80GB，10亿条索引数据，每条32B，哪种索引方式"></a>4、内存1GB，机械磁盘80GB，10亿条索引数据，每条32B，哪种索引方式</h4><h4 id="5、修改文件或目录的权限的命令是chmod"><a href="#5、修改文件或目录的权限的命令是chmod" class="headerlink" title="5、修改文件或目录的权限的命令是chmod"></a>5、修改文件或目录的权限的命令是chmod</h4><ol>
+<li>chmod [who] [+ | - | =] [mode] 文件名</li>
+<li>把index.html 文件修改为可写可读可执行:chmod 777 index.html</li>
+<li>要修改目录下所有文件属性可写可读可执行:chmod 777 <em>. </em></li>
+</ol>
+<h4 id="6、修改某个文件或目录的所有者和所属的组（chgrp）"><a href="#6、修改某个文件或目录的所有者和所属的组（chgrp）" class="headerlink" title="6、修改某个文件或目录的所有者和所属的组（chgrp）"></a>6、修改某个文件或目录的所有者和所属的组（chgrp）</h4><p>使用chown命令更改文件拥有者</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chown [-R] 账号名称 文件或目录</span><br><span class="line">chown [-R] 账号名称:用户组名称 文件或目录</span><br></pre></td></tr></table></figure>
+<p>使用chgrp命令更改文件所属用户组</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chgrp [-R] 用户组名称 dirname/filename ...</span><br></pre></td></tr></table></figure>
+<h4 id="7、2018个结点完全二叉树，叶子结点1009，高度为11"><a href="#7、2018个结点完全二叉树，叶子结点1009，高度为11" class="headerlink" title="7、2018个结点完全二叉树，叶子结点1009，高度为11"></a>7、2018个结点完全二叉树，叶子结点1009，高度为11</h4><ol>
+<li>排成完全二叉树时叶子节点最多</li>
+<li>高度为11的满二叉树有2^11-1=2047个节点，高度为10的满二叉树有2^10-1=1023个节点</li>
+<li>由2018-1023=995，可以得出第11层有995个叶子节点</li>
+<li>然后第10层有512-995/2=16个叶子节点，所以总的叶子节点数为995+14=1009个</li>
+</ol>
+<h4 id="8、Linux"><a href="#8、Linux" class="headerlink" title="8、Linux"></a>8、Linux</h4><blockquote>
+<p>压缩的日志文件“youzan.log.gz”中查找关键字“exception”并统计出现次数0</p>
+</blockquote>
+<p>zgrep “start” ./xxx.gz</p>
+<h4 id="9、有19球，分为4堆，至少3球，多少种"><a href="#9、有19球，分为4堆，至少3球，多少种" class="headerlink" title="9、有19球，分为4堆，至少3球，多少种"></a>9、有19球，分为4堆，至少3球，多少种</h4><h3 id="同花顺笔试"><a href="#同花顺笔试" class="headerlink" title="同花顺笔试"></a>同花顺笔试</h3><h4 id="1、int-m-10-int-n-11-交换m-n-不使用临时变量，至少两种方法"><a href="#1、int-m-10-int-n-11-交换m-n-不使用临时变量，至少两种方法" class="headerlink" title="1、int m=10;int n=11;交换m,n,不使用临时变量，至少两种方法"></a>1、int m=10;int n=11;交换m,n,不使用临时变量，至少两种方法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">//交换a、b的值，不使用临时变量</span><br><span class="line">public class change &#123;</span><br><span class="line"></span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		int a = 11;</span><br><span class="line">		int b = 22;</span><br><span class="line">	    //交换a、b的值（加减法）</span><br><span class="line">		a = a + b;</span><br><span class="line">	    b = a - b;</span><br><span class="line">	    a = a - b;</span><br><span class="line">	    //交换a、b的值（乘除法）</span><br><span class="line">	    a = a * b;</span><br><span class="line">	    b = a / b;</span><br><span class="line">	    a = a / b;</span><br><span class="line">	    //交换a、b的值（异或法）</span><br><span class="line">	    a ^= b;//a=a^b</span><br><span class="line">	    b ^= a;//b=b^(a^b)=b^a^b=b^b^a=0^a=a</span><br><span class="line">	    a ^= b;//a=(a^b)^a=a^b^a=a^a^b=0^b=b</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2、进程间通信方式，以及各自的特点和应用场景"><a href="#2、进程间通信方式，以及各自的特点和应用场景" class="headerlink" title="2、进程间通信方式，以及各自的特点和应用场景"></a>2、进程间通信方式，以及各自的特点和应用场景</h4><ol>
+<li>（有名）管道：单向的，先进先出，提供了简单的流控制，进程读空管道或者写满管道，都将造成进程阻塞<br>管道包括无名管道和有名管道，前者用于父子间进程通信，后者用于任意两个进程间通信</li>
+<li>信号：因按键、硬件异常、进程调用kill函数将信号发送给另一个进程、用户调用kill命令将信号发送给其他进程，传递的消息比较少，主要是通知消息</li>
+<li>消息队列：一个消息链表，可以把消息看作一个记录，具有特定的格式，进程可以向队列中添加消息或者读走消息，有缓冲区</li>
+<li>共享内存：映射一段可以被其他进程访问的内存，这段共享物理内存由一个进程创建，但是多个进程都可以访问，共享内存是进程间共享数据的一种最快的方法</li>
+<li>信号量：用于保护临界资源，进程可以根据它来判断是否能够访问某些公共资源，除了用于反复问控制外，还可以用于进程同步，相当于计数器</li>
+<li>套接字：可以用于不同进程间的通信。<ol>
+<li>流式套接字：提供可靠的，面向连接的通讯流</li>
+<li>数据包套接字：定义一种无连接的服务，通过相互独立的报文进行传输，是无序的</li>
+<li>原始套接字：用于新的网络协议的测试</li>
+</ol>
+</li>
+</ol>
+<h4 id="3、进程"><a href="#3、进程" class="headerlink" title="3、进程"></a>3、进程</h4><blockquote>
+<p>描述一个进程在内存中的布局和具体的作用/一个进程能使用的内存地址空间有多大？如果超过这个限制，程序会报什么错误？/如何访问（读、写）另外一个进程的内存</p>
+</blockquote>
+<ol>
+<li>代码区Code segment：存放程序的二进制代码,</li>
+<li>常量区Constant segment：所有常量均存放在常量区。程序结束后由OS释放</li>
+<li>全局数据区Global data segment：全局变量和静态数据,即使是函数内部的静态局部变量,均存放于全局数据区。程序结束后由Os释放</li>
+<li>堆区Heap segment：由程序员分配和释放,若程序员不释放,程序结束时可能由OS释放。该区存放由new, malloc产生的动态数据,</li>
+<li>栈区Stack segment：由编译器自动分配和释放。存放:<ol>
+<li>函数内部的自动变量,即局部变量,</li>
+<li>函数的参数值,</li>
+</ol>
+</li>
+</ol>
+<h5 id="内存溢出"><a href="#内存溢出" class="headerlink" title="内存溢出"></a>内存溢出</h5><ol>
+<li>堆区最多开2G - 1大小空间</li>
+<li>栈区能开1G多，当接近2G就会报错</li>
+<li>内存共享，消息传递，或者产生CopyDataStruct缓冲区</li>
+</ol>
+<h4 id="4、正整数和负整数在内存中的存储有什么区别？（补码）"><a href="#4、正整数和负整数在内存中的存储有什么区别？（补码）" class="headerlink" title="4、正整数和负整数在内存中的存储有什么区别？（补码）"></a>4、正整数和负整数在内存中的存储有什么区别？（补码）</h4><p>整数在内存中是以补码的形式存放，其中正整数的源码反码补码形式相同；负整数的原码反码补码形式不同</p>
+<h4 id="5、Linux上从另一台服务器上拷贝文件到本机应该执行什么指令"><a href="#5、Linux上从另一台服务器上拷贝文件到本机应该执行什么指令" class="headerlink" title="5、Linux上从另一台服务器上拷贝文件到本机应该执行什么指令"></a>5、Linux上从另一台服务器上拷贝文件到本机应该执行什么指令</h4><p>将远程linux主机上/remote/path的文件copy到本主机的/local/path目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp user@remote.machine:/remote/path /local/path</span><br></pre></td></tr></table></figure>
+<p>将本主机的/local/path目录copy到远程linux主机上/remote/path的文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp /local/path user@remote.machine:/remote/path</span><br></pre></td></tr></table></figure>
+<h4 id="6、编程实现二分查找算法"><a href="#6、编程实现二分查找算法" class="headerlink" title="6、编程实现二分查找算法"></a>6、编程实现二分查找算法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">/* 数组实现 */ </span><br><span class="line">int *bsearch(int *t, int n, int x) &#123; </span><br><span class="line">    int lo = 0, hi = n; </span><br><span class="line">    while (lo &lt; hi) &#123; </span><br><span class="line">        int mid = (lo + hi) / 2; </span><br><span class="line">        if (x &lt; t[mid]) </span><br><span class="line">            hi = mid; </span><br><span class="line">        else if (x &gt; t[mid]) </span><br><span class="line">                lo = mid + 1; </span><br><span class="line">        else return t + mid; </span><br><span class="line">    &#125; </span><br><span class="line">    return NULL; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="7、TCP的三次握手，TIME-WAIT和CLOSE-WAIT状态是什么"><a href="#7、TCP的三次握手，TIME-WAIT和CLOSE-WAIT状态是什么" class="headerlink" title="7、TCP的三次握手，TIME_WAIT和CLOSE_WAIT状态是什么"></a>7、TCP的三次握手，TIME_WAIT和CLOSE_WAIT状态是什么</h4><ol>
+<li>TIME_WAIT ：主动关闭链接时形成的，等待2MSL时间，约4分钟。主要是防止最后一个ACK丢失。  由于TIME_WAIT 的时间会非常长，因此server端应尽量减少主动关闭连接</li>
+<li>CLOSE_WAIT：被动关闭连接是形成的。根据TCP状态机，服务器端收到客户端发送的FIN，则按照TCP实现发送ACK，因此进入CLOSE_WAIT状态。但如果服务器端不执行close()，就不能由CLOSE_WAIT迁移到LAST_ACK，则系统中会存在很多CLOSE_WAIT状态的连接。此时，可能是系统忙于处理读、写操作，而未将已收到FIN的连接，进行close。此时，recv/read已收到FIN的连接socket，会返回0。</li>
+</ol>
+<h4 id="8、编写代码。判断CPU是大端还是小端存储顺序"><a href="#8、编写代码。判断CPU是大端还是小端存储顺序" class="headerlink" title="8、编写代码。判断CPU是大端还是小端存储顺序"></a>8、编写代码。判断CPU是大端还是小端存储顺序</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#include &quot;stdio.h&quot;</span><br><span class="line">int main()&#123;</span><br><span class="line">  union w&#123;</span><br><span class="line">  int a;  //4 bytes</span><br><span class="line">  char b; //1 byte</span><br><span class="line"> &#125; c;</span><br><span class="line">  c.a=1;</span><br><span class="line">  if (c.b==1)</span><br><span class="line">  printf(&quot;It is Little_endian!\n&quot;);</span><br><span class="line">  else</span><br><span class="line">  printf(&quot;It is Big_endian!\n&quot;);</span><br><span class="line">  return 1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="9、编程"><a href="#9、编程" class="headerlink" title="9、编程"></a>9、编程</h4><blockquote>
+<p>一个整数数组中的元素有正有负，在该数组中找出一个连续子数组，要求该子数组中各元素的和最大（即最大子数组）</p>
+</blockquote>
+<h4 id="10、观察者模式伪代码"><a href="#10、观察者模式伪代码" class="headerlink" title="10、观察者模式伪代码"></a>10、观察者模式伪代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">//即时通信客户端伪代码</span><br><span class="line">public class ClientObservable extends java.util.Observable&#123;</span><br><span class="line">private static ClientObservable instance = new ClientObservable();</span><br><span class="line">public static ClientObservable getInstance()&#123;</span><br><span class="line">return instance;</span><br><span class="line">&#125;</span><br><span class="line">public void addListener( RevcListener listener )&#123;</span><br><span class="line">this.addObserver( listener );</span><br><span class="line">&#125;</span><br><span class="line">public void fire( RevcMessage message )&#123;</span><br><span class="line">this.setChanged();</span><br><span class="line">this.notifyObservers( message );</span><br><span class="line">&#125;</span><br><span class="line">public static abstract class RevcListener implements java.util.Observer&#123;</span><br><span class="line">@Override</span><br><span class="line">public void update( Observable o, Object arg )&#123;</span><br><span class="line">this.onRevc( ( RevcMessage ) arg );</span><br><span class="line">&#125;</span><br><span class="line">public abstract void onRevc( RevcMessage message );</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//在客户端显示界面调用</span><br><span class="line">ClientObservable.getInstance().addListener( new RevcListener()&#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void onRevc( RevcMessage message )&#123;</span><br><span class="line">        //TODO</span><br><span class="line">        MyPane.this.t.setText( &quot;1111111111111111&quot; );&#125;</span><br><span class="line">    &#125; </span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h4 id="11、对非对称加密的理解，什么时候使用非对称加密"><a href="#11、对非对称加密的理解，什么时候使用非对称加密" class="headerlink" title="11、对非对称加密的理解，什么时候使用非对称加密"></a>11、对非对称加密的理解，什么时候使用非对称加密</h4><ol>
+<li>非对称加密在加密的过程中使用一对密钥。一对密钥中一个用于加密，另一个用来解密。如用A加密，则用B解密；如果用B加密，则要用A解密。在这对密钥中一个密钥用来公用，另一个作为私有的密钥；用来向外公布的叫做公钥，另一半需要安全保护的是私钥。</li>
+<li>非对称加密安全性更好：非对称加密使用一对秘钥，一个用来加密，一个用来解密，而且公钥是公开的，秘钥是自己保存的，不需要像对称加密那样在通信之前要先同步秘钥。</li>
+<li>非对称加密缺点是加密和解密花费时间长、速度慢，只适合对少量数据进行加密。</li>
+</ol>
+<h4 id="12、爬台阶"><a href="#12、爬台阶" class="headerlink" title="12、爬台阶"></a>12、爬台阶</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">public class ClimbStairs</span><br><span class="line">&#123;</span><br><span class="line">/**</span><br><span class="line">* 使用朴素递归的方法和动态规划的方法实现求爬楼梯的方法数</span><br><span class="line">*/</span><br><span class="line">public static void main(String[] args)</span><br><span class="line">&#123;</span><br><span class="line">long start1, start2;//用于记录两个子函数开始运行的时间</span><br><span class="line">Scanner str = new Scanner(System.in);</span><br><span class="line">int number = str.nextInt();//获得台阶数目</span><br><span class="line">long count[] = new long[number + 1];//用于记录动态规划中子问题的解</span><br><span class="line">count[0] = 1L;</span><br><span class="line">count[1] = 1L;</span><br><span class="line">start1 = System.currentTimeMillis();//记录函数1的开始时间</span><br><span class="line">System.out.println(&quot;There are &quot; + fun1(number) + &quot; methods.&quot;);</span><br><span class="line">System.out.println(&quot;Cost &quot; + (System.currentTimeMillis() - start1) + &quot; ms.&quot;);//获得函数1的执行时间</span><br><span class="line">start2 = System.currentTimeMillis();//记录函数2的开始时间</span><br><span class="line">System.out.println(&quot;There are &quot; + fun2(count, number) + &quot; methods.&quot;);</span><br><span class="line">System.out.println(&quot;Cost &quot; + (System.currentTimeMillis() - start2) + &quot; ms.&quot;);//获得函数2的运行时间</span><br><span class="line">&#125;</span><br><span class="line">//定义朴素递归调用方法</span><br><span class="line">public static long fun1(int num)</span><br><span class="line">&#123;</span><br><span class="line">if (num == 1)//基础情况</span><br><span class="line">return 1L;</span><br><span class="line">else if (num == 2)//基础情况</span><br><span class="line">return 2L;</span><br><span class="line">else</span><br><span class="line">return fun1(num - 1) + fun1(num - 2);//递归调用</span><br><span class="line">&#125;</span><br><span class="line">//定义动态规划方法</span><br><span class="line">public static long fun2(long count[], int num)</span><br><span class="line">&#123;</span><br><span class="line">if (num == 1)//基础情况</span><br><span class="line">return 1L;</span><br><span class="line">else</span><br><span class="line">&#123;</span><br><span class="line">for (int i = 2; i &lt;= num; i++)</span><br><span class="line">&#123;</span><br><span class="line">count[i] = count[i - 1] + count[i - 2];//这里并没有调用原函数计算，而是直接使用子问题的结果</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">return count[num];</span><br><span class="line">&#125;&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="13、什么是深拷贝？什么是浅拷贝？"><a href="#13、什么是深拷贝？什么是浅拷贝？" class="headerlink" title="13、什么是深拷贝？什么是浅拷贝？"></a>13、什么是深拷贝？什么是浅拷贝？</h4><ol>
+<li>浅拷贝是对指针的拷贝，拷贝后两个指针指向同一个内存空间，</li>
+<li>深拷贝不但对指针进行拷贝，而且对指针指向的内容进行拷贝，经深拷贝后的指针是指向两个不同地址的指针。</li>
+</ol>
+<h4 id="14、利用sort-排序整个vector容器里元素的时间复杂度是多少"><a href="#14、利用sort-排序整个vector容器里元素的时间复杂度是多少" class="headerlink" title="14、利用sort()排序整个vector容器里元素的时间复杂度是多少"></a>14、利用sort()排序整个vector容器里元素的时间复杂度是多少</h4><h4 id="15、写一个分割字符串的函数，它可以将一个用某分隔符分割的字符串解析成分割后的结果集"><a href="#15、写一个分割字符串的函数，它可以将一个用某分隔符分割的字符串解析成分割后的结果集" class="headerlink" title="15、写一个分割字符串的函数，它可以将一个用某分隔符分割的字符串解析成分割后的结果集"></a>15、写一个分割字符串的函数，它可以将一个用某分隔符分割的字符串解析成分割后的结果集</h4><h4 id="16、什么是死锁？如何确保N个线程可以访问N个资源同时又不导致死锁？"><a href="#16、什么是死锁？如何确保N个线程可以访问N个资源同时又不导致死锁？" class="headerlink" title="16、什么是死锁？如何确保N个线程可以访问N个资源同时又不导致死锁？"></a>16、什么是死锁？如何确保N个线程可以访问N个资源同时又不导致死锁？</h4><ol>
+<li>死锁是指两个或两个以上的进程在执行过程中，由于竞争资源或者由于彼此通信而造成的一种阻塞的现象，若无外力作用，它们都将无法推进下去。此时称系统处于死锁状态或系统产生了死锁，这些永远在互相等待的进程称为死锁进程。</li>
+<li>指定锁的顺序，并强制线程按照指定的顺序获取锁。因此所有的线程都是以同样的加锁和释放锁，就不会出现死锁了</li>
+</ol>
+<h5 id="多线程产生死锁的四个必要条件："><a href="#多线程产生死锁的四个必要条件：" class="headerlink" title="多线程产生死锁的四个必要条件："></a>多线程产生死锁的四个必要条件：</h5><ol>
+<li>互斥条件：一个资源每次只能被一个进程使用。</li>
+<li>保持和请求条件：一个进程因请求资源而阻塞时，对已获得资源保持不放。</li>
+<li>不可剥夺调教：进程已获得资源，在未使用完成前，不能被剥夺。</li>
+<li>循环等待条件：若干进程之间形成一种头尾相接的循环等待资源关系。</li>
+</ol>
+<h4 id="17、IP-188-188-0-111，IP-188-188-5-222，子网掩码设为255-255-252-0，在同一网段吗？为什么"><a href="#17、IP-188-188-0-111，IP-188-188-5-222，子网掩码设为255-255-252-0，在同一网段吗？为什么" class="headerlink" title="17、IP:188.188.0.111，IP:188.188.5.222，子网掩码设为255.255.252.0，在同一网段吗？为什么"></a>17、IP:188.188.0.111，IP:188.188.5.222，子网掩码设为255.255.252.0，在同一网段吗？为什么</h4><p>两个ip不在一个网段</p>
+<ol>
+<li>188.188.0.111 的网络号是 188.188.0.0</li>
+<li>188.188.5.222 的网络号是 188.188.4.0</li>
+</ol>
+<h4 id="18、一个使用GBK的中文文本文件，按照CP936读取，不产生乱码"><a href="#18、一个使用GBK的中文文本文件，按照CP936读取，不产生乱码" class="headerlink" title="18、一个使用GBK的中文文本文件，按照CP936读取，不产生乱码"></a>18、一个使用GBK的中文文本文件，按照CP936读取，不产生乱码</h4><h4 id="19、编程"><a href="#19、编程" class="headerlink" title="19、编程"></a>19、编程</h4><blockquote>
+<p>假如有一个包含2017年所有日期的数组，数组中每个元素都是“月日”格式的字符串，且日期是按照从小到大排列的，类似这样：{“0101”，“0102”，“0103”，…}<br>请编写程序，该程序可以传入一个”月日”格式的日期，并返回该日期是数组中的第几个元素，比如传入”0101”,则返回1；传入“0103”，则返回3</p>
+</blockquote>
+<h3 id="猪八戒笔试"><a href="#猪八戒笔试" class="headerlink" title="猪八戒笔试"></a>猪八戒笔试</h3><h4 id="1、RuntimeException-Exception"><a href="#1、RuntimeException-Exception" class="headerlink" title="1、RuntimeException/Exception"></a>1、RuntimeException/Exception</h4><ol>
+<li>抛出 RuntimeException，调用方法的程序员不需要知道会出这个异常</li>
+<li>抛出Exception的方法，调用者需要明确知道这个方法里会出现什么异常，并提示调用者要去处理这个可能得异常。</li>
+</ol>
+<h4 id="2、java-util-List不能存整数-数组-加入重复的数据"><a href="#2、java-util-List不能存整数-数组-加入重复的数据" class="headerlink" title="2、java.util.List不能存整数/数组/加入重复的数据"></a>2、java.util.List不能存整数/数组/加入重复的数据</h4><p>List一般允许重复的元素存在</p>
+<h4 id="3、命令行中改变当前目录-文件夹的Linux-Window命令是（cd）"><a href="#3、命令行中改变当前目录-文件夹的Linux-Window命令是（cd）" class="headerlink" title="3、命令行中改变当前目录/文件夹的Linux/Window命令是（cd）"></a>3、命令行中改变当前目录/文件夹的Linux/Window命令是（cd）</h4><p>cd: change directory 切换目录</p>
+<h4 id="4、1是Long还是Object"><a href="#4、1是Long还是Object" class="headerlink" title="4、1是Long还是Object"></a>4、1是Long还是Object</h4><p>long型可以表示的整型数字范围为-2^32 ~ 2^32-1。</p>
+<h4 id="5、java-util-Map不能存整数-数组"><a href="#5、java-util-Map不能存整数-数组" class="headerlink" title="5、java.util.Map不能存整数/数组"></a>5、java.util.Map不能存整数/数组</h4><p>map是key-value的形式存放的</p>
+<h4 id="6、计算机缺了（硬盘-显示器-内存）部件，不可能工作"><a href="#6、计算机缺了（硬盘-显示器-内存）部件，不可能工作" class="headerlink" title="6、计算机缺了（硬盘/显示器/内存）部件，不可能工作"></a>6、计算机缺了（硬盘/显示器/内存）部件，不可能工作</h4><h4 id="7、将int转换为String的正确方法"><a href="#7、将int转换为String的正确方法" class="headerlink" title="7、将int转换为String的正确方法"></a>7、将int转换为String的正确方法</h4><ol>
+<li>String s = String.valueOf(i);</li>
+<li>String s = Integer.toString(i);</li>
+<li>String s = “” + i;</li>
+</ol>
+<h4 id="8、and是SQL关键字？（true）"><a href="#8、and是SQL关键字？（true）" class="headerlink" title="8、and是SQL关键字？（true）"></a>8、and是SQL关键字？（true）</h4><h4 id="9、多表关联查询，用关联条件的字段建立索引，可以提高SQL语句效率"><a href="#9、多表关联查询，用关联条件的字段建立索引，可以提高SQL语句效率" class="headerlink" title="9、多表关联查询，用关联条件的字段建立索引，可以提高SQL语句效率"></a>9、多表关联查询，用关联条件的字段建立索引，可以提高SQL语句效率</h4><p>SQL以order by的字段建立索引，可以改变SQL语句效率</p>
+<h4 id="10、protected-子类、父类"><a href="#10、protected-子类、父类" class="headerlink" title="10、protected 子类、父类"></a>10、protected 子类、父类</h4><ol>
+<li>protected：本包可以访问，子类可以继承。</li>
+<li>某类的protected 方法和属性在包外是不能通过该类对象进行访问的</li>
+<li>在该类包外的子类中能“看到“的只是子类自己继承来的protected 方法和属性，它是不能“看到“它的父类对象的protected方法和属性的。</li>
+</ol>
+<h4 id="11、long-MAX-VALUE-0（运行时异常）"><a href="#11、long-MAX-VALUE-0（运行时异常）" class="headerlink" title="11、long.MAX_VALUE/0（运行时异常）"></a>11、long.MAX_VALUE/0（运行时异常）</h4><h4 id="12、队列可以基于java-util-Set实现（false）"><a href="#12、队列可以基于java-util-Set实现（false）" class="headerlink" title="12、队列可以基于java.util.Set实现（false）"></a>12、队列可以基于java.util.Set实现（false）</h4><ol>
+<li>Queue接口与List、Set同一级别，都是继承了Collection接口。</li>
+<li>LinkedList实现了Queue接口。</li>
+<li>Queue接口窄化了对LinkedList的方法的访问权限，即在方法中的参数类型如果是Queue时，就完全只能访问Queue接口所定义的方法 了，而不能直接访问 LinkedList的非Queue的方法，以使得只有恰当的方法才可以使用。</li>
+<li>BlockingQueue 继承了Queue接口。 </li>
+</ol>
+<h4 id="13、Integer-MAX-VALUE-1-（运行时异常）"><a href="#13、Integer-MAX-VALUE-1-（运行时异常）" class="headerlink" title="13、Integer.MAX_VALUE+1==?（运行时异常）"></a>13、Integer.MAX_VALUE+1==?（运行时异常）</h4><ol>
+<li>Integer.MAX_VALUE+1=Integer.MIN_VALUE</li>
+<li>Integer.MAX_VALUE的二进制是0111 1111 1111 1111 1111 1111 1111 1111</li>
+<li>Integer.MIN_VALUE的二进制是 1000 0000 0000 0000 0000 0000 0000 0000</li>
+</ol>
+<h4 id="14、如果不使用native实现，java程序不可能发生内存泄露"><a href="#14、如果不使用native实现，java程序不可能发生内存泄露" class="headerlink" title="14、如果不使用native实现，java程序不可能发生内存泄露"></a>14、如果不使用native实现，java程序不可能发生内存泄露</h4><p>内存泄漏发生的原因和解决方法。</p>
+<ol>
+<li>全局集合<ol>
+<li>在大型应用程序中存在各种各样的全局数据仓库是很普遍的，在这些情况下，必须注意管理储存库的大小。必须有某种机制从储存库中移除不再需要的数据。</li>
+<li>解决形式<ol>
+<li>一种周期运行的清除作业，验证仓库中的数据然后清除一切不需要的数据。</li>
+<li>使用反向链接(referrer)计数，集合负责统计集合中每个入口的反向链接的数目，要求反向链接告诉集合何时会退出入口。当反向链接数目为零时，该元素就可以从集合中移除了。</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>缓存<ol>
+<li>缓存一种用来快速查找已经执行过的操作结果的数据结构，把常用的输入数据的操作结果进行缓存，以便在下次调用该操作时使用缓存的数据。通常以动态方式实现，如果缓存设置不正确而大量使用缓存的话则会出现内存溢出的后果，因此需要将所使用的内存容量与检索数据的速度加以平衡。</li>
+<li>解决途径是使用java.lang.ref.SoftReference类坚持将对象放入缓存。这个方法可以保证当虚拟机用完内存或者需要更多堆的时候，可以释放这些对象的引用。</li>
+</ol>
+</li>
+<li>类装载器<ol>
+<li>Java类装载器的使用为内存泄漏提供了许多可乘之机。一般来说类装载器都具有复杂结构，因为类装载器不仅仅是只与”常规”对象引用有关，同时也和对象内部的引用有关。比如数据变量，方法和各种类。这意味着只要存在对数据变量，方法，各种类和对象的类装载器，那么类装载器将驻留在JVM中。既然类装载器可以同很多的类关联，同时也可以和静态数据变量关联，那么相当多的内存就可能发生泄漏。 </li>
+<li>从JVM获得内存系统信息的方法基本上有两种：<ol>
+<li>ava虚拟机工具接口(Java Virtual Machine Tools Interface，JVMTI)及其前身Java虚拟机监视程序接口(Java Virtual Machine Profiling Interface，JVMPI)是外部工具与JVM通信并从JVM收集信息的标准化接口。</li>
+<li>字节码技术是指使用探测器处理字节码以获得工具所需的信息的技术。</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h4 id="15、select-from-A-left-join-B-on-1-2"><a href="#15、select-from-A-left-join-B-on-1-2" class="headerlink" title="15、select * from A left join B on 1=2"></a>15、select * from A left join B on 1=2</h4><p>on：与取得结果集同步进行数据刷选及过滤</p>
+<h4 id="16、JDK不能安装到服务器上（false）"><a href="#16、JDK不能安装到服务器上（false）" class="headerlink" title="16、JDK不能安装到服务器上（false）"></a>16、JDK不能安装到服务器上（false）</h4><h4 id="17、索引可能加快select-update-delete的速度（true）"><a href="#17、索引可能加快select-update-delete的速度（true）" class="headerlink" title="17、索引可能加快select/update/delete的速度（true）"></a>17、索引可能加快select/update/delete的速度（true）</h4><p>索引除了提高查询速度外，也能提高DML操作的速度</p>
+<h4 id="18、-0xF-lt-lt-8-amp-amp-0xF结果（1）"><a href="#18、-0xF-lt-lt-8-amp-amp-0xF结果（1）" class="headerlink" title="18、(0xF&lt;&lt;8)&amp;&amp;0xF结果（1）"></a>18、(0xF&lt;&lt;8)&amp;&amp;0xF结果（1）</h4><p>~在C语言中是按位取反的意思，<br>~(0xf)则要看一起运算的变量或者赋值的变量类型。</p>
+<ol>
+<li>如果是unsigned char（8位），unsigned char i = ~(0xf); 那么 ~(0Xf)=11110000（2进制）=0xF0=240（10进制无符号数）</li>
+<li>如果是char（8位），char i = ~(0xf); 那么 ~(0Xf)=11110000（2进制）=0xF0=-16（10进制有符号数）</li>
+<li>如果是unsigned short（16位），unsigned short i = ~(0xf); 那么 ~(0Xf)=1111111111110000（2进制）=0xFFF0=65520（10进制无符号数）</li>
+<li>如果是short（16位），short i = ~(0xf); 那么 ~(0Xf)=1111111111110000（2进制）=0xFFF0=-16（10进制有符号数）</li>
+</ol>
+<h4 id="19、生产者消费者模式"><a href="#19、生产者消费者模式" class="headerlink" title="19、生产者消费者模式"></a>19、生产者消费者模式</h4><blockquote>
+<p>生产者消费者模式中，如果生产者多线程，消费者单线程，不会有线程安全问题（false）</p>
+</blockquote>
+<p>采用wait—notify实现生产者消费者模式</p>
+<ol>
+<li>一生产者与一消费者：</li>
+<li>一生产者与多消费者：</li>
+</ol>
+<h4 id="20、若要把变量声明为多个线程共用的变量，应使用修饰符（volatile）"><a href="#20、若要把变量声明为多个线程共用的变量，应使用修饰符（volatile）" class="headerlink" title="20、若要把变量声明为多个线程共用的变量，应使用修饰符（volatile）"></a>20、若要把变量声明为多个线程共用的变量，应使用修饰符（volatile）</h4><p>如果用transient声明一个实例变量，当对象存储时，它的值不需要维持。即，用transient关键字标记的成员变量不参与序列化过程。</p>
+<h5 id="21、int-x-’A’-‘a’-x的值（26）"><a href="#21、int-x-’A’-‘a’-x的值（26）" class="headerlink" title="21、int x=’A’-‘a’;x的值（26）"></a>21、int x=’A’-‘a’;x的值（26）</h5><p>ASCII码运算</p>
 
       
     </div>
@@ -614,7 +1065,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#CVTE笔试"><span class="nav-number">1.</span> <span class="nav-text">CVTE笔试</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、IPV4"><span class="nav-number">1.1.</span> <span class="nav-text">1、IPV4</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#定义"><span class="nav-number">1.1.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#目的"><span class="nav-number">1.1.2.</span> <span class="nav-text">目的</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#IPv4协议族"><span class="nav-number">1.1.3.</span> <span class="nav-text">IPv4协议族</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#IPv4地址组成"><span class="nav-number">1.1.4.</span> <span class="nav-text">IPv4地址组成</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、JVM垃圾回收，年老代堆空间、年轻代堆空间"><span class="nav-number">1.2.</span> <span class="nav-text">2、JVM垃圾回收，年老代堆空间、年轻代堆空间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、网卡是完成（数据链路层和物理层）功能"><span class="nav-number">1.3.</span> <span class="nav-text">3、网卡是完成（数据链路层和物理层）功能</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#主要功能"><span class="nav-number">1.3.1.</span> <span class="nav-text">主要功能</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、多列索引-聚簇索引-索引选择性"><span class="nav-number">1.4.</span> <span class="nav-text">4、多列索引/聚簇索引/索引选择性</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#多列索引"><span class="nav-number">1.4.1.</span> <span class="nav-text">多列索引</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#聚簇索引"><span class="nav-number">1.4.2.</span> <span class="nav-text">聚簇索引</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#索引的选择性"><span class="nav-number">1.4.3.</span> <span class="nav-text">索引的选择性</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#确定索引的选择性的方法"><span class="nav-number">1.4.3.1.</span> <span class="nav-text">确定索引的选择性的方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、Java泛型"><span class="nav-number">1.5.</span> <span class="nav-text">5、Java泛型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6、Java集合类"><span class="nav-number">1.6.</span> <span class="nav-text">6、Java集合类</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#集合详解"><span class="nav-number">1.6.1.</span> <span class="nav-text">集合详解</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Map-和-Set-集合的关系"><span class="nav-number">1.6.2.</span> <span class="nav-text">Map 和 Set 集合的关系</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7、排序"><span class="nav-number">1.7.</span> <span class="nav-text">7、排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8、GC与强引用、软引用、弱引用、虚引用之间的关系"><span class="nav-number">1.8.</span> <span class="nav-text">8、GC与强引用、软引用、弱引用、虚引用之间的关系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9、一个SQL查询中group-by的字段必须包含在select字段中"><span class="nav-number">1.9.</span> <span class="nav-text">9、一个SQL查询中group by的字段必须包含在select字段中</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10、反射"><span class="nav-number">1.10.</span> <span class="nav-text">10、反射</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#11、二叉树计算"><span class="nav-number">1.10.1.</span> <span class="nav-text">11、二叉树计算</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12、HTTP协议（基于TCP、属于应用层协议）"><span class="nav-number">1.11.</span> <span class="nav-text">12、HTTP协议（基于TCP、属于应用层协议）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#13、StringBuilder线程安全、StringBuffer非线程安全"><span class="nav-number">1.12.</span> <span class="nav-text">13、StringBuilder线程安全、StringBuffer非线程安全</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#14、JDK1-8用const修饰常量"><span class="nav-number">1.13.</span> <span class="nav-text">14、JDK1.8用const修饰常量</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#15、StringBuffer"><span class="nav-number">1.13.1.</span> <span class="nav-text">15、StringBuffer</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#16、分数运算"><span class="nav-number">1.14.</span> <span class="nav-text">16、分数运算</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#17、数组arr，随机抽走一张"><span class="nav-number">1.15.</span> <span class="nav-text">17、数组arr，随机抽走一张</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#CVTE笔试"><span class="nav-number">1.</span> <span class="nav-text">CVTE笔试</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、IPV4"><span class="nav-number">1.1.</span> <span class="nav-text">1、IPV4</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#定义"><span class="nav-number">1.1.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#目的"><span class="nav-number">1.1.2.</span> <span class="nav-text">目的</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#IPv4协议族"><span class="nav-number">1.1.3.</span> <span class="nav-text">IPv4协议族</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#IPv4地址组成"><span class="nav-number">1.1.4.</span> <span class="nav-text">IPv4地址组成</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、JVM垃圾回收，年老代堆空间、年轻代堆空间"><span class="nav-number">1.2.</span> <span class="nav-text">2、JVM垃圾回收，年老代堆空间、年轻代堆空间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、网卡是完成（数据链路层和物理层）功能"><span class="nav-number">1.3.</span> <span class="nav-text">3、网卡是完成（数据链路层和物理层）功能</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#主要功能"><span class="nav-number">1.3.1.</span> <span class="nav-text">主要功能</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、多列索引-聚簇索引-索引选择性"><span class="nav-number">1.4.</span> <span class="nav-text">4、多列索引/聚簇索引/索引选择性</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#多列索引"><span class="nav-number">1.4.1.</span> <span class="nav-text">多列索引</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#聚簇索引"><span class="nav-number">1.4.2.</span> <span class="nav-text">聚簇索引</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#索引的选择性"><span class="nav-number">1.4.3.</span> <span class="nav-text">索引的选择性</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#确定索引的选择性的方法"><span class="nav-number">1.4.3.1.</span> <span class="nav-text">确定索引的选择性的方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、Java泛型"><span class="nav-number">1.5.</span> <span class="nav-text">5、Java泛型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6、Java集合类"><span class="nav-number">1.6.</span> <span class="nav-text">6、Java集合类</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#集合详解"><span class="nav-number">1.6.1.</span> <span class="nav-text">集合详解</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Map-和-Set-集合的关系"><span class="nav-number">1.6.2.</span> <span class="nav-text">Map 和 Set 集合的关系</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7、排序"><span class="nav-number">1.7.</span> <span class="nav-text">7、排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8、GC与强引用、软引用、弱引用、虚引用之间的关系"><span class="nav-number">1.8.</span> <span class="nav-text">8、GC与强引用、软引用、弱引用、虚引用之间的关系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9、一个SQL查询中group-by的字段必须包含在select字段中"><span class="nav-number">1.9.</span> <span class="nav-text">9、一个SQL查询中group by的字段必须包含在select字段中</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10、反射"><span class="nav-number">1.10.</span> <span class="nav-text">10、反射</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#11、二叉树计算"><span class="nav-number">1.10.1.</span> <span class="nav-text">11、二叉树计算</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12、HTTP协议（基于TCP、属于应用层协议）"><span class="nav-number">1.11.</span> <span class="nav-text">12、HTTP协议（基于TCP、属于应用层协议）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#13、StringBuilder线程安全、StringBuffer非线程安全"><span class="nav-number">1.12.</span> <span class="nav-text">13、StringBuilder线程安全、StringBuffer非线程安全</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#14、JDK1-8用const修饰常量"><span class="nav-number">1.13.</span> <span class="nav-text">14、JDK1.8用const修饰常量</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#15、StringBuffer"><span class="nav-number">1.13.1.</span> <span class="nav-text">15、StringBuffer</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#16、分数运算"><span class="nav-number">1.14.</span> <span class="nav-text">16、分数运算</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#17、数组arr，随机抽走一张"><span class="nav-number">1.15.</span> <span class="nav-text">17、数组arr，随机抽走一张</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#同程艺龙笔试"><span class="nav-number">2.</span> <span class="nav-text">同程艺龙笔试</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、创建对象时，jvm会找到对应的-java文件，通过-java文件创建对象？（false）"><span class="nav-number">2.1.</span> <span class="nav-text">1、创建对象时，jvm会找到对应的.java文件，通过.java文件创建对象？（false）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、重写的方法不能比被重写的方法抛出（throws声明的）更多种类的异常？（false）"><span class="nav-number">2.2.</span> <span class="nav-text">2、重写的方法不能比被重写的方法抛出（throws声明的）更多种类的异常？（false）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、byte类型所占存储空间为1个字节，取值范围0-255？（false）"><span class="nav-number">2.3.</span> <span class="nav-text">3、byte类型所占存储空间为1个字节，取值范围0~255？（false）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、java中可以通过this关键字解决成员变量与局部变量名称冲突问题？（true）"><span class="nav-number">2.4.</span> <span class="nav-text">4、java中可以通过this关键字解决成员变量与局部变量名称冲突问题？（true）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6、当类被加载时，静态代码块会执行，并且只会执行一次？（true）"><span class="nav-number">2.5.</span> <span class="nav-text">6、当类被加载时，静态代码块会执行，并且只会执行一次？（true）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7、在不同的操作系统中可以使用同一个JDK？（false）"><span class="nav-number">2.6.</span> <span class="nav-text">7、在不同的操作系统中可以使用同一个JDK？（false）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8、两个对象的内容和类型是否相同，通过“-”操作符进行判定？（false）"><span class="nav-number">2.7.</span> <span class="nav-text">8、两个对象的内容和类型是否相同，通过“==”操作符进行判定？（false）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1、OSI：物、数、网、传、会、表、应"><span class="nav-number">2.8.</span> <span class="nav-text">1、OSI：物、数、网、传、会、表、应</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、ServerSocketChannel可能发生哪个事件？"><span class="nav-number">2.9.</span> <span class="nav-text">2、ServerSocketChannel可能发生哪个事件？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、构造函数的返回类型只能是void型（false）"><span class="nav-number">2.10.</span> <span class="nav-text">3、构造函数的返回类型只能是void型（false）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、object"><span class="nav-number">2.11.</span> <span class="nav-text">4、object</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、list"><span class="nav-number">2.12.</span> <span class="nav-text">5、list</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6、线程"><span class="nav-number">2.13.</span> <span class="nav-text">6、线程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7、哪一个关键字表示线程放弃对象锁（wait）"><span class="nav-number">2.14.</span> <span class="nav-text">7、哪一个关键字表示线程放弃对象锁（wait）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8、哪些会导致String字符串被改变（toUpperCase、replace、concat）"><span class="nav-number">2.15.</span> <span class="nav-text">8、哪些会导致String字符串被改变（toUpperCase、replace、concat）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9、int型数据的正确取值范围"><span class="nav-number">2.16.</span> <span class="nav-text">9、int型数据的正确取值范围</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10、线程"><span class="nav-number">2.17.</span> <span class="nav-text">10、线程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11、char-a-’a’，int-String-‘a’重载"><span class="nav-number">2.18.</span> <span class="nav-text">11、char a=’a’，int/String ‘a’重载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12、DatagramPacket"><span class="nav-number">2.19.</span> <span class="nav-text">12、DatagramPacket</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#13、post用户提交的表单数据位于http请求的（请求体）"><span class="nav-number">2.20.</span> <span class="nav-text">13、post用户提交的表单数据位于http请求的（请求体）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#14、Error-Exception类区别"><span class="nav-number">2.21.</span> <span class="nav-text">14、Error/Exception类区别</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#腾讯笔试"><span class="nav-number">3.</span> <span class="nav-text">腾讯笔试</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、修改-home下xx目录以及目录下所有文件，所有人可读可写"><span class="nav-number">3.1.</span> <span class="nav-text">1、修改/home下xx目录以及目录下所有文件，所有人可读可写</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、最佳置换OPT"><span class="nav-number">3.2.</span> <span class="nav-text">2、最佳置换OPT</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、字符“tencent”的二进制编码位数（未解）"><span class="nav-number">3.3.</span> <span class="nav-text">3、字符“tencent”的二进制编码位数（未解）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、递归算法"><span class="nav-number">3.4.</span> <span class="nav-text">4、递归算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、由数组变为链表，什么排序算法的时间复杂度会增加"><span class="nav-number">3.5.</span> <span class="nav-text">5、由数组变为链表，什么排序算法的时间复杂度会增加</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6、B-树、B-树"><span class="nav-number">3.6.</span> <span class="nav-text">6、B-树、B+树</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7、静态链接只是对相对地址修改"><span class="nav-number">3.7.</span> <span class="nav-text">7、静态链接只是对相对地址修改</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8、传输层提供建立、维护和拆端到端的连接"><span class="nav-number">3.8.</span> <span class="nav-text">8、传输层提供建立、维护和拆端到端的连接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9、MapReduce-面向大数据并行处理的计算模型、框架和平台"><span class="nav-number">3.9.</span> <span class="nav-text">9、MapReduce 面向大数据并行处理的计算模型、框架和平台</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10、快速排序"><span class="nav-number">3.10.</span> <span class="nav-text">10、快速排序</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#快速排序基本思想："><span class="nav-number">3.10.1.</span> <span class="nav-text">快速排序基本思想：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#快速排序的算法："><span class="nav-number">3.10.2.</span> <span class="nav-text">快速排序的算法：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12、TCP通信时，拥塞窗口cwmd-1，慢开始门限ssthresh-24"><span class="nav-number">3.11.</span> <span class="nav-text">12、TCP通信时，拥塞窗口cwmd=1，慢开始门限ssthresh=24</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#13、JVM性能调优工具：jmap、jps、jstack、jstat"><span class="nav-number">3.12.</span> <span class="nav-text">13、JVM性能调优工具：jmap、jps、jstack、jstat</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#14、允许远程主机访问本机的8080端口的防火墙策略"><span class="nav-number">3.13.</span> <span class="nav-text">14、允许远程主机访问本机的8080端口的防火墙策略</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4399笔试"><span class="nav-number">4.</span> <span class="nav-text">4399笔试</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、进程主要组成部分"><span class="nav-number">4.1.</span> <span class="nav-text">1、进程主要组成部分</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、与初始排序无关的是"><span class="nav-number">4.2.</span> <span class="nav-text">2、与初始排序无关的是</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、在MySQL中，char和varchar的类型区别在于"><span class="nav-number">4.3.</span> <span class="nav-text">3、在MySQL中，char和varchar的类型区别在于</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小米笔试"><span class="nav-number">5.</span> <span class="nav-text">小米笔试</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、图"><span class="nav-number">5.1.</span> <span class="nav-text">1、图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、为避免运算过程中整型溢出可以考虑的方法"><span class="nav-number">5.2.</span> <span class="nav-text">2、为避免运算过程中整型溢出可以考虑的方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、队列，两端入队，一端出队"><span class="nav-number">5.3.</span> <span class="nav-text">3、队列，两端入队，一端出队</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、TCP是面向数据报的传输，UDP是面向字节流的传输（false）"><span class="nav-number">5.4.</span> <span class="nav-text">4、TCP是面向数据报的传输，UDP是面向字节流的传输（false）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、线程的粒度小于进程（true）"><span class="nav-number">5.5.</span> <span class="nav-text">5、线程的粒度小于进程（true）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6、-strcmp-sprintf-strcpy-strncat-那些函数容易造成缓冲区溢出"><span class="nav-number">5.6.</span> <span class="nav-text">6、(strcmp,sprintf,strcpy,strncat)那些函数容易造成缓冲区溢出</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#百信银行笔试"><span class="nav-number">6.</span> <span class="nav-text">百信银行笔试</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、属于应用层的网络协议"><span class="nav-number">6.1.</span> <span class="nav-text">1、属于应用层的网络协议</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、抽象abstract方法是否可同时是静态的static，是否可同时被synchronized修饰"><span class="nav-number">6.2.</span> <span class="nav-text">2、抽象abstract方法是否可同时是静态的static，是否可同时被synchronized修饰</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、迭代查询"><span class="nav-number">6.3.</span> <span class="nav-text">3、迭代查询</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、5条直线最多可将一个圆切成（13-16）份"><span class="nav-number">6.4.</span> <span class="nav-text">4、5条直线最多可将一个圆切成（13-16）份</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、Hive中内部外部表的区别"><span class="nav-number">6.5.</span> <span class="nav-text">5、Hive中内部外部表的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#区别："><span class="nav-number">6.5.1.</span> <span class="nav-text">区别：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6、Java数组复制效率最高的方法"><span class="nav-number">6.6.</span> <span class="nav-text">6、Java数组复制效率最高的方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7、基于TCP协议"><span class="nav-number">6.7.</span> <span class="nav-text">7、基于TCP协议</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#TCP三次握手的过程："><span class="nav-number">6.7.1.</span> <span class="nav-text">TCP三次握手的过程：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#TCP-UDP协议族："><span class="nav-number">6.7.2.</span> <span class="nav-text">TCP/UDP协议族：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8、a-”-”-b-”-”-s-”-”，用a与b来表示，有21-36-28-34种表示方式"><span class="nav-number">6.8.</span> <span class="nav-text">8、a=”#”,b=”##”,s=”########”，用a与b来表示，有21/36/28/34种表示方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9、若字符串s-“aibank”，则s中的互异的非平凡子串（非空且不同于s本身）的个数为（20）"><span class="nav-number">6.9.</span> <span class="nav-text">9、若字符串s=“aibank”，则s中的互异的非平凡子串（非空且不同于s本身）的个数为（20）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10、后退N帧-GSN协议"><span class="nav-number">6.10.</span> <span class="nav-text">10、后退N帧 GSN协议</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11、用户代理只能发送不能接受电子邮件，则可能是（POP3）地址错误"><span class="nav-number">6.11.</span> <span class="nav-text">11、用户代理只能发送不能接受电子邮件，则可能是（POP3）地址错误</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12、与数据库表有关的约束not-null"><span class="nav-number">6.12.</span> <span class="nav-text">12、与数据库表有关的约束not null</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#13、n-4有多少种出栈序列"><span class="nav-number">6.13.</span> <span class="nav-text">13、n=4有多少种出栈序列</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#14、www-aibank-com域名使用https的原因：防止流量劫持"><span class="nav-number">6.14.</span> <span class="nav-text">14、www.aibank.com域名使用https的原因：防止流量劫持</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#15、gcc工具不可用于Java构建（Maven、Gradle、Ant）"><span class="nav-number">6.15.</span> <span class="nav-text">15、gcc工具不可用于Java构建（Maven、Gradle、Ant）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#16、JVM内存：Java方法、程序计数器、方法-线程隔离"><span class="nav-number">6.16.</span> <span class="nav-text">16、JVM内存：Java方法、程序计数器、方法===线程隔离</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#17、Hadoop的调度器有哪些"><span class="nav-number">6.17.</span> <span class="nav-text">17、Hadoop的调度器有哪些</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#珍爱网笔试（线下）"><span class="nav-number">7.</span> <span class="nav-text">珍爱网笔试（线下）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、书写最简单的单例模式"><span class="nav-number">7.1.</span> <span class="nav-text">1、书写最简单的单例模式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#何时使用"><span class="nav-number">7.1.1.</span> <span class="nav-text">何时使用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#优点"><span class="nav-number">7.1.2.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#代码"><span class="nav-number">7.1.3.</span> <span class="nav-text">代码</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一点资讯笔试"><span class="nav-number">8.</span> <span class="nav-text">一点资讯笔试</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、这个等式在哪种进制下成立，24-18-396（8进制）"><span class="nav-number">8.1.</span> <span class="nav-text">1、这个等式在哪种进制下成立，24*18=396（8进制）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、PCI总线"><span class="nav-number">8.2.</span> <span class="nav-text">2、PCI总线</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、TCP通过（IP地址-端口号）来区分不同的连接"><span class="nav-number">8.3.</span> <span class="nav-text">3、TCP通过（IP地址+端口号）来区分不同的连接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、内存1GB，机械磁盘80GB，10亿条索引数据，每条32B，哪种索引方式"><span class="nav-number">8.4.</span> <span class="nav-text">4、内存1GB，机械磁盘80GB，10亿条索引数据，每条32B，哪种索引方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、修改文件或目录的权限的命令是chmod"><span class="nav-number">8.5.</span> <span class="nav-text">5、修改文件或目录的权限的命令是chmod</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6、修改某个文件或目录的所有者和所属的组（chgrp）"><span class="nav-number">8.6.</span> <span class="nav-text">6、修改某个文件或目录的所有者和所属的组（chgrp）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7、2018个结点完全二叉树，叶子结点1009，高度为11"><span class="nav-number">8.7.</span> <span class="nav-text">7、2018个结点完全二叉树，叶子结点1009，高度为11</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8、Linux"><span class="nav-number">8.8.</span> <span class="nav-text">8、Linux</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9、有19球，分为4堆，至少3球，多少种"><span class="nav-number">8.9.</span> <span class="nav-text">9、有19球，分为4堆，至少3球，多少种</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#同花顺笔试"><span class="nav-number">9.</span> <span class="nav-text">同花顺笔试</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、int-m-10-int-n-11-交换m-n-不使用临时变量，至少两种方法"><span class="nav-number">9.1.</span> <span class="nav-text">1、int m=10;int n=11;交换m,n,不使用临时变量，至少两种方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、进程间通信方式，以及各自的特点和应用场景"><span class="nav-number">9.2.</span> <span class="nav-text">2、进程间通信方式，以及各自的特点和应用场景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、进程"><span class="nav-number">9.3.</span> <span class="nav-text">3、进程</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#内存溢出"><span class="nav-number">9.3.1.</span> <span class="nav-text">内存溢出</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、正整数和负整数在内存中的存储有什么区别？（补码）"><span class="nav-number">9.4.</span> <span class="nav-text">4、正整数和负整数在内存中的存储有什么区别？（补码）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、Linux上从另一台服务器上拷贝文件到本机应该执行什么指令"><span class="nav-number">9.5.</span> <span class="nav-text">5、Linux上从另一台服务器上拷贝文件到本机应该执行什么指令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6、编程实现二分查找算法"><span class="nav-number">9.6.</span> <span class="nav-text">6、编程实现二分查找算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7、TCP的三次握手，TIME-WAIT和CLOSE-WAIT状态是什么"><span class="nav-number">9.7.</span> <span class="nav-text">7、TCP的三次握手，TIME_WAIT和CLOSE_WAIT状态是什么</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8、编写代码。判断CPU是大端还是小端存储顺序"><span class="nav-number">9.8.</span> <span class="nav-text">8、编写代码。判断CPU是大端还是小端存储顺序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9、编程"><span class="nav-number">9.9.</span> <span class="nav-text">9、编程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10、观察者模式伪代码"><span class="nav-number">9.10.</span> <span class="nav-text">10、观察者模式伪代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11、对非对称加密的理解，什么时候使用非对称加密"><span class="nav-number">9.11.</span> <span class="nav-text">11、对非对称加密的理解，什么时候使用非对称加密</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12、爬台阶"><span class="nav-number">9.12.</span> <span class="nav-text">12、爬台阶</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#13、什么是深拷贝？什么是浅拷贝？"><span class="nav-number">9.13.</span> <span class="nav-text">13、什么是深拷贝？什么是浅拷贝？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#14、利用sort-排序整个vector容器里元素的时间复杂度是多少"><span class="nav-number">9.14.</span> <span class="nav-text">14、利用sort()排序整个vector容器里元素的时间复杂度是多少</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#15、写一个分割字符串的函数，它可以将一个用某分隔符分割的字符串解析成分割后的结果集"><span class="nav-number">9.15.</span> <span class="nav-text">15、写一个分割字符串的函数，它可以将一个用某分隔符分割的字符串解析成分割后的结果集</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#16、什么是死锁？如何确保N个线程可以访问N个资源同时又不导致死锁？"><span class="nav-number">9.16.</span> <span class="nav-text">16、什么是死锁？如何确保N个线程可以访问N个资源同时又不导致死锁？</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#多线程产生死锁的四个必要条件："><span class="nav-number">9.16.1.</span> <span class="nav-text">多线程产生死锁的四个必要条件：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#17、IP-188-188-0-111，IP-188-188-5-222，子网掩码设为255-255-252-0，在同一网段吗？为什么"><span class="nav-number">9.17.</span> <span class="nav-text">17、IP:188.188.0.111，IP:188.188.5.222，子网掩码设为255.255.252.0，在同一网段吗？为什么</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#18、一个使用GBK的中文文本文件，按照CP936读取，不产生乱码"><span class="nav-number">9.18.</span> <span class="nav-text">18、一个使用GBK的中文文本文件，按照CP936读取，不产生乱码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#19、编程"><span class="nav-number">9.19.</span> <span class="nav-text">19、编程</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#猪八戒笔试"><span class="nav-number">10.</span> <span class="nav-text">猪八戒笔试</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、RuntimeException-Exception"><span class="nav-number">10.1.</span> <span class="nav-text">1、RuntimeException/Exception</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、java-util-List不能存整数-数组-加入重复的数据"><span class="nav-number">10.2.</span> <span class="nav-text">2、java.util.List不能存整数/数组/加入重复的数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、命令行中改变当前目录-文件夹的Linux-Window命令是（cd）"><span class="nav-number">10.3.</span> <span class="nav-text">3、命令行中改变当前目录/文件夹的Linux/Window命令是（cd）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、1是Long还是Object"><span class="nav-number">10.4.</span> <span class="nav-text">4、1是Long还是Object</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、java-util-Map不能存整数-数组"><span class="nav-number">10.5.</span> <span class="nav-text">5、java.util.Map不能存整数/数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6、计算机缺了（硬盘-显示器-内存）部件，不可能工作"><span class="nav-number">10.6.</span> <span class="nav-text">6、计算机缺了（硬盘/显示器/内存）部件，不可能工作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7、将int转换为String的正确方法"><span class="nav-number">10.7.</span> <span class="nav-text">7、将int转换为String的正确方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8、and是SQL关键字？（true）"><span class="nav-number">10.8.</span> <span class="nav-text">8、and是SQL关键字？（true）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9、多表关联查询，用关联条件的字段建立索引，可以提高SQL语句效率"><span class="nav-number">10.9.</span> <span class="nav-text">9、多表关联查询，用关联条件的字段建立索引，可以提高SQL语句效率</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10、protected-子类、父类"><span class="nav-number">10.10.</span> <span class="nav-text">10、protected 子类、父类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11、long-MAX-VALUE-0（运行时异常）"><span class="nav-number">10.11.</span> <span class="nav-text">11、long.MAX_VALUE/0（运行时异常）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12、队列可以基于java-util-Set实现（false）"><span class="nav-number">10.12.</span> <span class="nav-text">12、队列可以基于java.util.Set实现（false）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#13、Integer-MAX-VALUE-1-（运行时异常）"><span class="nav-number">10.13.</span> <span class="nav-text">13、Integer.MAX_VALUE+1==?（运行时异常）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#14、如果不使用native实现，java程序不可能发生内存泄露"><span class="nav-number">10.14.</span> <span class="nav-text">14、如果不使用native实现，java程序不可能发生内存泄露</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#15、select-from-A-left-join-B-on-1-2"><span class="nav-number">10.15.</span> <span class="nav-text">15、select * from A left join B on 1=2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#16、JDK不能安装到服务器上（false）"><span class="nav-number">10.16.</span> <span class="nav-text">16、JDK不能安装到服务器上（false）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#17、索引可能加快select-update-delete的速度（true）"><span class="nav-number">10.17.</span> <span class="nav-text">17、索引可能加快select/update/delete的速度（true）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#18、-0xF-lt-lt-8-amp-amp-0xF结果（1）"><span class="nav-number">10.18.</span> <span class="nav-text">18、(0xF&lt;&lt;8)&amp;&amp;0xF结果（1）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#19、生产者消费者模式"><span class="nav-number">10.19.</span> <span class="nav-text">19、生产者消费者模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#20、若要把变量声明为多个线程共用的变量，应使用修饰符（volatile）"><span class="nav-number">10.20.</span> <span class="nav-text">20、若要把变量声明为多个线程共用的变量，应使用修饰符（volatile）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#21、int-x-’A’-‘a’-x的值（26）"><span class="nav-number">10.20.1.</span> <span class="nav-text">21、int x=’A’-‘a’;x的值（26）</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -655,7 +1106,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">全站共186.1k字</span>
+  <span class="post-count">全站共197.9k字</span>
 </div>
         
 
