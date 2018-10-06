@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[关于hexo的那些事儿]]></title>
+    <url>%2F2018%2F10%2F06%2F%E5%85%B3%E4%BA%8Ehexo%E7%9A%84%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF%2F</url>
+    <content type="text"><![CDATA[本菜鸡是听老姐的建议开始搞自己的博客的。 给个友情链接：https://wenxn.github.io/ 瞻仰一下年薪25W的dalao.. 鉴于本人比较.. 忙于其他的事情，所以这篇文就单单放链接了.. 毕竟一些东西还是要多看多搜索才知道.. 看了很多博客，感觉简书的比较实在，界面也不错，CSDN的广告太多了唉.. 其实不是想写这篇文，就是文件夹收藏太多了，找个地方放一下链接，也利于以后要搭建自己博客的娃少走点弯路，学习真的是一件无止境的事情啊.. —————————– 正文开始 —————————— git+github的启蒙文章，https://segmentfault.com/a/1190000002413519#articleHeader2 github启蒙，https://www.cnblogs.com/xiaocen/p/3727324.html git的启蒙，https://www.cnblogs.com/my-freedom/p/5701427.html git的用法，http://www.bootcss.com/p/git-guide/ 用github和hexo搭建博客（详细），https://www.jianshu.com/p/05289a4bc8b2 很详细的搭建教程，也有错误的处理方法，https://www.cnblogs.com/qyun/p/6628601.html hexo入门讲解，https://zhuanlan.zhihu.com/p/24763104 选择喜欢的hexo主题，https://www.zhihu.com/question/24422335 鉴于我和老姐都是next主题，所以都是相关设置咯 https://zhuanlan.zhihu.com/p/22735619 https://blog.csdn.net/u011475210/article/details/79023429 http://theme-next.iissnan.com/（官方） https://zhuanlan.zhihu.com/p/22745430（加强版功能） https://hexo.io/zh-cn/docs/writing（官方） http://mashirosorata.vicp.io/HEXO-NEXT%E4%B8%BB%E9%A2%98%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE.html https://segmentfault.com/a/1190000009544924#articleHeader21 https://blog.csdn.net/Hoshea_chx/article/details/78826689 https://blog.csdn.net/linshuhe1/article/details/52424573 https://www.jianshu.com/p/efbeddc5eb19 https://www.jianshu.com/p/e17711e44e00 https://www.jianshu.com/p/ebbbc8edcc24 图标库，https://fontawesome.com/icons?d=gallery&amp;s=brands 自定义页面，https://blog.csdn.net/jiaojsun/article/details/76341379 更新博文，https://www.zhihu.com/question/59088760/answer/161640592 关于博文的维护，https://www.zhihu.com/question/21193762 关于如何将本地项目上传到github，本人也收藏了几个链接，应该比本站博文的更详细，供参考 https://blog.csdn.net/zamamiro/article/details/70172900 https://www.cnblogs.com/specter45/p/github.html#s4 https://www.cnblogs.com/eedc/p/6168430.html https://www.cnblogs.com/cxk1995/p/5800196.html 关于Markdown，本人用有道云笔记，不过老姐推荐用one，以后再试试.. 其实发布几乎只用到下面三个命令123hexo g //解编码？hexo s //本地服务器，端口号4000hexo d //部署到github]]></content>
+      <categories>
+        <category>实践操作</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[使用git发布项目到github]]></title>
     <url>%2F2018%2F10%2F06%2F%E4%BD%BF%E7%94%A8git%E5%8F%91%E5%B8%83%E9%A1%B9%E7%9B%AE%E5%88%B0github%2F</url>
     <content type="text"><![CDATA[1. 安装git 下载地址：https://gitforwindows.org/ 2. 注册github3. 在github新建仓库4. 复制仓库的http地址5. 在本地的git命令行输入1git clone +http地址 注意：此时应该是在本地的项目文件夹（git bush here） 6. 发现多出了个文件夹，前面一步的目的是把github仓库复制到本地。然后我们可以把自己的项目放进这个文件夹。接着cd+文件夹名7. 输入以下代码123git add . git commit -m &quot;remark&quot; git push -u origin master 8. 完成！]]></content>
