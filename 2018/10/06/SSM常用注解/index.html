@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="JUnit特性  用于测试期望结果的断言 用于共享共同测试数据的测试工具 用于方便的组织和运行测试的测试套件 图形和文本的测试运行器  对类的一个方法进行测试  在eclipse加入JUnit的library 新建一个class             1234567891011121314//HelloWorld.javapackage example;import org.omg.CORBA.">
+<meta name="description" content="Mybatis注解 @Arg：单独的构造方法参数 @CacheNamespace：为给定的命名空间配置缓存 @CacheNamespaceRef：参照另外一个命名空间的缓存来使用 @Case：单独实例的值和它对应的映射 @ConstructorArgs：收集一组结果传递给对象构造方法 @Insert,@Update,@Delete：代表了执行的真实SQL，使用字符串数组 @InsertProvid">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Junit">
-<meta property="og:url" content="http://yoursite.com/2018/09/05/JUnit/index.html">
+<meta property="og:title" content="SSM常用注解">
+<meta property="og:url" content="http://yoursite.com/2018/10/06/SSM常用注解/index.html">
 <meta property="og:site_name" content="Welcome">
-<meta property="og:description" content="JUnit特性  用于测试期望结果的断言 用于共享共同测试数据的测试工具 用于方便的组织和运行测试的测试套件 图形和文本的测试运行器  对类的一个方法进行测试  在eclipse加入JUnit的library 新建一个class             1234567891011121314//HelloWorld.javapackage example;import org.omg.CORBA.">
+<meta property="og:description" content="Mybatis注解 @Arg：单独的构造方法参数 @CacheNamespace：为给定的命名空间配置缓存 @CacheNamespaceRef：参照另外一个命名空间的缓存来使用 @Case：单独实例的值和它对应的映射 @ConstructorArgs：收集一组结果传递给对象构造方法 @Insert,@Update,@Delete：代表了执行的真实SQL，使用字符串数组 @InsertProvid">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-04T13:25:35.733Z">
+<meta property="og:updated_time" content="2018-10-06T08:57:46.246Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Junit">
-<meta name="twitter:description" content="JUnit特性  用于测试期望结果的断言 用于共享共同测试数据的测试工具 用于方便的组织和运行测试的测试套件 图形和文本的测试运行器  对类的一个方法进行测试  在eclipse加入JUnit的library 新建一个class             1234567891011121314//HelloWorld.javapackage example;import org.omg.CORBA.">
+<meta name="twitter:title" content="SSM常用注解">
+<meta name="twitter:description" content="Mybatis注解 @Arg：单独的构造方法参数 @CacheNamespace：为给定的命名空间配置缓存 @CacheNamespaceRef：参照另外一个命名空间的缓存来使用 @Case：单独实例的值和它对应的映射 @ConstructorArgs：收集一组结果传递给对象构造方法 @Insert,@Update,@Delete：代表了执行的真实SQL，使用字符串数组 @InsertProvid">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/05/JUnit/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/10/06/SSM常用注解/"/>
 
 
 
 
 
-  <title>Junit | Welcome</title>
+  <title>SSM常用注解 | Welcome</title>
   
 
 
@@ -242,7 +242,7 @@
   
 
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/05/JUnit/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/06/SSM常用注解/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="十点一刻">
@@ -259,7 +259,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Junit</h1>
+          <h1 class="post-title" itemprop="name headline">SSM常用注解</h1>
         
 
         <div class="post-meta">
@@ -271,8 +271,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-05T18:45:48+08:00">
-                2018-09-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-06T10:45:48+08:00">
+                2018-10-06
               </time>
             
 
@@ -309,26 +309,59 @@
       
 
       
-        <p>JUnit特性</p>
-<ol>
-<li>用于测试期望结果的断言</li>
-<li>用于共享共同测试数据的测试工具</li>
-<li>用于方便的组织和运行测试的测试套件</li>
-<li>图形和文本的测试运行器</li>
+        <h5 id="Mybatis注解"><a href="#Mybatis注解" class="headerlink" title="Mybatis注解"></a>Mybatis注解</h5><ol>
+<li>@Arg：单独的构造方法参数</li>
+<li>@CacheNamespace：为给定的命名空间配置缓存</li>
+<li>@CacheNamespaceRef：参照另外一个命名空间的缓存来使用</li>
+<li>@Case：单独实例的值和它对应的映射</li>
+<li>@ConstructorArgs：收集一组结果传递给对象构造方法</li>
+<li>@Insert,@Update,@Delete：代表了执行的真实SQL，使用字符串数组</li>
+<li>@InsertProvider,@UpdateProvider,@DeleteProvider：允许指定一个类名和一个方法在执行时返回运行的SQL</li>
+<li>@Many：复杂类型的集合属性映射</li>
+<li>@One：复杂类型的单独属性值映射</li>
+<li>@Options：提供访问交换和配置选项，通常在映射语句上作为属性出现</li>
+<li>@Param：应用于映射器方法，给每个参数名字</li>
+<li>@Result：在列和属性或字段之间的单独结果映射</li>
+<li>@Results：结果映射的列表，包含了一个特别结果列如何被映射到属性或字段的详情</li>
+<li>@TypeDiscriminator：一组实例值，用来决定结果映射的表现</li>
 </ol>
-<p>对类的一个方法进行测试</p>
-<ol>
-<li>在eclipse加入JUnit的library</li>
-<li>新建一个class           </li>
+<h5 id="Spring和Spring-MVC常用注解"><a href="#Spring和Spring-MVC常用注解" class="headerlink" title="Spring和Spring MVC常用注解"></a>Spring和Spring MVC常用注解</h5><ol>
+<li>@After：定义最终增强</li>
+<li>@AfterReturning：定义后置增强</li>
+<li>@AfterThrowing：定义异常抛出增强</li>
+<li>@Around：定义环绕增强</li>
+<li>@Aspect：定义切面</li>
+<li>@Autowired：实现Bean的装配，默认按类型装配</li>
+<li>@Before：定义前置增强</li>
+<li>@Cacheable：声明一个方法的返回值应该被缓存</li>
+<li>@CacheFlush：声明一个方法是清空缓存的触发器</li>
+<li>@Component：被此注解的类都将由Spring容器进行管理</li>
+<li>@Controller：用于标注控制器类</li>
+<li>@ControllerAdvice：能够将通用的@ExceptionHandler、@InitBinder和@ModelAttributes方法收集到一个类中，并应用于所有控制器中</li>
+<li>@DateTimeFormat：可以用来格式化java.util.Date，java.util.Calendar和java.util.Long类型</li>
+<li>@ExceptionHandler：配置在局部异常处理时定义异常处理</li>
+<li>@InitBinder：添加自定义编辑器</li>
+<li>@ModelAttribute：</li>
+<li>参数：表明此参数的值来源于模型中的某个属性</li>
+<li>方法：表明此方法会在此控制器的每个方法执行前被执行</li>
+<li>@NumberFormat：可以用来格式化任何数字类型或java.util.Number的实例</li>
+<li>@PathVariable：可以将URL中的{xxx}占位符参数绑定到控制器处理方法的入参中</li>
+<li>@Pointcut：定义切入点表达式</li>
+<li>@PostConstruct：被此注解标注的方法会在Bean初始化之后被Spring容器执行</li>
+<li>@PreDestroy：被此注解标注的方法会在Bean销毁之前被Spring容器执行</li>
+<li>@Qualifier：明确指定Bean的名称进行注入</li>
+<li>@Repository：用于标注DAO类</li>
+<li>@RequestMapping：定义控制器方法和URL的映射关系</li>
+<li>@RequestParam：指定被标注的方法入参和URL请求的参数的对应关系</li>
+<li>@Required：用于检查特定的属性是否被设置，如果没有设置则抛出异常</li>
+<li>@Resource：实现Bean的装配，默认按名称装配</li>
+<li>@ResponseBody：将标注该注解的处理方法的返回结果直接写入HTTP Response Body中</li>
+<li>@Scope：定义一个类的作用范围</li>
+<li>@Service：用于标注业务类</li>
+<li>@SessionAttributes：使模型中的数据存储一份到session域中</li>
+<li>@Transactional：为类或方法添加事务处理</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//HelloWorld.java</span><br><span class="line">package example;</span><br><span class="line"></span><br><span class="line">import org.omg.CORBA.PUBLIC_MEMBER;</span><br><span class="line"></span><br><span class="line">public class HelloWorld &#123;</span><br><span class="line"></span><br><span class="line">	public int abs(int n)&#123;</span><br><span class="line">		return n&gt;0?n:(-n);</span><br><span class="line">	&#125;</span><br><span class="line">	public static void main(String[] args)&#123;</span><br><span class="line">		HelloWorld hWorld=new HelloWorld();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>在类里面新建一个JUnit Test Case,选中setUP()和tearDown()</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">//setUP()用来建立测试环境</span><br><span class="line">//tearDown()用于清理资源</span><br><span class="line">//绿色代表测试通过，红色未通过</span><br><span class="line">package example;</span><br><span class="line"></span><br><span class="line">import static org.junit.Assert.*;</span><br><span class="line"></span><br><span class="line">import org.junit.After;</span><br><span class="line">import org.junit.Before;</span><br><span class="line">import org.junit.Test;</span><br><span class="line"></span><br><span class="line">import junit.framework.TestCase;</span><br><span class="line"></span><br><span class="line">public class HelloWorldTest extends TestCase&#123;</span><br><span class="line"></span><br><span class="line">	private HelloWorld hello;</span><br><span class="line">	</span><br><span class="line">	@Before</span><br><span class="line">	public void setUp() throws Exception &#123;</span><br><span class="line">		super.setUp();</span><br><span class="line">		hello=new HelloWorld();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	@After</span><br><span class="line">	public void tearDown() throws Exception &#123;</span><br><span class="line">		super.tearDown();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	@Test</span><br><span class="line">	public void testAbs() &#123;</span><br><span class="line">		assertEquals(hello.abs(14),14);</span><br><span class="line">		assertEquals(hello.abs(-5),5);</span><br><span class="line">		assertEquals(hello.abs(0),0);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol start="4">
-<li>success！[图略]</li>
-</ol>
+<h5 id="Spring注解-另一版本"><a href="#Spring注解-另一版本" class="headerlink" title="Spring注解(另一版本)"></a>Spring注解(另一版本)</h5><p>@Controller：用于指示Spring类的实例是一个控制器<br>@RequestMapping：指示Spring用哪一个类或方法来处理请求动作<br>@RequestParam：用于将指定的请求参数赋值给方法中的形参<br>@PathVariable：可以非常方便地获得请求URL中的动态参数<br>@MatrixVariable：允许开发者进行多条件组合查询<br>@CrossOrigin：用于在SpringMVC中处理跨域请求<br>@RequestHeader：用于将请求的头信息数据映射到功能处理方法的参数上<br>@CookieValue：用于将请求的Cookie数据映射到功能处理方法的参数上<br>@RequestAttribute：用于访问由请求处理方法、过滤器或拦截器创建的、预先存在于request作用域中的属性，将该属性转换到目标方法的参数<br>@SessionAttribute：用于访问由请求处理方法、过滤器或拦截器创建的、预先存在于session作用域中的属性，将该属性转换到目标方法的参数<br>@SessionAttributes：允许有选择地指定Model中的哪些属性转存到HttpSession对象当中<br>@ModelAttribute：用于将请求参数绑定到对象<br>@RequestBody：用来处理Content-Type<br>@ResponseBody：用于将Controller的请求处理方法返回的对象，通过适当的HttpMessageConverter转换为指定格式后，写入到Response对象的body数据区<br>@RestController：该类中所有使用@RequestMapping注解的方法都默认使用了@ResponseBody注解<br>@ResponseStatus：处理异常，将异常信息返回给客户端，提高可读性<br>@ExceptionHandle：指定异常类（用处最强大）<br>@ControllerAdvice：将以上两个注解的方法应用到所有的请求处理方法上</p>
 
       
     </div>
@@ -358,8 +391,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/05/测试的基本概念/" rel="next" title="测试">
-                <i class="fa fa-chevron-left"></i> 测试
+              <a href="/2018/10/06/spring+mybatis简单实例/" rel="next" title="spring+mybatis简单实例">
+                <i class="fa fa-chevron-left"></i> spring+mybatis简单实例
               </a>
             
           </div>
@@ -368,8 +401,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/09/05/压力测试&JMeter/" rel="prev" title="JMeter">
-                JMeter <i class="fa fa-chevron-right"></i>
+              <a href="/2018/10/06/Git基本操作/" rel="prev" title="Git基本操作">
+                Git基本操作 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -422,8 +455,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -485,6 +527,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#Mybatis注解"><span class="nav-number">1.</span> <span class="nav-text">Mybatis注解</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Spring和Spring-MVC常用注解"><span class="nav-number">2.</span> <span class="nav-text">Spring和Spring MVC常用注解</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Spring注解-另一版本"><span class="nav-number">3.</span> <span class="nav-text">Spring注解(另一版本)</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
