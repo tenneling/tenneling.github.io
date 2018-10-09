@@ -1,0 +1,1309 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="JAVA," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="#### Ucloud测评 1. 如何判断一个单向链表是否有环，举出至少2种空间复杂度为o11234567891011121314151617/**  * 判断单链表是否存在环  * @param head  * @return  */ public static &amp;lt;T&amp;gt; boolean isLoopList(ListNode&amp;lt;T&amp;gt; head)&amp;#123;     Lis">
+<meta name="keywords" content="JAVA">
+<meta property="og:type" content="article">
+<meta property="og:title" content="笔试汇总帖-5">
+<meta property="og:url" content="http://yoursite.com/2018/10/10/笔试总结帖-5/index.html">
+<meta property="og:site_name" content="Welcome">
+<meta property="og:description" content="#### Ucloud测评 1. 如何判断一个单向链表是否有环，举出至少2种空间复杂度为o11234567891011121314151617/**  * 判断单链表是否存在环  * @param head  * @return  */ public static &amp;lt;T&amp;gt; boolean isLoopList(ListNode&amp;lt;T&amp;gt; head)&amp;#123;     Lis">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-10-09T17:04:12.009Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="笔试汇总帖-5">
+<meta name="twitter:description" content="#### Ucloud测评 1. 如何判断一个单向链表是否有环，举出至少2种空间复杂度为o11234567891011121314151617/**  * 判断单链表是否存在环  * @param head  * @return  */ public static &amp;lt;T&amp;gt; boolean isLoopList(ListNode&amp;lt;T&amp;gt; head)&amp;#123;     Lis">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":true,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/10/10/笔试总结帖-5/"/>
+
+
+
+
+
+  <title>笔试汇总帖-5 | Welcome</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"><a href="https://github.com/tenneling"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Welcome</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/10/笔试总结帖-5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="十点一刻">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/qifang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Welcome">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">笔试汇总帖-5</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-10T01:55:48+08:00">
+                2018-10-10
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-10-10T01:04:12+08:00">
+                2018-10-10
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/笔经面经/" itemprop="url" rel="index">
+                    <span itemprop="name">笔经面经</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>﻿#### Ucloud测评</p>
+<h5 id="1-如何判断一个单向链表是否有环，举出至少2种空间复杂度为o1"><a href="#1-如何判断一个单向链表是否有环，举出至少2种空间复杂度为o1" class="headerlink" title="1. 如何判断一个单向链表是否有环，举出至少2种空间复杂度为o1"></a>1. 如何判断一个单向链表是否有环，举出至少2种空间复杂度为o1</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">/** </span><br><span class="line"> * 判断单链表是否存在环 </span><br><span class="line"> * @param head </span><br><span class="line"> * @return </span><br><span class="line"> */ public static &lt;T&gt; boolean isLoopList(ListNode&lt;T&gt; head)&#123; </span><br><span class="line">    ListNode&lt;T&gt; slowPointer, fastPointer;</span><br><span class="line">    //使用快慢指针，慢指针每次向前一步，快指针每次两步</span><br><span class="line">    slowPointer = fastPointer = head;</span><br><span class="line">    while(fastPointer != null &amp;&amp; fastPointer.next != null)&#123; </span><br><span class="line">        slowPointer = slowPointer.next; </span><br><span class="line">        fastPointer = fastPointer.next.next; //两指针相遇则有环 </span><br><span class="line">        if(slowPointer == fastPointer)&#123; </span><br><span class="line">            return true; </span><br><span class="line">        &#125; </span><br><span class="line">    &#125; </span><br><span class="line">    return false;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="2-给定一个非负整数序列，组合这些数字以形成这些数字可能组合中最大的数。如-3-3-34-5-9-，这个最大数字为-9534330"><a href="#2-给定一个非负整数序列，组合这些数字以形成这些数字可能组合中最大的数。如-3-3-34-5-9-，这个最大数字为-9534330" class="headerlink" title="2. 给定一个非负整数序列，组合这些数字以形成这些数字可能组合中最大的数。如[3,3,34,5,9]，这个最大数字为[9534330]"></a>2. 给定一个非负整数序列，组合这些数字以形成这些数字可能组合中最大的数。如[3,3,34,5,9]，这个最大数字为[9534330]</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">//编写一个能将给定非负整数列表中的数字排列成最大数字的函数。例如，给定[50，2，1,9]，最大数字为95021。</span><br><span class="line">public class Test4&#123;</span><br><span class="line">public static void main(String[] args)&#123;</span><br><span class="line">    int[] list=&#123;85,840,860,760,9&#125;;</span><br><span class="line">    System.out.println(getMaxList(list));</span><br><span class="line">&#125;</span><br><span class="line">//获取最大值列表</span><br><span class="line">public static String getMaxList(int[] list)&#123;</span><br><span class="line">    String[] str_list=new String[list.length];</span><br><span class="line">    String mergeStr=&quot;&quot;;</span><br><span class="line">    for(int i=0;i&lt;list.length;i++)&#123;</span><br><span class="line">        str_list[i]=Integer.toString(list[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    for(int i=0;i&lt;str_list.length-1;i++)&#123;</span><br><span class="line">        for(int j=i+1;j&lt;str_list.length;j++)&#123;</span><br><span class="line">            String[] str=linkNum(str_list[i],str_list[j]);</span><br><span class="line">            str_list[i]=str[0];</span><br><span class="line">            str_list[j]=str[1];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    for(int i=0;i&lt;str_list.length;i++)&#123;</span><br><span class="line">        mergeStr+=str_list[i];</span><br><span class="line">    &#125;</span><br><span class="line">    return mergeStr;</span><br><span class="line">&#125;</span><br><span class="line">//把俩数拼接成最大的数字</span><br><span class="line">public static String[] linkNum(String str1,String str2)&#123;</span><br><span class="line">    int min_length=str1.length()&lt;=str2.length()?str1.length():str2.length();</span><br><span class="line">    String[] str3=new String[2];</span><br><span class="line">    str3[0]=str1;</span><br><span class="line">    str3[1]=str2;</span><br><span class="line">    int i=1;</span><br><span class="line">    for(;i&lt;=min_length;i++)&#123;</span><br><span class="line">        if(str1.substring(i-1,i).compareTo(str2.substring(i-1,i))&lt;0)&#123;</span><br><span class="line">            str3[0]=str2;</span><br><span class="line">            str3[1]=str1;</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">        else if(str1.substring(i-1,i).compareTo(str2.substring(i-1,i))&gt;0)&#123;</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return str3;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="3-TCP拥塞控制包括快速重传、快速回复、快速避免"><a href="#3-TCP拥塞控制包括快速重传、快速回复、快速避免" class="headerlink" title="3. TCP拥塞控制包括快速重传、快速回复、快速避免"></a>3. TCP拥塞控制包括快速重传、快速回复、快速避免</h5><h4 id="诚毅笔试"><a href="#诚毅笔试" class="headerlink" title="诚毅笔试"></a>诚毅笔试</h4><h5 id="1-一个数如果恰好等于除它之外的所有因子之和-这个数就称为”完数”。例如6-1-2-3。编程找出10000以内的所有完数。"><a href="#1-一个数如果恰好等于除它之外的所有因子之和-这个数就称为”完数”。例如6-1-2-3。编程找出10000以内的所有完数。" class="headerlink" title="1. 一个数如果恰好等于除它之外的所有因子之和,这个数就称为”完数”。例如6=1+2+3。编程找出10000以内的所有完数。"></a>1. 一个数如果恰好等于除它之外的所有因子之和,这个数就称为”完数”。例如6=1+2+3。编程找出10000以内的所有完数。</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class Twelvef</span><br><span class="line">public static void main(String] twe)&#123;</span><br><span class="line">    int i,j,s:/定义求和变量s,声明循环参数</span><br><span class="line">    System.out.println(&quot;10000以内的完数有:&quot;);</span><br><span class="line">    for(i=;2;i&lt;1000;i++)&#123;//外循环从2开始逐个递增判断</span><br><span class="line">        s=0://每检验一个数,令求和变量清零</span><br><span class="line">        for(j=i-1;j&gt;0;j--)/内循环从i-1开始逐个递减到1&#123;</span><br><span class="line">            if(i%=0)//外循环数除以内循环数,余0则是外循环数的因子</span><br><span class="line">            s=s+i://令外循环数的因子相加</span><br><span class="line">        &#125;</span><br><span class="line">        if(s=i)//若外循环数恰好等于除它之外的所有因子之和&#123;</span><br><span class="line">            System.out.println(i)://显示该外循环数</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="2-求m和n的最大公约数和最小公倍数"><a href="#2-求m和n的最大公约数和最小公倍数" class="headerlink" title="2. 求m和n的最大公约数和最小公倍数"></a>2. 求m和n的最大公约数和最小公倍数</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//递归算法</span><br><span class="line"> public static int maxCommonDivisor(int m, int n)&#123;</span><br><span class="line">    if(m &lt; n)&#123;</span><br><span class="line">        int temp = m;</span><br><span class="line">        m = n;</span><br><span class="line">        n = temp;</span><br><span class="line">    &#125;</span><br><span class="line">    if(m % n == 0)&#123;</span><br><span class="line">        return n;</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        return maxCommonDivisor(n, m%n);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//循环法</span><br><span class="line">public static int maxCommonDivisor2(int m, int n)&#123;</span><br><span class="line">    if(m &lt; n)&#123;</span><br><span class="line">        int temp = m;</span><br><span class="line">        m = n;</span><br><span class="line">        n = temp;</span><br><span class="line">    &#125;</span><br><span class="line">    while(m % n != 0)&#123;</span><br><span class="line">        int temp = m % n;</span><br><span class="line">        m = n;</span><br><span class="line">        n = temp;</span><br><span class="line">    &#125;</span><br><span class="line">    return n;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public static int minCommonMultiple(int m, int n)&#123;</span><br><span class="line">       return m*n/maxCommonDivisor2(m, n);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="宜信"><a href="#宜信" class="headerlink" title="宜信"></a>宜信</h4><h5 id="1-Tn-Tn-2-2-Tn-4-n的时间复杂度（n2？）"><a href="#1-Tn-Tn-2-2-Tn-4-n的时间复杂度（n2？）" class="headerlink" title="1. Tn=Tn/2+2*Tn/4+n的时间复杂度（n2？）"></a>1. Tn=Tn/2+2*Tn/4+n的时间复杂度（n2？）</h5><h5 id="2-三维空间中六个平面最多将空间分为几个部分？（8）"><a href="#2-三维空间中六个平面最多将空间分为几个部分？（8）" class="headerlink" title="2. 三维空间中六个平面最多将空间分为几个部分？（8）"></a>2. 三维空间中六个平面最多将空间分为几个部分？（8）</h5><ol>
+<li>n个点最多把直线分成C(n,0)+C(n,1)份； </li>
+<li>n条直线最多把平面分成C(n,0)+C(n,1)+C(n,2)份； </li>
+<li>n个平面最多把空间分成C(n,0)+C(n,1)+C(n,2)+C(n,3)=(n^3+5n+6)/6份； </li>
+<li>n个空间最多把“时空”分成C(n,0)+C(n,1)+C(n,2)+C(n,3)+C(n,4)份； </li>
+<li>…… </li>
+<li>C(a,b)表示从a个元素中取b个的组合数.</li>
+</ol>
+<h5 id="3-在双向链表中，删除元素p的操作"><a href="#3-在双向链表中，删除元素p的操作" class="headerlink" title="3. 在双向链表中，删除元素p的操作"></a>3. 在双向链表中，删除元素p的操作</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//在删除之前一定要把P的前驱后继链连接好，再删除</span><br><span class="line">    p-&gt;lnext-&gt;rnext=p-&gt;rnext;//p的前驱的后继等于p的后继；</span><br><span class="line">    p-&gt;rnext-lnext=p-&gt;lnext;//P的后继的前驱等于P的前驱；</span><br><span class="line">    free(p);</span><br></pre></td></tr></table></figure>
+<h5 id="4-jvm可以限制堆外内存大小（true）"><a href="#4-jvm可以限制堆外内存大小（true）" class="headerlink" title="4. jvm可以限制堆外内存大小（true）"></a>4. jvm可以限制堆外内存大小（true）</h5><p><strong>堆外内存，不受JVM控制的内存。</strong></p>
+<ol>
+<li>相比于堆内内存有几个优势：<ol>
+<li>减少了垃圾回收的工作，因为垃圾回收会暂停其他的工作</li>
+<li>加快了复制的速度。因为堆内在flush到远程时，会先复制到直接内存（非堆内存），然后再发送</li>
+</ol>
+</li>
+<li>相比于堆内内存有几个劣势：<ol>
+<li>堆外内存难以控制，如果内存泄漏，那么很难排查</li>
+<li>堆外内存相对来说，不适合存储很复杂的对象。一般简单的对象或者扁平化的比较适合。</li>
+</ol>
+</li>
+</ol>
+<h5 id="5-cms垃圾回收包括7个步骤"><a href="#5-cms垃圾回收包括7个步骤" class="headerlink" title="5. cms垃圾回收包括7个步骤"></a>5. cms垃圾回收包括7个步骤</h5><p>垃圾回收器从线程运行情况分类有三种</p>
+<ol>
+<li>串行回收，Serial回收器，单线程回收，全程stw；</li>
+<li>并行回收，名称以Parallel开头的回收器，多线程回收，全程stw；</li>
+<li>并发回收，cms与G1，多线程分阶段回收，只有某阶段会stw；</li>
+</ol>
+<h5 id="6-threadlocal利用了thread的弱引用map（true）"><a href="#6-threadlocal利用了thread的弱引用map（true）" class="headerlink" title="6. threadlocal利用了thread的弱引用map（true）"></a>6. threadlocal利用了thread的弱引用map（true）</h5><p>每个thread中都存在一个map, map的类型是ThreadLocal.ThreadLocalMap. Map中的key为一个threadlocal实例. 每个key都弱引用指向threadlocal.</p>
+<h5 id="7-dalvik虚拟机采用的是基于寄存器的指令集"><a href="#7-dalvik虚拟机采用的是基于寄存器的指令集" class="headerlink" title="7. dalvik虚拟机采用的是基于寄存器的指令集"></a>7. dalvik虚拟机采用的是基于寄存器的指令集</h5><p>Dalvik虚拟机使用的指令是基于寄存器的,而Java虚拟机使用的指令集是基于堆栈的。</p>
+<h5 id="8-若使用KMP匹配算法，串‘ababaaababaa’的next数组为（011234223456）"><a href="#8-若使用KMP匹配算法，串‘ababaaababaa’的next数组为（011234223456）" class="headerlink" title="8. 若使用KMP匹配算法，串‘ababaaababaa’的next数组为（011234223456）"></a>8. 若使用KMP匹配算法，串‘ababaaababaa’的next数组为（011234223456）</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">计算字符串的next函数值,可以参考&quot;KMP模式匹配算法&quot;.</span><br><span class="line"> </span><br><span class="line">计算过程:</span><br><span class="line"> </span><br><span class="line">下标j   1  2  3  4  5  6  7  8  9  10  11  12</span><br><span class="line">字符串  a  b  a  b  a  a  a  b  a   b   a   a</span><br><span class="line">next[j] 0  1  1  2  3  4  2  2  3   4   5   6    </span><br><span class="line"> </span><br><span class="line">1) 当j=1时,固定就是next[1]=0;</span><br><span class="line">2) 当j=2时,由1到j-1的字符串是&quot;a&quot;,属于其他情况,固定就是next[2]=1;</span><br><span class="line">3) 当j=3时,由1到j-1的字符串是&quot;ab&quot;,前缀字符&quot;a&quot;与后缀字符&quot;b&quot;不相等,</span><br><span class="line">   属于其他情况,所以,next[3]=1;</span><br><span class="line">4) 当j=4时,由1到j-1的字符串是&quot;aba&quot;,前缀字符&quot;a&quot;与后缀字符&quot;a&quot;相等,</span><br><span class="line">   也就是有1个字符相等,所以,next[4]=1+1=2;</span><br><span class="line">5) 当j=5时,由1到j-1的字符串是&quot;abab&quot;,前缀字符&quot;ab&quot;与后缀字符&quot;ab&quot;相等,</span><br><span class="line">   也就是有2个字符相等,所以,next[5]=2+1=3;</span><br><span class="line">6) 当j=6时,由1到j-1的字符串是&quot;ababa&quot;,前缀字符&quot;aba&quot;与后缀字符&quot;aba&quot;相等,</span><br><span class="line">   也就是有3个字符相等,所以,next[6]=3+1=4;</span><br><span class="line">7) 当j=7时,由1到j-1的字符串是&quot;ababaa&quot;,前缀字符&quot;a&quot;与后缀字符&quot;a&quot;相等,</span><br><span class="line">   也就是有1个字符相等,所以,next[7]=1+1=2;</span><br><span class="line">8) 当j=8时,由1到j-1的字符串是&quot;ababaaa&quot;,前缀字符&quot;a&quot;与后缀字符&quot;a&quot;相等,</span><br><span class="line">   也就是有1个字符相等,所以,next[8]=1+1=2;</span><br><span class="line">9) 当j=9时,由1到j-1的字符串是&quot;ababaaab&quot;,前缀字符&quot;ab&quot;与后缀字符&quot;ab&quot;相等,</span><br><span class="line">   也就是有2个字符相等,所以,next[9]=2+1=3;</span><br><span class="line">10)当j=10时,由1到j-1的字符串是&quot;ababaaaba&quot;,前缀字符&quot;aba&quot;与后缀字符&quot;aba&quot;相等,</span><br><span class="line">   也就是有3个字符相等,所以,next[10]=3+1=4;</span><br><span class="line">11)当j=11时,由1到j-1的字符串是&quot;ababaaabab&quot;,前缀字符&quot;abab&quot;与后缀字符&quot;abab&quot;相等,</span><br><span class="line">   也就是有4个字符相等,所以,next[11]=4+1=5;</span><br><span class="line">12)当j=12时,由1到j-1的字符串是&quot;ababaaababa&quot;,前缀字符&quot;ababa&quot;与后缀字符&quot;ababa&quot;相等,</span><br><span class="line">   也就是有5个字符相等,所以,next[12]=5+1=6;</span><br></pre></td></tr></table></figure>
+<h5 id="9-（前序后序）不能唯一确定二叉树"><a href="#9-（前序后序）不能唯一确定二叉树" class="headerlink" title="9. （前序后序）不能唯一确定二叉树"></a>9. （前序后序）不能唯一确定二叉树</h5><p>反例：任何结点只有左子树的二叉树和任何结点只有右子树的二叉树，其前序序列相同，后序序列相同，但却是两棵不同的二叉树。</p>
+<h5 id="10-由权值分别为1-26-5-9-12-16的叶子结点生成一根哈夫曼树，它的带权路径长度为（124）"><a href="#10-由权值分别为1-26-5-9-12-16的叶子结点生成一根哈夫曼树，它的带权路径长度为（124）" class="headerlink" title="10. 由权值分别为1,26,5,9,12,16的叶子结点生成一根哈夫曼树，它的带权路径长度为（124）"></a>10. 由权值分别为1,26,5,9,12,16的叶子结点生成一根哈夫曼树，它的带权路径长度为（124）</h5><p>26+10x2+12x3+9*4+5+1=124</p>
+<h5 id="11-对于包含4个不同的元素的二叉搜索树，共有多少种不同的结构（14）"><a href="#11-对于包含4个不同的元素的二叉搜索树，共有多少种不同的结构（14）" class="headerlink" title="11. 对于包含4个不同的元素的二叉搜索树，共有多少种不同的结构（14）"></a>11. 对于包含4个不同的元素的二叉搜索树，共有多少种不同的结构（14）</h5><h5 id="12-B-树、Kd-树、红黑树、伸展树"><a href="#12-B-树、Kd-树、红黑树、伸展树" class="headerlink" title="12. B-树、Kd-树、红黑树、伸展树"></a>12. B-树、Kd-树、红黑树、伸展树</h5><p>红黑树：不牺牲太大的建立查找结构的代价，也能保证稳定高效的查找效率<br>伸展树，或者叫自适应查找树，是一种用于保存有序集合的简单高效的数据结构。伸展树实质上是一个二叉查找树。允许查找，插入，删除，删除最小，删除最大，分割，合并等许多操作</p>
+<ol>
+<li>对大规模的数据的存取适合（b-）</li>
+<li>处理与几何有关的问题适合（kd-树）</li>
+<li>（kd-树）扩充后可支持对历史版本的访问</li>
+</ol>
+<h4 id="华勤笔试"><a href="#华勤笔试" class="headerlink" title="华勤笔试"></a>华勤笔试</h4><h5 id="1-Java从c-演变，仍然保留的特性是（位运算-）"><a href="#1-Java从c-演变，仍然保留的特性是（位运算-）" class="headerlink" title="1. Java从c++演变，仍然保留的特性是（位运算?）"></a>1. Java从c++演变，仍然保留的特性是（位运算?）</h5><h5 id="2-String-s-”a”-”b”-”c”-”d”-”e”创建了几个对象"><a href="#2-String-s-”a”-”b”-”c”-”d”-”e”创建了几个对象" class="headerlink" title="2. String s=”a”+”b”+”c”+”d”+”e”创建了几个对象"></a>2. String s=”a”+”b”+”c”+”d”+”e”创建了几个对象</h5><p>赋值符号右边的”a”、”b”、”c”、”d”、”e”都是常量。对于常量，编译时就直接存储它们的字面值而不是它们的引用，在编译时就直接讲它们连接的结果提取出来变成了”abcde”。该语句在class文件中就相当于String s = “abcde”，然后当JVM执行到这一句的时候， 就在String pool里找。如果没有这个字符串，就会产生一个。</p>
+<h5 id="3-static修饰的变量初始化时刻（加载类）"><a href="#3-static修饰的变量初始化时刻（加载类）" class="headerlink" title="3. static修饰的变量初始化时刻（加载类）"></a>3. static修饰的变量初始化时刻（加载类）</h5><p>类中的静态成员会随着类的加载而加载</p>
+<h5 id="4-整数类对象-整数类型变量（）"><a href="#4-整数类对象-整数类型变量（）" class="headerlink" title="4. 整数类对象/整数类型变量（）"></a>4. 整数类对象/整数类型变量（）</h5><pre><code>1. a=Integer.parseInt(&quot;12&quot;);
+2. b=Integer.valueOf(&quot;12&quot;).intValue();
+</code></pre><p>parseInte和intValue这两个方法的返回值都是int。<br>因此a和b都是整数类型变量,而非integer对象，并且值相等。</p>
+<h5 id="5-在类方法中不可以this来调用本类的类方法（false）"><a href="#5-在类方法中不可以this来调用本类的类方法（false）" class="headerlink" title="5. 在类方法中不可以this来调用本类的类方法（false）"></a>5. 在类方法中不可以this来调用本类的类方法（false）</h5><p>this的含义就是表示当前方法所在类对象，类存在的属性和方法都可以通过this.xxx来调用</p>
+<h5 id="6-从扑克牌中随机抽5张牌，判断是不是一个顺子，即这5张牌是不是连续的"><a href="#6-从扑克牌中随机抽5张牌，判断是不是一个顺子，即这5张牌是不是连续的" class="headerlink" title="6. 从扑克牌中随机抽5张牌，判断是不是一个顺子，即这5张牌是不是连续的"></a>6. 从扑克牌中随机抽5张牌，判断是不是一个顺子，即这5张牌是不是连续的</h5><h6 id="思路一"><a href="#思路一" class="headerlink" title="思路一:"></a>思路一:</h6><p>把5张牌看成由5个数字组成的数组。大小王是特殊的数字，把它们都当成0。最直观的把数组排序，但值得注意的是，由于0可以当成任意数字，可以用0去补满数组中的空缺，也就是排序之后的数组不是连续的，即相邻的两个数字相隔若干个数字，但如果我们有足够的0可以补满这两个数字的空缺，这个数组实际上还是连续的。举个例子，数组排序之后为{0，1，3，4，5}。在1和3之间空缺了一个2，刚好我们有一个0，也就是我们可以它当成2去填补这个空缺。于是我们需要做三件事情：把数组排序，统计数组中0的个数，统计排序之后的数组相邻数字之间的空缺总数。如果空缺的总数小于或者等于0的个数，那么这个数组就是连续的；反之则不连续。最后，我们还需要注意的是，如果数组中的非0数字重复出现，则该数组不是连续的。换成扑克牌的描述方式，就是如果一副牌里含有对子，则不可能是顺子。</p>
+<h6 id="思路二"><a href="#思路二" class="headerlink" title="思路二:"></a>思路二:</h6><ol>
+<li>确认5张牌中除了0，其余数字没有重复的（可以用表统计的方法）;</li>
+<li>满足这样的逻辑：（max，min分别代表5张牌中的除0以外的最大值最小值）</li>
+<li>如果没有0，则max-min=4，则为顺子，否则不是<pre><code>2. 如果有一个0，则max-min=4或者3，则为顺子，否则不是
+3. 如果有两个0，则max-min=4或者3或者2，则为顺子，否则不是
+</code></pre></li>
+<li>最大值和最小值在步骤1中就可以获得，这样就不用排序了。</li>
+</ol>
+<h6 id="代码如下："><a href="#代码如下：" class="headerlink" title="代码如下："></a>代码如下：</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">import java.util.*;</span><br><span class="line">public class Puke&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        int[] a=&#123;0,0,1,2,5&#125;;</span><br><span class="line">        System.out.print(judge_2(a));</span><br><span class="line">    &#125;</span><br><span class="line">    public static boolean judge_1(int[] a) //解法一</span><br><span class="line">    &#123;</span><br><span class="line">        Arrays.sort(a);</span><br><span class="line">        int Zero=0;int Max=a[a.length-1],min,distance;</span><br><span class="line">        for(int i=0;i&lt;a.length;i++)&#123;</span><br><span class="line">            if(a[i]==0)</span><br><span class="line">            Zero++;</span><br><span class="line">        &#125;</span><br><span class="line">        min = a[Zero];</span><br><span class="line">        distance = Max-min;</span><br><span class="line">        if(Zero==0)&#123;</span><br><span class="line">            if(distance==4)</span><br><span class="line">                return true;</span><br><span class="line">            else</span><br><span class="line">                return false;</span><br><span class="line">        &#125;</span><br><span class="line">        else if(Zero==1)&#123;</span><br><span class="line">                if(distance==4||distance==3)</span><br><span class="line">                    return true;</span><br><span class="line">                else</span><br><span class="line">                    return false;</span><br><span class="line">        &#125;</span><br><span class="line">        else if(Zero==2)&#123;</span><br><span class="line">            if(distance==4||distance==3||distance==2)</span><br><span class="line">                return true;</span><br><span class="line">            else</span><br><span class="line">                return false;</span><br><span class="line">        &#125;</span><br><span class="line">        return false;</span><br><span class="line">&#125;</span><br><span class="line">    public static boolean judge_2(int[] a)//解法二</span><br><span class="line">    &#123;</span><br><span class="line">        Arrays.sort(a);</span><br><span class="line">        int Zero=0;int sum=0,distance=0;</span><br><span class="line">        for(int i=0;i&lt;a.length;i++)//可以在找0的过程中计算出MAX和Min因此不必排序</span><br><span class="line">        &#123;</span><br><span class="line">            if(a[i]==0)</span><br><span class="line">                Zero++;</span><br><span class="line">        &#125;</span><br><span class="line">        if(Zero&gt;2)</span><br><span class="line">            return false;</span><br><span class="line">        // System.out.println(Zero);</span><br><span class="line">        for(int i=Zero;i&lt;a.length-1;i++)&#123;</span><br><span class="line">            if(a[i]==a[i+1])</span><br><span class="line">                return false;</span><br><span class="line">            distance = a[i+1]-a[i]-1;</span><br><span class="line">            sum =sum+distance;</span><br><span class="line">        &#125;</span><br><span class="line">        // System.out.println(sum);</span><br><span class="line">        if(Zero&gt;=sum)</span><br><span class="line">            return true;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="诺基亚："><a href="#诺基亚：" class="headerlink" title="诺基亚："></a>诺基亚：</h4><h5 id="1-在VC6-0中，int为2字节（false）"><a href="#1-在VC6-0中，int为2字节（false）" class="headerlink" title="1. 在VC6.0中，int为2字节（false）"></a>1. 在VC6.0中，int为2字节（false）</h5><p>在vc编译器中int默认是long int，因此int在vc6.0里面是4个字节</p>
+<h5 id="2-利用cat命令查看文本文件的内容时要对所有的输出行进行编号的命令（cat-n）"><a href="#2-利用cat命令查看文本文件的内容时要对所有的输出行进行编号的命令（cat-n）" class="headerlink" title="2. 利用cat命令查看文本文件的内容时要对所有的输出行进行编号的命令（cat -n）"></a>2. 利用cat命令查看文本文件的内容时要对所有的输出行进行编号的命令（cat -n）</h5><p>cat命令主要用来查看文件内容，创建文件，文件合并，追加文件内容等功能。</p>
+<ol>
+<li>cat f1.txt，查看f1.txt文件的内容。</li>
+<li>cat -n f1.txt，查看f1.txt文件的内容，并且由1开始对所有输出行进行编号。</li>
+<li>cat -b f1.txt，查看f1.txt文件的内容，用法与-n相似，只不过对于空白行不编号。</li>
+<li>cat -s f1.txt，当遇到有连续两行或两行以上的空白行，就代换为一行的空白行。</li>
+<li>cat -e f1.txt，在输出内容的每一行后面加一个$符号。</li>
+<li>cat f1.txt f2.txt，同时显示f1.txt和f2.txt文件内容，注意文件名之间以空格分隔，而不是逗号。</li>
+<li>cat -n f1.txt&gt;f2.txt，对f1.txt文件中每一行加上行号后然后写入到f2.txt中，会覆盖原来的内容，文件不存在则创建它。</li>
+<li>cat -n f1.txt&gt;&gt;f2.txt，对f1.txt文件中每一行加上行号后然后追加到f2.txt中去，不会覆盖原来的内容，文件不存在则创建它。</li>
+</ol>
+<h5 id="3-vi命令将文档中的全部2014替换成2015"><a href="#3-vi命令将文档中的全部2014替换成2015" class="headerlink" title="3. vi命令将文档中的全部2014替换成2015"></a>3. vi命令将文档中的全部2014替换成2015</h5><ol>
+<li>#vi xx.txt</li>
+<li>#按esc键</li>
+<li>输入# :%s/2014/2015/g</li>
+</ol>
+<h5 id="4-哪条指令用于配置默认路由"><a href="#4-哪条指令用于配置默认路由" class="headerlink" title="4. 哪条指令用于配置默认路由"></a>4. 哪条指令用于配置默认路由</h5><ol>
+<li>默认路由是静态路由的一个特例。当路由器为路由数据包查找路径而没有找到可供使用的、匹配的路由选择信息时，默认路由将为该数据包指定一个固定的下一跳IP地址。默认路由的配置命令是“ip route”.</li>
+<li>默认路由的配置命令中“0.0.0.0 0.0.0.0”表示未知主机，即任何无法判断的目的主机地址，因此“ip route 0.0.0.0 0.0.0.0 172.16.10.1”，其中，“172.16.10.1”是IP数据报传送的下一跳路由地址。</li>
+</ol>
+<h5 id="5-环境变量-表示上一条命令执行后的返回值"><a href="#5-环境变量-表示上一条命令执行后的返回值" class="headerlink" title="5. 环境变量($*)表示上一条命令执行后的返回值"></a>5. 环境变量($*)表示上一条命令执行后的返回值</h5><ol>
+<li>$?：上一次执行命令的返回状态。如果变量值为0,证明上一个命令正确，如果非0则上一个命令没有正确执行。</li>
+<li>$$:当前进程的进程号（PID）</li>
+<li>$!:后台运行的最后一个进程的进程号</li>
+<li>$0:当前shell的名字</li>
+<li>$1:传递给shell脚本的第一个参数</li>
+<li>$2:传递给shell脚本的第二个参数</li>
+</ol>
+<h5 id="6-tail-100-var-log-maillog，表示（显示maillog最后一百行的内容）"><a href="#6-tail-100-var-log-maillog，表示（显示maillog最后一百行的内容）" class="headerlink" title="6. tail -100/var/log/maillog，表示（显示maillog最后一百行的内容）"></a>6. tail -100/var/log/maillog，表示（显示maillog最后一百行的内容）</h5><h5 id="7-ICMP协议属于（网络）层"><a href="#7-ICMP协议属于（网络）层" class="headerlink" title="7. ICMP协议属于（网络）层"></a>7. ICMP协议属于（网络）层</h5><p>ICMP协议是一种面向无连接的协议，用于传输出错报告控制信息</p>
+<h5 id="8-已知某植物一对树枝每月一个新的分支，每对分支第三月新分支，从一月一个分支开始，到明年的十二月底有多少个树枝"><a href="#8-已知某植物一对树枝每月一个新的分支，每对分支第三月新分支，从一月一个分支开始，到明年的十二月底有多少个树枝" class="headerlink" title="8. 已知某植物一对树枝每月一个新的分支，每对分支第三月新分支，从一月一个分支开始，到明年的十二月底有多少个树枝"></a>8. 已知某植物一对树枝每月一个新的分支，每对分支第三月新分支，从一月一个分支开始，到明年的十二月底有多少个树枝</h5><p>从第三个数据开始，每一个数据是前面两个数据的和</p>
+<h5 id="9-给定一个整数数组num，找到一个具有最大和的连续子数组（子数组最少包含一个元素），且该子数组的长度为奇数，返回其最大和"><a href="#9-给定一个整数数组num，找到一个具有最大和的连续子数组（子数组最少包含一个元素），且该子数组的长度为奇数，返回其最大和" class="headerlink" title="9. 给定一个整数数组num，找到一个具有最大和的连续子数组（子数组最少包含一个元素），且该子数组的长度为奇数，返回其最大和"></a>9. 给定一个整数数组num，找到一个具有最大和的连续子数组（子数组最少包含一个元素），且该子数组的长度为奇数，返回其最大和</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public int maxSubArray(int[] nums) &#123;</span><br><span class="line">        int sum=nums[0];//当前遍历到的最大和的子集</span><br><span class="line">        int max=nums[0];//数组的最大和</span><br><span class="line">        for(int i=1;i&lt;nums.length;i++)&#123;</span><br><span class="line">            sum=sum&gt;0?(sum+nums[i]):nums[i];</span><br><span class="line">            max=max&gt;sum?max:sum;</span><br><span class="line">        &#125;</span><br><span class="line">        return max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="微盟"><a href="#微盟" class="headerlink" title="微盟"></a>微盟</h4><h5 id="1-说出5种以上的设计模式，并描述该设计模式的应用场景"><a href="#1-说出5种以上的设计模式，并描述该设计模式的应用场景" class="headerlink" title="1. 说出5种以上的设计模式，并描述该设计模式的应用场景"></a>1. 说出5种以上的设计模式，并描述该设计模式的应用场景</h5><h5 id="2-什么是数据库乐观锁，简述乐观锁的实现步骤，以库存超卖设计为例"><a href="#2-什么是数据库乐观锁，简述乐观锁的实现步骤，以库存超卖设计为例" class="headerlink" title="2. 什么是数据库乐观锁，简述乐观锁的实现步骤，以库存超卖设计为例"></a>2. 什么是数据库乐观锁，简述乐观锁的实现步骤，以库存超卖设计为例</h5><h6 id="数据的锁定分为两种，第一种叫作悲观锁，第二种叫作乐观锁。"><a href="#数据的锁定分为两种，第一种叫作悲观锁，第二种叫作乐观锁。" class="headerlink" title="数据的锁定分为两种，第一种叫作悲观锁，第二种叫作乐观锁。"></a>数据的锁定分为两种，第一种叫作悲观锁，第二种叫作乐观锁。</h6><ol>
+<li>悲观锁，对数据的冲突采取一种悲观的态度，也就是说假设数据肯定会冲突，所以在数据开始读取的时候就把数据锁定住。【数据锁定：数据将暂时不会得到修改】</li>
+<li>乐观锁，认为数据一般情况下不会造成冲突，所以在数据进行提交更新的时候，才会正式对数据的冲突与否进行检测，如果发现冲突了，则让用户返回错误的信息。让用户决定如何去做。</li>
+</ol>
+<h6 id="理解："><a href="#理解：" class="headerlink" title="理解："></a>理解：</h6><ol>
+<li>乐观锁是一种思想，具体实现是，表中有一个版本字段，第一次读的时候，获取到这个字段。处理完业务逻辑开始更新的时候，需要再次查看该字段的值是否和第一次的一样。如果一样更新，反之拒绝。之所以叫乐观，因为这个模式没有从数据库加锁。</li>
+<li>悲观锁是读取的时候为后面的更新加锁，之后再来的读操作都会等待。这种是数据库锁<br>乐观锁优点程序实现，不会存在死锁等问题。他的适用场景也相对乐观。阻止不了除了程序之外的数据库操作。悲观锁是数据库实现，他阻止一切数据库操作。</li>
+</ol>
+<h5 id="3-请描述redis常用命令的功能，并简单描述使用场景（略）"><a href="#3-请描述redis常用命令的功能，并简单描述使用场景（略）" class="headerlink" title="3. 请描述redis常用命令的功能，并简单描述使用场景（略）"></a>3. 请描述redis常用命令的功能，并简单描述使用场景（略）</h5><h5 id="4-描述一下Spring框架中bean的生命周期"><a href="#4-描述一下Spring框架中bean的生命周期" class="headerlink" title="4. 描述一下Spring框架中bean的生命周期"></a>4. 描述一下Spring框架中bean的生命周期</h5><p><strong>在spring中，singleton属性默认是true，只有设定为false，则每次指定别名取得的Bean时都会产生一个新的实例</strong></p>
+<h6 id="一个Bean从创建到销毁，如果是用BeanFactory来生成-管理Bean的话，会经历几个执行阶段"><a href="#一个Bean从创建到销毁，如果是用BeanFactory来生成-管理Bean的话，会经历几个执行阶段" class="headerlink" title="一个Bean从创建到销毁，如果是用BeanFactory来生成,管理Bean的话，会经历几个执行阶段"></a>一个Bean从创建到销毁，如果是用BeanFactory来生成,管理Bean的话，会经历几个执行阶段</h6><ol>
+<li>Bean的建立：容器寻找Bean的定义信息并将其实例化。</li>
+<li>属性注入：使用依赖注入，Spring按照Bean定义信息配置Bean所有属性</li>
+<li>BeanNameAware的setBeanName()：如果Bean类有实现org.springframework.beans.BeanNameAware接口，工厂调用Bean的setBeanName()方法传递Bean的ID。</li>
+<li>BeanFactoryAware的setBeanFactory()：如果Bean类有实现org.springframework.beans.factory.BeanFactoryAware接口，工厂调用setBeanFactory()方法传入工厂自身。</li>
+<li>BeanPostProcessors的ProcessBeforeInitialization()：如果有org.springframework.beans.factory.config.BeanPostProcessors和Bean关联，那么其postProcessBeforeInitialization()方法将被调用。</li>
+<li>initializingBean的afterPropertiesSet()：如果Bean类已实现org.springframework.beans.factory.InitializingBean接口，则执行他的afterProPertiesSet()方法</li>
+<li>Bean定义文件中定义init-method：可以在Bean定义文件中使用”init-method”属性设定方法名称</li>
+<li>BeanPostProcessors的ProcessaAfterInitialization()：如果有任何的BeanPostProcessors实例与Bean实例关联，则执行BeanPostProcessors实例的ProcessaAfterInitialization()方法</li>
+</ol>
+<h6 id="Servlet的生命周期：实例化，初始init，接收请求service，销毁destroy。Spring上下文中的Bean也类似"><a href="#Servlet的生命周期：实例化，初始init，接收请求service，销毁destroy。Spring上下文中的Bean也类似" class="headerlink" title="Servlet的生命周期：实例化，初始init，接收请求service，销毁destroy。Spring上下文中的Bean也类似"></a>Servlet的生命周期：实例化，初始init，接收请求service，销毁destroy。Spring上下文中的Bean也类似</h6><ol>
+<li>实例化一个Bean－－也就是我们常说的new；</li>
+<li>按照Spring上下文对实例化的Bean进行配置－－也就是IOC注入；</li>
+<li>如果这个Bean已经实现了BeanNameAware接口，会调用它实现的setBeanName(String)方法，此处传递的就是Spring配置文件中Bean的id值</li>
+<li>如果这个Bean已经实现了BeanFactoryAware接口，会调用它实现的setBeanFactory(setBeanFactory(BeanFactory)传递的是Spring工厂自身（可以用这个方式来获取其它Bean，只需在Spring配置文件中配置一个普通的Bean就可以）；</li>
+<li>如果这个Bean已经实现了ApplicationContextAware接口，会调用setApplicationContext(ApplicationContext)方法，传入Spring上下文（同样这个方式也可以实现步骤4的内容，但比4更好，因为ApplicationContext是BeanFactory的子接口，有更多的实现方法）；</li>
+<li>如果这个Bean关联了BeanPostProcessor接口，将会调用postProcessBeforeInitialization(Object obj, String s)方法，BeanPostProcessor经常被用作是Bean内容的更改，并且由于这个是在Bean初始化结束时调用那个的方法，也可以被应用于内存或缓存技术；</li>
+<li>如果Bean在Spring配置文件中配置了init-method属性会自动调用其配置的初始化方法。</li>
+<li>如果这个Bean关联了BeanPostProcessor接口，将会调用postProcessAfterInitialization(Object obj, String s)方法</li>
+<li>当Bean不再需要时，会经过清理阶段，如果Bean实现了DisposableBean这个接口，会调用那个其实现的destroy()方法；</li>
+<li>如果这个Bean的Spring配置中配置了destroy-method属性，会自动调用其配置的销毁方法。</li>
+</ol>
+<h5 id="5-内存泄漏和内存溢出的区别"><a href="#5-内存泄漏和内存溢出的区别" class="headerlink" title="5. 内存泄漏和内存溢出的区别"></a>5. 内存泄漏和内存溢出的区别</h5><ol>
+<li>内存泄漏memory leak :指程序在申请内存后，无法释放已申请的内存空间，一次内存泄漏似乎不会有大的影响，但内存泄漏堆积后的后果就是内存溢出。</li>
+<li>内存溢出 out of memory :指程序申请内存时，没有足够的内存供申请者使用.</li>
+<li>二者的关系<ol>
+<li>内存泄漏的堆积最终会导致内存溢出</li>
+<li>内存溢出就是需要的内存空间超过了系统实际分配的空间，此时系统相当于没法满足你的需求，就会报内存溢出的错误。</li>
+<li>内存泄漏是指你向系统申请分配内存进行使用(new)，可是使用完了以后却不归还(delete)，结果你申请到的那块内存你自己也不能再访问（也许你把它的地址给弄丢了），而系统也不能再次将它分配给需要的程序。</li>
+<li>内存溢出：一个盘子用尽各种方法只能装4个果子，你装了5个，结果掉倒地上不能吃了。这就是溢出。比方说栈，栈满时再做进栈必定产生空间溢出，叫上溢，栈空时再做退栈也产生空间溢出，称为下溢。就是分配的内存不足以放下数据项序列,称为内存溢出。说白了就是我承受不了那么多，那我就报错，</li>
+</ol>
+</li>
+</ol>
+<h5 id="6-计算1-N之间所有的正整数中包含的1的数量"><a href="#6-计算1-N之间所有的正整数中包含的1的数量" class="headerlink" title="6. 计算1~N之间所有的正整数中包含的1的数量"></a>6. 计算1~N之间所有的正整数中包含的1的数量</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">/*用c语言编写程序输入一个正整数n，求1到n的数中1出现的个数*/</span><br><span class="line">#include&quot;stdio.h&quot;</span><br><span class="line">intcount(int n)&#123;</span><br><span class="line">    int i,j,c=0;</span><br><span class="line">    for(i=1;i&lt;=n;i++)&#123; </span><br><span class="line">        j=i; </span><br><span class="line">        while(j!=0)&#123;</span><br><span class="line">            if(i%10==1) /*判断位数中是否有1*/</span><br><span class="line">            &#123;</span><br><span class="line">                c++;</span><br><span class="line">            &#125;</span><br><span class="line">            j=j/10; /*让数除以十让他原来的高位变为低位，即原来的十位变成个位*/</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return c;</span><br><span class="line">&#125;</span><br><span class="line">main()&#123;</span><br><span class="line">    int c,n;</span><br><span class="line">    printf(&quot;input n:\n&quot;);</span><br><span class="line">    scanf(&quot;%d&quot;,&amp;n);</span><br><span class="line">    c=count(n);</span><br><span class="line">    printf(&quot;%d\n&quot;,c);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="7-设计10个线程，其中5个线程j-，5个线程j–，j初始为0，每个线程执行1万次"><a href="#7-设计10个线程，其中5个线程j-，5个线程j–，j初始为0，每个线程执行1万次" class="headerlink" title="7. 设计10个线程，其中5个线程j++，5个线程j–，j初始为0，每个线程执行1万次"></a>7. 设计10个线程，其中5个线程j++，5个线程j–，j初始为0，每个线程执行1万次</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">//关于“设计4个线程，其中两个线程对j加1，另外两个线程对j减1”的问题</span><br><span class="line">public class Test &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Data data = new Data();</span><br><span class="line">        Add add = new Add(data);</span><br><span class="line">        Dec dec = new Dec(data);</span><br><span class="line">        for (int i = 0; i &lt; 2; ++i) &#123;</span><br><span class="line">            new Thread(add, &quot;线程A&quot;).start();</span><br><span class="line">            new Thread(dec, &quot;线程B&quot;).start();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class Data &#123;</span><br><span class="line">    private int j = 0;</span><br><span class="line">    public synchronized void add()&#123;</span><br><span class="line">        System.out.println(Thread.currentThread().getName() + &quot;对j加1，当前j=&quot; + (++j));</span><br><span class="line">    &#125;</span><br><span class="line">    public synchronized void dec()&#123;</span><br><span class="line">        System.out.println(Thread.currentThread().getName() + &quot;对j减1，当前j=&quot; + (--j));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class Add implements Runnable&#123;</span><br><span class="line">    private Data data;</span><br><span class="line">    Add(Data data)&#123;</span><br><span class="line">        this.data= data;</span><br><span class="line">    &#125;</span><br><span class="line">    public void run() &#123;</span><br><span class="line">        data.add();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class Dec implements Runnable&#123;</span><br><span class="line">    private Data data;</span><br><span class="line">    Dec(Data data)&#123;</span><br><span class="line">        this.data= data;</span><br><span class="line">    &#125;</span><br><span class="line">    public void run() &#123;</span><br><span class="line">        data.dec();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="8">
+<li>输入一个字符串，用冒号隔开，返回相加结果</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">import java.util.StringTokenizer;</span><br><span class="line">import java.util.Scanner;</span><br><span class="line"></span><br><span class="line">public class Test &#123;</span><br><span class="line">    </span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        System.out.println(&quot;请输入字符串: (两个数字间用冒号隔开)&quot;);</span><br><span class="line">        Scanner s = new Scanner(System.in);</span><br><span class="line">        String sc=s.nextLine();</span><br><span class="line">        StringTokenizer string[] st=new StringTokenizer(sc,&quot;:&quot;);</span><br><span class="line">        while (st.hasMoreTokens()) &#123;</span><br><span class="line">            System.out.println(st.nextToken());</span><br><span class="line">        &#125;</span><br><span class="line">        int add = 0; </span><br><span class="line">        while (st.hasMoreTokens()) &#123;</span><br><span class="line">            add += Integer.parseInt(st.nextToken());</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(add);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="中信"><a href="#中信" class="headerlink" title="中信"></a>中信</h4><h5 id="1-应用程序可以用内存映射的方式访问文件中的数据-true"><a href="#1-应用程序可以用内存映射的方式访问文件中的数据-true" class="headerlink" title="1. 应用程序可以用内存映射的方式访问文件中的数据(true)"></a>1. 应用程序可以用内存映射的方式访问文件中的数据(true)</h5><h4 id="好未来"><a href="#好未来" class="headerlink" title="好未来"></a>好未来</h4><h5 id="1-二叉树的先序遍历需要借助栈（false）"><a href="#1-二叉树的先序遍历需要借助栈（false）" class="headerlink" title="1. 二叉树的先序遍历需要借助栈（false）"></a>1. 二叉树的先序遍历需要借助栈（false）</h5><h5 id="2-进入临界区的进程可以长时间不退出直到处理完自己的任务"><a href="#2-进入临界区的进程可以长时间不退出直到处理完自己的任务" class="headerlink" title="2. 进入临界区的进程可以长时间不退出直到处理完自己的任务"></a>2. 进入临界区的进程可以长时间不退出直到处理完自己的任务</h5><p>进入临界区的进程,不能在临界区内长时间阻塞 等待.</p>
+<h5 id="3-a-b-a-c-a-d-b-d-，若从顶点a开始对图进行DFS遍历，则可能得到的不同遍历序列的个数是（3）"><a href="#3-a-b-a-c-a-d-b-d-，若从顶点a开始对图进行DFS遍历，则可能得到的不同遍历序列的个数是（3）" class="headerlink" title="3. {a,b}{a,c}{a,d}{b,d}，若从顶点a开始对图进行DFS遍历，则可能得到的不同遍历序列的个数是（3）"></a>3. {a,b}{a,c}{a,d}{b,d}，若从顶点a开始对图进行DFS遍历，则可能得到的不同遍历序列的个数是（3）</h5><h5 id="4-作业调度算法HRRN既考虑了作业的等待时间，又考虑了作业运行时间，从而改善了处理机调度的性能"><a href="#4-作业调度算法HRRN既考虑了作业的等待时间，又考虑了作业运行时间，从而改善了处理机调度的性能" class="headerlink" title="4. 作业调度算法HRRN既考虑了作业的等待时间，又考虑了作业运行时间，从而改善了处理机调度的性能"></a>4. 作业调度算法HRRN既考虑了作业的等待时间，又考虑了作业运行时间，从而改善了处理机调度的性能</h5><p>高响应比算法既考虑了作业的等待时间，又考虑作业运行时间的调度算法。因此既照顾了短作业，又不致使长作业的等待时间过长</p>
+<h5 id="5-作业调度算法PSA用作作业调度的时候，系统从后备队列中选取一个优先级最高的放入内存-false"><a href="#5-作业调度算法PSA用作作业调度的时候，系统从后备队列中选取一个优先级最高的放入内存-false" class="headerlink" title="5. 作业调度算法PSA用作作业调度的时候，系统从后备队列中选取一个优先级最高的放入内存(false)"></a>5. 作业调度算法PSA用作作业调度的时候，系统从后备队列中选取一个优先级最高的放入内存(false)</h5><h6 id="作业调度算法"><a href="#作业调度算法" class="headerlink" title="作业调度算法:"></a>作业调度算法:</h6><ol>
+<li>先来先服务算法(FCES) ,每次调度是从就绪队列中选择一个最先进入该队列的进程,为<br>之分配处理机,使之投入运行。作业的等待时间就是作业的优先级,等待时间越长,优先级越高。可用于作业调度和进程调度。(特殊情况无法执行)</li>
+<li>短作业优先(SJF)调度,它将从外存的作业后备队列中选择若干个估计运行时间最短的作业,优先将它们调入内存运行。以作业的长短来计算优先级,作业越短,其优先级越高。可用于作业调度和进程调度。(长作业可能被饿死)</li>
+<li>优先级调度算法(PSA) ,系统从后备队列中选择若干个优先级最高的作业装入内存。基于作业的紧迫程度,由外部赋予作业相应的优先级,调度算法是根据优先级进行调度的。(确认优先级困难)</li>
+<li>高响应比优先调度算法(HRRN) ,优先权= (等待时间+要求服务时间) /要求服务时间=响应时间/要求服务时间=响应比(Rp) 。等待时间相同时,要求服务时间越短优先权越高,类似SJF算法;要求服务时间相同时,等待时间越长优先级越高,类似FCFS算法;对于长作业的优先级,可以随等待时间的增加而提高,当其等待时间足够长时,也可以获得处理机。(产生额外开销)</li>
+</ol>
+<h5 id="6-破坏“不可抢占”条件是预防死锁-true"><a href="#6-破坏“不可抢占”条件是预防死锁-true" class="headerlink" title="6. 破坏“不可抢占”条件是预防死锁(true)"></a>6. 破坏“不可抢占”条件是预防死锁(true)</h5><h6 id="死锁预防"><a href="#死锁预防" class="headerlink" title="死锁预防:"></a>死锁预防:</h6><ol>
+<li>破坏“互斥”条件：在系统里取消互斥。若资源不被一个进程独占使用，那么死锁是肯定不会发生的。</li>
+<li>破坏“占有并等待”条件，就是在系统中不允许进程在已获得某种资源的情况下，申请其他资源。即要想出一个办法，阻止进程在持有资源的同时申请其他资源。</li>
+<li>破坏“不可抢占”条件就是允许对资源实行抢夺。</li>
+<li>破坏“循环等待”条件的一种方法，是将系统中的所有资源统一编号，进程可在任何时刻提出资源申请，但所有申请必须按照资源的编号顺序（升序）提出。这样做就能保证系统不出现死锁。</li>
+</ol>
+<h5 id="8-破坏“请求和保持”条件是避免死锁-false"><a href="#8-破坏“请求和保持”条件是避免死锁-false" class="headerlink" title="8. 破坏“请求和保持”条件是避免死锁(false)"></a>8. 破坏“请求和保持”条件是避免死锁(false)</h5><p>避免死锁：银行家算法</p>
+<h5 id="9-有名管道不允许无亲缘关系进程通信-false"><a href="#9-有名管道不允许无亲缘关系进程通信-false" class="headerlink" title="9. 有名管道不允许无亲缘关系进程通信(false)"></a>9. 有名管道不允许无亲缘关系进程通信(false)</h5><h5 id="10-信号是一种异步的通信方式-true"><a href="#10-信号是一种异步的通信方式-true" class="headerlink" title="10. 信号是一种异步的通信方式(true)"></a>10. 信号是一种异步的通信方式(true)</h5><p>信号是在软件层次上对中断机制的一种模拟，是一种异步通信方式。</p>
+<h5 id="11-共享内存是最快的通信方式-true"><a href="#11-共享内存是最快的通信方式-true" class="headerlink" title="11. 共享内存是最快的通信方式(true)"></a>11. 共享内存是最快的通信方式(true)</h5><ol>
+<li>共享内存可以说是最有用的进程间通信方式，也是最快的IPC形式。两个不同进程A、B共享内存的意思是，同一块物理内存被映射到进程A、B各自的进程地址空间。</li>
+<li>进程A可以即时看到进程B对共享内存中数据的更新，反之亦然。由于多个进程共享同一块内存区域，必然需要某种同步机制，互斥锁和信号量都可以。</li>
+<li>采用共享内存通信的一个显而易见的好处是效率高，因为进程可以直接读写内存，而不需要任何数据的拷贝。</li>
+</ol>
+<h5 id="12-无名管道是半双工通信-true"><a href="#12-无名管道是半双工通信-true" class="headerlink" title="12. 无名管道是半双工通信(true)"></a>12. 无名管道是半双工通信(true)</h5><ol>
+<li>无名管道是半双工的，就是对于一个管道来讲，只能读，或者写。</li>
+<li>无名管道只能在相关的，有共同祖先的进程间使用（即一般用户父子进程）。</li>
+<li>一个fork或者execve调用创建的子进程继承了父进程的文件描述符。</li>
+</ol>
+<h5 id="13-b树的叶子结点之间通过指针连接来增加查找速度-false"><a href="#13-b树的叶子结点之间通过指针连接来增加查找速度-false" class="headerlink" title="13. b树的叶子结点之间通过指针连接来增加查找速度(false)"></a>13. b树的叶子结点之间通过指针连接来增加查找速度(false)</h5><p>叶子节点之间通过指针来连接，范围扫描将十分简单，而对于B树来说，则需要在叶子节点和内部节点不停的往返移动。</p>
+<h5 id="14-m阶b树的根节点最多有m棵子树-true"><a href="#14-m阶b树的根节点最多有m棵子树-true" class="headerlink" title="14. m阶b树的根节点最多有m棵子树(true)"></a>14. m阶b树的根节点最多有m棵子树(true)</h5><p>m阶B树的根节点若不是叶节点，那么它至多有m棵子树，至少有2棵子树</p>
+<h5 id="15-NAT可以解决ipv4的地址不够的问题"><a href="#15-NAT可以解决ipv4的地址不够的问题" class="headerlink" title="15. NAT可以解决ipv4的地址不够的问题"></a>15. NAT可以解决ipv4的地址不够的问题</h5><p>NAT，一种减轻IPv4地址空间耗尽速度的方法</p>
+<ol>
+<li>IP地址不足；这种通过使用少量的公有IP地址代表较多的私有IP地址的方式，将有助于减缓可用的IP地址空间的枯竭。</li>
+<li>隐藏内部网络；NAT不仅能解决了lP地址不足的问题，而且还能够有效地避免来自网络外部的攻击，隐藏并保护网络内部的计算机。NAT 之内的 PC 联机到 Internet 上面时，他所显示的 IP 是 NAT 主机的公共 IP，所以Client端的PC当然就具有一定程度的安全了，外界在进行 portscan（端口扫描） 的时候，就侦测不到源Client 端的 PC 。</li>
+<li>能够处理地址重复情况，避免了地址的重新编号，增加了编址的灵活性。</li>
+<li>可以使多个使用TCP负载特性的服务器之间实现基本的数据包负载均衡</li>
+</ol>
+<h5 id="16-IP只能找到目的主机，无法找到目的进程（true）"><a href="#16-IP只能找到目的主机，无法找到目的进程（true）" class="headerlink" title="16. IP只能找到目的主机，无法找到目的进程（true）"></a>16. IP只能找到目的主机，无法找到目的进程（true）</h5><p> IP数据报IP报承担主机寻址,提供报头检错;只能找到目的主机而无法找到目的进程。</p>
+<h5 id="17-UDP和IP都是数据报协议（true）"><a href="#17-UDP和IP都是数据报协议（true）" class="headerlink" title="17. UDP和IP都是数据报协议（true）"></a>17. UDP和IP都是数据报协议（true）</h5>
+      
+    </div>
+    
+    
+    
+
+<div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">------ end------</div>
+    
+</div>
+
+  
+</div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JAVA/" rel="tag"> <i class="fa fa-tag"></i> JAVA</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/06/关于hexo的那些事儿/" rel="next" title="关于hexo的那些事儿">
+                <i class="fa fa-chevron-left"></i> 关于hexo的那些事儿
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/qifang.jpg"
+                alt="十点一刻" />
+            
+              <p class="site-author-name" itemprop="name">十点一刻</p>
+              <p class="site-description motion-element" itemprop="description">在没有路的丛林走出迷雾</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">33</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/tenneling" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:tenneling@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-如何判断一个单向链表是否有环，举出至少2种空间复杂度为o1"><span class="nav-number">1.</span> <span class="nav-text">1. 如何判断一个单向链表是否有环，举出至少2种空间复杂度为o1</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-给定一个非负整数序列，组合这些数字以形成这些数字可能组合中最大的数。如-3-3-34-5-9-，这个最大数字为-9534330"><span class="nav-number">2.</span> <span class="nav-text">2. 给定一个非负整数序列，组合这些数字以形成这些数字可能组合中最大的数。如[3,3,34,5,9]，这个最大数字为[9534330]</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-TCP拥塞控制包括快速重传、快速回复、快速避免"><span class="nav-number">3.</span> <span class="nav-text">3. TCP拥塞控制包括快速重传、快速回复、快速避免</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#诚毅笔试"><span class="nav-number"></span> <span class="nav-text">诚毅笔试</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-一个数如果恰好等于除它之外的所有因子之和-这个数就称为”完数”。例如6-1-2-3。编程找出10000以内的所有完数。"><span class="nav-number">1.</span> <span class="nav-text">1. 一个数如果恰好等于除它之外的所有因子之和,这个数就称为”完数”。例如6=1+2+3。编程找出10000以内的所有完数。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-求m和n的最大公约数和最小公倍数"><span class="nav-number">2.</span> <span class="nav-text">2. 求m和n的最大公约数和最小公倍数</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#宜信"><span class="nav-number"></span> <span class="nav-text">宜信</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-Tn-Tn-2-2-Tn-4-n的时间复杂度（n2？）"><span class="nav-number">1.</span> <span class="nav-text">1. Tn=Tn/2+2*Tn/4+n的时间复杂度（n2？）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-三维空间中六个平面最多将空间分为几个部分？（8）"><span class="nav-number">2.</span> <span class="nav-text">2. 三维空间中六个平面最多将空间分为几个部分？（8）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-在双向链表中，删除元素p的操作"><span class="nav-number">3.</span> <span class="nav-text">3. 在双向链表中，删除元素p的操作</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-jvm可以限制堆外内存大小（true）"><span class="nav-number">4.</span> <span class="nav-text">4. jvm可以限制堆外内存大小（true）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-cms垃圾回收包括7个步骤"><span class="nav-number">5.</span> <span class="nav-text">5. cms垃圾回收包括7个步骤</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-threadlocal利用了thread的弱引用map（true）"><span class="nav-number">6.</span> <span class="nav-text">6. threadlocal利用了thread的弱引用map（true）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7-dalvik虚拟机采用的是基于寄存器的指令集"><span class="nav-number">7.</span> <span class="nav-text">7. dalvik虚拟机采用的是基于寄存器的指令集</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#8-若使用KMP匹配算法，串‘ababaaababaa’的next数组为（011234223456）"><span class="nav-number">8.</span> <span class="nav-text">8. 若使用KMP匹配算法，串‘ababaaababaa’的next数组为（011234223456）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#9-（前序后序）不能唯一确定二叉树"><span class="nav-number">9.</span> <span class="nav-text">9. （前序后序）不能唯一确定二叉树</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#10-由权值分别为1-26-5-9-12-16的叶子结点生成一根哈夫曼树，它的带权路径长度为（124）"><span class="nav-number">10.</span> <span class="nav-text">10. 由权值分别为1,26,5,9,12,16的叶子结点生成一根哈夫曼树，它的带权路径长度为（124）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#11-对于包含4个不同的元素的二叉搜索树，共有多少种不同的结构（14）"><span class="nav-number">11.</span> <span class="nav-text">11. 对于包含4个不同的元素的二叉搜索树，共有多少种不同的结构（14）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#12-B-树、Kd-树、红黑树、伸展树"><span class="nav-number">12.</span> <span class="nav-text">12. B-树、Kd-树、红黑树、伸展树</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#华勤笔试"><span class="nav-number"></span> <span class="nav-text">华勤笔试</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-Java从c-演变，仍然保留的特性是（位运算-）"><span class="nav-number">1.</span> <span class="nav-text">1. Java从c++演变，仍然保留的特性是（位运算?）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-String-s-”a”-”b”-”c”-”d”-”e”创建了几个对象"><span class="nav-number">2.</span> <span class="nav-text">2. String s=”a”+”b”+”c”+”d”+”e”创建了几个对象</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-static修饰的变量初始化时刻（加载类）"><span class="nav-number">3.</span> <span class="nav-text">3. static修饰的变量初始化时刻（加载类）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-整数类对象-整数类型变量（）"><span class="nav-number">4.</span> <span class="nav-text">4. 整数类对象/整数类型变量（）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-在类方法中不可以this来调用本类的类方法（false）"><span class="nav-number">5.</span> <span class="nav-text">5. 在类方法中不可以this来调用本类的类方法（false）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-从扑克牌中随机抽5张牌，判断是不是一个顺子，即这5张牌是不是连续的"><span class="nav-number">6.</span> <span class="nav-text">6. 从扑克牌中随机抽5张牌，判断是不是一个顺子，即这5张牌是不是连续的</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#思路一"><span class="nav-number">6.1.</span> <span class="nav-text">思路一:</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#思路二"><span class="nav-number">6.2.</span> <span class="nav-text">思路二:</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#代码如下："><span class="nav-number">6.3.</span> <span class="nav-text">代码如下：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#诺基亚："><span class="nav-number"></span> <span class="nav-text">诺基亚：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-在VC6-0中，int为2字节（false）"><span class="nav-number">1.</span> <span class="nav-text">1. 在VC6.0中，int为2字节（false）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-利用cat命令查看文本文件的内容时要对所有的输出行进行编号的命令（cat-n）"><span class="nav-number">2.</span> <span class="nav-text">2. 利用cat命令查看文本文件的内容时要对所有的输出行进行编号的命令（cat -n）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-vi命令将文档中的全部2014替换成2015"><span class="nav-number">3.</span> <span class="nav-text">3. vi命令将文档中的全部2014替换成2015</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-哪条指令用于配置默认路由"><span class="nav-number">4.</span> <span class="nav-text">4. 哪条指令用于配置默认路由</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-环境变量-表示上一条命令执行后的返回值"><span class="nav-number">5.</span> <span class="nav-text">5. 环境变量($*)表示上一条命令执行后的返回值</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-tail-100-var-log-maillog，表示（显示maillog最后一百行的内容）"><span class="nav-number">6.</span> <span class="nav-text">6. tail -100/var/log/maillog，表示（显示maillog最后一百行的内容）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7-ICMP协议属于（网络）层"><span class="nav-number">7.</span> <span class="nav-text">7. ICMP协议属于（网络）层</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#8-已知某植物一对树枝每月一个新的分支，每对分支第三月新分支，从一月一个分支开始，到明年的十二月底有多少个树枝"><span class="nav-number">8.</span> <span class="nav-text">8. 已知某植物一对树枝每月一个新的分支，每对分支第三月新分支，从一月一个分支开始，到明年的十二月底有多少个树枝</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#9-给定一个整数数组num，找到一个具有最大和的连续子数组（子数组最少包含一个元素），且该子数组的长度为奇数，返回其最大和"><span class="nav-number">9.</span> <span class="nav-text">9. 给定一个整数数组num，找到一个具有最大和的连续子数组（子数组最少包含一个元素），且该子数组的长度为奇数，返回其最大和</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#微盟"><span class="nav-number"></span> <span class="nav-text">微盟</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-说出5种以上的设计模式，并描述该设计模式的应用场景"><span class="nav-number">1.</span> <span class="nav-text">1. 说出5种以上的设计模式，并描述该设计模式的应用场景</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-什么是数据库乐观锁，简述乐观锁的实现步骤，以库存超卖设计为例"><span class="nav-number">2.</span> <span class="nav-text">2. 什么是数据库乐观锁，简述乐观锁的实现步骤，以库存超卖设计为例</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#数据的锁定分为两种，第一种叫作悲观锁，第二种叫作乐观锁。"><span class="nav-number">2.1.</span> <span class="nav-text">数据的锁定分为两种，第一种叫作悲观锁，第二种叫作乐观锁。</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#理解："><span class="nav-number">2.2.</span> <span class="nav-text">理解：</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-请描述redis常用命令的功能，并简单描述使用场景（略）"><span class="nav-number">3.</span> <span class="nav-text">3. 请描述redis常用命令的功能，并简单描述使用场景（略）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-描述一下Spring框架中bean的生命周期"><span class="nav-number">4.</span> <span class="nav-text">4. 描述一下Spring框架中bean的生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#一个Bean从创建到销毁，如果是用BeanFactory来生成-管理Bean的话，会经历几个执行阶段"><span class="nav-number">4.1.</span> <span class="nav-text">一个Bean从创建到销毁，如果是用BeanFactory来生成,管理Bean的话，会经历几个执行阶段</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Servlet的生命周期：实例化，初始init，接收请求service，销毁destroy。Spring上下文中的Bean也类似"><span class="nav-number">4.2.</span> <span class="nav-text">Servlet的生命周期：实例化，初始init，接收请求service，销毁destroy。Spring上下文中的Bean也类似</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-内存泄漏和内存溢出的区别"><span class="nav-number">5.</span> <span class="nav-text">5. 内存泄漏和内存溢出的区别</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-计算1-N之间所有的正整数中包含的1的数量"><span class="nav-number">6.</span> <span class="nav-text">6. 计算1~N之间所有的正整数中包含的1的数量</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7-设计10个线程，其中5个线程j-，5个线程j–，j初始为0，每个线程执行1万次"><span class="nav-number">7.</span> <span class="nav-text">7. 设计10个线程，其中5个线程j++，5个线程j–，j初始为0，每个线程执行1万次</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#中信"><span class="nav-number"></span> <span class="nav-text">中信</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-应用程序可以用内存映射的方式访问文件中的数据-true"><span class="nav-number">1.</span> <span class="nav-text">1. 应用程序可以用内存映射的方式访问文件中的数据(true)</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#好未来"><span class="nav-number"></span> <span class="nav-text">好未来</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-二叉树的先序遍历需要借助栈（false）"><span class="nav-number">1.</span> <span class="nav-text">1. 二叉树的先序遍历需要借助栈（false）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-进入临界区的进程可以长时间不退出直到处理完自己的任务"><span class="nav-number">2.</span> <span class="nav-text">2. 进入临界区的进程可以长时间不退出直到处理完自己的任务</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-a-b-a-c-a-d-b-d-，若从顶点a开始对图进行DFS遍历，则可能得到的不同遍历序列的个数是（3）"><span class="nav-number">3.</span> <span class="nav-text">3. {a,b}{a,c}{a,d}{b,d}，若从顶点a开始对图进行DFS遍历，则可能得到的不同遍历序列的个数是（3）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-作业调度算法HRRN既考虑了作业的等待时间，又考虑了作业运行时间，从而改善了处理机调度的性能"><span class="nav-number">4.</span> <span class="nav-text">4. 作业调度算法HRRN既考虑了作业的等待时间，又考虑了作业运行时间，从而改善了处理机调度的性能</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-作业调度算法PSA用作作业调度的时候，系统从后备队列中选取一个优先级最高的放入内存-false"><span class="nav-number">5.</span> <span class="nav-text">5. 作业调度算法PSA用作作业调度的时候，系统从后备队列中选取一个优先级最高的放入内存(false)</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#作业调度算法"><span class="nav-number">5.1.</span> <span class="nav-text">作业调度算法:</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-破坏“不可抢占”条件是预防死锁-true"><span class="nav-number">6.</span> <span class="nav-text">6. 破坏“不可抢占”条件是预防死锁(true)</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#死锁预防"><span class="nav-number">6.1.</span> <span class="nav-text">死锁预防:</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#8-破坏“请求和保持”条件是避免死锁-false"><span class="nav-number">7.</span> <span class="nav-text">8. 破坏“请求和保持”条件是避免死锁(false)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#9-有名管道不允许无亲缘关系进程通信-false"><span class="nav-number">8.</span> <span class="nav-text">9. 有名管道不允许无亲缘关系进程通信(false)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#10-信号是一种异步的通信方式-true"><span class="nav-number">9.</span> <span class="nav-text">10. 信号是一种异步的通信方式(true)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#11-共享内存是最快的通信方式-true"><span class="nav-number">10.</span> <span class="nav-text">11. 共享内存是最快的通信方式(true)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#12-无名管道是半双工通信-true"><span class="nav-number">11.</span> <span class="nav-text">12. 无名管道是半双工通信(true)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#13-b树的叶子结点之间通过指针连接来增加查找速度-false"><span class="nav-number">12.</span> <span class="nav-text">13. b树的叶子结点之间通过指针连接来增加查找速度(false)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#14-m阶b树的根节点最多有m棵子树-true"><span class="nav-number">13.</span> <span class="nav-text">14. m阶b树的根节点最多有m棵子树(true)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#15-NAT可以解决ipv4的地址不够的问题"><span class="nav-number">14.</span> <span class="nav-text">15. NAT可以解决ipv4的地址不够的问题</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#16-IP只能找到目的主机，无法找到目的进程（true）"><span class="nav-number">15.</span> <span class="nav-text">16. IP只能找到目的主机，无法找到目的进程（true）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#17-UDP和IP都是数据报协议（true）"><span class="nav-number">16.</span> <span class="nav-text">17. UDP和IP都是数据报协议（true）</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+        </div>
+      
+<div id="music163player">
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=2&id=477786576&auto=0&height=32"></iframe>
+</div>
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        ﻿<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">十点一刻</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">全站共228.0k字</span>
+</div>
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+
+
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+
+</body>
+</html>
