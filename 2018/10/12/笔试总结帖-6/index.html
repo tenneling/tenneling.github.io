@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="JAVA," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="#### 平安科技 1. 使用create schema语句建立的是（数据库[模式]）2. 一台刚刚接入互联网的web服务器第一次被访问：ARP-&amp;gt;DNS-&amp;gt;HTTP 当你给WEB服务器接上网线的时候，它会自动发送一条ARP信息，使得接入网关能找的到它； 网关上会形成一条类似：2c 96 1e 3c 3e 9b - 192.168.1.123的MAC地址到IP地址的映射记录。 用户通">
+<meta name="keywords" content="JAVA">
+<meta property="og:type" content="article">
+<meta property="og:title" content="笔试汇总帖-6">
+<meta property="og:url" content="http://yoursite.com/2018/10/12/笔试总结帖-6/index.html">
+<meta property="og:site_name" content="Welcome">
+<meta property="og:description" content="#### 平安科技 1. 使用create schema语句建立的是（数据库[模式]）2. 一台刚刚接入互联网的web服务器第一次被访问：ARP-&amp;gt;DNS-&amp;gt;HTTP 当你给WEB服务器接上网线的时候，它会自动发送一条ARP信息，使得接入网关能找的到它； 网关上会形成一条类似：2c 96 1e 3c 3e 9b - 192.168.1.123的MAC地址到IP地址的映射记录。 用户通">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-10-11T17:40:43.989Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="笔试汇总帖-6">
+<meta name="twitter:description" content="#### 平安科技 1. 使用create schema语句建立的是（数据库[模式]）2. 一台刚刚接入互联网的web服务器第一次被访问：ARP-&amp;gt;DNS-&amp;gt;HTTP 当你给WEB服务器接上网线的时候，它会自动发送一条ARP信息，使得接入网关能找的到它； 网关上会形成一条类似：2c 96 1e 3c 3e 9b - 192.168.1.123的MAC地址到IP地址的映射记录。 用户通">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":true,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/10/12/笔试总结帖-6/"/>
+
+
+
+
+
+  <title>笔试汇总帖-6 | Welcome</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"><a href="https://github.com/tenneling"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Welcome</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/12/笔试总结帖-6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="十点一刻">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/qifang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Welcome">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">笔试汇总帖-6</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-12T01:55:48+08:00">
+                2018-10-12
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-10-12T01:40:43+08:00">
+                2018-10-12
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/笔经面经/" itemprop="url" rel="index">
+                    <span itemprop="name">笔经面经</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>﻿#### 平安科技</p>
+<h5 id="1-使用create-schema语句建立的是（数据库-模式-）"><a href="#1-使用create-schema语句建立的是（数据库-模式-）" class="headerlink" title="1. 使用create schema语句建立的是（数据库[模式]）"></a>1. 使用create schema语句建立的是（数据库[模式]）</h5><h5 id="2-一台刚刚接入互联网的web服务器第一次被访问：ARP-gt-DNS-gt-HTTP"><a href="#2-一台刚刚接入互联网的web服务器第一次被访问：ARP-gt-DNS-gt-HTTP" class="headerlink" title="2. 一台刚刚接入互联网的web服务器第一次被访问：ARP-&gt;DNS-&gt;HTTP"></a>2. 一台刚刚接入互联网的web服务器第一次被访问：ARP-&gt;DNS-&gt;HTTP</h5><ol>
+<li>当你给WEB服务器接上网线的时候，它会自动发送一条ARP信息，使得接入网关能找的到它； 网关上会形成一条类似：2c 96 1e 3c 3e 9b - 192.168.1.123的MAC地址到IP地址的映射记录。</li>
+<li>用户通过IP地址，经过多个网络节点，访问到目标的服务器。</li>
+</ol>
+<h5 id="3-数据库的连接一般都用长连接-true"><a href="#3-数据库的连接一般都用长连接-true" class="headerlink" title="3. 数据库的连接一般都用长连接(true)"></a>3. 数据库的连接一般都用长连接(true)</h5><h5 id="4-web网站的http服务一般都用短连接-true"><a href="#4-web网站的http服务一般都用短连接-true" class="headerlink" title="4. web网站的http服务一般都用短连接(true)"></a>4. web网站的http服务一般都用短连接(true)</h5><h5 id="5-进程和程序的本质区别-动态和静态的区别"><a href="#5-进程和程序的本质区别-动态和静态的区别" class="headerlink" title="5. 进程和程序的本质区别(动态和静态的区别)"></a>5. 进程和程序的本质区别(动态和静态的区别)</h5><p>进程是运行中的程序，故二者不应该是分时使用和独占使用计算机资源。</p>
+<h5 id="6-树最适合用来表示元素之间具有分支层次关系的数据-true"><a href="#6-树最适合用来表示元素之间具有分支层次关系的数据-true" class="headerlink" title="6. 树最适合用来表示元素之间具有分支层次关系的数据(true)"></a>6. 树最适合用来表示元素之间具有分支层次关系的数据(true)</h5><h5 id="7-如何放掉一个指定占据的内存空间？"><a href="#7-如何放掉一个指定占据的内存空间？" class="headerlink" title="7. 如何放掉一个指定占据的内存空间？"></a>7. 如何放掉一个指定占据的内存空间？</h5><p>程序员无法明确强制垃圾回收器运行</p>
+<h5 id="8-哪种类型异常？-int-arry-new-int-10-syso-arry-10"><a href="#8-哪种类型异常？-int-arry-new-int-10-syso-arry-10" class="headerlink" title="8. 哪种类型异常？// int arry[]=new int[10];syso(arry[10]);"></a>8. 哪种类型异常？// int arry[]=new int[10];syso(arry[10]);</h5><p>ArrayIndexOutOfBoundsException</p>
+<h5 id="9-包里的权限"><a href="#9-包里的权限" class="headerlink" title="9. 包里的权限"></a>9. 包里的权限</h5><p>protected：可以被该类中的函数、子类的函数、以及3.其友元函数访问。</p>
+<h5 id="10-采用时间片轮转调度是为了（多个终端用户都能及时响应）"><a href="#10-采用时间片轮转调度是为了（多个终端用户都能及时响应）" class="headerlink" title="10. 采用时间片轮转调度是为了（多个终端用户都能及时响应）"></a>10. 采用时间片轮转调度是为了（多个终端用户都能及时响应）</h5><h5 id="11-Java数据库连接库JDBC用到哪种设计模式（桥接）"><a href="#11-Java数据库连接库JDBC用到哪种设计模式（桥接）" class="headerlink" title="11. Java数据库连接库JDBC用到哪种设计模式（桥接）"></a>11. Java数据库连接库JDBC用到哪种设计模式（桥接）</h5><h5 id="12-一棵平衡二叉树一定是一棵（二叉搜索树）"><a href="#12-一棵平衡二叉树一定是一棵（二叉搜索树）" class="headerlink" title="12. 一棵平衡二叉树一定是一棵（二叉搜索树）"></a>12. 一棵平衡二叉树一定是一棵（二叉搜索树）</h5><h4 id="论客"><a href="#论客" class="headerlink" title="论客"></a>论客</h4><h5 id="1-A派生B，B派生C-A-a1-new-B-A-a2-new-C"><a href="#1-A派生B，B派生C-A-a1-new-B-A-a2-new-C" class="headerlink" title="1. A派生B，B派生C//A a1=new B(); A a2=new C();"></a>1. A派生B，B派生C//A a1=new B(); A a2=new C();</h5><p>第1行，第2行和第3行的声明都是正确的</p>
+<h5 id="2-JDBC的statement（通用查询-参数化查询）"><a href="#2-JDBC的statement（通用查询-参数化查询）" class="headerlink" title="2. JDBC的statement（通用查询/参数化查询）"></a>2. JDBC的statement（通用查询/参数化查询）</h5><ol>
+<li>Java提供了 Statement、PreparedStatement和CallableStatement三种方式来执行查询语句，其中Statement用于通用查询，PreparedStatement 用于执行参数化查询，而CallableStatement则是用于存储过程。</li>
+<li>PreparedStatement是java.sql包下面的一个接口，用来执行SQL语句查询，通过调用connection.preparedStatement(sql)方法可以获得PreparedStatment对象。数据库系统会对sql语句进行预编译处理（如果JDBC驱动支持的话），预处理语句将被预先编译好，这条预编译的sql查询语句能在将来的查询中重用，这样一来，它比Statement对象生成的查询速度更快。</li>
+<li>支持参数占位符：  ?  一个问号代表着一个参数。</li>
+</ol>
+<h5 id="3-Spring声明式事务配置"><a href="#3-Spring声明式事务配置" class="headerlink" title="3. Spring声明式事务配置"></a>3. Spring声明式事务配置</h5><h5 id="4-sevlet初始化阶段：servletconfig对象-servletrequest和servletresponse对象-servlet对象"><a href="#4-sevlet初始化阶段：servletconfig对象-servletrequest和servletresponse对象-servlet对象" class="headerlink" title="4. sevlet初始化阶段：servletconfig对象/servletrequest和servletresponse对象/servlet对象"></a>4. sevlet初始化阶段：servletconfig对象/servletrequest和servletresponse对象/servlet对象</h5><ol>
+<li>加载Servlet类及.class对应的数据</li>
+<li>创建ServletConfig对象</li>
+<li>创建Servlet对象</li>
+</ol>
+<h5 id="5-threadlocal"><a href="#5-threadlocal" class="headerlink" title="5. threadlocal"></a>5. threadlocal</h5><p>ThreadLocal是一个本地线程副本变量工具类。主要用于将私有线程和该线程存放的副本对象做一个映射，各个线程之间的变量互不干扰，在高并发场景下，可以实现无状态的调用，特别适用于各个线程依赖不通的变量值完成操作的场景。</p>
+<ol>
+<li>get()方法用于获取当前线程的副本变量值。</li>
+<li>set()方法用于保存当前线程的副本变量值。</li>
+<li>initialValue()为当前线程初始副本变量值。</li>
+<li>remove()方法移除当前前程的副本变量值。</li>
+</ol>
+<h6 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h6><ol>
+<li>每个ThreadLocal只能保存一个变量副本，如果想要上线一个线程能够保存多个副本以上，就需要创建多个ThreadLocal。</li>
+<li>ThreadLocal内部的ThreadLocalMap键为弱引用，会有内存泄漏的风险。</li>
+<li>适用于无状态，副本变量独立后不影响业务逻辑的高并发场景。如果如果业务逻辑强依赖于副本变量，则不适合用ThreadLocal解决，需要另寻解决方案。</li>
+</ol>
+<h5 id="6-javac一次可同时编译数个Java源文件-true"><a href="#6-javac一次可同时编译数个Java源文件-true" class="headerlink" title="6. javac一次可同时编译数个Java源文件(true)"></a>6. javac一次可同时编译数个Java源文件(true)</h5><p>javac可以编译多个文件，通过 “javac *.java”实现，前提是这些java文件都要在此编译路径下，如果不在的话，先通过cd命令进行位置切换即可</p>
+<h5 id="7-javac-exe能指定编译结果置于哪个目录-true"><a href="#7-javac-exe能指定编译结果置于哪个目录-true" class="headerlink" title="7. javac.exe能指定编译结果置于哪个目录(true)"></a>7. javac.exe能指定编译结果置于哪个目录(true)</h5><h5 id="8-形式参数可被视为local-variable-true"><a href="#8-形式参数可被视为local-variable-true" class="headerlink" title="8. 形式参数可被视为local variable(true)"></a>8. 形式参数可被视为local variable(true)</h5><h5 id="9-形式参数可被字段修饰符修饰（false"><a href="#9-形式参数可被字段修饰符修饰（false" class="headerlink" title="9. 形式参数可被字段修饰符修饰（false)"></a>9. 形式参数可被字段修饰符修饰（false)</h5><p>对于形式参数只能用final修饰符，其它任何修饰符都会引起编译器错误。</p>
+<h5 id="10-环境变量可在编译source-code时指定-false"><a href="#10-环境变量可在编译source-code时指定-false" class="headerlink" title="10. 环境变量可在编译source code时指定(false)"></a>10. 环境变量可在编译source code时指定(false)</h5><p>在编译source code 前就已经指定的</p>
+<h5 id="11-在编译程序时，所能指定的环境变量不包括class-path-true"><a href="#11-在编译程序时，所能指定的环境变量不包括class-path-true" class="headerlink" title="11.在编译程序时，所能指定的环境变量不包括class path(true)"></a>11.在编译程序时，所能指定的环境变量不包括class path(true)</h5><p>classpath是单独拿出来定义的，是“类路径”</p>
+<h4 id="网龙"><a href="#网龙" class="headerlink" title="网龙"></a>网龙</h4><h5 id="1-语法分析器的作用：-识别语法错误）"><a href="#1-语法分析器的作用：-识别语法错误）" class="headerlink" title="1. 语法分析器的作用：(识别语法错误）"></a>1. 语法分析器的作用：(识别语法错误）</h5><h5 id="2-耗内存的操作使用线程，提高内存利用率-true"><a href="#2-耗内存的操作使用线程，提高内存利用率-true" class="headerlink" title="2. 耗内存的操作使用线程，提高内存利用率(true)"></a>2. 耗内存的操作使用线程，提高内存利用率(true)</h5><h5 id="3-（通过DriverManager-getConnection方法加载）不是加载驱动程序的方法"><a href="#3-（通过DriverManager-getConnection方法加载）不是加载驱动程序的方法" class="headerlink" title="3. （通过DriverManager.getConnection方法加载）不是加载驱动程序的方法"></a>3. （通过DriverManager.getConnection方法加载）不是加载驱动程序的方法</h5><p>DriverManager.getConnection方法是获取链接的，而不是加载驱动的</p>
+<h5 id="4-resultset中记录行的第一列索引-1"><a href="#4-resultset中记录行的第一列索引-1" class="headerlink" title="4. resultset中记录行的第一列索引(1)"></a>4. resultset中记录行的第一列索引(1)</h5><p>ResultSet数组是从1开始遍历。ResultSet是jsp，用来接收获取的数据库信息，查询时也是从第1列开始。</p>
+<h5 id="5-工厂模式遵循了-开放-封闭原则）"><a href="#5-工厂模式遵循了-开放-封闭原则）" class="headerlink" title="5. 工厂模式遵循了(开放-封闭原则）"></a>5. 工厂模式遵循了(开放-封闭原则）</h5><ol>
+<li>所谓的开放-封闭原则（以下用OC原则代替）说的是：对于软件设计来说，无论是类，模块，函数等，可以扩展，但是不可以修改。意思是：对于扩展是开放的，对于修改是封闭的。</li>
+<li>OC原则的精神在于：面对新的需求时，我们只需要对增加代码，而不需要修改已经存在的代码。这样，才能体现出面向对象设计中的提到的，可维护性，可扩展性，可复用性，灵活性好。</li>
+</ol>
+<h5 id="6-抽象类可以有构造方法，接口不能有构造方法-true"><a href="#6-抽象类可以有构造方法，接口不能有构造方法-true" class="headerlink" title="6. 抽象类可以有构造方法，接口不能有构造方法(true)"></a>6. 抽象类可以有构造方法，接口不能有构造方法(true)</h5><p>区别：</p>
+<ol>
+<li>接口不能有构造方法，抽象类可以有。</li>
+<li>接口不能有方法体，抽象类可以有。</li>
+<li>接口不能有静态方法，抽象类可以有。</li>
+<li>在接口中凡是变量必须是public static final，而在抽象类中没有要求。 </li>
+</ol>
+<h5 id="7-GC垃圾回收常用的算法-引用计数、标记压缩"><a href="#7-GC垃圾回收常用的算法-引用计数、标记压缩" class="headerlink" title="7. GC垃圾回收常用的算法(引用计数、标记压缩)"></a>7. GC垃圾回收常用的算法(引用计数、标记压缩)</h5><ol>
+<li>引用计数法（Java没有采用）</li>
+<li>标记-清除法 （jvm老年代回收）</li>
+<li>标记-压缩法 （jvm老年代回收）</li>
+<li>复制算法 （jvm新生代回收）</li>
+</ol>
+<h6 id="复制算法与标记-压缩法对比："><a href="#复制算法与标记-压缩法对比：" class="headerlink" title="复制算法与标记-压缩法对比："></a>复制算法与标记-压缩法对比：</h6><p>复制收集算法在对象存活率较高时就要执行较多的复制操作，效率将会变低。更关键的是，如果不想浪费50%的空间，就需要有额外的空间进行分配担保，以应对被使用的内存中所有对象都100%存活的极端情况，所以复制算法仅仅应用在新生代，而老年代一般不能直接选用这种算法，使用标记-压缩法。</p>
+<h6 id="标记-压缩法与标记-清除法对比："><a href="#标记-压缩法与标记-清除法对比：" class="headerlink" title="标记-压缩法与标记-清除法对比："></a>标记-压缩法与标记-清除法对比：</h6><p>根据老年代的特点，有人提出了“标记-压缩”（Mark-Compact）算法，标记过程仍然与“标记-清除”算法一样，但后续步骤不是直接对可回收对象进行清理，而是让所有存活的对象都向一端移动，然后直接清理掉端边界以外的内存。也可以减少内存碎片。</p>
+<h4 id="税友"><a href="#税友" class="headerlink" title="税友"></a>税友</h4><h5 id="1-修改jsp时无需重启的原因"><a href="#1-修改jsp时无需重启的原因" class="headerlink" title="1. 修改jsp时无需重启的原因"></a>1. 修改jsp时无需重启的原因</h5><p>因为Tomcat对JSP进入了侦听，如果有修改，就会重新翻译成Servlet并最终编译成Class文件，替换掉原JSP页面对应的Class文件。Tomcat的内部机制是可以让这种Class文件立即生效的。而普通的Class文件修改后，不能立即生效。</p>
+<h5 id="2-java中serializable接口的作用"><a href="#2-java中serializable接口的作用" class="headerlink" title="2. java中serializable接口的作用"></a>2. java中serializable接口的作用</h5><ol>
+<li>实现java.io.Serializable 接口的类是可序列化的。没有实现此接口的类将不能使它们的任一状态被序列化或逆序列化。</li>
+<li>序列化类的所有子类本身都是可序列化的。这个序列化接口没有任何方法和域，仅用于标识序列化的语意。允许非序列化类的子类型序列化，子类型可以假定负责保存和恢复父类型的公有的、保护的和(如果可访问)包的域的状态。只要该类(扩展)有一个无参构造子类型，可初始化它的状态，那么子类型就可承担上述职责。在这种情况下申明一个可序列化的类是一个错误。此错误将在运行时被检测。就是可以把对象存到字节流，然后可以恢复！</li>
+</ol>
+<h5 id="3-abstract方法必须在abstract类中-true"><a href="#3-abstract方法必须在abstract类中-true" class="headerlink" title="3. abstract方法必须在abstract类中(true)"></a>3. abstract方法必须在abstract类中(true)</h5><h5 id="4-static方法中能处理非static的数据-false"><a href="#4-static方法中能处理非static的数据-false" class="headerlink" title="4. static方法中能处理非static的数据(false)"></a>4. static方法中能处理非static的数据(false)</h5><h5 id="5-Integer-MAX-VALUE-1-打印2147483648-false"><a href="#5-Integer-MAX-VALUE-1-打印2147483648-false" class="headerlink" title="5. Integer.MAX_VALUE+1,打印2147483648(false)"></a>5. Integer.MAX_VALUE+1,打印2147483648(false)</h5><p>(最小负整数)</p>
+<ol>
+<li>在Java中 Integer.MAX_VALUE+1==Integer.MIN_VALUE</li>
+<li>负数的源码是补码取反+1，刚好是Integer.MIN_VALUE</li>
+</ol>
+<h5 id="6-基于restful调用的框架（dubbo）"><a href="#6-基于restful调用的框架（dubbo）" class="headerlink" title="6. 基于restful调用的框架（dubbo）"></a>6. 基于restful调用的框架（dubbo）</h5><h5 id="7-76足球队，几次比赛"><a href="#7-76足球队，几次比赛" class="headerlink" title="7. 76足球队，几次比赛"></a>7. 76足球队，几次比赛</h5><p>因为每两队都要进行两次比赛，所以如果有x个队伍，那么每一个队伍就要和其他所有队伍各进行两场，共需上场2（x-1）场。一共有x个队伍，所以一共会有2(x-1)<em>x个队伍上场，而每场比赛需要两个队伍上场，所以一共有(x-1)</em>x场比赛。</p>
+<h5 id="8-hashmap"><a href="#8-hashmap" class="headerlink" title="8. hashmap"></a>8. hashmap</h5><ol>
+<li>线程安全（false）</li>
+<li>实现主要用到了哈希表的链地址法，“数组+链表”（true）</li>
+<li>初始化传入的容量参数的值就是实际分配空间（false）<br>默认情况下，当我们设置HashMap的初始化容量时，实际上HashMap会采用第一个大于该数值的2的幂作为初始化容量。</li>
+<li>如果两个键的hashcode调用，则对象会被覆盖（false）<br>如果要以对象（自己创建的类等）作为键，实际上是以对象的散列值(以hashCode方法计算得到)作为键。hashCode计算的hash值默认是对象的地址值。<br>这样就会忽略对象的内容，不是以对象的内容来判断。如果要以对象的内容进行判断，就要覆盖掉对象原有的hashCode方法。</li>
+</ol>
+<h5 id="9-Java程序经编译后会产生（bytecode）"><a href="#9-Java程序经编译后会产生（bytecode）" class="headerlink" title="9. Java程序经编译后会产生（bytecode）"></a>9. Java程序经编译后会产生（bytecode）</h5><p>Java字节码是Java源文件编译产生的中间文件</p>
+<ol start="10">
+<li>在oracle中，varchar2的最大长度为（4000）<br>在Oracle Database中，VARCHAR2字段类型，最大值为4000<h5 id="11-list扩充0次（ArrayList-20"><a href="#11-list扩充0次（ArrayList-20" class="headerlink" title="11. list扩充0次（ArrayList[20]"></a>11. list扩充0次（ArrayList[20]</h5></li>
+<li>ArrayList list=new ArrayList(); //这种是默认创建大小为10的数组，每次扩容大小为1.5倍 </li>
+<li>ArrayList list=new ArrayList(20); //使用的ArrayList的有参构造函数 ，这种是指定数组大小的创建，创建时直接分配其大小，没有扩充。 一次性为创建了传入的数字的长度的数组。所以，扩充为0次</li>
+</ol>
+<h5 id="12-局域网，2个不同网段间无法ping通，不可能原因"><a href="#12-局域网，2个不同网段间无法ping通，不可能原因" class="headerlink" title="12. 局域网，2个不同网段间无法ping通，不可能原因"></a>12. 局域网，2个不同网段间无法ping通，不可能原因</h5><p>在同一网段的IP地址不能ping通有两种原因：</p>
+<ol>
+<li>二个IP地址的子网掩码不一样，那也是没法ping通的。</li>
+<li>其中一台电脑开户了防火墙不允许局域网通过，这也是没法Ping通的。</li>
+</ol>
+<h5 id="13-grep命令"><a href="#13-grep命令" class="headerlink" title="13. grep命令"></a>13. grep命令</h5><ol>
+<li>-E ：开启扩展（Extend）的正则表达式。</li>
+<li>-i ：忽略大小写（ignore case）。</li>
+<li>-v ：反过来（invert），只打印没有匹配的，而匹配的反而不打印。</li>
+<li>-n ：显示行号</li>
+<li>-w ：被匹配的文本只能是单词，而不能是单词中的某一部分，如文本中有liker，而我搜寻的只是like，就可以使用-w选项来避免匹配liker</li>
+<li>-c ：显示总共有多少行被匹配到了，而不是显示被匹配到的内容，注意如果同时使用-cv选项是显示有多少行没有被匹配到。</li>
+<li>-o ：只显示被模式匹配到的字符串。</li>
+<li>–color :将匹配到的内容以颜色高亮显示。</li>
+<li>-A  n：显示匹配到的字符串所在的行及其后n行，after</li>
+<li>-B  n：显示匹配到的字符串所在的行及其前n行，before</li>
+<li>-C  n：显示匹配到的字符串所在的行及其前后各n行，context</li>
+</ol>
+<h5 id="14-在安装linux操作系统时，必须有的两种分区（根分区-swap交换分区）"><a href="#14-在安装linux操作系统时，必须有的两种分区（根分区-swap交换分区）" class="headerlink" title="14. 在安装linux操作系统时，必须有的两种分区（根分区/swap交换分区）"></a>14. 在安装linux操作系统时，必须有的两种分区（根分区/swap交换分区）</h5><h5 id="15-稳定排序（直接选择-归并排序）"><a href="#15-稳定排序（直接选择-归并排序）" class="headerlink" title="15. 稳定排序（直接选择/归并排序）"></a>15. 稳定排序（直接选择/归并排序）</h5><ol>
+<li>堆排序、快速排序、希尔排序、直接选择排序不是稳定的排序算法</li>
+<li>基数排序、冒泡排序、直接插入排序、折半插入排序、归并排序是稳定的排序算法。</li>
+</ol>
+<h5 id="16-linux，普通用户的家目录默认（-home"><a href="#16-linux，普通用户的家目录默认（-home" class="headerlink" title="16. linux，普通用户的家目录默认（/home)"></a>16. linux，普通用户的家目录默认（/home)</h5><ol>
+<li>一般普通用户,家目录是/home/用户名</li>
+<li>root用户，家目录是/root</li>
+</ol>
+<h5 id="17-不合法声明"><a href="#17-不合法声明" class="headerlink" title="17. 不合法声明"></a>17. 不合法声明</h5><ol>
+<li>int t=4L</li>
+<li>float f=1.1</li>
+</ol>
+<h5 id="18-switch-能够作用在string类型上-true"><a href="#18-switch-能够作用在string类型上-true" class="headerlink" title="18. switch 能够作用在string类型上(true)"></a>18. switch 能够作用在string类型上(true)</h5><h5 id="19-黑盒测试常用设计方法（边界值分析-等价类划分-判定表驱动）"><a href="#19-黑盒测试常用设计方法（边界值分析-等价类划分-判定表驱动）" class="headerlink" title="19. 黑盒测试常用设计方法（边界值分析/等价类划分/判定表驱动）"></a>19. 黑盒测试常用设计方法（边界值分析/等价类划分/判定表驱动）</h5><h5 id="20-java-lang包下的类（thread-number-date-exception）"><a href="#20-java-lang包下的类（thread-number-date-exception）" class="headerlink" title="20. java.lang包下的类（thread/number/date/exception）"></a>20. java.lang包下的类（thread/number/date/exception）</h5><ol>
+<li>常用的对象类型包 <ol>
+<li>Object类：类Object是类层次结构的根类。每个类都使用Object作为超类。</li>
+<li>字符串类</li>
+<li>8种基本元素的包装类 </li>
+</ol>
+</li>
+<li>常用的异常类型包 <ol>
+<li>Throwable类 </li>
+<li>Error类 </li>
+<li>Exception类 </li>
+</ol>
+</li>
+<li>常用的接口包 <ol>
+<li>Comparable接口</li>
+<li>Runable接口</li>
+<li>Cloneable接口 </li>
+<li>Iterable接口</li>
+</ol>
+</li>
+<li>系统包 <ol>
+<li>System类 </li>
+<li>Runtime类 </li>
+<li>Thread类 </li>
+<li>ThreadLocal类 </li>
+</ol>
+</li>
+<li>注解包 </li>
+<li>反射包 <ol>
+<li>AccessibleObject类 </li>
+<li>Array类 </li>
+<li>Constructor类 </li>
+<li>Field类 </li>
+<li>Method类 </li>
+<li>Modifier类 </li>
+<li>Proxy类 </li>
+</ol>
+</li>
+</ol>
+<h4 id="电信"><a href="#电信" class="headerlink" title="电信"></a>电信</h4><h5 id="1-HDFS的适合的读写任务（一次写入，多次读写）"><a href="#1-HDFS的适合的读写任务（一次写入，多次读写）" class="headerlink" title="1. HDFS的适合的读写任务（一次写入，多次读写）"></a>1. HDFS的适合的读写任务（一次写入，多次读写）</h5><h5 id="2-删除用户（-r），级联用户主目录"><a href="#2-删除用户（-r），级联用户主目录" class="headerlink" title="2. 删除用户（-r），级联用户主目录"></a>2. 删除用户（-r），级联用户主目录</h5><h5 id="3-SNMP工作于（应用层）"><a href="#3-SNMP工作于（应用层）" class="headerlink" title="3. SNMP工作于（应用层）"></a>3. SNMP工作于（应用层）</h5><h5 id="4-中继器（物理层）"><a href="#4-中继器（物理层）" class="headerlink" title="4. 中继器（物理层）"></a>4. 中继器（物理层）</h5><h5 id="5-云计算是对（）技术的发展与运用"><a href="#5-云计算是对（）技术的发展与运用" class="headerlink" title="5. 云计算是对（）技术的发展与运用"></a>5. 云计算是对（）技术的发展与运用</h5><ol>
+<li>并行计算</li>
+<li>网格计算</li>
+<li>分布式计算</li>
+</ol>
+<h5 id="6-hadoop中节点之间的进程通信是通过（SSH）协议实现的"><a href="#6-hadoop中节点之间的进程通信是通过（SSH）协议实现的" class="headerlink" title="6. hadoop中节点之间的进程通信是通过（SSH）协议实现的"></a>6. hadoop中节点之间的进程通信是通过（SSH）协议实现的</h5><h5 id="7-创建用户，在（-home-下创建一个用户主目录"><a href="#7-创建用户，在（-home-下创建一个用户主目录" class="headerlink" title="7. 创建用户，在（/home)下创建一个用户主目录"></a>7. 创建用户，在（/home)下创建一个用户主目录</h5><h5 id="8-（c）不是强类型语言"><a href="#8-（c）不是强类型语言" class="headerlink" title="8. （c）不是强类型语言"></a>8. （c）不是强类型语言</h5><h5 id="9-publictpt-tj-cn，计算机名（PUBLIC）"><a href="#9-publictpt-tj-cn，计算机名（PUBLIC）" class="headerlink" title="9. publictpt.tj.cn，计算机名（PUBLIC）"></a>9. publictpt.tj.cn，计算机名（PUBLIC）</h5><h5 id="10-云计算技术的层次结构"><a href="#10-云计算技术的层次结构" class="headerlink" title="10. 云计算技术的层次结构"></a>10. 云计算技术的层次结构</h5><ol>
+<li>物力资源层</li>
+<li>资源池层</li>
+<li>管理中间件</li>
+<li>SOA构建层</li>
+</ol>
+<h5 id="11-Hadoop支持哪些压缩格式"><a href="#11-Hadoop支持哪些压缩格式" class="headerlink" title="11. Hadoop支持哪些压缩格式"></a>11. Hadoop支持哪些压缩格式</h5><ol>
+<li>gzip压缩</li>
+<li>lzo压缩</li>
+<li>snappy压缩</li>
+<li>bzip2压缩</li>
+</ol>
+<h5 id="12-主流的服务器虚拟化技术（VBOX、KVM、Xen）"><a href="#12-主流的服务器虚拟化技术（VBOX、KVM、Xen）" class="headerlink" title="12. 主流的服务器虚拟化技术（VBOX、KVM、Xen）"></a>12. 主流的服务器虚拟化技术（VBOX、KVM、Xen）</h5>
+      
+    </div>
+    
+    
+    
+
+<div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">------ end------</div>
+    
+</div>
+
+  
+</div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JAVA/" rel="tag"> <i class="fa fa-tag"></i> JAVA</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/10/笔试总结帖-5/" rel="next" title="笔试汇总帖-5">
+                <i class="fa fa-chevron-left"></i> 笔试汇总帖-5
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/qifang.jpg"
+                alt="十点一刻" />
+            
+              <p class="site-author-name" itemprop="name">十点一刻</p>
+              <p class="site-description motion-element" itemprop="description">在没有路的丛林走出迷雾</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/tenneling" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:tenneling@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-使用create-schema语句建立的是（数据库-模式-）"><span class="nav-number">1.</span> <span class="nav-text">1. 使用create schema语句建立的是（数据库[模式]）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-一台刚刚接入互联网的web服务器第一次被访问：ARP-gt-DNS-gt-HTTP"><span class="nav-number">2.</span> <span class="nav-text">2. 一台刚刚接入互联网的web服务器第一次被访问：ARP-&gt;DNS-&gt;HTTP</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-数据库的连接一般都用长连接-true"><span class="nav-number">3.</span> <span class="nav-text">3. 数据库的连接一般都用长连接(true)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-web网站的http服务一般都用短连接-true"><span class="nav-number">4.</span> <span class="nav-text">4. web网站的http服务一般都用短连接(true)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-进程和程序的本质区别-动态和静态的区别"><span class="nav-number">5.</span> <span class="nav-text">5. 进程和程序的本质区别(动态和静态的区别)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-树最适合用来表示元素之间具有分支层次关系的数据-true"><span class="nav-number">6.</span> <span class="nav-text">6. 树最适合用来表示元素之间具有分支层次关系的数据(true)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7-如何放掉一个指定占据的内存空间？"><span class="nav-number">7.</span> <span class="nav-text">7. 如何放掉一个指定占据的内存空间？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#8-哪种类型异常？-int-arry-new-int-10-syso-arry-10"><span class="nav-number">8.</span> <span class="nav-text">8. 哪种类型异常？// int arry[]=new int[10];syso(arry[10]);</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#9-包里的权限"><span class="nav-number">9.</span> <span class="nav-text">9. 包里的权限</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#10-采用时间片轮转调度是为了（多个终端用户都能及时响应）"><span class="nav-number">10.</span> <span class="nav-text">10. 采用时间片轮转调度是为了（多个终端用户都能及时响应）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#11-Java数据库连接库JDBC用到哪种设计模式（桥接）"><span class="nav-number">11.</span> <span class="nav-text">11. Java数据库连接库JDBC用到哪种设计模式（桥接）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#12-一棵平衡二叉树一定是一棵（二叉搜索树）"><span class="nav-number">12.</span> <span class="nav-text">12. 一棵平衡二叉树一定是一棵（二叉搜索树）</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#论客"><span class="nav-number"></span> <span class="nav-text">论客</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-A派生B，B派生C-A-a1-new-B-A-a2-new-C"><span class="nav-number">1.</span> <span class="nav-text">1. A派生B，B派生C//A a1=new B(); A a2=new C();</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-JDBC的statement（通用查询-参数化查询）"><span class="nav-number">2.</span> <span class="nav-text">2. JDBC的statement（通用查询/参数化查询）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-Spring声明式事务配置"><span class="nav-number">3.</span> <span class="nav-text">3. Spring声明式事务配置</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-sevlet初始化阶段：servletconfig对象-servletrequest和servletresponse对象-servlet对象"><span class="nav-number">4.</span> <span class="nav-text">4. sevlet初始化阶段：servletconfig对象/servletrequest和servletresponse对象/servlet对象</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-threadlocal"><span class="nav-number">5.</span> <span class="nav-text">5. threadlocal</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#总结"><span class="nav-number">5.1.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-javac一次可同时编译数个Java源文件-true"><span class="nav-number">6.</span> <span class="nav-text">6. javac一次可同时编译数个Java源文件(true)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7-javac-exe能指定编译结果置于哪个目录-true"><span class="nav-number">7.</span> <span class="nav-text">7. javac.exe能指定编译结果置于哪个目录(true)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#8-形式参数可被视为local-variable-true"><span class="nav-number">8.</span> <span class="nav-text">8. 形式参数可被视为local variable(true)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#9-形式参数可被字段修饰符修饰（false"><span class="nav-number">9.</span> <span class="nav-text">9. 形式参数可被字段修饰符修饰（false)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#10-环境变量可在编译source-code时指定-false"><span class="nav-number">10.</span> <span class="nav-text">10. 环境变量可在编译source code时指定(false)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#11-在编译程序时，所能指定的环境变量不包括class-path-true"><span class="nav-number">11.</span> <span class="nav-text">11.在编译程序时，所能指定的环境变量不包括class path(true)</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#网龙"><span class="nav-number"></span> <span class="nav-text">网龙</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-语法分析器的作用：-识别语法错误）"><span class="nav-number">1.</span> <span class="nav-text">1. 语法分析器的作用：(识别语法错误）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-耗内存的操作使用线程，提高内存利用率-true"><span class="nav-number">2.</span> <span class="nav-text">2. 耗内存的操作使用线程，提高内存利用率(true)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-（通过DriverManager-getConnection方法加载）不是加载驱动程序的方法"><span class="nav-number">3.</span> <span class="nav-text">3. （通过DriverManager.getConnection方法加载）不是加载驱动程序的方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-resultset中记录行的第一列索引-1"><span class="nav-number">4.</span> <span class="nav-text">4. resultset中记录行的第一列索引(1)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-工厂模式遵循了-开放-封闭原则）"><span class="nav-number">5.</span> <span class="nav-text">5. 工厂模式遵循了(开放-封闭原则）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-抽象类可以有构造方法，接口不能有构造方法-true"><span class="nav-number">6.</span> <span class="nav-text">6. 抽象类可以有构造方法，接口不能有构造方法(true)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7-GC垃圾回收常用的算法-引用计数、标记压缩"><span class="nav-number">7.</span> <span class="nav-text">7. GC垃圾回收常用的算法(引用计数、标记压缩)</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#复制算法与标记-压缩法对比："><span class="nav-number">7.1.</span> <span class="nav-text">复制算法与标记-压缩法对比：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#标记-压缩法与标记-清除法对比："><span class="nav-number">7.2.</span> <span class="nav-text">标记-压缩法与标记-清除法对比：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#税友"><span class="nav-number"></span> <span class="nav-text">税友</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-修改jsp时无需重启的原因"><span class="nav-number">1.</span> <span class="nav-text">1. 修改jsp时无需重启的原因</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-java中serializable接口的作用"><span class="nav-number">2.</span> <span class="nav-text">2. java中serializable接口的作用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-abstract方法必须在abstract类中-true"><span class="nav-number">3.</span> <span class="nav-text">3. abstract方法必须在abstract类中(true)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-static方法中能处理非static的数据-false"><span class="nav-number">4.</span> <span class="nav-text">4. static方法中能处理非static的数据(false)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-Integer-MAX-VALUE-1-打印2147483648-false"><span class="nav-number">5.</span> <span class="nav-text">5. Integer.MAX_VALUE+1,打印2147483648(false)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-基于restful调用的框架（dubbo）"><span class="nav-number">6.</span> <span class="nav-text">6. 基于restful调用的框架（dubbo）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7-76足球队，几次比赛"><span class="nav-number">7.</span> <span class="nav-text">7. 76足球队，几次比赛</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#8-hashmap"><span class="nav-number">8.</span> <span class="nav-text">8. hashmap</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#9-Java程序经编译后会产生（bytecode）"><span class="nav-number">9.</span> <span class="nav-text">9. Java程序经编译后会产生（bytecode）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#11-list扩充0次（ArrayList-20"><span class="nav-number">10.</span> <span class="nav-text">11. list扩充0次（ArrayList[20]</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#12-局域网，2个不同网段间无法ping通，不可能原因"><span class="nav-number">11.</span> <span class="nav-text">12. 局域网，2个不同网段间无法ping通，不可能原因</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#13-grep命令"><span class="nav-number">12.</span> <span class="nav-text">13. grep命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#14-在安装linux操作系统时，必须有的两种分区（根分区-swap交换分区）"><span class="nav-number">13.</span> <span class="nav-text">14. 在安装linux操作系统时，必须有的两种分区（根分区/swap交换分区）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#15-稳定排序（直接选择-归并排序）"><span class="nav-number">14.</span> <span class="nav-text">15. 稳定排序（直接选择/归并排序）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#16-linux，普通用户的家目录默认（-home"><span class="nav-number">15.</span> <span class="nav-text">16. linux，普通用户的家目录默认（/home)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#17-不合法声明"><span class="nav-number">16.</span> <span class="nav-text">17. 不合法声明</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#18-switch-能够作用在string类型上-true"><span class="nav-number">17.</span> <span class="nav-text">18. switch 能够作用在string类型上(true)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#19-黑盒测试常用设计方法（边界值分析-等价类划分-判定表驱动）"><span class="nav-number">18.</span> <span class="nav-text">19. 黑盒测试常用设计方法（边界值分析/等价类划分/判定表驱动）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#20-java-lang包下的类（thread-number-date-exception）"><span class="nav-number">19.</span> <span class="nav-text">20. java.lang包下的类（thread/number/date/exception）</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#电信"><span class="nav-number"></span> <span class="nav-text">电信</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-HDFS的适合的读写任务（一次写入，多次读写）"><span class="nav-number">1.</span> <span class="nav-text">1. HDFS的适合的读写任务（一次写入，多次读写）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-删除用户（-r），级联用户主目录"><span class="nav-number">2.</span> <span class="nav-text">2. 删除用户（-r），级联用户主目录</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-SNMP工作于（应用层）"><span class="nav-number">3.</span> <span class="nav-text">3. SNMP工作于（应用层）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-中继器（物理层）"><span class="nav-number">4.</span> <span class="nav-text">4. 中继器（物理层）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-云计算是对（）技术的发展与运用"><span class="nav-number">5.</span> <span class="nav-text">5. 云计算是对（）技术的发展与运用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-hadoop中节点之间的进程通信是通过（SSH）协议实现的"><span class="nav-number">6.</span> <span class="nav-text">6. hadoop中节点之间的进程通信是通过（SSH）协议实现的</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7-创建用户，在（-home-下创建一个用户主目录"><span class="nav-number">7.</span> <span class="nav-text">7. 创建用户，在（/home)下创建一个用户主目录</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#8-（c）不是强类型语言"><span class="nav-number">8.</span> <span class="nav-text">8. （c）不是强类型语言</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#9-publictpt-tj-cn，计算机名（PUBLIC）"><span class="nav-number">9.</span> <span class="nav-text">9. publictpt.tj.cn，计算机名（PUBLIC）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#10-云计算技术的层次结构"><span class="nav-number">10.</span> <span class="nav-text">10. 云计算技术的层次结构</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#11-Hadoop支持哪些压缩格式"><span class="nav-number">11.</span> <span class="nav-text">11. Hadoop支持哪些压缩格式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#12-主流的服务器虚拟化技术（VBOX、KVM、Xen）"><span class="nav-number">12.</span> <span class="nav-text">12. 主流的服务器虚拟化技术（VBOX、KVM、Xen）</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+        </div>
+      
+<div id="music163player">
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=2&id=477786576&auto=0&height=32"></iframe>
+</div>
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        ﻿<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">十点一刻</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">全站共231.6k字</span>
+</div>
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+
+
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+
+</body>
+</html>
