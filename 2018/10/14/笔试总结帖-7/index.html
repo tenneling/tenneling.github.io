@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="JAVA," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="10.12-10.13的笔试  阅文1. 下面哪个css属性不支持负值（padding） padding 不支持任何形式的负值 2. 在html中，position默认值是（static）static：position的默认值，一般不设置position属性时，会按照正常的文档流进行排列 3. 解决哈希冲突的链地址算法中，插入新的数据项的时间（随装填因子线性增长）链地址算法的基本思想是将所有哈希">
+<meta name="keywords" content="JAVA">
+<meta property="og:type" content="article">
+<meta property="og:title" content="笔试汇总帖-7">
+<meta property="og:url" content="http://yoursite.com/2018/10/14/笔试总结帖-7/index.html">
+<meta property="og:site_name" content="Welcome">
+<meta property="og:description" content="10.12-10.13的笔试  阅文1. 下面哪个css属性不支持负值（padding） padding 不支持任何形式的负值 2. 在html中，position默认值是（static）static：position的默认值，一般不设置position属性时，会按照正常的文档流进行排列 3. 解决哈希冲突的链地址算法中，插入新的数据项的时间（随装填因子线性增长）链地址算法的基本思想是将所有哈希">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-10-14T08:26:28.079Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="笔试汇总帖-7">
+<meta name="twitter:description" content="10.12-10.13的笔试  阅文1. 下面哪个css属性不支持负值（padding） padding 不支持任何形式的负值 2. 在html中，position默认值是（static）static：position的默认值，一般不设置position属性时，会按照正常的文档流进行排列 3. 解决哈希冲突的链地址算法中，插入新的数据项的时间（随装填因子线性增长）链地址算法的基本思想是将所有哈希">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":true,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/10/14/笔试总结帖-7/"/>
+
+
+
+
+
+  <title>笔试汇总帖-7 | Welcome</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"><a href="https://github.com/tenneling"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Welcome</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/14/笔试总结帖-7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="十点一刻">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/qifang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Welcome">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">笔试汇总帖-7</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-14T16:26:48+08:00">
+                2018-10-14
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-10-14T16:26:28+08:00">
+                2018-10-14
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/笔经面经/" itemprop="url" rel="index">
+                    <span itemprop="name">笔经面经</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>﻿10.12-10.13的笔试</p>
+<hr>
+<h4 id="阅文"><a href="#阅文" class="headerlink" title="阅文"></a>阅文</h4><h5 id="1-下面哪个css属性不支持负值（padding）"><a href="#1-下面哪个css属性不支持负值（padding）" class="headerlink" title="1. 下面哪个css属性不支持负值（padding）"></a>1. 下面哪个css属性不支持负值（padding）</h5><p> padding 不支持任何形式的负值</p>
+<h5 id="2-在html中，position默认值是（static）"><a href="#2-在html中，position默认值是（static）" class="headerlink" title="2. 在html中，position默认值是（static）"></a>2. 在html中，position默认值是（static）</h5><p>static：position的默认值，一般不设置position属性时，会按照正常的文档流进行排列</p>
+<h5 id="3-解决哈希冲突的链地址算法中，插入新的数据项的时间（随装填因子线性增长）"><a href="#3-解决哈希冲突的链地址算法中，插入新的数据项的时间（随装填因子线性增长）" class="headerlink" title="3. 解决哈希冲突的链地址算法中，插入新的数据项的时间（随装填因子线性增长）"></a>3. 解决哈希冲突的链地址算法中，插入新的数据项的时间（随装填因子线性增长）</h5><p>链地址算法的基本思想是将所有哈希地址为i的元素构成一个称为同义词链的单链表，并将单链表的头指针存在哈希表的第i个单元中，因而查找、插入和删除主要在同义词链中进行。链地址法适用于经常进行插入和删除的情况。插入新数据项的时间随装载因子线性增长。</p>
+<h5 id="4-（string）不属于Java基本数据类型"><a href="#4-（string）不属于Java基本数据类型" class="headerlink" title="4. （string）不属于Java基本数据类型"></a>4. （string）不属于Java基本数据类型</h5><p>Java语言提供了八种基本类型。</p>
+<ol>
+<li>整数：int,short,byte,long</li>
+<li>浮点型：float,double</li>
+<li>字符：char</li>
+<li>布尔：boolean</li>
+</ol>
+<h5 id="5-数组初始化，int-x-4-0-int-y-4-1-，数组x和y的值-0-0-0-0-，-1-0-0-0"><a href="#5-数组初始化，int-x-4-0-int-y-4-1-，数组x和y的值-0-0-0-0-，-1-0-0-0" class="headerlink" title="5. 数组初始化，int x[4]={0};int y[4]={1}，数组x和y的值[{0.0.0.0}，{1,0,0,0}]"></a>5. 数组初始化，int x[4]={0};int y[4]={1}，数组x和y的值[{0.0.0.0}，{1,0,0,0}]</h5><p>如果初始化时指定的的元素个数比数组大小少， 剩下的元素都回被初始化为0 。</p>
+<h5 id="6-DNS解析服务中属于初级域的是（com-cn-net-sina）"><a href="#6-DNS解析服务中属于初级域的是（com-cn-net-sina）" class="headerlink" title="6. DNS解析服务中属于初级域的是（com/cn/net/sina）"></a>6. DNS解析服务中属于初级域的是（com/cn/net/sina）</h5><p><a href="http://www.csdn.net" target="_blank" rel="noopener">www.csdn.net</a></p>
+<ol>
+<li>主机名：www</li>
+<li>域名：csdn</li>
+<li>类型：net</li>
+</ol>
+<h5 id="7-堆实现了优先队列（true）"><a href="#7-堆实现了优先队列（true）" class="headerlink" title="7. 堆实现了优先队列（true）"></a>7. 堆实现了优先队列（true）</h5><h5 id="8-var-a-、a-instanceof-Array、a-constructor-Array、Array-prototype-isPrototypeOf-a-、Object-prototype-toString-apply-a-’-object-Array-’"><a href="#8-var-a-、a-instanceof-Array、a-constructor-Array、Array-prototype-isPrototypeOf-a-、Object-prototype-toString-apply-a-’-object-Array-’" class="headerlink" title="8. var a=[] 、a.instanceof Array、a.constructor==Array、Array.prototype.isPrototypeOf(a)、Object.prototype.toString.apply(a)===’[object Array]’"></a>8. var a=[] 、a.instanceof Array、a.constructor==Array、Array.prototype.isPrototypeOf(a)、Object.prototype.toString.apply(a)===’[object Array]’</h5><p>在ES5中，我们至少有如下5种方式去判断一个值是否数组</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var a = []; </span><br><span class="line">// 1.基于instanceof </span><br><span class="line">a instanceof Array; </span><br><span class="line">// 2.基于constructor </span><br><span class="line">a.constructor === Array; </span><br><span class="line">// 3.基于Object.prototype.isPrototypeOf </span><br><span class="line">Array.prototype.isPrototypeOf(a); </span><br><span class="line">// 4.基于getPrototypeOf </span><br><span class="line">Object.getPrototypeOf(a) === Array.prototype; </span><br><span class="line">// 5.基于Object.prototype.toString </span><br><span class="line">Object.prototype.toString.apply(a) === &apos;[object Array]&apos;;</span><br></pre></td></tr></table></figure>
+<p>以上，除了Object.prototype.toString外，其它方法都不能正确判断变量的类型。</p>
+<h5 id="9-公平锁是顺序获取竞争资源的一种机制（true）"><a href="#9-公平锁是顺序获取竞争资源的一种机制（true）" class="headerlink" title="9. 公平锁是顺序获取竞争资源的一种机制（true）"></a>9. 公平锁是顺序获取竞争资源的一种机制（true）</h5><ol>
+<li>公平锁表示线程获取锁的顺序是按照线程加锁的顺序来分配的，即先来先得的FIFO先进先出顺序。</li>
+<li>非公平锁是一种获取锁的抢占机制，是随机获得锁的，和公平锁不一样的就是先来的不一定先得到锁，这个方式可能造成某些线程一直拿不到锁，结果也就是不公平。</li>
+</ol>
+<h5 id="10-在Linux的ln命令中，硬链接可以跨文件系统而软连接则不能（false）"><a href="#10-在Linux的ln命令中，硬链接可以跨文件系统而软连接则不能（false）" class="headerlink" title="10. 在Linux的ln命令中，硬链接可以跨文件系统而软连接则不能（false）"></a>10. 在Linux的ln命令中，硬链接可以跨文件系统而软连接则不能（false）</h5><ol>
+<li>软链接可以跨文件系统，硬链接不可以</li>
+<li>在默认情况下，ln命令创建硬链接。ln命令会增加链接数，rm命令会减少链接数。一个文件除非链接数为0，否则不会从文件系统中被物理地删除。</li>
+</ol>
+<h5 id="11-HTTP返回码302是指：客户的缓存资源是最新的，要客户端使用缓存（false）"><a href="#11-HTTP返回码302是指：客户的缓存资源是最新的，要客户端使用缓存（false）" class="headerlink" title="11. HTTP返回码302是指：客户的缓存资源是最新的，要客户端使用缓存（false）"></a>11. HTTP返回码302是指：客户的缓存资源是最新的，要客户端使用缓存（false）</h5><ol>
+<li>302 Found：重定向，新的URL会在response 中的Location中返回，浏览器将会自动使用新的URL发出新的Request</li>
+<li>例如在IE中输入， <a href="http://www.google.com" target="_blank" rel="noopener">http://www.google.com</a>. HTTP服务器会返回302， IE取到Response中Location header的新URL, 又重新发送了一个Request.</li>
+</ol>
+<h5 id="12-进程和线程的区别是什么"><a href="#12-进程和线程的区别是什么" class="headerlink" title="12. 进程和线程的区别是什么"></a>12. 进程和线程的区别是什么</h5><ol>
+<li>进程：是并发执行的程序在执行过程中分配和管理资源的基本单位，是一个动态概念，竞争计算机系统资源的基本单位。</li>
+<li>线程：是进程的一个执行单元，是进程内部调度实体。比进程更小的独立运行的基本单位。线程也被称为轻量级进程。</li>
+<li>一个程序至少一个进程，一个进程至少一个线程。</li>
+</ol>
+<h5 id="13-GC是什么？为什么要有GC？"><a href="#13-GC是什么？为什么要有GC？" class="headerlink" title="13. GC是什么？为什么要有GC？"></a>13. GC是什么？为什么要有GC？</h5><ol>
+<li>GC是垃圾收集</li>
+<li>Java提供的GC功能可以自动监测对象是否超过作用域从而达到自动回收内存的目的，</li>
+<li>Java语言没有提供释放已分配内存的显示操作方法。Java程序员不用担心内存管理，因为垃圾收集器会自动进行管理。要请求垃圾收集，可以调用下面的方法之一：System.gc()或Runtime.getRuntime().gc()，但JVM可以屏蔽掉显示的垃圾回收调用。 </li>
+</ol>
+<h5 id="14-Executor，ExecutorService，ThreadPoolExecutor，Executors的关系"><a href="#14-Executor，ExecutorService，ThreadPoolExecutor，Executors的关系" class="headerlink" title="14. Executor，ExecutorService，ThreadPoolExecutor，Executors的关系"></a>14. Executor，ExecutorService，ThreadPoolExecutor，Executors的关系</h5><ol>
+<li>Executor：执行已提交的 Runnable 任务对象。此接口提供一种将任务提交与每个任务将如何运行的机制（包括线程使用的细节、调度等）分离开来的方法。通常使用 Executor 而不是显式地创建线程。Executor 接口并没有严格地要求执行是异步的。在最简单的情况下，执行程序可以在调用方的线程中立即运行已提交的任务：</li>
+<li>ExcutorService：提供了管理终止的方法，以及可为跟踪一个或多个异步任务执行状况而生成 Future 的方法。可以关闭 ExecutorService，这将导致其拒绝新任务。提供两个方法来关闭 ExecutorService。shutdown()方法在终止前允许执行以前提交的任务，而 shutdownNow() 方法阻止等待任务的启动并试图停止当前正在执行的任务。在终止后，执行程序没有任务在执行，也没有任务在等待执行，并且无法提交新任务。应该关闭未使用的 ExecutorService以允许回收其资源。</li>
+<li>ThreadPoolExecutor：ExecutorService的一个实现类，它使用可能的几个池线程之一执行每个提交的任务，通常使用 Executors 工厂方法配置。</li>
+<li>Executor ：一个抽象层面的核心接口，不同于 java.lang.Thread 类将任务和执行耦合在一起， Executor 将任务本身和执行任务分离。</li>
+</ol>
+<h6 id="线程池可以解决两个不同问题："><a href="#线程池可以解决两个不同问题：" class="headerlink" title="线程池可以解决两个不同问题："></a>线程池可以解决两个不同问题：</h6><ol>
+<li>由于减少了每个任务调用的开销，它们通常可以在执行大量异步任务时提供增强的性能，并且还可以提供绑定和管理资源（包括执行任务集时使用的线程）的方法。</li>
+<li>每个 ThreadPoolExecutor 还维护着一些基本的统计数据，如完成的任务数。为了便于跨大量上下文使用，此类提供了很多可调整的参数和扩展钩子 (hook)。</li>
+</ol>
+<h4 id="乐信"><a href="#乐信" class="headerlink" title="乐信"></a>乐信</h4><h5 id="1-继承呈现的是is-a的关系"><a href="#1-继承呈现的是is-a的关系" class="headerlink" title="1. 继承呈现的是is a的关系"></a>1. 继承呈现的是is a的关系</h5><ol>
+<li>继承是“is   a”</li>
+<li>组合是“like   a”</li>
+</ol>
+<h5 id="2-所有父类方法可以被override"><a href="#2-所有父类方法可以被override" class="headerlink" title="2. 所有父类方法可以被override"></a>2. 所有父类方法可以被override</h5><ol>
+<li>子类使用new覆盖父类方法后，是独立于父类的方法。</li>
+<li>子类使用override覆盖父类的方法后，只是在调用时不再调用父类方法而调用子类方法。</li>
+</ol>
+<h6 id="方法的重写（override）两同两小一大原则："><a href="#方法的重写（override）两同两小一大原则：" class="headerlink" title="方法的重写（override）两同两小一大原则："></a>方法的重写（override）两同两小一大原则：</h6><ol>
+<li>方法名相同，参数类型相同</li>
+<li>子类返回类型小于等于父类方法返回类型</li>
+<li>子类抛出异常小于等于父类方法抛出异常</li>
+<li>子类访问权限大于等于父类方法访问权限</li>
+</ol>
+<h5 id="3-数据结构按逻辑分类"><a href="#3-数据结构按逻辑分类" class="headerlink" title="3. 数据结构按逻辑分类"></a>3. 数据结构按逻辑分类</h5><p>数据的逻辑结构分两大类：线性结构和非线性结构 </p>
+<h5 id="4-实例变量是类的成员变量（true）"><a href="#4-实例变量是类的成员变量（true）" class="headerlink" title="4. 实例变量是类的成员变量（true）"></a>4. 实例变量是类的成员变量（true）</h5><ol>
+<li>实例成员变量:非静态成员变量</li>
+<li>类成员变量：静态成员变量. 对于这个类的任何实例都是一样的值，不属于某个实例</li>
+</ol>
+<h5 id="5-在方法体中定义的局部变量在该方法被执行时创建的（true）"><a href="#5-在方法体中定义的局部变量在该方法被执行时创建的（true）" class="headerlink" title="5. 在方法体中定义的局部变量在该方法被执行时创建的（true）"></a>5. 在方法体中定义的局部变量在该方法被执行时创建的（true）</h5><p>局部变量会在方法被调用的时候创建，方法调用结束后摧毁</p>
+<h5 id="6-哪两个可以在Demo的子类中使用"><a href="#6-哪两个可以在Demo的子类中使用" class="headerlink" title="6. 哪两个可以在Demo的子类中使用"></a>6. 哪两个可以在Demo的子类中使用</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">class Demo&#123;protected int m1(int a,int b)&#123;return 0;&#125;&#125;</span><br><span class="line">public/private short/int m1(int a,int b)&#123;return 0;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//即不能够使从类A中继续来的方法的可见性降低  </span><br><span class="line">//private int method1(int a, int b) &#123; return 0; &#125;</span><br><span class="line">//静态方法不能够隐藏继承于A的实例</span><br><span class="line">//static protected int method1(int a, int b) &#123; return 0; &#125;   </span><br><span class="line">//返回类型与A中的该方法不一致</span><br><span class="line">//public short method1(int a, int b) &#123; return 0; &#125;</span><br><span class="line">//这里是写了一个重载方法，因为参数类型不一致，不会报错</span><br><span class="line">//private int method1(int a, long b) &#123; return 0; &#125;   </span><br><span class="line">//可见性可以增大，但是不能够缩小，正确</span><br><span class="line">//public int method1(int a, int b) &#123; return 0; &#125;</span><br></pre></td></tr></table></figure>
+<h5 id="7-引用和指针"><a href="#7-引用和指针" class="headerlink" title="7. 引用和指针"></a>7. 引用和指针</h5><ol>
+<li>指针和引用在声明时可不用初始化（false）<br>引用在定义是必须初始化，但是指针定义时不用初始化，可以先定义，再赋值</li>
+<li>引用没有自己的内存空间，而指针有（false）<br>引用没有自己内存，它和所指向的变量使用同一内存</li>
+</ol>
+<h5 id="8-测试分期乐app的登录功能，请问怎么做测试设计，如何考虑测试类型和设计相关测试用例进行测试"><a href="#8-测试分期乐app的登录功能，请问怎么做测试设计，如何考虑测试类型和设计相关测试用例进行测试" class="headerlink" title="8. 测试分期乐app的登录功能，请问怎么做测试设计，如何考虑测试类型和设计相关测试用例进行测试"></a>8. 测试分期乐app的登录功能，请问怎么做测试设计，如何考虑测试类型和设计相关测试用例进行测试</h5><h5 id="9-描述了解哪些测试工具，说明所能完成的测试内容和大概原理，不少于3个"><a href="#9-描述了解哪些测试工具，说明所能完成的测试内容和大概原理，不少于3个" class="headerlink" title="9. 描述了解哪些测试工具，说明所能完成的测试内容和大概原理，不少于3个"></a>9. 描述了解哪些测试工具，说明所能完成的测试内容和大概原理，不少于3个</h5><h4 id="58"><a href="#58" class="headerlink" title="58"></a>58</h4><h5 id="1-将k个不同的物品分成2部分，则可能的分法有几种？（2-k-1-1）"><a href="#1-将k个不同的物品分成2部分，则可能的分法有几种？（2-k-1-1）" class="headerlink" title="1. 将k个不同的物品分成2部分，则可能的分法有几种？（2^(k-1)-1）"></a>1. 将k个不同的物品分成2部分，则可能的分法有几种？（2^(k-1)-1）</h5><h5 id="2-前序遍历二叉树的结果为1-2-3-4-5。二叉树有多少种可能的形状（43）"><a href="#2-前序遍历二叉树的结果为1-2-3-4-5。二叉树有多少种可能的形状（43）" class="headerlink" title="2. 前序遍历二叉树的结果为1,2,3,4,5。二叉树有多少种可能的形状（43）"></a>2. 前序遍历二叉树的结果为1,2,3,4,5。二叉树有多少种可能的形状（43）</h5><h5 id="3-如果一个待排序列已经基本有序，使用下面哪种排序算法的效率最差-冒泡"><a href="#3-如果一个待排序列已经基本有序，使用下面哪种排序算法的效率最差-冒泡" class="headerlink" title="3. 如果一个待排序列已经基本有序，使用下面哪种排序算法的效率最差(冒泡)"></a>3. 如果一个待排序列已经基本有序，使用下面哪种排序算法的效率最差(冒泡)</h5><h5 id="4-计算学校中所有学生重名的次数，使用以下哪种数据结构最好？（哈希表）"><a href="#4-计算学校中所有学生重名的次数，使用以下哪种数据结构最好？（哈希表）" class="headerlink" title="4. 计算学校中所有学生重名的次数，使用以下哪种数据结构最好？（哈希表）"></a>4. 计算学校中所有学生重名的次数，使用以下哪种数据结构最好？（哈希表）</h5><h5 id="5-Linux系统中删除-58-jishu文件夹及其中的所有文件，应该使用（rmdir-r-58-jishu）"><a href="#5-Linux系统中删除-58-jishu文件夹及其中的所有文件，应该使用（rmdir-r-58-jishu）" class="headerlink" title="5. Linux系统中删除/58/jishu文件夹及其中的所有文件，应该使用（rmdir -r/58/jishu）"></a>5. Linux系统中删除/58/jishu文件夹及其中的所有文件，应该使用（rmdir -r/58/jishu）</h5><p>linux删除文件夹下所有文件，可以使用rm命令的 -rf参数。f是强制删除，-r是递归所有的子文件夹。</p>
+<h5 id="6-有n-1个不同的整数-a1-a2-……-an-，假设有一个乱序的整数序列，其中a1-a2-……-an分别出现了两次，m出现了一次，找出出现一次的m"><a href="#6-有n-1个不同的整数-a1-a2-……-an-，假设有一个乱序的整数序列，其中a1-a2-……-an分别出现了两次，m出现了一次，找出出现一次的m" class="headerlink" title="6. 有n+1个不同的整数(a1,a2,……,an)，假设有一个乱序的整数序列，其中a1,a2,……,an分别出现了两次，m出现了一次，找出出现一次的m"></a>6. 有n+1个不同的整数(a1,a2,……,an)，假设有一个乱序的整数序列，其中a1,a2,……,an分别出现了两次，m出现了一次，找出出现一次的m</h5><h5 id="7-全局变量int-m-200-在16核的机器上，同时启动两个线程，100次m–，m的取值范围"><a href="#7-全局变量int-m-200-在16核的机器上，同时启动两个线程，100次m–，m的取值范围" class="headerlink" title="7. 全局变量int m=200,在16核的机器上，同时启动两个线程，100次m–，m的取值范围"></a>7. 全局变量int m=200,在16核的机器上，同时启动两个线程，100次m–，m的取值范围</h5><h5 id="8-对未知数量的文件流或者网络流如何进行等概率抽样，请简述方案并证明其等概性"><a href="#8-对未知数量的文件流或者网络流如何进行等概率抽样，请简述方案并证明其等概性" class="headerlink" title="8. 对未知数量的文件流或者网络流如何进行等概率抽样，请简述方案并证明其等概性"></a>8. 对未知数量的文件流或者网络流如何进行等概率抽样，请简述方案并证明其等概性</h5><h5 id="9-有两个有序的集合，集合的每个元素都是一段范围，求交集"><a href="#9-有两个有序的集合，集合的每个元素都是一段范围，求交集" class="headerlink" title="9. 有两个有序的集合，集合的每个元素都是一段范围，求交集"></a>9. 有两个有序的集合，集合的每个元素都是一段范围，求交集</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line">import java.util.ArrayList;</span><br><span class="line">import java.util.List;</span><br><span class="line"> </span><br><span class="line">/*</span><br><span class="line"> * @author snow</span><br><span class="line"> * @time 2016_08_01 20:26</span><br><span class="line"> * @questions 有两个有序的集合，集合的每个元素都是一段范围，求其交集，</span><br><span class="line"> * 例如集合&#123;[4,8],[9,13]&#125;和&#123;[6,12]&#125;的交集为&#123;[6,8],[9,12]&#125;</span><br><span class="line"> */</span><br><span class="line">public class NumberIntersection_010 &#123;</span><br><span class="line">    public static void main(String args[])&#123;</span><br><span class="line">        Section section1 = new Section(2, 4);</span><br><span class="line">        Section section2 = new Section(8,11);</span><br><span class="line">        Section section3 = new Section(6,10);</span><br><span class="line">        Section section4 = new Section(11,13);</span><br><span class="line">        List&lt;Section&gt; aList = new ArrayList&lt;Section&gt;();</span><br><span class="line">        List&lt;Section&gt; bList = new ArrayList&lt;Section&gt;();</span><br><span class="line">        aList.add(section1);</span><br><span class="line">        aList.add(section2);</span><br><span class="line">        bList.add(section3);</span><br><span class="line">        bList.add(section4);</span><br><span class="line">         </span><br><span class="line">        List&lt;Section&gt; result = getInterSection(aList,bList);</span><br><span class="line">        System.out.println(&quot;两个集合的的交集是&quot;);</span><br><span class="line">        for(Section sect:result)&#123;</span><br><span class="line">            System.out.println(sect.getSection());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    private static List&lt;Section&gt; getInterSection(List&lt;Section&gt; aList,List&lt;Section&gt; bList) &#123;</span><br><span class="line">        int i = 0 , j = 0;</span><br><span class="line">        List&lt;Section&gt; interSection = new ArrayList&lt;Section&gt;();</span><br><span class="line">        while(i&lt;aList.size()&amp;&amp;j&lt;bList.size())&#123;</span><br><span class="line">            Section a = aList.get(i);</span><br><span class="line">            Section b = bList.get(j);</span><br><span class="line">            int aLeft = a.getLefe();</span><br><span class="line">            int aRight = a.getRight();</span><br><span class="line">            int bLeft = b.getLefe();</span><br><span class="line">            int bRight = b.getRight();</span><br><span class="line">            if(aLeft&gt;bRight)&#123;</span><br><span class="line">                j++;</span><br><span class="line">            &#125;else if(aRight&lt;bLeft)&#123;</span><br><span class="line">                i++;</span><br><span class="line">            &#125;else if(aLeft&gt;bLeft)&#123;</span><br><span class="line">                if(aRight&lt;bRight)&#123;</span><br><span class="line">                    interSection.add(a);</span><br><span class="line">                    i++;</span><br><span class="line">                &#125;else&#123;</span><br><span class="line">                    Section temp = new Section(aLeft,bRight);</span><br><span class="line">                    interSection.add(temp);</span><br><span class="line">                    j++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                if(bRight&lt;aRight)&#123;</span><br><span class="line">                    interSection.add(b);</span><br><span class="line">                    j++;</span><br><span class="line">                &#125;else&#123;</span><br><span class="line">                    Section temp = new Section(bLeft,aRight);</span><br><span class="line">                    interSection.add(temp);</span><br><span class="line">                    i++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return interSection;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">class Section&#123;</span><br><span class="line">    int lefe,right;</span><br><span class="line">    public Section(int l,int r)&#123;</span><br><span class="line">        lefe = l;</span><br><span class="line">        right =r;</span><br><span class="line">    &#125;</span><br><span class="line">     </span><br><span class="line">    public int getLefe() &#123;</span><br><span class="line">        return lefe;</span><br><span class="line">    &#125;</span><br><span class="line">    public int getRight() &#123;</span><br><span class="line">        return right;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    public String getSection()&#123;</span><br><span class="line">        return &quot;[&quot;+lefe + &quot;,&quot; + right +&quot;]&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="10-返回已排序数组中第一个大于或等于给定数字的元素的位置"><a href="#10-返回已排序数组中第一个大于或等于给定数字的元素的位置" class="headerlink" title="10. 返回已排序数组中第一个大于或等于给定数字的元素的位置"></a>10. 返回已排序数组中第一个大于或等于给定数字的元素的位置</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int searchInsert(vector&lt;int&gt;&amp; nums, int target) &#123;</span><br><span class="line">        //auto it = lower_bound(nums.begin(), nums.end(), target);</span><br><span class="line">        //return it - nums.begin();</span><br><span class="line"></span><br><span class="line">        /* </span><br><span class="line">         * 如果只有一个元素，会直接返回0</span><br><span class="line">         * 如果所有元素都小于target，会返回nums.size() - 1，需要加1</span><br><span class="line">         * 所以需要返回后判断一次nums[left]的大小</span><br><span class="line">         */</span><br><span class="line">        int left = equalLeftBound(nums, target);</span><br><span class="line">        if(nums[left] &lt; target)</span><br><span class="line">            return left + 1;</span><br><span class="line">        else</span><br><span class="line">            return left;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">private:</span><br><span class="line">    /* 找到第一个出现target的位置 */</span><br><span class="line">    int equalLeftBound(vector&lt;int&gt;&amp; nums, int target)</span><br><span class="line">    &#123;</span><br><span class="line">        int left = 0;</span><br><span class="line">        int right = nums.size() - 1;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        while(left &lt; right)</span><br><span class="line">        &#123;</span><br><span class="line">            int middle = (left + right) / 2;</span><br><span class="line">            if(nums[middle] &lt; target)</span><br><span class="line">                left = middle + 1;</span><br><span class="line">            else</span><br><span class="line">                right = middle;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        return left;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+<div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">------ end------</div>
+    
+</div>
+
+  
+</div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JAVA/" rel="tag"> <i class="fa fa-tag"></i> JAVA</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/12/笔试总结帖-6/" rel="next" title="笔试汇总帖-6">
+                <i class="fa fa-chevron-left"></i> 笔试汇总帖-6
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/qifang.jpg"
+                alt="十点一刻" />
+            
+              <p class="site-author-name" itemprop="name">十点一刻</p>
+              <p class="site-description motion-element" itemprop="description">在没有路的丛林走出迷雾</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/tenneling" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:tenneling@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#阅文"><span class="nav-number">1.</span> <span class="nav-text">阅文</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-下面哪个css属性不支持负值（padding）"><span class="nav-number">1.1.</span> <span class="nav-text">1. 下面哪个css属性不支持负值（padding）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-在html中，position默认值是（static）"><span class="nav-number">1.2.</span> <span class="nav-text">2. 在html中，position默认值是（static）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-解决哈希冲突的链地址算法中，插入新的数据项的时间（随装填因子线性增长）"><span class="nav-number">1.3.</span> <span class="nav-text">3. 解决哈希冲突的链地址算法中，插入新的数据项的时间（随装填因子线性增长）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-（string）不属于Java基本数据类型"><span class="nav-number">1.4.</span> <span class="nav-text">4. （string）不属于Java基本数据类型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-数组初始化，int-x-4-0-int-y-4-1-，数组x和y的值-0-0-0-0-，-1-0-0-0"><span class="nav-number">1.5.</span> <span class="nav-text">5. 数组初始化，int x[4]={0};int y[4]={1}，数组x和y的值[{0.0.0.0}，{1,0,0,0}]</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-DNS解析服务中属于初级域的是（com-cn-net-sina）"><span class="nav-number">1.6.</span> <span class="nav-text">6. DNS解析服务中属于初级域的是（com/cn/net/sina）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7-堆实现了优先队列（true）"><span class="nav-number">1.7.</span> <span class="nav-text">7. 堆实现了优先队列（true）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#8-var-a-、a-instanceof-Array、a-constructor-Array、Array-prototype-isPrototypeOf-a-、Object-prototype-toString-apply-a-’-object-Array-’"><span class="nav-number">1.8.</span> <span class="nav-text">8. var a=[] 、a.instanceof Array、a.constructor==Array、Array.prototype.isPrototypeOf(a)、Object.prototype.toString.apply(a)===’[object Array]’</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#9-公平锁是顺序获取竞争资源的一种机制（true）"><span class="nav-number">1.9.</span> <span class="nav-text">9. 公平锁是顺序获取竞争资源的一种机制（true）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#10-在Linux的ln命令中，硬链接可以跨文件系统而软连接则不能（false）"><span class="nav-number">1.10.</span> <span class="nav-text">10. 在Linux的ln命令中，硬链接可以跨文件系统而软连接则不能（false）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#11-HTTP返回码302是指：客户的缓存资源是最新的，要客户端使用缓存（false）"><span class="nav-number">1.11.</span> <span class="nav-text">11. HTTP返回码302是指：客户的缓存资源是最新的，要客户端使用缓存（false）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#12-进程和线程的区别是什么"><span class="nav-number">1.12.</span> <span class="nav-text">12. 进程和线程的区别是什么</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#13-GC是什么？为什么要有GC？"><span class="nav-number">1.13.</span> <span class="nav-text">13. GC是什么？为什么要有GC？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#14-Executor，ExecutorService，ThreadPoolExecutor，Executors的关系"><span class="nav-number">1.14.</span> <span class="nav-text">14. Executor，ExecutorService，ThreadPoolExecutor，Executors的关系</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#线程池可以解决两个不同问题："><span class="nav-number">1.14.1.</span> <span class="nav-text">线程池可以解决两个不同问题：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#乐信"><span class="nav-number">2.</span> <span class="nav-text">乐信</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-继承呈现的是is-a的关系"><span class="nav-number">2.1.</span> <span class="nav-text">1. 继承呈现的是is a的关系</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-所有父类方法可以被override"><span class="nav-number">2.2.</span> <span class="nav-text">2. 所有父类方法可以被override</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#方法的重写（override）两同两小一大原则："><span class="nav-number">2.2.1.</span> <span class="nav-text">方法的重写（override）两同两小一大原则：</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-数据结构按逻辑分类"><span class="nav-number">2.3.</span> <span class="nav-text">3. 数据结构按逻辑分类</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-实例变量是类的成员变量（true）"><span class="nav-number">2.4.</span> <span class="nav-text">4. 实例变量是类的成员变量（true）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-在方法体中定义的局部变量在该方法被执行时创建的（true）"><span class="nav-number">2.5.</span> <span class="nav-text">5. 在方法体中定义的局部变量在该方法被执行时创建的（true）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-哪两个可以在Demo的子类中使用"><span class="nav-number">2.6.</span> <span class="nav-text">6. 哪两个可以在Demo的子类中使用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7-引用和指针"><span class="nav-number">2.7.</span> <span class="nav-text">7. 引用和指针</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#8-测试分期乐app的登录功能，请问怎么做测试设计，如何考虑测试类型和设计相关测试用例进行测试"><span class="nav-number">2.8.</span> <span class="nav-text">8. 测试分期乐app的登录功能，请问怎么做测试设计，如何考虑测试类型和设计相关测试用例进行测试</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#9-描述了解哪些测试工具，说明所能完成的测试内容和大概原理，不少于3个"><span class="nav-number">2.9.</span> <span class="nav-text">9. 描述了解哪些测试工具，说明所能完成的测试内容和大概原理，不少于3个</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#58"><span class="nav-number">3.</span> <span class="nav-text">58</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-将k个不同的物品分成2部分，则可能的分法有几种？（2-k-1-1）"><span class="nav-number">3.1.</span> <span class="nav-text">1. 将k个不同的物品分成2部分，则可能的分法有几种？（2^(k-1)-1）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-前序遍历二叉树的结果为1-2-3-4-5。二叉树有多少种可能的形状（43）"><span class="nav-number">3.2.</span> <span class="nav-text">2. 前序遍历二叉树的结果为1,2,3,4,5。二叉树有多少种可能的形状（43）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-如果一个待排序列已经基本有序，使用下面哪种排序算法的效率最差-冒泡"><span class="nav-number">3.3.</span> <span class="nav-text">3. 如果一个待排序列已经基本有序，使用下面哪种排序算法的效率最差(冒泡)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-计算学校中所有学生重名的次数，使用以下哪种数据结构最好？（哈希表）"><span class="nav-number">3.4.</span> <span class="nav-text">4. 计算学校中所有学生重名的次数，使用以下哪种数据结构最好？（哈希表）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-Linux系统中删除-58-jishu文件夹及其中的所有文件，应该使用（rmdir-r-58-jishu）"><span class="nav-number">3.5.</span> <span class="nav-text">5. Linux系统中删除/58/jishu文件夹及其中的所有文件，应该使用（rmdir -r/58/jishu）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-有n-1个不同的整数-a1-a2-……-an-，假设有一个乱序的整数序列，其中a1-a2-……-an分别出现了两次，m出现了一次，找出出现一次的m"><span class="nav-number">3.6.</span> <span class="nav-text">6. 有n+1个不同的整数(a1,a2,……,an)，假设有一个乱序的整数序列，其中a1,a2,……,an分别出现了两次，m出现了一次，找出出现一次的m</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7-全局变量int-m-200-在16核的机器上，同时启动两个线程，100次m–，m的取值范围"><span class="nav-number">3.7.</span> <span class="nav-text">7. 全局变量int m=200,在16核的机器上，同时启动两个线程，100次m–，m的取值范围</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#8-对未知数量的文件流或者网络流如何进行等概率抽样，请简述方案并证明其等概性"><span class="nav-number">3.8.</span> <span class="nav-text">8. 对未知数量的文件流或者网络流如何进行等概率抽样，请简述方案并证明其等概性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#9-有两个有序的集合，集合的每个元素都是一段范围，求交集"><span class="nav-number">3.9.</span> <span class="nav-text">9. 有两个有序的集合，集合的每个元素都是一段范围，求交集</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#10-返回已排序数组中第一个大于或等于给定数字的元素的位置"><span class="nav-number">3.10.</span> <span class="nav-text">10. 返回已排序数组中第一个大于或等于给定数字的元素的位置</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+        </div>
+      
+<div id="music163player">
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=2&id=477786576&auto=0&height=32"></iframe>
+</div>
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        ﻿<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">十点一刻</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">全站共234.8k字</span>
+</div>
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+
+
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+
+</body>
+</html>
