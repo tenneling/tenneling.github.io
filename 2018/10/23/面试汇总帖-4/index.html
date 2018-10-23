@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="JAVA," />
 
 
 
@@ -86,16 +86,18 @@
 
 
 
-<meta name="description" content="在没有路的丛林走出迷雾">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Welcome">
-<meta property="og:url" content="http://yoursite.com/tags/MySQL/index.html">
+<meta name="description" content="影子一面1. 写sql语句where和group by没有考虑好 2. 排序（1000找100最大）找最大的1000个整数  内存无法装下：先取出1001个整数，构建一个最小堆，堆顶永远是最小的整数。 比较：从剩余的整数中一次取出一个，跟最小堆堆顶相比，如果比堆顶小，就pass掉，接着取；如果比最小堆堆顶大，那么将之替换掉堆顶，然后调整最小堆 结果：100亿个整数全部操作完后，抛开堆顶，剩下的10">
+<meta name="keywords" content="JAVA">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面试汇总帖-4">
+<meta property="og:url" content="http://yoursite.com/2018/10/23/面试汇总帖-4/index.html">
 <meta property="og:site_name" content="Welcome">
-<meta property="og:description" content="在没有路的丛林走出迷雾">
+<meta property="og:description" content="影子一面1. 写sql语句where和group by没有考虑好 2. 排序（1000找100最大）找最大的1000个整数  内存无法装下：先取出1001个整数，构建一个最小堆，堆顶永远是最小的整数。 比较：从剩余的整数中一次取出一个，跟最小堆堆顶相比，如果比堆顶小，就pass掉，接着取；如果比最小堆堆顶大，那么将之替换掉堆顶，然后调整最小堆 结果：100亿个整数全部操作完后，抛开堆顶，剩下的10">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-10-23T12:33:10.044Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Welcome">
-<meta name="twitter:description" content="在没有路的丛林走出迷雾">
+<meta name="twitter:title" content="面试汇总帖-4">
+<meta name="twitter:description" content="影子一面1. 写sql语句where和group by没有考虑好 2. 排序（1000找100最大）找最大的1000个整数  内存无法装下：先取出1001个整数，构建一个最小堆，堆顶永远是最小的整数。 比较：从剩余的整数中一次取出一个，跟最小堆堆顶相比，如果比堆顶小，就pass掉，接着取；如果比最小堆堆顶大，那么将之替换掉堆顶，然后调整最小堆 结果：100亿个整数全部操作完后，抛开堆顶，剩下的10">
 
 
 
@@ -125,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/MySQL/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/10/23/面试汇总帖-4/"/>
 
 
 
 
 
-  <title>标签: MySQL | Welcome</title>
+  <title>面试汇总帖-4 | Welcome</title>
   
 
 
@@ -150,7 +152,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"><a href="https://github.com/tenneling"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -268,54 +270,201 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>MySQL<small>标签</small>
-        </h1>
-      </div>
+  
+
+  
+  
+  
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/23/面试汇总帖-4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="十点一刻">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/qifang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Welcome">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">面试汇总帖-4</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-23T20:47:48+08:00">
+                2018-10-23
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-10-23T20:33:10+08:00">
+                2018-10-23
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/笔经面经/" itemprop="url" rel="index">
+                    <span itemprop="name">笔经面经</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
+      
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/08/05/MySql双机热备份方法/" itemprop="url">
-              
-                <span itemprop="name">MySQL双机热备份方法</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-05T23:23:48+08:00"
-              content="2018-08-05" >
-          08-05
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
+        <h4 id="影子一面"><a href="#影子一面" class="headerlink" title="影子一面"></a>影子一面</h4><h5 id="1-写sql语句"><a href="#1-写sql语句" class="headerlink" title="1. 写sql语句"></a>1. 写sql语句</h5><p>where和group by没有考虑好</p>
+<h5 id="2-排序（1000找100最大）"><a href="#2-排序（1000找100最大）" class="headerlink" title="2. 排序（1000找100最大）"></a>2. 排序（1000找100最大）</h5><p>找最大的1000个整数</p>
+<ol>
+<li>内存无法装下：先取出1001个整数，构建一个最小堆，堆顶永远是最小的整数。</li>
+<li>比较：从剩余的整数中一次取出一个，跟最小堆堆顶相比，如果比堆顶小，就pass掉，接着取；如果比最小堆堆顶大，那么将之替换掉堆顶，然后调整最小堆</li>
+<li>结果：100亿个整数全部操作完后，抛开堆顶，剩下的1000个就是最大的1000个整数。</li>
+</ol>
+<h5 id="3-手写单例模式"><a href="#3-手写单例模式" class="headerlink" title="3. 手写单例模式"></a>3. 手写单例模式</h5><p>有欠缺的代码，背得不牢<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public class SingleTon &#123;</span><br><span class="line"> </span><br><span class="line">    private SingleTon()&#123;</span><br><span class="line">		</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    //实例化放在静态代码块里可提高程序的执行效率，但也可能更占用空间	</span><br><span class="line">    private final static SingleTon instance = new SingleTon();</span><br><span class="line">    public static SingleTon getInstance()&#123;</span><br><span class="line">   </span><br><span class="line">        return instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h5 id="4-同步锁"><a href="#4-同步锁" class="headerlink" title="4. 同步锁"></a>4. 同步锁</h5><h5 id="5-多态继承"><a href="#5-多态继承" class="headerlink" title="5. 多态继承"></a>5. 多态继承</h5><h5 id="6-spring动态代理"><a href="#6-spring动态代理" class="headerlink" title="6. spring动态代理"></a>6. spring动态代理</h5><h4 id="小迈科技"><a href="#小迈科技" class="headerlink" title="小迈科技"></a>小迈科技</h4><h5 id="1-多态"><a href="#1-多态" class="headerlink" title="1. 多态"></a>1. 多态</h5><h5 id="2-字符流和字节流区别及应用场景"><a href="#2-字符流和字节流区别及应用场景" class="headerlink" title="2. 字符流和字节流区别及应用场景"></a>2. 字符流和字节流区别及应用场景</h5><h5 id="3-线程实现方法及二者区别"><a href="#3-线程实现方法及二者区别" class="headerlink" title="3. 线程实现方法及二者区别"></a>3. 线程实现方法及二者区别</h5><h5 id="4-线程控制多并发数据的应用场景"><a href="#4-线程控制多并发数据的应用场景" class="headerlink" title="4. 线程控制多并发数据的应用场景"></a>4. 线程控制多并发数据的应用场景</h5><h4 id="金发科技"><a href="#金发科技" class="headerlink" title="金发科技"></a>金发科技</h4><p>聊人生系列~<br>公司规模相当震撼<br>如果工作，我希望有部车。</p>
+<hr>
+<p>等明天的影子面完终面，秋招就尘埃落定了<br>想好粤芯和名通的路<br>哪个更适合我？<br>到底考研重要还是技术发展？<br>如果是影子，那可能两者兼得hia<br>许愿！</p>
 
       
     </div>
+    
+    
+    
 
+<div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">------ end------</div>
+    
+</div>
+
+  
+</div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JAVA/" rel="tag"> <i class="fa fa-tag"></i> JAVA</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/22/剑指offer编程-1/" rel="next" title="剑指offer编程-1">
+                <i class="fa fa-chevron-left"></i> 剑指offer编程-1
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -323,6 +472,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -343,8 +496,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -424,6 +586,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#影子一面"><span class="nav-number">1.</span> <span class="nav-text">影子一面</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-写sql语句"><span class="nav-number">1.1.</span> <span class="nav-text">1. 写sql语句</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-排序（1000找100最大）"><span class="nav-number">1.2.</span> <span class="nav-text">2. 排序（1000找100最大）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-手写单例模式"><span class="nav-number">1.3.</span> <span class="nav-text">3. 手写单例模式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-同步锁"><span class="nav-number">1.4.</span> <span class="nav-text">4. 同步锁</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-多态继承"><span class="nav-number">1.5.</span> <span class="nav-text">5. 多态继承</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-spring动态代理"><span class="nav-number">1.6.</span> <span class="nav-text">6. spring动态代理</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#小迈科技"><span class="nav-number">2.</span> <span class="nav-text">小迈科技</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-多态"><span class="nav-number">2.1.</span> <span class="nav-text">1. 多态</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-字符流和字节流区别及应用场景"><span class="nav-number">2.2.</span> <span class="nav-text">2. 字符流和字节流区别及应用场景</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-线程实现方法及二者区别"><span class="nav-number">2.3.</span> <span class="nav-text">3. 线程实现方法及二者区别</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-线程控制多并发数据的应用场景"><span class="nav-number">2.4.</span> <span class="nav-text">4. 线程控制多并发数据的应用场景</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#金发科技"><span class="nav-number">3.</span> <span class="nav-text">金发科技</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -571,6 +749,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
